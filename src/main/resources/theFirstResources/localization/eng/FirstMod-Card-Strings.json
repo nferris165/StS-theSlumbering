@@ -61,10 +61,22 @@
   },
   "theFirst:MagicVarTest": {
     "NAME": "Testing",
-    "DESCRIPTION": "DO !theFirst:Magic! things and deal !theFirst:ED! damage."
+    "DESCRIPTION": "Do !theFirst:Magic! things and deal !theFirst:ED! damage."
   },
   "theFirst:ChannelSkill": {
     "NAME": "Channel Orb",
     "DESCRIPTION": "Channel 1 First Orb."
+  },
+  "theFirst:TheSeed": {
+    "NAME": "The Seed",
+    "DESCRIPTION": "Add a thefirst:Seed to your deck. NL Removed from your deck after playing."
+  },
+  "theFirst:Seed": {
+    "NAME": "Seed",
+    "DESCRIPTION": "Blossoms after being played 5 times. NL Currently has been played !M! times."
+  },
+  "theFirst:Bomb": {
+    "NAME": "Bomb",
+    "DESCRIPTION": "Unplayable. NL At the end of your turn, take 10 damage. NL Ethereal."
   }
 }

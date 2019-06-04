@@ -262,6 +262,11 @@ public class FirstMod implements
         BaseMod.addCard(new ChannelSkill());
         BaseMod.addCard(new MagicVarTest());
 
+        //colorless cards
+        BaseMod.addCard(new TheSeed());
+        BaseMod.addCard(new Seed());
+        BaseMod.addCard(new Bomb());
+
         //unlock?
         UnlockTracker.unlockCard(BasicDefend.ID);
         UnlockTracker.unlockCard(BasicAttack.ID);
@@ -280,6 +285,9 @@ public class FirstMod implements
         UnlockTracker.unlockCard(RarePower.ID);
         UnlockTracker.unlockCard(ChannelSkill.ID);
         UnlockTracker.unlockCard(MagicVarTest.ID);
+        UnlockTracker.unlockCard(TheSeed.ID);
+        UnlockTracker.unlockCard(Seed.ID);
+        UnlockTracker.unlockCard(Bomb.ID);
 
 
     }
@@ -341,7 +349,11 @@ public class FirstMod implements
 
         incFirstRelicFloat(amt);
 
-        return 0;
+        if(AbstractDungeon.player.chosenClass == TheFirst.Enums.THE_FIRST){
+            return 0;
+        }
+
+        return amt;
     }
 
     public static String makeID(String idText) {
@@ -370,7 +382,7 @@ public class FirstMod implements
 
     @Override
     public void receiveStartAct() {
-        if(AbstractDungeon.player.getClass() == TheFirst.class){
+        if(AbstractDungeon.player.chosenClass == TheFirst.Enums.THE_FIRST){
 
             int a = AbstractDungeon.actNum;
 

@@ -7,6 +7,13 @@
     "DESCRIPTION": "Whenever you play a card, gain 1 dexterity this turn only."
   },
   {
+    "NAMES": [
+      "seed",
+      "seeds"
+    ],
+    "DESCRIPTION": "Seeds are unplayable curse cards that will grow if cared for."
+  },
+  {
     "PROPER_NAME": "Multiword Keyword",
     "NAMES": [
       "Multiword Keyword",

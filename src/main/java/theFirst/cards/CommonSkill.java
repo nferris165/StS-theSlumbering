@@ -17,7 +17,7 @@ public class CommonSkill extends AbstractCustomCard {
 
     private static final CardRarity RARITY = CardRarity.COMMON;
     private static final CardTarget TARGET = CardTarget.SELF;
-    private static final CardType TYPE = CardType.ATTACK;
+    private static final CardType TYPE = CardType.SKILL;
     public static final CardColor COLOR = TheFirst.Enums.COLOR_FIRST;
 
     private static final int COST = 1;

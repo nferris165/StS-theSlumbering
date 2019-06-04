@@ -1,6 +1,5 @@
 package theFirst.cards;
 
-import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
@@ -9,45 +8,37 @@ import theFirst.characters.TheFirst;
 
 import static theFirst.FirstMod.makeCardPath;
 
-public class UncommonSkill extends AbstractCustomCard {
+public class TheSeed extends AbstractCustomCard {
 
-    public static final String ID = FirstMod.makeID(UncommonSkill.class.getSimpleName());
+    public static final String ID = FirstMod.makeID(TheSeed.class.getSimpleName());
 
     public static final String IMG = makeCardPath("S_temp.png");
 
-    private static final CardRarity RARITY = CardRarity.UNCOMMON;
+    private static final CardRarity RARITY = CardRarity.RARE;
     private static final CardTarget TARGET = CardTarget.SELF;
     private static final CardType TYPE = CardType.SKILL;
-    public static final CardColor COLOR = TheFirst.Enums.COLOR_FIRST;
+    public static final CardColor COLOR = CardColor.COLORLESS;
 
-    private static final int COST = 1;
+    private static final int COST = 2;
     private static final int UPGRADED_COST = 1;
 
-    private static final int BLOCK = 5;
-    private static final int UPGRADE_BLOCK = 3;
 
-    private static final int DAMAGE = 0;
-    private static final int UPGRADE_PLUS_DMG = 0;
-
-    public UncommonSkill() {
+    public TheSeed() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
-        baseDamage = DAMAGE;
-        baseBlock = BLOCK;
+        this.exhaust = true;
     }
 
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        AbstractDungeon.actionManager.addToBottom(new GainBlockAction(p, p, block));
+        AbstractDungeon.player.masterDeck.addToRandomSpot(new Seed());
+        AbstractDungeon.player.masterDeck.removeCard(this.cardID);
     }
-
 
     @Override
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            upgradeDamage(UPGRADE_PLUS_DMG);
-            upgradeBlock(UPGRADE_BLOCK);
             upgradeBaseCost(UPGRADED_COST);
             initializeDescription();
         }
