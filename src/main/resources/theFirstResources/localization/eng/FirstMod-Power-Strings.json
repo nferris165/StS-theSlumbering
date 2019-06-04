@@ -1,0 +1,10 @@
+{
+"theFirst:CommonPower": {
+        "NAME": "Placeholder Power",
+        "DESCRIPTIONS": ["You applied ", " keyword.", " keywords."]
+},
+"theFirst:RarePower": {
+        "NAME": "Placeholder Power",
+        "DESCRIPTIONS": ["At the start of your turn, BasicAttack ", " enemy." , " enemies."]
+}
+}

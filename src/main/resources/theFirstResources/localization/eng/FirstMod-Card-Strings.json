@@ -1,0 +1,70 @@
+{
+  "theFirst:BasicAttack": {
+    "NAME": "Basic Attack",
+    "DESCRIPTION": "Deal !D! Damage. NL Gain !B! Block. NL You are feeling [#666646]groggy...[]"
+  },
+  "theFirst:BasicDefend": {
+    "NAME": "Basic Defend",
+    "DESCRIPTION": "Gain !B! Block. NL You hear [#666646]screams...[] in your mind."
+  },
+  "theFirst:DrowsyAttack": {
+    "NAME": "Drowsy Attack",
+    "DESCRIPTION": "Deal !D! Damage. NL Gain !B! Block. NL You are feeling [#666646]groggy...[]"
+  },
+  "theFirst:DrowsyDefend": {
+    "NAME": "Drowsy Defend",
+    "DESCRIPTION": "Gain !B! Block. NL You hear [#666646]screams...[] in your mind."
+  },
+  "theFirst:WokeAttack": {
+    "NAME": "Woke Attack",
+    "DESCRIPTION": "Deal !D! Damage. NL Gain !B! Block. NL You are feeling [#666646]groggy...[]"
+  },
+  "theFirst:WokeDefend": {
+    "NAME": "Woke Defend",
+    "DESCRIPTION": "Gain !B! Block. NL You hear [#666646]screams...[] in your mind."
+  },
+  "theFirst:CommonAttack": {
+    "NAME": "Common A",
+    "DESCRIPTION": "Deal !D! Damage."
+  },
+  "theFirst:UncommonAttack": {
+    "NAME": "Uncommon A",
+    "DESCRIPTION": "Deal !D! Damage."
+  },
+  "theFirst:RareAttack": {
+    "NAME": "Rare A",
+    "DESCRIPTION": "Deal !D! Damage."
+  },
+  "theFirst:CommonSkill": {
+    "NAME": "Common S",
+    "DESCRIPTION": "Gain !B! Block."
+  },
+  "theFirst:UncommonSkill": {
+    "NAME": "Uncommon S",
+    "DESCRIPTION": "Gain !B! Block."
+  },
+  "theFirst:RareSkill": {
+    "NAME": "Rare S",
+    "DESCRIPTION": "Gain !B! Block."
+  },
+  "theFirst:CommonPower": {
+    "NAME": "Common P",
+    "DESCRIPTION": "Gain 1 Strength."
+  },
+  "theFirst:UncommonPower": {
+    "NAME": "Uncommon P",
+    "DESCRIPTION": "Do something."
+  },
+  "theFirst:RarePower": {
+    "NAME": "Rare P",
+    "DESCRIPTION": "Do something else."
+  },
+  "theFirst:MagicVarTest": {
+    "NAME": "Testing",
+    "DESCRIPTION": "DO !theFirst:Magic! things and deal !theFirst:ED! damage."
+  },
+  "theFirst:ChannelSkill": {
+    "NAME": "Channel Orb",
+    "DESCRIPTION": "Channel 1 First Orb."
+  }
+}

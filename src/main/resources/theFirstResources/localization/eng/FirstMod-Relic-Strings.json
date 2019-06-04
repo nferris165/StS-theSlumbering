@@ -1,0 +1,64 @@
+{
+  "theFirst:GlassShield": {
+    "NAME": "Glass Shield",
+    "FLAVOR": "WARNING: Fragile.",
+    "DESCRIPTIONS": [
+      "If incoming damage would be #yBlocked, reduce it by #b3. Shatters after #b",
+      " hits."
+    ]
+  },
+  "theFirst:SlimeShield": {
+    "NAME": "Slime Shield",
+    "FLAVOR": "Not very protective, but regenerates constantly.",
+    "DESCRIPTIONS": [
+      "Negates #b15 damage and then breaks. Regenerates between battles."
+    ]
+  },
+  "theFirst:FirstRelic": {
+    "NAME": "The Deep Slumber",
+    "FLAVOR": "Yaaaaaaaawn...",
+    "DESCRIPTIONS": [
+      "[#2aecd7]This shouldn't be part of your wake up routine!",
+      "You have just begun to awaken...",
+      "You are feeling groggy...",
+      "You still feel sluggish...",
+      "Your head is beginning to clear up...",
+      "You feel fully awake."
+    ]
+  },
+  "theFirst:HeartCollector": {
+    "NAME": "Heart Collector",
+    "FLAVOR": "It's hunger cannot be sated.",
+    "DESCRIPTIONS": [
+      "We should never have gotten here!",
+      "Accumulate hearts by defeating enemies. Spend those hearts by right clicking. ",
+      "Hearts grant #yBlock, and will grant more #yBlock the more awake you are."
+    ]
+  },
+  "theFirst:CursedAnvil": {
+    "NAME": "Cursed Anvil",
+    "FLAVOR": "Improvement at a cost.",
+    "DESCRIPTIONS": [
+      "Upon pickup, upgrade every card in your deck. NL Then, remove #b",
+      " random upgraded cards and replace them with their base versions."
+    ]
+  },
+  "theFirst:EnchantedHammer": {
+    "NAME": "Enchanted Hammer",
+    "FLAVOR": "Blessed by a powerful being...",
+    "DESCRIPTIONS": [
+      "Whenever you #ySmith a card, #yUpgrade another random card."
+    ]
+  },
+  "theFirst:GamblerFolly": {
+    "NAME": "Gambler's Folly",
+    "FLAVOR": "No gambler worth their salt has ever been able to resist.",
+    "DESCRIPTIONS": [
+      "Do you dare challenge the odds?",
+      "Luck smiles on you. NL Your #yGold rewards are increased, and you have a chance at greater chest rewards.",
+      "Your gambling addiction will catch up with you eventually. NL Whenever you gain #yGold, the house collects some of your debt.",
+      "JACKPOT! NL Gain a bundle of #yGold immediately, and your future rewards have a much higher chance of being increased.",
+      " #yGold"
+    ]
+  }
+}

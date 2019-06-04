@@ -1,0 +1,12 @@
+{
+  "theFirst:SimpleMonster": {
+  "MOVES": [
+    "Bellow",
+    "Thrash"
+  ],
+  "NAME": "SimpleMon",
+  "DIALOG": [
+    ""
+  ]
+}
+}

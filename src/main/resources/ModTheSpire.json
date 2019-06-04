@@ -1,0 +1,12 @@
+{
+  "modid": "firstmod",
+  "name": "First Mod",
+  "author_list": ["Nichilas"],
+  "description": "My first mod.",
+  "version": "${project.version}",
+  "sts_version": "${SlayTheSpire.version}",
+  "mts_version": "${ModTheSpire.version}",
+  "dependencies": ["basemod", "stslib"],
+  "update_json": ""
+}
+

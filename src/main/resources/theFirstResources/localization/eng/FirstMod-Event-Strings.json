@@ -1,0 +1,22 @@
+{
+  "theFirst:BasicEvent": {
+    "NAME": "Basic Event",
+    "DESCRIPTIONS": [
+      "You stumble across a floating #bBlue #bOrb. NL As you approach, you begin to feel the winds of a far off land.",
+      "A portal bursts forth from the #borb, and whisks you away. NL As you examine your new surroundings, you notice the ruins of a house that you immediately recall as belonging to someone you held dear. NL Your body pulses with #ranger. NL Suddenly, you are whisked back, noticing that your pockets are a little bit lighter.",
+      "You put everything you have into a hefty strike on the #borb. It shatters, falling to the ground and leaving your hand stinging with pain. NL Inside the ruined fragments of the orb, you notice something sparkling.",
+      "Satisfied with your actions, you continue on your way.",
+      "You continue on your way, unsure if the what you saw was a dream or not."
+    ],
+    "OPTIONS": [
+      "[Touch the Orb] #rLose #r",
+      " #rgold. #gWake #gup #ga #glittle...",
+      "[Destroy the Orb] #rLose ",
+      ". #gGain #gtwo #grandom #gBasic #gcards.",
+      "[Ignore the Orb] #rFall #rdeeper #rinto #ryour #pslumber...",
+      "[Leave]",
+      "[Obtain Reward]",
+      "[Locked] Requires: Attack Card"
+    ]
+  }
+}
