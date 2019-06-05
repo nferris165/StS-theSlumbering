@@ -1,12 +1,14 @@
 package theFirst.cards;
 
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
+import com.megacrit.cardcrawl.actions.common.ReducePowerAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.StrengthPower;
 import theFirst.FirstMod;
 import theFirst.characters.TheFirst;
+import theFirst.powers.DrowsyPower;
 
 import static theFirst.FirstMod.makeCardPath;
 
@@ -39,7 +41,8 @@ public class CommonPower extends AbstractCustomCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        AbstractDungeon.actionManager.addToTop(new ApplyPowerAction(p, p, new StrengthPower(AbstractDungeon.player, 1), 1));
+        //AbstractDungeon.actionManager.addToTop(new ApplyPowerAction(p, p, new DrowsyPower(AbstractDungeon.player, 1, false), 1));
+        AbstractDungeon.actionManager.addToBottom(new ReducePowerAction(p, p, DrowsyPower.POWER_ID, 1));
     }
 
 

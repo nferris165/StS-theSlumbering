@@ -51,9 +51,9 @@
     "NAME": "Common P",
     "DESCRIPTION": "Gain 1 Strength."
   },
-  "theFirst:UncommonPower": {
-    "NAME": "Uncommon P",
-    "DESCRIPTION": "Do something."
+  "theFirst:ExtraArm": {
+    "NAME": "Extra Arm",
+    "DESCRIPTION": "At the start of your turn, play a bonus attack."
   },
   "theFirst:RarePower": {
     "NAME": "Rare P",

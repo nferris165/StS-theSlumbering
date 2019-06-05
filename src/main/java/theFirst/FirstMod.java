@@ -256,7 +256,7 @@ public class FirstMod implements
         BaseMod.addCard(new UncommonSkill());
         BaseMod.addCard(new RareSkill());
         BaseMod.addCard(new CommonPower());
-        BaseMod.addCard(new UncommonPower());
+        BaseMod.addCard(new ExtraArm());
         BaseMod.addCard(new RarePower());
 
         BaseMod.addCard(new ChannelSkill());
@@ -281,7 +281,7 @@ public class FirstMod implements
         UnlockTracker.unlockCard(UncommonSkill.ID);
         UnlockTracker.unlockCard(RareSkill.ID);
         UnlockTracker.unlockCard(CommonPower.ID);
-        UnlockTracker.unlockCard(UncommonPower.ID);
+        UnlockTracker.unlockCard(ExtraArm.ID);
         UnlockTracker.unlockCard(RarePower.ID);
         UnlockTracker.unlockCard(ChannelSkill.ID);
         UnlockTracker.unlockCard(MagicVarTest.ID);

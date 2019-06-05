@@ -30,7 +30,10 @@ public class FirstRelic extends AbstractCustomRelic {
 
     @Override
     public int getState(){
-        if(this.counter == 0){
+        if(this.counter < 0){
+            return 0;
+        }
+        else if(this.counter == 0){
             return 1;
         }
         else if(this.counter < 5){
@@ -42,11 +45,12 @@ public class FirstRelic extends AbstractCustomRelic {
         else if(this.counter < 15){
             return 4;
         }
-        else if(this.counter >= 20){
+        else if (this.counter < 20){
             return 5;
         }
-        else{
-            return 0;
+        else //if(this.counter >= 20)
+        {
+            return 6;
         }
     }
 

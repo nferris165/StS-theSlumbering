@@ -39,7 +39,7 @@ public class NewPotion extends AbstractPotion {
         }
     }
 
-    //TODO use on map?
+    //TODO use on map? ui.panels.potion
     @Override
     public boolean canUse() {
         if (AbstractDungeon.actionManager.turnHasEnded && AbstractDungeon.getCurrRoom().phase == RoomPhase.COMBAT) {

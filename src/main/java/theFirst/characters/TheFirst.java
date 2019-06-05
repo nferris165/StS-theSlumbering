@@ -24,6 +24,7 @@ import com.megacrit.cardcrawl.unlock.UnlockTracker;
 import com.megacrit.cardcrawl.vfx.cardManip.ShowCardAndObtainEffect;
 import theFirst.FirstMod;
 import theFirst.cards.*;
+import theFirst.powers.DrowsyPower;
 import theFirst.relics.*;
 
 import java.util.ArrayList;
@@ -231,7 +232,11 @@ public class TheFirst extends AbstractCustomPlayer {
         if(AbstractDungeon.player.hasRelic("theFirst:FirstRelic")){
             AbstractCustomRelic r = (AbstractCustomRelic) AbstractDungeon.player.getRelic("theFirst:FirstRelic");
             AbstractDungeon.actionManager.addToTop(new ApplyPowerAction(AbstractDungeon.player,
-                    AbstractDungeon.player, new WeakPower(AbstractDungeon.player, 5 - r.getState(), true), 1));
+                    AbstractDungeon.player, new DrowsyPower(AbstractDungeon.player, 5 - r.getState(), true), 1));
+        }
+        else{
+            AbstractDungeon.actionManager.addToTop(new ApplyPowerAction(AbstractDungeon.player,
+                    AbstractDungeon.player, new DrowsyPower(AbstractDungeon.player, 99, true), 1));
         }
     }
 

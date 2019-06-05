@@ -26,6 +26,7 @@ public class TheSeed extends AbstractCustomCard {
     public TheSeed() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         this.exhaust = true;
+        this.purgeOnUse = true;
     }
 
 
