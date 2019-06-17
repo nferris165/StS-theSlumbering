@@ -1,8 +1,11 @@
 package theFirst.cards;
 
+import com.badlogic.gdx.math.MathUtils;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.vfx.cardManip.ShowCardAndObtainEffect;
 import theFirst.FirstMod;
 import theFirst.characters.TheFirst;
 
@@ -32,7 +35,8 @@ public class TheSeed extends AbstractCustomCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        AbstractDungeon.player.masterDeck.addToRandomSpot(new Seed());
+        AbstractDungeon.effectList.add(new ShowCardAndObtainEffect(new Seed(), MathUtils.random(0.1F, 0.9F) * (float) Settings.WIDTH, MathUtils.random(0.2F, 0.8F) * (float) Settings.HEIGHT));
+        //AbstractDungeon.player.masterDeck.addToRandomSpot(new Seed());
         AbstractDungeon.player.masterDeck.removeCard(this.cardID);
     }
 

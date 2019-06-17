@@ -50,7 +50,7 @@ public class FirstRelic extends AbstractCustomRelic {
         }
         else //if(this.counter >= 20)
         {
-            return 6;
+            return 5;
         }
     }
 

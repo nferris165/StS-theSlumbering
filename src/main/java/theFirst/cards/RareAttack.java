@@ -25,16 +25,12 @@ public class RareAttack extends AbstractCustomCard {
     private static final int COST = 1;
     private static final int UPGRADED_COST = 1;
 
-    private static final int BLOCK = 0;
-    private static final int UPGRADE_BLOCK = 0;
-
     private static final int DAMAGE = 5;
     private static final int UPGRADE_PLUS_DMG = 4;
 
     public RareAttack() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         baseDamage = DAMAGE;
-        baseBlock = BLOCK;
     }
 
 
@@ -50,7 +46,6 @@ public class RareAttack extends AbstractCustomCard {
         if (!upgraded) {
             upgradeName();
             upgradeDamage(UPGRADE_PLUS_DMG);
-            upgradeBlock(UPGRADE_BLOCK);
             upgradeBaseCost(UPGRADED_COST);
             initializeDescription();
         }

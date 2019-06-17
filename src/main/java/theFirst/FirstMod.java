@@ -249,11 +249,11 @@ public class FirstMod implements
         BaseMod.addCard(new WokeAttack());
 
         //standard cards
-        BaseMod.addCard(new CommonAttack());
-        BaseMod.addCard(new UncommonAttack());
+        BaseMod.addCard(new Jab());
+        BaseMod.addCard(new StumblingBlow());
         BaseMod.addCard(new RareAttack());
-        BaseMod.addCard(new CommonSkill());
-        BaseMod.addCard(new UncommonSkill());
+        BaseMod.addCard(new WakeUpSlap());
+        BaseMod.addCard(new ThornCloak());
         BaseMod.addCard(new RareSkill());
         BaseMod.addCard(new CommonPower());
         BaseMod.addCard(new ExtraArm());
@@ -274,11 +274,11 @@ public class FirstMod implements
         UnlockTracker.unlockCard(DrowsyDefend.ID);
         UnlockTracker.unlockCard(WokeAttack.ID);
         UnlockTracker.unlockCard(WokeDefend.ID);
-        UnlockTracker.unlockCard(CommonAttack.ID);
-        UnlockTracker.unlockCard(UncommonAttack.ID);
+        UnlockTracker.unlockCard(Jab.ID);
+        UnlockTracker.unlockCard(StumblingBlow.ID);
         UnlockTracker.unlockCard(RareAttack.ID);
-        UnlockTracker.unlockCard(CommonSkill.ID);
-        UnlockTracker.unlockCard(UncommonSkill.ID);
+        UnlockTracker.unlockCard(WakeUpSlap.ID);
+        UnlockTracker.unlockCard(ThornCloak.ID);
         UnlockTracker.unlockCard(RareSkill.ID);
         UnlockTracker.unlockCard(CommonPower.ID);
         UnlockTracker.unlockCard(ExtraArm.ID);

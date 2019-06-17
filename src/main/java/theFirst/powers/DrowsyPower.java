@@ -27,6 +27,8 @@ public class DrowsyPower  extends AbstractPower implements CloneablePowerInterfa
 
     private boolean justApplied = false;
 
+    //TODO define power
+
     public DrowsyPower(AbstractCreature owner, int amount, boolean isSourceMonster) {
         name = NAME;
         ID = POWER_ID;

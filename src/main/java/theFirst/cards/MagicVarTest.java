@@ -33,7 +33,7 @@ public class MagicVarTest extends AbstractCustomCard {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
 
         baseDamage = VALUE;
-        SecondMagicNumber = baseSecondMagicNumber = VALUE;
+        secondMagicNumber = baseSecondMagicNumber = VALUE;
 
     }
 

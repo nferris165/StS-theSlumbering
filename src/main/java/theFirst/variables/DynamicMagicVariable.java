@@ -20,7 +20,7 @@ public class DynamicMagicVariable extends DynamicVariable {
 
     @Override
     public int value(AbstractCard card) {
-        return ((AbstractCustomCard) card).SecondMagicNumber;
+        return ((AbstractCustomCard) card).secondMagicNumber;
     }
 
     @Override

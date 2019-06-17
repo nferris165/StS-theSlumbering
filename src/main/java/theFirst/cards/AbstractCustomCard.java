@@ -6,7 +6,7 @@ import static com.megacrit.cardcrawl.core.CardCrawlGame.languagePack;
 
 public abstract class AbstractCustomCard extends CustomCard {
 
-    public int SecondMagicNumber;
+    public int secondMagicNumber;
     public int baseSecondMagicNumber;
     public boolean upgradedSecondMagicNumber;
     public boolean isSecondMagicNumberModified;
@@ -29,13 +29,13 @@ public abstract class AbstractCustomCard extends CustomCard {
 
         if (upgradedSecondMagicNumber) {
             isSecondMagicNumberModified = true;
-            SecondMagicNumber = baseSecondMagicNumber;
+            secondMagicNumber = baseSecondMagicNumber;
         }
     }
 
     public void upgradeSecondMagicNumber(int upgradeAmount) {
         upgradedSecondMagicNumber = true;
         baseSecondMagicNumber += upgradeAmount;
-        SecondMagicNumber = baseSecondMagicNumber;
+        secondMagicNumber = baseSecondMagicNumber;
     }
 }

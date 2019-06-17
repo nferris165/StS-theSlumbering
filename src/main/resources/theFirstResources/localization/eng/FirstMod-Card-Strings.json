@@ -23,25 +23,25 @@
     "NAME": "Woke Defend",
     "DESCRIPTION": "Gain !B! Block. NL You hear [#666646]screams...[] in your mind."
   },
-  "theFirst:CommonAttack": {
-    "NAME": "Common A",
+  "theFirst:Jab": {
+    "NAME": "Jab",
     "DESCRIPTION": "Deal !D! Damage."
   },
-  "theFirst:UncommonAttack": {
-    "NAME": "Uncommon A",
-    "DESCRIPTION": "Deal !D! Damage."
+  "theFirst:StumblingBlow": {
+    "NAME": "Stumbling Blow",
+    "DESCRIPTION": "Deal !D! Damage. NL Gain !M! Weak."
   },
   "theFirst:RareAttack": {
     "NAME": "Rare A",
     "DESCRIPTION": "Deal !D! Damage."
   },
-  "theFirst:CommonSkill": {
-    "NAME": "Common S",
-    "DESCRIPTION": "Gain !B! Block."
+  "theFirst:WakeUpSlap": {
+    "NAME": "Wake-Up Slap",
+    "DESCRIPTION": "Take !theFirst:Magic! damage. NL Draw a card. NL Gain !M! Strength this turn."
   },
-  "theFirst:UncommonSkill": {
-    "NAME": "Uncommon S",
-    "DESCRIPTION": "Gain !B! Block."
+  "theFirst:ThornCloak": {
+    "NAME": "Cloak of Thorns",
+    "DESCRIPTION": "Gain !B! Block. NL Whenever you are attacked this turn, deal !M! damage back."
   },
   "theFirst:RareSkill": {
     "NAME": "Rare S",
