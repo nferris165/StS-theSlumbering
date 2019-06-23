@@ -254,10 +254,10 @@ public class FirstMod implements
         BaseMod.addCard(new RareAttack());
         BaseMod.addCard(new WakeUpSlap());
         BaseMod.addCard(new ThornCloak());
-        BaseMod.addCard(new RareSkill());
+        BaseMod.addCard(new Parry());
         BaseMod.addCard(new CommonPower());
         BaseMod.addCard(new ExtraArm());
-        BaseMod.addCard(new RarePower());
+        BaseMod.addCard(new Reflect());
 
         BaseMod.addCard(new ChannelSkill());
         BaseMod.addCard(new MagicVarTest());
@@ -279,10 +279,10 @@ public class FirstMod implements
         UnlockTracker.unlockCard(RareAttack.ID);
         UnlockTracker.unlockCard(WakeUpSlap.ID);
         UnlockTracker.unlockCard(ThornCloak.ID);
-        UnlockTracker.unlockCard(RareSkill.ID);
+        UnlockTracker.unlockCard(Parry.ID);
         UnlockTracker.unlockCard(CommonPower.ID);
         UnlockTracker.unlockCard(ExtraArm.ID);
-        UnlockTracker.unlockCard(RarePower.ID);
+        UnlockTracker.unlockCard(Reflect.ID);
         UnlockTracker.unlockCard(ChannelSkill.ID);
         UnlockTracker.unlockCard(MagicVarTest.ID);
         UnlockTracker.unlockCard(TheSeed.ID);

@@ -15,5 +15,13 @@
                 " turn.",
                 " turns."
         ]
+},
+"theFirst:ReflectPower": {
+        "NAME": "Reflect",
+        "DESCRIPTIONS": ["Reflect ", " percent of damage back at the attacker."]
+},
+"theFirst:ParryPower": {
+        "NAME": "Parry",
+        "DESCRIPTIONS": ["If the next attack is fully blocked, the attacker takes the damage instead."]
 }
 }

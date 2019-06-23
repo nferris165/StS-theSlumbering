@@ -43,9 +43,9 @@
     "NAME": "Cloak of Thorns",
     "DESCRIPTION": "Gain !B! Block. NL Whenever you are attacked this turn, deal !M! damage back."
   },
-  "theFirst:RareSkill": {
-    "NAME": "Rare S",
-    "DESCRIPTION": "Gain !B! Block."
+  "theFirst:Parry": {
+    "NAME": "Parry",
+    "DESCRIPTION": "Gain 1 thefirst:Parry."
   },
   "theFirst:CommonPower": {
     "NAME": "Common P",
@@ -55,9 +55,9 @@
     "NAME": "Extra Arm",
     "DESCRIPTION": "At the start of your turn, play a bonus attack."
   },
-  "theFirst:RarePower": {
-    "NAME": "Rare P",
-    "DESCRIPTION": "Do something else."
+  "theFirst:Reflect": {
+    "NAME": "Reflect",
+    "DESCRIPTION": "Whenever you are attacked this turn, reflect 30% of the damage."
   },
   "theFirst:MagicVarTest": {
     "NAME": "Testing",

@@ -14,6 +14,12 @@
     "DESCRIPTION": "Seeds are unplayable curse cards that will grow if cared for."
   },
   {
+    "NAMES": [
+      "parry"
+    ],
+    "DESCRIPTION": "If the next attack is fully blocked, the attacker takes the damage instead."
+  },
+  {
     "PROPER_NAME": "Multiword Keyword",
     "NAMES": [
       "Multiword Keyword",
