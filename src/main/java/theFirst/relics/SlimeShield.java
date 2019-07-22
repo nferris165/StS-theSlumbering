@@ -1,5 +1,6 @@
 package theFirst.relics;
 
+import basemod.abstracts.CustomSavable;
 import com.badlogic.gdx.graphics.Texture;
 import com.evacipated.cardcrawl.mod.stslib.relics.BetterOnLoseHpRelic;
 import com.megacrit.cardcrawl.cards.DamageInfo;
@@ -11,7 +12,7 @@ import theFirst.util.TextureLoader;
 
 import static theFirst.FirstMod.*;
 
-public class SlimeShield extends AbstractCustomRelic implements BetterOnLoseHpRelic, OnLoseBlockRelic {
+public class SlimeShield extends AbstractCustomRelic implements BetterOnLoseHpRelic, OnLoseBlockRelic, CustomSavable<Integer> {
 
     public static final String ID = FirstMod.makeID("SlimeShield");
 
@@ -19,11 +20,12 @@ public class SlimeShield extends AbstractCustomRelic implements BetterOnLoseHpRe
     private static final Texture OUTLINE = TextureLoader.getTexture(makeRelicOutlinePath("GlassShield.png"));
 
     public boolean active;
+    private int powerLevel = 15;
 
     public SlimeShield() {
         super(ID, IMG, OUTLINE, RelicTier.COMMON, LandingSound.MAGICAL);
 
-        this.counter = 15;
+        this.counter = powerLevel;
         this.floatCounter = 0;
         this.active = true;
     }
@@ -45,19 +47,20 @@ public class SlimeShield extends AbstractCustomRelic implements BetterOnLoseHpRe
 
     @Override
     public void atBattleStart(){
-        this.counter = 15;
+        this.counter = powerLevel;
         this.active = true;
         flash();
     }
 
     @Override
     public int onLoseBlock(DamageInfo damageInfo, int i) {
-        if(this.active){
+        /*if(this.active){
             if(i >= this.counter){
                 flash();
                 int j = i - this.counter;
                 this.counter = -1;
                 this.active = false;
+                this.powerLevel--;
                 return j;
             }
             else{
@@ -66,6 +69,7 @@ public class SlimeShield extends AbstractCustomRelic implements BetterOnLoseHpRe
                 return 0;
             }
         }
+        */
         return i;
     }
 
@@ -77,6 +81,7 @@ public class SlimeShield extends AbstractCustomRelic implements BetterOnLoseHpRe
                 int j = i - this.counter;
                 this.counter = -1;
                 this.active = false;
+                this.powerLevel--;
                 return j;
             }
             else{
@@ -86,5 +91,15 @@ public class SlimeShield extends AbstractCustomRelic implements BetterOnLoseHpRe
             }
         }
         return i;
+    }
+
+    @Override
+    public Integer onSave() {
+        return this.powerLevel;
+    }
+
+    @Override
+    public void onLoad(Integer pLevel) {
+        this.powerLevel = pLevel;
     }
 }

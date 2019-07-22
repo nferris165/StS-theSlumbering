@@ -78,5 +78,9 @@
   "theFirst:Bomb": {
     "NAME": "Bomb",
     "DESCRIPTION": "Unplayable. NL At the end of your turn, take 10 damage. NL Ethereal."
+  },
+  "theFirst:Detonator": {
+    "NAME": "Detonator",
+    "DESCRIPTION": "Unplayable. NL When drawn, deal !D! damage to all enemies."
   }
 }

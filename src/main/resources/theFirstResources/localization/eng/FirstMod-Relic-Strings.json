@@ -3,7 +3,7 @@
     "NAME": "Glass Shield",
     "FLAVOR": "WARNING: Fragile.",
     "DESCRIPTIONS": [
-      "If incoming damage would be #yBlocked, reduce it by #b3. Shatters after #b",
+      "If incoming damage would be #yBlocked, reduce it by #b3. NL Shatters after #b",
       " hits."
     ]
   },
@@ -11,7 +11,7 @@
     "NAME": "Slime Shield",
     "FLAVOR": "Not very protective, but regenerates constantly.",
     "DESCRIPTIONS": [
-      "Negates #b15 damage and then breaks. Regenerates between battles."
+      "Negates #b15 damage and then breaks. Regenerates between battles, but loses power."
     ]
   },
   "theFirst:FirstRelic": {

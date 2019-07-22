@@ -9,6 +9,7 @@ import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.Texture;
 import com.evacipated.cardcrawl.mod.stslib.Keyword;
+import com.evacipated.cardcrawl.modthespire.Loader;
 import com.evacipated.cardcrawl.modthespire.lib.SpireConfig;
 import com.evacipated.cardcrawl.modthespire.lib.SpireInitializer;
 import com.google.gson.Gson;
@@ -21,6 +22,9 @@ import com.megacrit.cardcrawl.helpers.FontHelper;
 import com.megacrit.cardcrawl.localization.*;
 import com.megacrit.cardcrawl.monsters.MonsterInfo;
 import com.megacrit.cardcrawl.neow.NeowEvent;
+import javassist.CtClass;
+import javassist.NotFoundException;
+import org.clapper.util.classutil.*;
 import theFirst.characters.TheFirst;
 import theFirst.events.BasicEvent;
 import theFirst.monsters.SimpleMonster;
@@ -36,9 +40,14 @@ import theFirst.variables.EnergyVariable;
 import theFirst.variables.DynamicMagicVariable;
 import theFirst.relics.FirstRelic;
 
+import java.io.File;
 import java.lang.reflect.Method;
+import java.lang.reflect.Modifier;
+import java.net.URISyntaxException;
+import java.net.URL;
 import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.Properties;
 
 
@@ -236,6 +245,13 @@ public class FirstMod implements
 
     @Override
     public void receiveEditCards() {
+
+        try {
+            autoAddCards();
+        } catch (URISyntaxException | IllegalAccessException | InstantiationException | NotFoundException | ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+        /*
         //variables
         BaseMod.addDynamicVariable(new EnergyVariable());
         BaseMod.addDynamicVariable(new DynamicMagicVariable());
@@ -266,6 +282,7 @@ public class FirstMod implements
         BaseMod.addCard(new TheSeed());
         BaseMod.addCard(new Seed());
         BaseMod.addCard(new Bomb());
+        BaseMod.addCard(new Detonator());
 
         //unlock?
         UnlockTracker.unlockCard(BasicDefend.ID);
@@ -288,8 +305,9 @@ public class FirstMod implements
         UnlockTracker.unlockCard(TheSeed.ID);
         UnlockTracker.unlockCard(Seed.ID);
         UnlockTracker.unlockCard(Bomb.ID);
+        UnlockTracker.unlockCard(Detonator.ID);
 
-
+*/
     }
 
     //TODO: autogenerate
@@ -324,6 +342,54 @@ public class FirstMod implements
         if (keywords != null) {
             for (Keyword keyword : keywords) {
                 BaseMod.addKeyword(modID.toLowerCase(), keyword.PROPER_NAME, keyword.NAMES, keyword.DESCRIPTION);
+            }
+        }
+    }
+
+    private static void autoAddCards() throws URISyntaxException, IllegalAccessException, InstantiationException, NotFoundException, ClassNotFoundException
+    {
+        ClassFinder finder = new ClassFinder();
+        URL url = FirstMod.class.getProtectionDomain().getCodeSource().getLocation();
+        finder.add(new File(url.toURI()));
+
+        ClassFilter filter =
+                new AndClassFilter(
+                        new NotClassFilter(new InterfaceOnlyClassFilter()),
+                        new NotClassFilter(new AbstractClassFilter()),
+                        new ClassModifiersClassFilter(Modifier.PUBLIC),
+                        new CardFilter()
+                );
+        Collection<ClassInfo> foundClasses = new ArrayList<>();
+        finder.findClasses(foundClasses, filter);
+
+        for (ClassInfo classInfo : foundClasses) {
+            CtClass cls = Loader.getClassPool().get(classInfo.getClassName());
+            if (cls.hasAnnotation(CardIgnore.class)) {
+                continue;
+            }
+            boolean isCard = false;
+            CtClass superCls = cls;
+            while (superCls != null) {
+                superCls = superCls.getSuperclass();
+                if (superCls == null) {
+                    break;
+                }
+                if (superCls.getName().equals(AbstractCard.class.getName())) {
+                    isCard = true;
+                    break;
+                }
+            }
+            if (!isCard) {
+                continue;
+            }
+
+            System.out.println(classInfo.getClassName());
+            AbstractCard card = (AbstractCard) Loader.getClassPool().getClassLoader().loadClass(cls.getName()).newInstance();
+            BaseMod.addCard(card);
+            if (cls.hasAnnotation(CardNoSeen.class)) {
+                UnlockTracker.hardUnlockOverride(card.cardID);
+            } else {
+                UnlockTracker.unlockCard(card.cardID);
             }
         }
     }
