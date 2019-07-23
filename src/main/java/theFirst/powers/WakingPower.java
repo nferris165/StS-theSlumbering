@@ -19,16 +19,16 @@ import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import theFirst.FirstMod;
-import theFirst.cards.BasicAttack;
-import theFirst.cards.DrowsyAttack;
-import theFirst.cards.WokeAttack;
+import theFirst.cards.*;
 import theFirst.util.TextureLoader;
 
-public class ParryPower extends AbstractPower implements CloneablePowerInterface, OnLoseBlockPower {
+public class WakingPower extends AbstractCustomPower implements CloneablePowerInterface {
     @SuppressWarnings("WeakerAccess")
     public AbstractCreature source;
+    public AbstractCard card;
+    public static boolean needYawn;
 
-    public static final String POWER_ID = FirstMod.makeID("ParryPower");
+    public static final String POWER_ID = FirstMod.makeID("WakingPower");
     private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
     public static final String NAME = powerStrings.NAME;
     public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;
@@ -36,15 +36,19 @@ public class ParryPower extends AbstractPower implements CloneablePowerInterface
     private static final Texture tex84 = TextureLoader.getTexture("theFirstResources/images/powers/placeholder_power84.png");
     private static final Texture tex32 = TextureLoader.getTexture("theFirstResources/images/powers/placeholder_power32.png");
 
-    public ParryPower(final AbstractCreature owner, final int amount) {
+    public WakingPower(final AbstractCreature owner, AbstractCard card) {
         name = NAME;
         ID = POWER_ID;
 
         this.owner = owner;
-        this.amount = amount;
+        this.card = card;
 
         type = PowerType.BUFF;
         isTurnBased = false;
+
+        needYawn = this.card.cardID.equals(new Stretch().cardID);
+
+        this.powerCheck = needYawn;
 
         this.region128 = new TextureAtlas.AtlasRegion(tex84, 0, 0, 84, 84);
         this.region48 = new TextureAtlas.AtlasRegion(tex32, 0, 0, 32, 32);
@@ -55,41 +59,30 @@ public class ParryPower extends AbstractPower implements CloneablePowerInterface
 
 
     @Override
+    public void atEndOfRound() {
+        AbstractDungeon.actionManager.addToTop(new RemoveSpecificPowerAction(this.owner, this.owner, ID));
+    }
+
+    @Override
     public void updateDescription() {
-        description = DESCRIPTIONS[0];
+        if(needYawn){
+            description = DESCRIPTIONS[0];
+        }
+        else {
+            description = DESCRIPTIONS[1];
+        }
+
     }
 
 
     @Override
     public AbstractPower makeCopy() {
-        return new ParryPower(owner, amount);
-    }
-
-    public void decrement(){
-        if (this.amount <= 1) {
-            AbstractDungeon.actionManager.addToTop(new RemoveSpecificPowerAction(this.owner, this.owner, ID));
-        } else {
-            AbstractDungeon.actionManager.addToTop(new ReducePowerAction(this.owner, this.owner, ID, 1));
-        }
+        return new WakingPower(owner, card);
     }
 
     @Override
-    public int onLoseBlock(DamageInfo info, int i) {
-
-        if (info.type == DamageInfo.DamageType.NORMAL && info.owner != null
-                && info.owner != this.owner && this.owner.currentBlock >= info.output) {
-
-            this.flash();
-            DamageInfo parryInfo = new DamageInfo(this.owner, info.output, DamageInfo.DamageType.THORNS);
-            AbstractDungeon.actionManager.addToTop(new DamageAction(info.owner, parryInfo, AbstractGameAction.AttackEffect.SLASH_HEAVY, true));
-
-            decrement();
-
-            return 0;
-        }
-
-        decrement();
-
-        return i;
+    public void onSpecificTrigger() {
+        AbstractDungeon.actionManager.addToTop(new RemoveSpecificPowerAction(this.owner, this.owner, ID));
     }
+
 }

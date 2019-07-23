@@ -1,27 +1,31 @@
 {
-"theFirst:CommonPower": {
-        "NAME": "Placeholder Power",
-        "DESCRIPTIONS": ["You applied ", " keyword.", " keywords."]
-},
-"theFirst:AutoAttackPower": {
-        "NAME": "Auto-Attack",
-        "DESCRIPTIONS": ["At the start of your turn, BasicAttack a random enemy."]
-},
-"theFirst:DrowsyPower": {
-        "NAME": "Drowsy",
-        "DESCRIPTIONS": [
-                "#yAttacks deal #b",
-                "% less damage for #b",
-                " turn.",
-                " turns."
-        ]
-},
-"theFirst:ReflectPower": {
-        "NAME": "Reflect",
-        "DESCRIPTIONS": ["Reflect ", " percent of damage back at the attacker."]
-},
-"theFirst:ParryPower": {
-        "NAME": "Parry",
-        "DESCRIPTIONS": ["If the next attack is fully blocked, the attacker takes the damage instead."]
-}
+        "theFirst:CommonPower": {
+                "NAME": "Placeholder Power",
+                "DESCRIPTIONS": ["You applied ", " keyword.", " keywords."]
+        },
+        "theFirst:AutoAttackPower": {
+                "NAME": "Auto-Attack",
+                "DESCRIPTIONS": ["At the start of your turn, BasicAttack a random enemy."]
+        },
+        "theFirst:DrowsyPower": {
+                "NAME": "Drowsy",
+                "DESCRIPTIONS": [
+                        "#yAttacks deal #b",
+                        "% less damage for #b",
+                        " turn.",
+                        " turns."
+                ]
+        },
+        "theFirst:ReflectPower": {
+                "NAME": "Reflect",
+                "DESCRIPTIONS": ["Reflect ", " percent of damage back at the attacker."]
+        },
+        "theFirst:ParryPower": {
+                "NAME": "Parry",
+                "DESCRIPTIONS": ["If the next attack is fully blocked, the attacker takes the damage instead."]
+        },
+        "theFirst:WakingPower": {
+                "NAME": "Waking...",
+                "DESCRIPTIONS": ["If you play Yawn this turn, wake up a little...", "If you play Stretch this turn, wake up a little..."]
+        }
 }

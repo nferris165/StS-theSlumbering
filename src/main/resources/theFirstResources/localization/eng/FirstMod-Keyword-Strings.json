@@ -15,6 +15,13 @@
   },
   {
     "NAMES": [
+      "detonator",
+      "detonators"
+    ],
+    "DESCRIPTION": "When drawn, damage all enemies."
+  },
+  {
+    "NAMES": [
       "parry"
     ],
     "DESCRIPTION": "If the next attack is fully blocked, the attacker takes the damage instead."

@@ -37,9 +37,7 @@ public class Seed extends AbstractCustomCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        if (p.hasRelic("Blue Candle")) {
-            this.useBlueCandle(p);
-        }
+
     }
 
     @Override

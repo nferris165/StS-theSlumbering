@@ -82,5 +82,21 @@
   "theFirst:Detonator": {
     "NAME": "Detonator",
     "DESCRIPTION": "Unplayable. NL When drawn, deal !D! damage to all enemies."
+  },
+  "theFirst:BombToss": {
+    "NAME": "Bomb Toss",
+    "DESCRIPTION": "Shuffle a thefirst:Detonator into your deck X times."
+  },
+  "theFirst:Dream": {
+    "NAME": "Dream",
+    "DESCRIPTION": "Add Yawn and Stretch to your discard pile. Play both to wake up a little."
+  },
+  "theFirst:Yawn": {
+    "NAME": "Yawn",
+    "DESCRIPTION": "Gain !B! Block. NL More powerful if played with Stretch. NL Exhaust."
+  },
+  "theFirst:Stretch": {
+    "NAME": "Stretch",
+    "DESCRIPTION": "Deal !D! Damage. NL More powerful if played with Yawn. NL Exhaust."
   }
 }

@@ -16,11 +16,11 @@ public class Parry extends AbstractCustomCard {
 
     public static final String ID = FirstMod.makeID(Parry.class.getSimpleName());
 
-    public static final String IMG = makeCardPath("S_temp.png");
+    public static final String IMG = makeCardPath("P_temp.png");
 
     private static final CardRarity RARITY = CardRarity.RARE;
     private static final CardTarget TARGET = CardTarget.SELF;
-    private static final CardType TYPE = CardType.SKILL;
+    private static final CardType TYPE = CardType.POWER;
     public static final CardColor COLOR = TheFirst.Enums.COLOR_FIRST;
 
     private static final int COST = 2;
