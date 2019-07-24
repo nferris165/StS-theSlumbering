@@ -1,6 +1,5 @@
 package theFirst.cards;
 
-import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
@@ -8,6 +7,7 @@ import theFirst.FirstMod;
 import theFirst.actions.DreamAction;
 import theFirst.characters.TheFirst;
 
+import static com.megacrit.cardcrawl.core.CardCrawlGame.languagePack;
 import static theFirst.FirstMod.makeCardPath;
 
 public class Dream extends AbstractCustomCard {
@@ -33,16 +33,15 @@ public class Dream extends AbstractCustomCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
 
-        AbstractDungeon.actionManager.addToBottom(new DreamAction());
+        AbstractDungeon.actionManager.addToBottom(new DreamAction(this.upgraded));
     }
-
-    //TODO: color/tooltip for desc
 
     @Override
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
             upgradeBaseCost(UPGRADED_COST);
+            this.rawDescription = languagePack.getCardStrings(ID).UPGRADE_DESCRIPTION;
             initializeDescription();
         }
     }

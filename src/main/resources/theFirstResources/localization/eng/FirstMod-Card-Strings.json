@@ -47,9 +47,10 @@
     "NAME": "Parry",
     "DESCRIPTION": "Gain 1 thefirst:Parry."
   },
-  "theFirst:CommonPower": {
-    "NAME": "Common P",
-    "DESCRIPTION": "Gain 1 Strength."
+  "theFirst:Invigorate": {
+    "NAME": "Invigorate",
+    "DESCRIPTION": "Reduce thefirst:Drowsy by 1.",
+    "UPGRADE_DESCRIPTION": "Innate. NL Reduce thefirst:Drowsy by 1."
   },
   "theFirst:ExtraArm": {
     "NAME": "Extra Arm",
@@ -89,14 +90,19 @@
   },
   "theFirst:Dream": {
     "NAME": "Dream",
-    "DESCRIPTION": "Add Yawn and Stretch to your discard pile. Play both to wake up a little."
+    "DESCRIPTION": "Add thefirst:Yawn and thefirst:Stretch to your discard pile. Play both to wake up a little.",
+    "UPGRADE_DESCRIPTION": "Add thefirst:Yawn+ and thefirst:Stretch+ to your discard pile. Play both to wake up a little."
   },
   "theFirst:Yawn": {
     "NAME": "Yawn",
-    "DESCRIPTION": "Gain !B! Block. NL More powerful if played with Stretch. NL Exhaust."
+    "DESCRIPTION": "Gain !B! Block. NL More powerful if played with thefirst:Stretch. NL Exhaust."
   },
   "theFirst:Stretch": {
     "NAME": "Stretch",
-    "DESCRIPTION": "Deal !D! Damage. NL More powerful if played with Yawn. NL Exhaust."
+    "DESCRIPTION": "Deal !D! Damage. NL More powerful if played with thefirst:Yawn. NL Exhaust."
+  },
+  "theFirst:DreamEater": {
+    "NAME": "Dream Eater",
+    "DESCRIPTION": "Deal !D! Damage. NL Gain 1 thefirst:Drowsy."
   }
 }

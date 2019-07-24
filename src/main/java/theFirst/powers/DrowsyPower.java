@@ -28,6 +28,9 @@ public class DrowsyPower  extends AbstractPower implements CloneablePowerInterfa
     private boolean justApplied = false;
 
     //TODO define power
+    // doesnt drop per turn?
+    // inc damage taken?
+    // lowers energy/draw?
 
     public DrowsyPower(AbstractCreature owner, int amount, boolean isSourceMonster) {
         name = NAME;

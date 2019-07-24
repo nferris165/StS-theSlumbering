@@ -47,7 +47,6 @@ public class Yawn extends AbstractCustomCard {
             AbstractCustomPower pow = (AbstractCustomPower) AbstractDungeon.player.getPower(powerID);
             if(pow.powerCheck) {
                 pow.onSpecificTrigger();
-                //TODO: wake up
             }
         }
         else{

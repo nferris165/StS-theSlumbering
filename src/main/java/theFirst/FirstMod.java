@@ -271,7 +271,7 @@ public class FirstMod implements
         BaseMod.addCard(new WakeUpSlap());
         BaseMod.addCard(new ThornCloak());
         BaseMod.addCard(new Parry());
-        BaseMod.addCard(new CommonPower());
+        BaseMod.addCard(new Invigorate());
         BaseMod.addCard(new ExtraArm());
         BaseMod.addCard(new Reflect());
 
@@ -297,7 +297,7 @@ public class FirstMod implements
         UnlockTracker.unlockCard(WakeUpSlap.ID);
         UnlockTracker.unlockCard(ThornCloak.ID);
         UnlockTracker.unlockCard(Parry.ID);
-        UnlockTracker.unlockCard(CommonPower.ID);
+        UnlockTracker.unlockCard(Invigorate.ID);
         UnlockTracker.unlockCard(ExtraArm.ID);
         UnlockTracker.unlockCard(Reflect.ID);
         UnlockTracker.unlockCard(ChannelSkill.ID);
@@ -310,7 +310,6 @@ public class FirstMod implements
 */
     }
 
-    //TODO: autogenerate
 
 
     @Override

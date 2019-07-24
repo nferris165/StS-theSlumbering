@@ -27,6 +27,24 @@
     "DESCRIPTION": "If the next attack is fully blocked, the attacker takes the damage instead."
   },
   {
+    "NAMES": [
+      "drowsy"
+    ],
+    "DESCRIPTION": "This is what drowsy does."
+  },
+  {
+    "NAMES": [
+      "yawn"
+    ],
+    "DESCRIPTION": "Yawn is a skill that will grant Block and Exhaust."
+  },
+  {
+    "NAMES": [
+      "stretch"
+    ],
+    "DESCRIPTION": "Stretch is an attack that will Exhaust."
+  },
+  {
     "PROPER_NAME": "Multiword Keyword",
     "NAMES": [
       "Multiword Keyword",

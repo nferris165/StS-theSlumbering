@@ -7,7 +7,6 @@ import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.powers.AbstractPower;
 import theFirst.FirstMod;
 import theFirst.characters.TheFirst;
 import theFirst.powers.AbstractCustomPower;
@@ -51,7 +50,6 @@ public class Stretch extends AbstractCustomCard {
             AbstractCustomPower pow = (AbstractCustomPower) AbstractDungeon.player.getPower(powerID);
             if(!pow.powerCheck) {
                 pow.onSpecificTrigger();
-                //TODO: wake up
             }
         }
         else{
