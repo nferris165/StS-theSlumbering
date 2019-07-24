@@ -53,10 +53,6 @@ public class CommonPower extends AbstractPower implements CloneablePowerInterfac
     }
 
     @Override
-    public void onInitialApplication() {
-    }
-
-    @Override
     public void onApplyPower(AbstractPower power, AbstractCreature target, AbstractCreature source) {
     }
 

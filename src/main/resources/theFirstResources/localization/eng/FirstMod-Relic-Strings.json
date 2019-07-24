@@ -18,13 +18,14 @@
     "NAME": "The Deep Slumber",
     "FLAVOR": "Yaaaaaaaawn...",
     "DESCRIPTIONS": [
-      "[#2aecd7]This shouldn't be part of your wake up routine!",
-      "You have just begun to awaken...",
-      "You are feeling groggy...",
-      "You still feel sluggish...",
-      "Your head is beginning to clear up...",
-      "The drowsiness has almost faded...",
-      "You feel fully awake."
+      "Right Click to remove all #ythefirst:Drowsy stacks, but fall deeper into your slumber...",
+      "[#2aecd7]This relic will gain power as you wake up. NL !",
+      "You have just begun to awaken... NL ",
+      "You are feeling groggy... NL ",
+      "You still feel sluggish... NL ",
+      "Your head is beginning to clear up... NL ",
+      "The drowsiness has almost faded... NL ",
+      "You feel fully awake. NL "
     ]
   },
   "theFirst:HeartCollector": {

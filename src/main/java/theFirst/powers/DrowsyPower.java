@@ -16,7 +16,7 @@ import theFirst.util.TextureLoader;
 
 import static theFirst.FirstMod.makePowerPath;
 
-public class DrowsyPower  extends AbstractPower implements CloneablePowerInterface {
+public class DrowsyPower  extends AbstractCustomPower implements CloneablePowerInterface {
     public static final String POWER_ID = FirstMod.makeID("DrowsyPower");
     private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
     public static final String NAME = powerStrings.NAME;
@@ -38,6 +38,7 @@ public class DrowsyPower  extends AbstractPower implements CloneablePowerInterfa
 
         this.owner = owner;
         this.amount = amount;
+        this.val = amount;
         if (isSourceMonster) {
             this.justApplied = true;
         }
@@ -51,14 +52,18 @@ public class DrowsyPower  extends AbstractPower implements CloneablePowerInterfa
         updateDescription();
     }
 
+    //TODO: relic change
     @Override
     public float atDamageGive(float damage, DamageInfo.DamageType type) {
+        float regBuf = damage * 0.2F * this.amount + damage;
+        float incBuf = damage * 0.4F * this.amount + damage;
         if (type == DamageInfo.DamageType.NORMAL) {
-            return !this.owner.isPlayer && AbstractDungeon.player.hasRelic("Paper Crane") ? damage * 0.6F : damage * 0.75F;
+            return AbstractDungeon.player.hasRelic("Paper Crane") ? incBuf : regBuf;
         } else {
             return damage;
         }
     }
+
 
     @Override
     public void atEndOfRound() {
@@ -67,11 +72,66 @@ public class DrowsyPower  extends AbstractPower implements CloneablePowerInterfa
         } else {
             if (this.amount == 0) {
                 AbstractDungeon.actionManager.addToBottom(new RemoveSpecificPowerAction(this.owner, this.owner, ID));
-            } else {
+            }
+            /*else {
                 AbstractDungeon.actionManager.addToBottom(new ReducePowerAction(this.owner, this.owner, ID, 1));
             }
-
+            */
         }
+    }
+
+    private void incEnergy(int amt){
+        for(int i = 0; i < amt; i++) {
+            ++AbstractDungeon.player.energy.energy;
+        }
+    }
+
+    private void decEnergy(int amt){
+        for(int i = 0; i < amt; i++) {
+            --AbstractDungeon.player.energy.energy;
+        }
+    }
+
+    @Override
+    public void onInitialApplication() {
+        decEnergy(this.amount);
+
+        for(int i = 0; i < this.amount; i++) {
+            --AbstractDungeon.player.energy.energyMaster;
+        }
+    }
+
+    @Override
+    public void onRemove() {
+        incEnergy(this.amount);
+        for(int i = 0; i < this.val; i++) {
+            ++AbstractDungeon.player.energy.energyMaster;
+        }    }
+
+    @Override
+    public void onVictory() {
+        for(int i = 0; i < this.val; i++) {
+            ++AbstractDungeon.player.energy.energyMaster;
+        }    }
+
+    @Override
+    public void reducePower(int reduceAmount) {
+        super.reducePower(reduceAmount);
+        if(this.amount > 999){
+            this.amount = 999;
+        }
+
+        incEnergy(reduceAmount);
+    }
+
+    @Override
+    public void stackPower(int stackAmount) {
+        super.stackPower(stackAmount);
+        if(this.amount > 999){
+            this.amount = 999;
+        }
+
+        decEnergy(stackAmount);
     }
 
     @Override

@@ -57,7 +57,7 @@ public class StumblingBlow extends AbstractCustomCard {
         if (!upgraded) {
             upgradeName();
             upgradeDamage(UPGRADE_PLUS_DMG);
-            upgradeBaseCost(UPGRADED_COST);
+            //upgradeBaseCost(UPGRADED_COST);
             upgradeMagicNumber(UPGRADE_WEAK);
             initializeDescription();
         }

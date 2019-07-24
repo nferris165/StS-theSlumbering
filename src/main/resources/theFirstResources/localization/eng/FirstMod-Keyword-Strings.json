@@ -36,13 +36,13 @@
     "NAMES": [
       "yawn"
     ],
-    "DESCRIPTION": "Yawn is a skill that will grant Block and Exhaust."
+    "DESCRIPTION": "Yawns are Skill cards which grant Block and Exhaust."
   },
   {
     "NAMES": [
       "stretch"
     ],
-    "DESCRIPTION": "Stretch is an attack that will Exhaust."
+    "DESCRIPTION": "Stretchs are Attack cards which Exhaust."
   },
   {
     "PROPER_NAME": "Multiword Keyword",

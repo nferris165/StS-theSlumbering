@@ -1,17 +1,21 @@
 package theFirst.relics;
 
 import com.badlogic.gdx.graphics.Texture;
-import com.megacrit.cardcrawl.actions.common.RelicAboveCreatureAction;
+import com.evacipated.cardcrawl.mod.stslib.relics.ClickableRelic;
+import com.megacrit.cardcrawl.actions.common.*;
+import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.PowerTip;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import theFirst.FirstMod;
 import theFirst.util.TextureLoader;
 
 import static theFirst.FirstMod.*;
 
-public class FirstRelic extends AbstractCustomRelic {
+public class FirstRelic extends AbstractCustomRelic implements ClickableRelic {
 
     public static final String ID = FirstMod.makeID("FirstRelic");
 
@@ -31,33 +35,33 @@ public class FirstRelic extends AbstractCustomRelic {
     @Override
     public int getState(){
         if(this.counter < 0){
-            return 0;
-        }
-        else if(this.counter == 0){
             return 1;
         }
-        else if(this.counter < 5){
+        else if(this.counter == 0){
             return 2;
         }
-        else if(this.counter < 10){
+        else if(this.counter < 5){
             return 3;
         }
-        else if(this.counter < 15){
+        else if(this.counter < 10){
             return 4;
         }
-        else if (this.counter < 20){
+        else if(this.counter < 15){
             return 5;
+        }
+        else if (this.counter < 20){
+            return 6;
         }
         else //if(this.counter >= 20)
         {
-            return 5;
+            return 6;
         }
     }
 
     @Override
     public String getUpdatedDescription() {
         int s = getState();
-        return DESCRIPTIONS[s];
+        return DESCRIPTIONS[s] + DESCRIPTIONS[0];
 
     }
 
@@ -138,4 +142,17 @@ public class FirstRelic extends AbstractCustomRelic {
         checkFloat();
     }
 
+    @Override
+    public void onRightClick() {
+
+        if (AbstractDungeon.getCurrRoom() != null && AbstractDungeon.getCurrRoom().phase == AbstractRoom.RoomPhase.COMBAT) {
+            AbstractCreature p = AbstractDungeon.player;
+            AbstractDungeon.actionManager.addToBottom(new RemoveSpecificPowerAction(p, p, makeID("DrowsyPower")));
+            if(this.counter > 0) {
+                onTrigger(-1);
+            } else{
+                AbstractDungeon.overlayMenu.endTurnButton.disable(true);
+            }
+        }
+    }
 }
