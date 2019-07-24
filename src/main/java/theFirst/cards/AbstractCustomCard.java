@@ -10,6 +10,7 @@ public abstract class AbstractCustomCard extends CustomCard {
     public int baseSecondMagicNumber;
     public boolean upgradedSecondMagicNumber;
     public boolean isSecondMagicNumberModified;
+    public String updated_desc;
 
     public AbstractCustomCard(final String id,
                               final String img,
@@ -20,6 +21,7 @@ public abstract class AbstractCustomCard extends CustomCard {
                               final CardTarget target) {
 
         super(id, languagePack.getCardStrings(id).NAME, img, cost, languagePack.getCardStrings(id).DESCRIPTION, type, color, rarity, target);
+        this.updated_desc = languagePack.getCardStrings(id).UPGRADE_DESCRIPTION;
     }
 
     @Override

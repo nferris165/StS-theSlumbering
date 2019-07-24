@@ -32,8 +32,8 @@ public class MagicVarTest extends AbstractCustomCard {
     public MagicVarTest() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
 
-        baseDamage = VALUE;
-        secondMagicNumber = baseSecondMagicNumber = VALUE;
+        this.baseDamage = this.damage = VALUE;
+        this.secondMagicNumber = this.baseSecondMagicNumber = VALUE;
 
     }
 
@@ -50,7 +50,7 @@ public class MagicVarTest extends AbstractCustomCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
         int calc = EnergyPanel.totalCount * damage;
 
-            AbstractDungeon.actionManager.addToBottom(
-                    new DamageAction(m, new DamageInfo(p, calc, damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_HORIZONTAL));
+        AbstractDungeon.actionManager.addToBottom(new DamageAction(
+                m, new DamageInfo(p, calc, damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_HORIZONTAL));
     }
 }

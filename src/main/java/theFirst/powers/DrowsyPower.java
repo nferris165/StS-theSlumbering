@@ -14,6 +14,7 @@ import com.megacrit.cardcrawl.powers.AbstractPower;
 import theFirst.FirstMod;
 import theFirst.util.TextureLoader;
 
+import static theFirst.FirstMod.makeID;
 import static theFirst.FirstMod.makePowerPath;
 
 public class DrowsyPower  extends AbstractCustomPower implements CloneablePowerInterface {
@@ -26,11 +27,6 @@ public class DrowsyPower  extends AbstractCustomPower implements CloneablePowerI
     private static final Texture tex32 = TextureLoader.getTexture(makePowerPath("placeholder_power32.png"));
 
     private boolean justApplied = false;
-
-    //TODO define power
-    // doesnt drop per turn?
-    // inc damage taken?
-    // lowers energy/draw?
 
     public DrowsyPower(AbstractCreature owner, int amount, boolean isSourceMonster) {
         name = NAME;
@@ -58,25 +54,9 @@ public class DrowsyPower  extends AbstractCustomPower implements CloneablePowerI
         float regBuf = damage * 0.2F * this.amount + damage;
         float incBuf = damage * 0.4F * this.amount + damage;
         if (type == DamageInfo.DamageType.NORMAL) {
-            return AbstractDungeon.player.hasRelic("Paper Crane") ? incBuf : regBuf;
+            return AbstractDungeon.player.hasRelic(makeID("StarMobile")) ? incBuf : regBuf;
         } else {
             return damage;
-        }
-    }
-
-
-    @Override
-    public void atEndOfRound() {
-        if (this.justApplied) {
-            this.justApplied = false;
-        } else {
-            if (this.amount == 0) {
-                AbstractDungeon.actionManager.addToBottom(new RemoveSpecificPowerAction(this.owner, this.owner, ID));
-            }
-            /*else {
-                AbstractDungeon.actionManager.addToBottom(new ReducePowerAction(this.owner, this.owner, ID, 1));
-            }
-            */
         }
     }
 
@@ -136,16 +116,10 @@ public class DrowsyPower  extends AbstractCustomPower implements CloneablePowerI
 
     @Override
     public void updateDescription() {
-        if (this.amount == 1) {
-            if (this.owner != null && !this.owner.isPlayer && AbstractDungeon.player.hasRelic("Paper Crane")) {
-                this.description = DESCRIPTIONS[0] + 40 + DESCRIPTIONS[1] + this.amount + DESCRIPTIONS[2];
-            } else {
-                this.description = DESCRIPTIONS[0] + 25 + DESCRIPTIONS[1] + this.amount + DESCRIPTIONS[2];
-            }
-        } else if (this.owner != null && !this.owner.isPlayer && AbstractDungeon.player.hasRelic("Paper Crane")) {
-            this.description = DESCRIPTIONS[0] + 40 + DESCRIPTIONS[1] + this.amount + DESCRIPTIONS[3];
+        if (this.owner.isPlayer && AbstractDungeon.player.hasRelic(makeID("StarMobile"))) {
+            this.description = DESCRIPTIONS[0] + 40 + DESCRIPTIONS[1];
         } else {
-            this.description = DESCRIPTIONS[0] + 25 + DESCRIPTIONS[1] + this.amount + DESCRIPTIONS[3];
+            this.description = DESCRIPTIONS[0] + 20 + DESCRIPTIONS[1];
         }
 
     }

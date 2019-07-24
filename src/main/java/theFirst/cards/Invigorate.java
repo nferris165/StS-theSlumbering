@@ -44,7 +44,7 @@ public class Invigorate extends AbstractCustomCard {
             upgradeName();
             this.isInnate = true;
             upgradeBaseCost(UPGRADED_COST);
-            this.rawDescription = languagePack.getCardStrings(ID).UPGRADE_DESCRIPTION;
+            this.rawDescription = this.updated_desc;
             initializeDescription();
         }
     }

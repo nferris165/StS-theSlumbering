@@ -251,63 +251,11 @@ public class FirstMod implements
         } catch (URISyntaxException | IllegalAccessException | InstantiationException | NotFoundException | ClassNotFoundException e) {
             e.printStackTrace();
         }
-        /*
+
         //variables
         BaseMod.addDynamicVariable(new EnergyVariable());
         BaseMod.addDynamicVariable(new DynamicMagicVariable());
 
-        //special cards
-        BaseMod.addCard(new BasicDefend());
-        BaseMod.addCard(new BasicAttack());
-        BaseMod.addCard(new DrowsyDefend());
-        BaseMod.addCard(new DrowsyAttack());
-        BaseMod.addCard(new WokeDefend());
-        BaseMod.addCard(new WokeAttack());
-
-        //standard cards
-        BaseMod.addCard(new Jab());
-        BaseMod.addCard(new StumblingBlow());
-        BaseMod.addCard(new RareAttack());
-        BaseMod.addCard(new WakeUpSlap());
-        BaseMod.addCard(new ThornCloak());
-        BaseMod.addCard(new Parry());
-        BaseMod.addCard(new Invigorate());
-        BaseMod.addCard(new ExtraArm());
-        BaseMod.addCard(new Reflect());
-
-        BaseMod.addCard(new ChannelSkill());
-        BaseMod.addCard(new MagicVarTest());
-
-        //colorless cards
-        BaseMod.addCard(new TheSeed());
-        BaseMod.addCard(new Seed());
-        BaseMod.addCard(new Bomb());
-        BaseMod.addCard(new Detonator());
-
-        //unlock?
-        UnlockTracker.unlockCard(BasicDefend.ID);
-        UnlockTracker.unlockCard(BasicAttack.ID);
-        UnlockTracker.unlockCard(DrowsyAttack.ID);
-        UnlockTracker.unlockCard(DrowsyDefend.ID);
-        UnlockTracker.unlockCard(WokeAttack.ID);
-        UnlockTracker.unlockCard(WokeDefend.ID);
-        UnlockTracker.unlockCard(Jab.ID);
-        UnlockTracker.unlockCard(StumblingBlow.ID);
-        UnlockTracker.unlockCard(RareAttack.ID);
-        UnlockTracker.unlockCard(WakeUpSlap.ID);
-        UnlockTracker.unlockCard(ThornCloak.ID);
-        UnlockTracker.unlockCard(Parry.ID);
-        UnlockTracker.unlockCard(Invigorate.ID);
-        UnlockTracker.unlockCard(ExtraArm.ID);
-        UnlockTracker.unlockCard(Reflect.ID);
-        UnlockTracker.unlockCard(ChannelSkill.ID);
-        UnlockTracker.unlockCard(MagicVarTest.ID);
-        UnlockTracker.unlockCard(TheSeed.ID);
-        UnlockTracker.unlockCard(Seed.ID);
-        UnlockTracker.unlockCard(Bomb.ID);
-        UnlockTracker.unlockCard(Detonator.ID);
-
-*/
     }
 
 

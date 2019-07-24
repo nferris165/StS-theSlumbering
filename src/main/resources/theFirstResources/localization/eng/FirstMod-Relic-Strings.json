@@ -20,6 +20,7 @@
     "DESCRIPTIONS": [
       "Right Click to remove all #ythefirst:Drowsy stacks, but fall deeper into your slumber...",
       "[#2aecd7]This relic will gain power as you wake up. NL !",
+      "You are entirely asleep. Falling any further asleep will end the turn. NL ",
       "You have just begun to awaken... NL ",
       "You are feeling groggy... NL ",
       "You still feel sluggish... NL ",
@@ -47,7 +48,7 @@
   },
   "theFirst:EnchantedHammer": {
     "NAME": "Enchanted Hammer",
-    "FLAVOR": "Blessed by a powerful being...",
+    "FLAVOR": "Blessed by a powerful being.",
     "DESCRIPTIONS": [
       "Whenever you #ySmith a card, #yUpgrade another random card."
     ]
@@ -62,5 +63,12 @@
       "JACKPOT! NL Gain a bundle of #yGold immediately, and your future rewards have a much higher chance of being increased.",
       " #yGold"
     ]
-  }
+  },
+  "theFirst:StarMobile": {
+  "NAME": "Star Mobile",
+  "FLAVOR": "Twinkle, twinkle, little star...",
+  "DESCRIPTIONS": [
+    "When thefirst:Drowsy, deal #b40% increased damage rather than #b20%."
+  ]
+}
 }

@@ -28,7 +28,7 @@ public class FirstRelic extends AbstractCustomRelic implements ClickableRelic {
     public FirstRelic() {
         super(ID, IMG, OUTLINE, RelicTier.STARTER, LandingSound.MAGICAL);
 
-        this.counter = 0;
+        this.counter = 1;
         this.floatCounter = 0;
     }
 
@@ -106,6 +106,11 @@ public class FirstRelic extends AbstractCustomRelic implements ClickableRelic {
             this.floatCounter -= 1.0F;
             onTrigger();
         }
+
+        while(this.floatCounter <= -1.0F){
+            this.floatCounter += 1.0F;
+            onTrigger(-1);
+        }
     }
 
     @Override
@@ -125,13 +130,16 @@ public class FirstRelic extends AbstractCustomRelic implements ClickableRelic {
 
     @Override
     public void onTrigger(){
-        this.counter++;
-        checkWake();
+        onTrigger(1);
     }
 
     @Override
     public void onTrigger(int s){
         this.counter += s;
+        if(this.counter < 0) {
+            this.counter = 0;
+            AbstractDungeon.overlayMenu.endTurnButton.disable(true);
+        }
         checkWake();
     }
 
@@ -148,11 +156,7 @@ public class FirstRelic extends AbstractCustomRelic implements ClickableRelic {
         if (AbstractDungeon.getCurrRoom() != null && AbstractDungeon.getCurrRoom().phase == AbstractRoom.RoomPhase.COMBAT) {
             AbstractCreature p = AbstractDungeon.player;
             AbstractDungeon.actionManager.addToBottom(new RemoveSpecificPowerAction(p, p, makeID("DrowsyPower")));
-            if(this.counter > 0) {
-                onTrigger(-1);
-            } else{
-                AbstractDungeon.overlayMenu.endTurnButton.disable(true);
-            }
+            onTrigger(-1);
         }
     }
 }

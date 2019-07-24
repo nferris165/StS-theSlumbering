@@ -48,7 +48,7 @@ public class TheFirst extends AbstractCustomPlayer {
     private static boolean calledTransform = true;
 
     //base stats
-    private static final int ENERGY_PER_TURN = 3;
+    private static final int ENERGY_PER_TURN = 4;
     private static final int STARTING_HP = 800;
     private static final int MAX_HP = 800;
     private static final int STARTING_GOLD = 10000;
@@ -232,7 +232,7 @@ public class TheFirst extends AbstractCustomPlayer {
         if(AbstractDungeon.player.hasRelic("theFirst:FirstRelic")){
             AbstractCustomRelic r = (AbstractCustomRelic) AbstractDungeon.player.getRelic("theFirst:FirstRelic");
             AbstractDungeon.actionManager.addToTop(new ApplyPowerAction(AbstractDungeon.player,
-                    AbstractDungeon.player, new DrowsyPower(AbstractDungeon.player, 5 - r.getState(), false), 1));
+                    AbstractDungeon.player, new DrowsyPower(AbstractDungeon.player, 6 - r.getState(), false), 1));
         }
         else{
             AbstractDungeon.actionManager.addToTop(new ApplyPowerAction(AbstractDungeon.player,
