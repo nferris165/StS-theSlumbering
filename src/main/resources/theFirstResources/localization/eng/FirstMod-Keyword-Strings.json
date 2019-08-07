@@ -34,15 +34,24 @@
   },
   {
     "NAMES": [
-      "yawn"
+      "yawn",
+      "yawns"
     ],
     "DESCRIPTION": "Yawns are Skill cards which grant Block and Exhaust."
   },
   {
     "NAMES": [
-      "stretch"
+      "stretch",
+      "stretches"
     ],
-    "DESCRIPTION": "Stretchs are Attack cards which Exhaust."
+    "DESCRIPTION": "Stretches are Attack cards which Exhaust."
+  },
+  {
+    "NAMES": [
+      "snooze",
+      "snoozes"
+    ],
+    "DESCRIPTION": "Snooze does something."
   },
   {
     "PROPER_NAME": "Multiword Keyword",
