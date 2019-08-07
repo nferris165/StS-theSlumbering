@@ -21,10 +21,19 @@
         },
         "theFirst:ParryPower": {
                 "NAME": "Parry",
-                "DESCRIPTIONS": ["If the next attack is fully blocked, the attacker takes the damage instead."]
+                "DESCRIPTIONS": ["If the next attack this turn is fully blocked, the attacker takes the damage instead. If not, take double damage."]
         },
         "theFirst:WakingPower": {
                 "NAME": "Waking...",
-                "DESCRIPTIONS": ["If you play Yawn this turn, wake up a little...", "If you play Stretch this turn, wake up a little..."]
+                "DESCRIPTIONS": ["If you play Yawn this turn, wake up a little...",
+                        "If you play Stretch this turn, wake up a little..."
+                ]
+        },
+        "theFirst:NegatePower": {
+                "NAME": "Negation",
+                "DESCRIPTIONS": ["The next time you would take damage, negate it.",
+                        "The next #b",
+                        " times you would take damage, negate it."
+                ]
         }
 }

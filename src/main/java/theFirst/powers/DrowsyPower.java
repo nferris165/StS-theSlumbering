@@ -41,7 +41,7 @@ public class DrowsyPower  extends AbstractCustomPower implements CloneablePowerI
             this.justApplied = true;
         }
         this.type = PowerType.DEBUFF;
-        this.isTurnBased = true;
+        this.isTurnBased = false;
         this.priority = 99;
 
         this.region128 = new TextureAtlas.AtlasRegion(tex84, 0, 0, 84, 84);

@@ -153,10 +153,12 @@ public class FirstRelic extends AbstractCustomRelic implements ClickableRelic {
     @Override
     public void onRightClick() {
 
-        if (AbstractDungeon.getCurrRoom() != null && AbstractDungeon.getCurrRoom().phase == AbstractRoom.RoomPhase.COMBAT) {
+        if (AbstractDungeon.getCurrRoom() != null && AbstractDungeon.getCurrRoom().phase == AbstractRoom.RoomPhase.COMBAT
+                && AbstractDungeon.player.hasPower(makeID("DrowsyPower"))) {
             AbstractCreature p = AbstractDungeon.player;
+            int amt = AbstractDungeon.player.getPower(makeID("DrowsyPower")).amount;
             AbstractDungeon.actionManager.addToBottom(new RemoveSpecificPowerAction(p, p, makeID("DrowsyPower")));
-            onTrigger(-1);
+            onTrigger(-amt);
         }
     }
 }

@@ -112,5 +112,13 @@
   "theFirst:Insomnia": {
     "NAME": "Insomnia",
     "DESCRIPTION": "Gain !B! Block. NL Gain !M! additional Block for each thefirst:Drowsy. NL Reduce thefirst:Drowsy by !theFirst:Magic!."
+  },
+  "theFirst:CurlUp": {
+    "NAME": "Curl Up",
+    "DESCRIPTION": "Gain !B! Block. NL Lose 1 Dexterity."
+  },
+  "theFirst:SleepParalysis": {
+    "NAME": "Sleep Paralysis",
+    "DESCRIPTION": "Negate the first !M! attacks this turn. NL End your turn."
   }
 }
