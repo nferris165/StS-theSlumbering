@@ -2,13 +2,14 @@ package theFirst.relics;
 
 import com.badlogic.gdx.graphics.Texture;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.PowerTip;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
 import theFirst.FirstMod;
+import theFirst.powers.AbstractCustomPower;
 import theFirst.util.TextureLoader;
 
-import static theFirst.FirstMod.makeRelicOutlinePath;
-import static theFirst.FirstMod.makeRelicPath;
+import static theFirst.FirstMod.*;
 
 public class StarMobile extends AbstractCustomRelic {
 
@@ -29,6 +30,13 @@ public class StarMobile extends AbstractCustomRelic {
     @Override
     public String getUpdatedDescription() {
         return DESCRIPTIONS[0];
+    }
+
+    @Override
+    public void onEquip() {
+        if(AbstractDungeon.player.hasPower(makeID("DrowsyPower"))){
+            AbstractDungeon.player.getPower(makeID("DrowsyPower")).updateDescription();
+        }
     }
 
     @Override

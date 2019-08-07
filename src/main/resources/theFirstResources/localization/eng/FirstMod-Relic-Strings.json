@@ -19,7 +19,7 @@
     "FLAVOR": "Yaaaaaaaawn...",
     "DESCRIPTIONS": [
       "Right Click to remove all #ythefirst:Drowsy stacks, but fall deeper into your slumber...",
-      "[#2aecd7]This relic will gain power as you wake up. NL !",
+      "[#2aecd7]This relic will gain power as you wake up. NL ",
       "You are entirely asleep. Falling any further asleep will end the turn. NL ",
       "You have just begun to awaken... NL ",
       "You are feeling groggy... NL ",
@@ -68,7 +68,7 @@
   "NAME": "Star Mobile",
   "FLAVOR": "Twinkle, twinkle, little star...",
   "DESCRIPTIONS": [
-    "When thefirst:Drowsy, deal #b40% increased damage rather than #b20%."
+    "When #ythefirst:Drowsy, deal #b30% increased damage rather than #b20%."
   ]
 }
 }

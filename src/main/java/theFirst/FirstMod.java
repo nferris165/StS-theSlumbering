@@ -226,6 +226,7 @@ public class FirstMod implements
         //character only
         BaseMod.addRelicToCustomPool(new HeartCollector(), TheFirst.Enums.COLOR_FIRST);
         BaseMod.addRelicToCustomPool(new FirstRelic(), TheFirst.Enums.COLOR_FIRST);
+        BaseMod.addRelicToCustomPool(new StarMobile(), TheFirst.Enums.COLOR_FIRST);
 
         //shared
         BaseMod.addRelic(new GlassShield(), RelicType.SHARED);
@@ -240,6 +241,8 @@ public class FirstMod implements
         UnlockTracker.markRelicAsSeen(CursedAnvil.ID);
         UnlockTracker.markRelicAsSeen(EnchantedHammer.ID);
         UnlockTracker.markRelicAsSeen(GamblerFolly.ID);
+        UnlockTracker.markRelicAsSeen(StarMobile.ID);
+
     }
 
 
@@ -378,7 +381,7 @@ public class FirstMod implements
     public static void incFirstRelic(int amt)
     {
         if(AbstractDungeon.player.hasRelic("theFirst:FirstRelic")){
-            AbstractCustomRelic r = (AbstractCustomRelic) AbstractDungeon.player.getRelic("theFirst:FirstRelic");
+            AbstractCustomRelic r = (AbstractCustomRelic) AbstractDungeon.player.getRelic(makeID("FirstRelic"));
             r.onTrigger(amt);
         }
     }
@@ -386,7 +389,7 @@ public class FirstMod implements
     public static void incFirstRelicFloat(int amt)
     {
         if(AbstractDungeon.player.hasRelic("theFirst:FirstRelic")){
-            AbstractCustomRelic r = (AbstractCustomRelic) AbstractDungeon.player.getRelic("theFirst:FirstRelic");
+            AbstractCustomRelic r = (AbstractCustomRelic) AbstractDungeon.player.getRelic(makeID("FirstRelic"));
             r.onTriggerFloat(amt);
         }
     }

@@ -11,7 +11,8 @@
                 "NAME": "Drowsy",
                 "DESCRIPTIONS": [
                         "#yAttacks deal #b",
-                        "% more damage, but you gain #b1 fewer [E] (This effect stacks)."
+                        "% more damage, but you gain #b",
+                        " fewer [E] ."
                 ]
         },
         "theFirst:ReflectPower": {
