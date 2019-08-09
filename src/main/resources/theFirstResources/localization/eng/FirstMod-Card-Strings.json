@@ -148,8 +148,8 @@
   },
   "theFirst:RecurringDream": {
     "NAME": "Recurring Dream",
-    "DESCRIPTION": "Select a card in your hand. Draw all copies of it in your draw pile.",
-    "UPGRADE_DESCRIPTION": "Select a card in your hand. Draw all copies of it in your draw pile and discard pile."
+    "DESCRIPTION": "Select a card in your hand. NL Draw all copies of it in your draw pile.",
+    "UPGRADE_DESCRIPTION": "Select a card in your hand. NL Draw all copies of it in your draw pile and discard pile."
   }
 
 }

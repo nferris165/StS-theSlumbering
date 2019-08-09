@@ -20,8 +20,8 @@ public class RecurringDream extends AbstractCustomCard {
     private static final CardType TYPE = CardType.SKILL;
     public static final CardColor COLOR = TheFirst.Enums.COLOR_FIRST;
 
-    private static final int COST = 1;
-    private static final int UPGRADED_COST = 0;
+    private static final int COST = 2;
+    private static final int UPGRADED_COST = 1;
 
     public RecurringDream() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
@@ -30,7 +30,7 @@ public class RecurringDream extends AbstractCustomCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        AbstractDungeon.actionManager.addToBottom(new HandSelectAction());
+        AbstractDungeon.actionManager.addToBottom(new HandSelectAction(this.upgraded));
     }
 
 

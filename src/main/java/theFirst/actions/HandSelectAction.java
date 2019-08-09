@@ -1,9 +1,9 @@
 package theFirst.actions;
 
-import com.evacipated.cardcrawl.mod.stslib.actions.common.FetchAction;
-import com.evacipated.cardcrawl.mod.stslib.actions.common.MoveCardsAction;
+import basemod.BaseMod;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
+import com.megacrit.cardcrawl.cards.CardGroup;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
@@ -16,21 +16,41 @@ import java.util.Iterator;
 
 public class HandSelectAction extends AbstractGameAction {
     private AbstractPlayer p;
+    private boolean upgraded;
+    private boolean returnedCard;
     public static final String ACTION_ID = FirstMod.makeID("HandSelectAction");
     private static final UIStrings uiStrings = CardCrawlGame.languagePack.getUIString(ACTION_ID);
     private static final String[] TEXT = uiStrings.TEXT;
 
-    public HandSelectAction(){
+    public HandSelectAction(boolean upgr){
+        if (AbstractDungeon.player.hasPower("No Draw")) {
+            AbstractDungeon.player.getPower("No Draw").flash();
+            this.setValues(AbstractDungeon.player, source, amount);
+            this.isDone = true;
+            this.duration = 0.0F;
+            this.actionType = ActionType.WAIT;
+            return;
+        }
+
         this.p = AbstractDungeon.player;
         this.duration = Settings.ACTION_DUR_FAST;
         this.actionType = ActionType.CARD_MANIPULATION;
+        this.upgraded = upgr;
+        this.returnedCard = false;
+
+
     }
 
-    private void draw(AbstractCard card){
+    private void draw(AbstractCard card, CardGroup pile){
 
-        Iterator deck = AbstractDungeon.player.masterDeck.group.iterator();
+        Iterator deck = pile.group.iterator();
         AbstractCard c;
         ArrayList<AbstractCard> cardsToMove = new ArrayList();
+
+        if(!this.returnedCard){
+            cardsToMove.add(card);
+            this.returnedCard = true;
+        }
 
         while(deck.hasNext()) {
             c = (AbstractCard)deck.next();
@@ -40,11 +60,11 @@ public class HandSelectAction extends AbstractGameAction {
         }
 
         for (AbstractCard d: cardsToMove) {
-            if (this.p.hand.size() == 10) {
-                this.p.drawPile.moveToDiscardPile(d);
+            if (this.p.hand.size() == BaseMod.MAX_HAND_SIZE) {
+                pile.moveToDiscardPile(d);
                 this.p.createHandIsFullDialog();
             } else {
-                //this.p.drawPile.moveToHand(d, this.p.drawPile);
+                this.p.drawPile.moveToHand(d, pile);
             }
         }
 
@@ -59,7 +79,10 @@ public class HandSelectAction extends AbstractGameAction {
             } else if (this.p.hand.size() == 1) {
                 AbstractCard c = this.p.hand.getTopCard();
 
-                draw(c);
+                draw(c, this.p.drawPile);
+                if(this.upgraded){
+                    draw(c, this.p.discardPile);
+                }
 
                 AbstractDungeon.player.hand.refreshHandLayout();
                 this.isDone = true;
@@ -75,7 +98,10 @@ public class HandSelectAction extends AbstractGameAction {
 
                 while(selected.hasNext()) {
                     c = (AbstractCard)selected.next();
-                    draw(c);
+                    draw(c, this.p.drawPile);
+                    if(this.upgraded){
+                        draw(c, this.p.discardPile);
+                    }
                 }
 
                 AbstractDungeon.player.hand.refreshHandLayout();
