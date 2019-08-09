@@ -7,7 +7,7 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.ui.panels.EnergyPanel;
-import theFirst.cards.Detonator;
+import theFirst.cards.colorless.Detonator;
 
 public class BombTossAction extends AbstractGameAction{
 

@@ -1,20 +1,17 @@
 package theFirst.cards;
 
-import com.badlogic.gdx.math.MathUtils;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
-import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.vfx.cardManip.ShowCardAndObtainEffect;
 import theFirst.FirstMod;
-import theFirst.cards.Curses.Seed;
+import theFirst.actions.HandSelectAction;
 import theFirst.characters.TheFirst;
 
 import static theFirst.FirstMod.makeCardPath;
 
-public class TheSeed extends AbstractCustomCard {
+public class RecurringDream extends AbstractCustomCard {
 
-    public static final String ID = FirstMod.makeID(TheSeed.class.getSimpleName());
+    public static final String ID = FirstMod.makeID(RecurringDream.class.getSimpleName());
 
     public static final String IMG = makeCardPath("S_temp.png");
 
@@ -23,29 +20,26 @@ public class TheSeed extends AbstractCustomCard {
     private static final CardType TYPE = CardType.SKILL;
     public static final CardColor COLOR = TheFirst.Enums.COLOR_FIRST;
 
-    private static final int COST = 2;
-    private static final int UPGRADED_COST = 1;
+    private static final int COST = 1;
+    private static final int UPGRADED_COST = 0;
 
-
-    public TheSeed() {
+    public RecurringDream() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
-        this.exhaust = true;
-        this.purgeOnUse = true;
     }
 
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        AbstractDungeon.effectList.add(new ShowCardAndObtainEffect(new Seed(), MathUtils.random(0.1F, 0.9F) * (float) Settings.WIDTH, MathUtils.random(0.2F, 0.8F) * (float) Settings.HEIGHT));
-        //AbstractDungeon.player.masterDeck.addToRandomSpot(new Seed());
-        AbstractDungeon.player.masterDeck.removeCard(this.cardID);
+        AbstractDungeon.actionManager.addToBottom(new HandSelectAction());
     }
+
 
     @Override
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
             upgradeBaseCost(UPGRADED_COST);
+            this.rawDescription = this.updated_desc;
             initializeDescription();
         }
     }

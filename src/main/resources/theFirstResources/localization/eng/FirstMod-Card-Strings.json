@@ -1,7 +1,7 @@
 {
   "theFirst:BasicAttack": {
     "NAME": "Basic Attack",
-    "DESCRIPTION": "Deal !D! Damage. NL Gain !B! Block. NL You are feeling [#666646]groggy...[]"
+    "DESCRIPTION": "Deal !D! damage. NL Gain !B! Block. NL You are feeling [#666646]groggy...[]"
   },
   "theFirst:BasicDefend": {
     "NAME": "Basic Defend",
@@ -9,7 +9,7 @@
   },
   "theFirst:DrowsyAttack": {
     "NAME": "Drowsy Attack",
-    "DESCRIPTION": "Deal !D! Damage. NL Gain !B! Block. NL You are feeling [#666646]groggy...[]"
+    "DESCRIPTION": "Deal !D! damage. NL Gain !B! Block. NL You are feeling [#666646]groggy...[]"
   },
   "theFirst:DrowsyDefend": {
     "NAME": "Drowsy Defend",
@@ -17,7 +17,7 @@
   },
   "theFirst:WokeAttack": {
     "NAME": "Woke Attack",
-    "DESCRIPTION": "Deal !D! Damage. NL Gain !B! Block. NL You are feeling [#666646]groggy...[]"
+    "DESCRIPTION": "Deal !D! damage. NL Gain !B! Block. NL You are feeling [#666646]groggy...[]"
   },
   "theFirst:WokeDefend": {
     "NAME": "Woke Defend",
@@ -25,15 +25,16 @@
   },
   "theFirst:Jab": {
     "NAME": "Jab",
-    "DESCRIPTION": "Deal !D! Damage."
+    "DESCRIPTION": "Deal !D! damage."
   },
   "theFirst:StumblingBlow": {
     "NAME": "Stumbling Blow",
-    "DESCRIPTION": "Deal !D! Damage. NL Gain !M! Weak."
+    "DESCRIPTION": "Deal !D! damage. NL Gain !M! Weak."
   },
-  "theFirst:RareAttack": {
-    "NAME": "Rare A",
-    "DESCRIPTION": "Deal !D! Damage."
+  "theFirst:NocturnalMyoclonus": {
+    "NAME": "Nocturnal Strike",
+    "DESCRIPTION": "Deal !D! damage. NL If thefirst:Drowsy, gain that much Block.",
+    "UPGRADE_DESCRIPTION": "Deal !D! damage. NL If thefirst:Drowsy, gain that much Block. NL Play the top card of your draw pile."
   },
   "theFirst:WakeUpSlap": {
     "NAME": "Wake-Up Slap",
@@ -99,15 +100,15 @@
   },
   "theFirst:Stretch": {
     "NAME": "Stretch",
-    "DESCRIPTION": "Deal !D! Damage. NL More powerful if played with thefirst:Yawn. NL Exhaust."
+    "DESCRIPTION": "Deal !D! damage. NL More powerful if played with thefirst:Yawn. NL Exhaust."
   },
   "theFirst:DreamEater": {
     "NAME": "Dream Eater",
-    "DESCRIPTION": "Deal !D! Damage. NL Gain 1 thefirst:Drowsy."
+    "DESCRIPTION": "Deal !D! damage. NL Gain 1 thefirst:Drowsy."
   },
   "theFirst:Nightmare": {
     "NAME": "Nightmare",
-    "DESCRIPTION": "Deal !D! Damage. NL Deals !M! additional Damage for each thefirst:Drowsy. NL Reduce thefirst:Drowsy by !theFirst:Magic!."
+    "DESCRIPTION": "Deal !D! damage. NL Deals !M! additional damage for each thefirst:Drowsy. NL Reduce thefirst:Drowsy by !theFirst:Magic!."
   },
   "theFirst:Insomnia": {
     "NAME": "Insomnia",
@@ -120,5 +121,35 @@
   "theFirst:SleepParalysis": {
     "NAME": "Sleep Paralysis",
     "DESCRIPTION": "Negate the first !M! attacks this turn. NL End your turn."
+  },
+  "theFirst:Lullaby": {
+    "NAME": "Lullaby",
+    "DESCRIPTION": "ALL enemies lose !M! Strength. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "ALL enemies lose !M! Strength. Apply !theFirst:Magic! Weak to ALL enemies. NL Exhaust."
+  },
+  "theFirst:Taunt": {
+    "NAME": "Taunt",
+    "DESCRIPTION": "Gain !B! Block. NL ALL enemies gain !M! Strength."
+  },
+  "theFirst:ImagineSkill": {
+    "NAME": "Imagine: Skill",
+    "DESCRIPTION": "Draw a card. If you draw a Skill, Refund this card's cost.",
+    "UPGRADE_DESCRIPTION": "Draw two cards. For each Skill, Refund this card's cost."
+  },
+  "theFirst:ImagineAttack": {
+    "NAME": "Imagine: Attack",
+    "DESCRIPTION": "Draw a card. If you draw a Attack, Refund this card's cost.",
+    "UPGRADE_DESCRIPTION": "Draw two cards. For each Attack, Refund this card's cost."
+  },
+  "theFirst:ImaginePower": {
+    "NAME": "Imagine: Power",
+    "DESCRIPTION": "Draw a card. If you draw a Power, Refund this card's cost.",
+    "UPGRADE_DESCRIPTION": "Draw two cards. For each Power, Refund this card's cost."
+  },
+  "theFirst:RecurringDream": {
+    "NAME": "Recurring Dream",
+    "DESCRIPTION": "Select a card in your hand. Draw all copies of it in your draw pile.",
+    "UPGRADE_DESCRIPTION": "Select a card in your hand. Draw all copies of it in your draw pile and discard pile."
   }
+
 }

@@ -24,27 +24,27 @@
     "NAMES": [
       "parry"
     ],
-    "DESCRIPTION": "If the next attack is fully blocked, the attacker takes the damage instead."
+    "DESCRIPTION": "If the next attack this turn is fully blocked, the attacker takes the damage instead. If not, take double damage."
   },
   {
     "NAMES": [
       "drowsy"
     ],
-    "DESCRIPTION": "#yAttacks deal #b20% more damage, but you gain #b1 fewer [E] ."
+    "DESCRIPTION": "Attacks deal #b20% more damage, but you gain #b1 fewer [E] ."
   },
   {
     "NAMES": [
       "yawn",
       "yawns"
     ],
-    "DESCRIPTION": "Yawns are Skill cards which grant Block and Exhaust."
+    "DESCRIPTION": "Yawns are Skill cards which grant #yBlock and #yExhaust."
   },
   {
     "NAMES": [
       "stretch",
       "stretches"
     ],
-    "DESCRIPTION": "Stretches are Attack cards which Exhaust."
+    "DESCRIPTION": "Stretches are Attack cards which #yExhaust."
   },
   {
     "NAMES": [

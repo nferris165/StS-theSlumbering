@@ -1,15 +1,11 @@
-package theFirst.cards;
+package theFirst.cards.colorless;
 
-import com.megacrit.cardcrawl.actions.common.MakeTempCardInDrawPileAction;
-import com.megacrit.cardcrawl.actions.common.PutOnDeckAction;
-import com.megacrit.cardcrawl.actions.unique.TempestAction;
-import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import theFirst.FirstMod;
 import theFirst.actions.BombTossAction;
-import theFirst.characters.TheFirst;
+import theFirst.cards.AbstractCustomCard;
 
 import static theFirst.FirstMod.makeCardPath;
 

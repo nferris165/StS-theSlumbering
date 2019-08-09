@@ -1,16 +1,12 @@
-package theFirst.cards;
+package theFirst.cards.Curses;
 
 import com.megacrit.cardcrawl.actions.common.SetDontTriggerAction;
-import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
-import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.vfx.cardManip.PurgeCardEffect;
 import theFirst.FirstMod;
 import theFirst.actions.SeedAction;
-
-import java.util.Iterator;
+import theFirst.cards.AbstractCustomCard;
 
 import static theFirst.FirstMod.makeCardPath;
 

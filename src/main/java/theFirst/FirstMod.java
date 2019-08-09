@@ -25,6 +25,7 @@ import com.megacrit.cardcrawl.neow.NeowEvent;
 import javassist.CtClass;
 import javassist.NotFoundException;
 import org.clapper.util.classutil.*;
+import theFirst.cards.BasicDefend;
 import theFirst.characters.TheFirst;
 import theFirst.events.BasicEvent;
 import theFirst.monsters.SimpleMonster;
@@ -281,6 +282,8 @@ public class FirstMod implements
                 modID + "Resources/localization/eng/FirstMod-Power-Strings.json");
         BaseMod.loadCustomStringsFile(RelicStrings.class,
                 modID + "Resources/localization/eng/FirstMod-Relic-Strings.json");
+        BaseMod.loadCustomStringsFile(UIStrings.class,
+                modID + "Resources/localization/eng/FirstMod-UI-Strings.json");
     }
 
     @Override
