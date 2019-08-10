@@ -22,6 +22,13 @@
   },
   {
     "NAMES": [
+      "bomb",
+      "bombs"
+    ],
+    "DESCRIPTION": "Bombs are unplayable status cards that damage you."
+  },
+  {
+    "NAMES": [
       "parry"
     ],
     "DESCRIPTION": "If the next attack this turn is fully blocked, the attacker takes the damage instead. If not, take double damage."
