@@ -64,7 +64,7 @@ public class HandSelectAction extends AbstractGameAction {
                 pile.moveToDiscardPile(d);
                 this.p.createHandIsFullDialog();
             } else {
-                this.p.drawPile.moveToHand(d, pile);
+                pile.moveToHand(d, pile);
             }
         }
 

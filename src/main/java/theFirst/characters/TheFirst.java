@@ -116,10 +116,13 @@ public class TheFirst extends AbstractCustomPlayer {
         retVal.add(BasicAttack.ID);
         retVal.add(BasicAttack.ID);
         retVal.add(BasicAttack.ID);
+        retVal.add(Jab.ID);
 
         retVal.add(BasicDefend.ID);
         retVal.add(BasicDefend.ID);
         retVal.add(BasicDefend.ID);
+
+        retVal.add(Invigorate.ID);
 
         return retVal;
     }

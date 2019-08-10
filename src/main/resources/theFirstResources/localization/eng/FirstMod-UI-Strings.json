@@ -3,5 +3,15 @@
     "TEXT": [
       "Use"
     ]
+  },
+  "theFirst:HandReduceAction": {
+    "TEXT": [
+      "Reduce the Cost"
+    ]
+  },
+  "theFirst:DiscardEffectAction": {
+    "TEXT": [
+      "Discard"
+    ]
   }
 }

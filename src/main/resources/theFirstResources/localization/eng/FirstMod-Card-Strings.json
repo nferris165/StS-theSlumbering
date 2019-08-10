@@ -150,6 +150,9 @@
     "NAME": "Recurring Dream",
     "DESCRIPTION": "Select a card in your hand. NL Draw all copies of it in your draw pile.",
     "UPGRADE_DESCRIPTION": "Select a card in your hand. NL Draw all copies of it in your draw pile and discard pile."
+  },
+  "theFirst:EnergyShift": {
+    "NAME": "Energy Shift",
+    "DESCRIPTION": "Select a card. NL This turn, it costs !M! less."
   }
-
 }
