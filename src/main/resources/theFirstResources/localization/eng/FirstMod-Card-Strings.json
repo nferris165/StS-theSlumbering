@@ -172,5 +172,9 @@
     "NAME": "Comfortable",
     "DESCRIPTION": "Unplayable. NL Gain [E] when drawn.",
     "UPGRADE_DESCRIPTION": "Unplayable. NL Gain [E] and 1 Artifact when drawn."
+  },
+  "theFirst:SideSleeper": {
+    "NAME": "Side Sleeper",
+    "DESCRIPTION": "The leftmost card in your hand ALWAYS costs !M!."
   }
 }

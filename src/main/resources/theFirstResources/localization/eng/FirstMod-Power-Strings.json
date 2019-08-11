@@ -17,7 +17,7 @@
         },
         "theFirst:ReflectPower": {
                 "NAME": "Reflect",
-                "DESCRIPTIONS": ["Reflect ", " percent of damage back at the attacker."]
+                "DESCRIPTIONS": ["Whenever you are attacked this turn, reflect #b", " percent of damage."]
         },
         "theFirst:ParryPower": {
                 "NAME": "Parry",
@@ -34,6 +34,12 @@
                 "DESCRIPTIONS": ["The next time you would take damage, negate it.",
                         "The next #b",
                         " times you would take damage, negate it."
+                ]
+        },
+        "theFirst:SideSleeperPower": {
+                "NAME": "Side Sleeper Power",
+                "DESCRIPTIONS": ["The leftmost card in your hand ALWAYS costs #b",
+                        "."
                 ]
         }
 }
