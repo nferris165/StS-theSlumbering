@@ -13,6 +13,7 @@ import com.evacipated.cardcrawl.modthespire.Loader;
 import com.evacipated.cardcrawl.modthespire.lib.SpireConfig;
 import com.evacipated.cardcrawl.modthespire.lib.SpireInitializer;
 import com.google.gson.Gson;
+import com.megacrit.cardcrawl.actions.utility.ShowCardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -22,6 +23,7 @@ import com.megacrit.cardcrawl.helpers.FontHelper;
 import com.megacrit.cardcrawl.localization.*;
 import com.megacrit.cardcrawl.monsters.MonsterInfo;
 import com.megacrit.cardcrawl.neow.NeowEvent;
+import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import javassist.CtClass;
 import javassist.NotFoundException;
 import org.clapper.util.classutil.*;
@@ -29,6 +31,8 @@ import theFirst.cards.BasicDefend;
 import theFirst.characters.TheFirst;
 import theFirst.events.BasicEvent;
 import theFirst.monsters.SimpleMonster;
+import theFirst.patches.customTags;
+import theFirst.patches.customTypes;
 import theFirst.relics.AbstractCustomRelic;
 import com.megacrit.cardcrawl.unlock.UnlockTracker;
 import org.apache.logging.log4j.LogManager;
@@ -56,6 +60,7 @@ import java.util.Properties;
 @SpireInitializer
 public class FirstMod implements
         StartActSubscriber,
+        OnStartBattleSubscriber,
         MaxHPChangeSubscriber,
         EditCardsSubscriber,
         EditRelicsSubscriber,
@@ -398,6 +403,17 @@ public class FirstMod implements
     }
 
 
+    @Override
+    public void receiveOnBattleStart(AbstractRoom abstractRoom) {
+
+        for(AbstractCard c: AbstractDungeon.player.masterDeck.group){
+            if(c.type == customTypes.PASSIVE){
+                AbstractDungeon.actionManager.addToBottom(new ShowCardAction(c));
+                ((AbstractCustomCard) c).passiveEffect();
+                AbstractDungeon.player.drawPile.group.remove(c);
+            }
+        }
+    }
 
     @Override
     public void receiveStartAct() {
@@ -408,6 +424,17 @@ public class FirstMod implements
             TheFirst.replaceCards(a);
 
         }
+    }
+
+    public static boolean passiveCheck(AbstractCard card){
+        boolean val = false;
+
+        if(card.hasTag(customTags.Passive)){
+            val = true;
+        }
+
+        //logger.info(val + "\n\n");
+        return val;
     }
 
     public static ArrayList<AbstractCard> generateByTag(int tag){

@@ -14,5 +14,6 @@ public class customTags {
     @SpireEnum
     public static AbstractCard.CardTags Woke;
 
-
+    @SpireEnum
+    public static AbstractCard.CardTags Passive;
 }

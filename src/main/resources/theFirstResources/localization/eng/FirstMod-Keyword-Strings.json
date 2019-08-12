@@ -61,6 +61,13 @@
     "DESCRIPTION": "Snooze does something."
   },
   {
+    "NAMES": [
+      "passive",
+      "passives"
+    ],
+    "DESCRIPTION": "Unplayable cards that are automatically put into effect at the start of battle."
+  },
+  {
     "PROPER_NAME": "Multiword Keyword",
     "NAMES": [
       "Multiword Keyword",

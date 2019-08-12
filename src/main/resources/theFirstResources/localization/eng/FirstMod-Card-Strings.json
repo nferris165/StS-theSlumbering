@@ -176,5 +176,9 @@
   "theFirst:SideSleeper": {
     "NAME": "Side Sleeper",
     "DESCRIPTION": "The leftmost card in your hand ALWAYS costs !M!."
+  },
+  "theFirst:PassiveTest": {
+    "NAME": "testing",
+    "DESCRIPTION": "thefirst:Passive. NL Does Something."
   }
 }
