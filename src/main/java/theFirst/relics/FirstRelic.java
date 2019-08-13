@@ -11,6 +11,7 @@ import com.megacrit.cardcrawl.helpers.PowerTip;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import theFirst.FirstMod;
+import theFirst.powers.DrowsyPower;
 import theFirst.util.TextureLoader;
 
 import static theFirst.FirstMod.*;
@@ -154,10 +155,10 @@ public class FirstRelic extends AbstractCustomRelic implements ClickableRelic {
     public void onRightClick() {
 
         if (AbstractDungeon.getCurrRoom() != null && AbstractDungeon.getCurrRoom().phase == AbstractRoom.RoomPhase.COMBAT
-                && AbstractDungeon.player.hasPower(makeID("DrowsyPower"))) {
+                && AbstractDungeon.player.hasPower(DrowsyPower.POWER_ID)) {
             AbstractCreature p = AbstractDungeon.player;
-            int amt = AbstractDungeon.player.getPower(makeID("DrowsyPower")).amount;
-            AbstractDungeon.actionManager.addToBottom(new RemoveSpecificPowerAction(p, p, makeID("DrowsyPower")));
+            int amt = AbstractDungeon.player.getPower(DrowsyPower.POWER_ID).amount;
+            AbstractDungeon.actionManager.addToBottom(new RemoveSpecificPowerAction(p, p, DrowsyPower.POWER_ID));
             onTrigger(-amt);
         }
     }

@@ -10,6 +10,7 @@ import com.megacrit.cardcrawl.potions.AbstractPotion;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
 import com.megacrit.cardcrawl.rooms.AbstractRoom.RoomPhase;
 import theFirst.FirstMod;
+import theFirst.relics.FirstRelic;
 
 public class NewPotion extends AbstractPotion {
 
@@ -33,8 +34,8 @@ public class NewPotion extends AbstractPotion {
     @Override
     public void use(AbstractCreature target) {
 
-        if(AbstractDungeon.player.hasRelic("theFirst:FirstRelic")){
-            AbstractRelic r = AbstractDungeon.player.getRelic("theFirst:FirstRelic");
+        if(AbstractDungeon.player.hasRelic(FirstRelic.ID)){
+            AbstractRelic r = AbstractDungeon.player.getRelic(FirstRelic.ID);
             r.onTrigger();
         }
     }

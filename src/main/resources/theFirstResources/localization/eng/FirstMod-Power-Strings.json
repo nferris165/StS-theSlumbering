@@ -42,5 +42,10 @@
                 "NAME": "Double Block Power",
                 "DESCRIPTIONS": ["At the end of your turn, double your #yBlock."
                 ]
+        },
+        "theFirst:ToughSkinPower": {
+                "NAME": "Tough Skin Power",
+                "DESCRIPTIONS": ["At the start of your turn, gain #b", " #yBlock."
+                ]
         }
 }

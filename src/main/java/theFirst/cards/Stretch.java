@@ -44,7 +44,7 @@ public class Stretch extends AbstractCustomCard {
                 m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.BLUNT_LIGHT));
 
 
-        String powerID = makeID("WakingPower");
+        String powerID = WakingPower.POWER_ID;
 
         if(AbstractDungeon.player.hasPower(powerID)){
             AbstractCustomPower pow = (AbstractCustomPower) AbstractDungeon.player.getPower(powerID);

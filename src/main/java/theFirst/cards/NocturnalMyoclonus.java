@@ -12,6 +12,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.NextTurnBlockPower;
 import theFirst.FirstMod;
 import theFirst.characters.TheFirst;
+import theFirst.powers.DrowsyPower;
 
 import static theFirst.FirstMod.makeCardPath;
 import static theFirst.FirstMod.makeID;
@@ -43,7 +44,7 @@ public class NocturnalMyoclonus extends AbstractCustomCard {
         AbstractDungeon.actionManager.addToBottom(
                 new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_HORIZONTAL));
 
-        if(p.hasPower(makeID("DrowsyPower"))){
+        if(p.hasPower(DrowsyPower.POWER_ID)){
             AbstractDungeon.actionManager.addToBottom(new GainBlockAction(p, p, this.damage));
         }
 

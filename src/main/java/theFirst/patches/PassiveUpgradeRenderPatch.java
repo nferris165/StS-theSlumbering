@@ -24,7 +24,6 @@ public class PassiveUpgradeRenderPatch {
             return SpireReturn.Return(false);
         }
 
-
             return SpireReturn.Continue();
     }
 }

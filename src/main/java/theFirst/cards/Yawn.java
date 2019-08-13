@@ -11,7 +11,6 @@ import theFirst.powers.AbstractCustomPower;
 import theFirst.powers.WakingPower;
 
 import static theFirst.FirstMod.makeCardPath;
-import static theFirst.FirstMod.makeID;
 
 public class Yawn extends AbstractCustomCard {
 
@@ -41,7 +40,7 @@ public class Yawn extends AbstractCustomCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
         AbstractDungeon.actionManager.addToBottom(new GainBlockAction(p, p, this.block));
 
-        String powerID = makeID("WakingPower");
+        String powerID = WakingPower.POWER_ID;
 
         if(AbstractDungeon.player.hasPower(powerID)){
             AbstractCustomPower pow = (AbstractCustomPower) AbstractDungeon.player.getPower(powerID);

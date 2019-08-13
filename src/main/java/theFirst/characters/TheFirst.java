@@ -232,8 +232,8 @@ public class TheFirst extends AbstractCustomPlayer {
     {
         super.preBattlePrep();
 
-        if(AbstractDungeon.player.hasRelic("theFirst:FirstRelic")){
-            AbstractCustomRelic r = (AbstractCustomRelic) AbstractDungeon.player.getRelic("theFirst:FirstRelic");
+        if(AbstractDungeon.player.hasRelic(FirstRelic.ID)){
+            AbstractCustomRelic r = (AbstractCustomRelic) AbstractDungeon.player.getRelic(FirstRelic.ID);
             AbstractDungeon.actionManager.addToTop(new ApplyPowerAction(AbstractDungeon.player,
                     AbstractDungeon.player, new DrowsyPower(AbstractDungeon.player, 6 - r.getState(), false), 1));
         }

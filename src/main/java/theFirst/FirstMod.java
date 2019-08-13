@@ -385,16 +385,16 @@ public class FirstMod implements
 
     public static void incFirstRelic(int amt)
     {
-        if(AbstractDungeon.player.hasRelic("theFirst:FirstRelic")){
-            AbstractCustomRelic r = (AbstractCustomRelic) AbstractDungeon.player.getRelic(makeID("FirstRelic"));
+        if(AbstractDungeon.player.hasRelic(FirstRelic.ID)){
+            AbstractCustomRelic r = (AbstractCustomRelic) AbstractDungeon.player.getRelic(FirstRelic.ID);
             r.onTrigger(amt);
         }
     }
 
     public static void incFirstRelicFloat(int amt)
     {
-        if(AbstractDungeon.player.hasRelic("theFirst:FirstRelic")){
-            AbstractCustomRelic r = (AbstractCustomRelic) AbstractDungeon.player.getRelic(makeID("FirstRelic"));
+        if(AbstractDungeon.player.hasRelic(FirstRelic.ID)){
+            AbstractCustomRelic r = (AbstractCustomRelic) AbstractDungeon.player.getRelic(FirstRelic.ID);
             r.onTriggerFloat(amt);
         }
     }

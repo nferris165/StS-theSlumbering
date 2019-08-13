@@ -9,7 +9,6 @@ import theFirst.characters.TheFirst;
 import theFirst.powers.SideSleeperPower;
 
 import static theFirst.FirstMod.makeCardPath;
-import static theFirst.FirstMod.makeID;
 
 public class SideSleeper extends AbstractCustomCard {
 
@@ -38,7 +37,7 @@ public class SideSleeper extends AbstractCustomCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        if(!p.hasPower(makeID("SideSleeperPower"))){
+        if(!p.hasPower(SideSleeperPower.POWER_ID)){
             AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new SideSleeperPower(p, this.magicNumber)));
         }
     }

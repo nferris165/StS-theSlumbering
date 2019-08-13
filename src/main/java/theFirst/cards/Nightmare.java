@@ -55,7 +55,7 @@ public class Nightmare extends AbstractCustomCard {
     @Override
     public void calculateCardDamage(AbstractMonster mo) {
         int realBaseDamage = this.baseDamage;
-        this.baseDamage += this.magicNumber * AbstractDungeon.player.getPower(makeID("DrowsyPower")).amount;
+        this.baseDamage += this.magicNumber * AbstractDungeon.player.getPower(DrowsyPower.POWER_ID).amount;
         super.calculateCardDamage(mo);
         this.baseDamage = realBaseDamage;
         this.isDamageModified = this.damage != this.baseDamage;
@@ -64,7 +64,7 @@ public class Nightmare extends AbstractCustomCard {
     @Override
     public void applyPowers() {
         int realBaseDamage = this.baseDamage;
-        this.baseDamage += this.magicNumber * AbstractDungeon.player.getPower(makeID("DrowsyPower")).amount;
+        this.baseDamage += this.magicNumber * AbstractDungeon.player.getPower(DrowsyPower.POWER_ID).amount;
         super.applyPowers();
         this.baseDamage = realBaseDamage;
         this.isDamageModified = this.damage != this.baseDamage;

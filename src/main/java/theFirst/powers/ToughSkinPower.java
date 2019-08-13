@@ -3,6 +3,8 @@ package theFirst.powers;
 import basemod.interfaces.CloneablePowerInterface;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
+import com.megacrit.cardcrawl.actions.common.GainBlockAction;
+import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -10,14 +12,13 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import theFirst.FirstMod;
+import theFirst.cards.*;
 import theFirst.util.TextureLoader;
 
-public class SideSleeperPower extends AbstractCustomPower implements CloneablePowerInterface {
+public class ToughSkinPower extends AbstractCustomPower implements CloneablePowerInterface {
     @SuppressWarnings("WeakerAccess")
 
-    private int reduce;
-
-    public static final String POWER_ID = FirstMod.makeID("SideSleeperPower");
+    public static final String POWER_ID = FirstMod.makeID("ToughSkinPower");
     private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
     public static final String NAME = powerStrings.NAME;
     public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;
@@ -25,13 +26,13 @@ public class SideSleeperPower extends AbstractCustomPower implements CloneablePo
     private static final Texture tex84 = TextureLoader.getTexture("theFirstResources/images/powers/placeholder_power84.png");
     private static final Texture tex32 = TextureLoader.getTexture("theFirstResources/images/powers/placeholder_power32.png");
 
-    public SideSleeperPower(final AbstractCreature owner, int cost) {
+    public ToughSkinPower(final AbstractCreature owner, int val) {
         name = NAME;
         ID = POWER_ID;
 
         this.owner = owner;
         this.amount = -1;
-        this.reduce = cost;
+        this.val = val;
 
         type = PowerType.BUFF;
         isTurnBased = false;
@@ -42,37 +43,24 @@ public class SideSleeperPower extends AbstractCustomPower implements CloneablePo
         updateDescription();
     }
 
-    private void reduceCard(){
-        int count = AbstractDungeon.player.hand.size();
 
-        if(count > 0) {
-            AbstractCard card = AbstractDungeon.player.hand.getBottomCard();
-            card.setCostForTurn(this.reduce);
-        }
+    @Override
+    public void atStartOfTurn() {
+        AbstractDungeon.actionManager.addToBottom(new GainBlockAction(this.owner, this.owner, this.val));
     }
 
     @Override
     public void onInitialApplication() {
-        reduceCard();
-    }
-
-    @Override
-    public void onAfterCardPlayed(AbstractCard usedCard) {
-        reduceCard();
-    }
-
-    @Override
-    public void onDrawOrDiscard() {
-        reduceCard();
+        AbstractDungeon.actionManager.addToBottom(new GainBlockAction(this.owner, this.owner, this.val));
     }
 
     @Override
     public void updateDescription() {
-        description = DESCRIPTIONS[0] + this.reduce + DESCRIPTIONS[1];
+        description = DESCRIPTIONS[0] + this.val + DESCRIPTIONS[1];
     }
 
     @Override
     public AbstractPower makeCopy() {
-        return new SideSleeperPower(owner, reduce);
+        return new ToughSkinPower(this.owner, this.val);
     }
 }

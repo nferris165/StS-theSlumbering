@@ -184,5 +184,9 @@
   "theFirst:SpectralDefender": {
     "NAME": "Spectral Defender",
     "DESCRIPTION": "thefirst:Passive. NL At the end of your turn, double your Block."
+  },
+  "theFirst:ToughSkin": {
+    "NAME": "Tough Skin",
+    "DESCRIPTION": "thefirst:Passive. NL At the start of your turn, gain !M! Block."
   }
 }

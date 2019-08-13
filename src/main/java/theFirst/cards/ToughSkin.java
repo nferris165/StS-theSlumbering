@@ -4,7 +4,6 @@ import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.powers.BarricadePower;
 import theFirst.FirstMod;
 import theFirst.characters.TheFirst;
 import theFirst.patches.customTags;
@@ -12,9 +11,9 @@ import theFirst.powers.ToughSkinPower;
 
 import static theFirst.FirstMod.makeCardPath;
 
-public class BagOfShields extends AbstractCustomCard {
+public class ToughSkin extends AbstractCustomCard {
 
-    public static final String ID = FirstMod.makeID(BagOfShields.class.getSimpleName());
+    public static final String ID = FirstMod.makeID(ToughSkin.class.getSimpleName());
 
     public static final String IMG = makeCardPath("P_temp.png");
 
@@ -25,18 +24,21 @@ public class BagOfShields extends AbstractCustomCard {
 
     private static final int COST = -2;
 
-    public BagOfShields() {
+    private static final int MAGIC = 8;
+
+    public ToughSkin() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
+
+        baseMagicNumber = magicNumber = MAGIC;
 
         tags.add(customTags.Passive);
     }
 
-
     @Override
     public void passiveEffect() {
         AbstractPlayer p = AbstractDungeon.player;
-        if(!p.hasPower(BarricadePower.POWER_ID)) {
-            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new BarricadePower(p)));
+        if(!p.hasPower(ToughSkinPower.POWER_ID)){
+            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new ToughSkinPower(p, this.magicNumber)));
         }
     }
 
@@ -56,6 +58,5 @@ public class BagOfShields extends AbstractCustomCard {
 
     @Override
     public void upgrade() {
-
     }
 }

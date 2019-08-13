@@ -7,6 +7,7 @@ import com.megacrit.cardcrawl.helpers.PowerTip;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
 import theFirst.FirstMod;
 import theFirst.powers.AbstractCustomPower;
+import theFirst.powers.DrowsyPower;
 import theFirst.util.TextureLoader;
 
 import static theFirst.FirstMod.*;
@@ -34,8 +35,8 @@ public class StarMobile extends AbstractCustomRelic {
 
     @Override
     public void onEquip() {
-        if(AbstractDungeon.player.hasPower(makeID("DrowsyPower"))){
-            AbstractDungeon.player.getPower(makeID("DrowsyPower")).updateDescription();
+        if(AbstractDungeon.player.hasPower(DrowsyPower.POWER_ID)){
+            AbstractDungeon.player.getPower(DrowsyPower.POWER_ID).updateDescription();
         }
     }
 

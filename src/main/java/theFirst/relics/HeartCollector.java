@@ -8,6 +8,7 @@ import com.megacrit.cardcrawl.actions.common.RelicAboveCreatureAction;
 import com.megacrit.cardcrawl.actions.utility.SFXAction;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.powers.MinionPower;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import theFirst.FirstMod;
@@ -45,8 +46,8 @@ public class HeartCollector extends CustomRelic implements ClickableRelic {
 
             //gain block
             int woke = 0;
-            if(AbstractDungeon.player.hasRelic("theFirst:FirstRelic")){
-                AbstractRelic r = AbstractDungeon.player.getRelic("theFirst:FirstRelic");
+            if(AbstractDungeon.player.hasRelic(FirstRelic.ID)){
+                AbstractRelic r = AbstractDungeon.player.getRelic(FirstRelic.ID);
                 woke = r.counter;
             }
 
@@ -57,7 +58,7 @@ public class HeartCollector extends CustomRelic implements ClickableRelic {
 
     @Override
     public void onMonsterDeath(AbstractMonster m) {
-        if (m.currentHealth <= 0 && !m.hasPower("Minion")) {
+        if (m.currentHealth <= 0 && !m.hasPower(MinionPower.POWER_ID)) {
             this.flash();
             AbstractDungeon.actionManager.addToBottom(new RelicAboveCreatureAction(m, this));
             this.counter++;
