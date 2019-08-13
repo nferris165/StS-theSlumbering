@@ -78,6 +78,7 @@ public class HandSelectAction extends AbstractGameAction {
                 this.isDone = true;
             } else if (this.p.hand.size() == 1) {
                 AbstractCard c = this.p.hand.getTopCard();
+                this.returnedCard = true;
 
                 draw(c, this.p.drawPile);
                 if(this.upgraded){

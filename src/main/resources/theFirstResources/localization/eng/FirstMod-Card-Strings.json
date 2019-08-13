@@ -200,5 +200,13 @@
   "theFirst:StoneHearth": {
     "NAME": "Stone Hearth",
     "DESCRIPTION": "Deal between !D! and !M! damage to a random enemy and gain that much Block."
+  },
+  "theFirst:InducedDream": {
+    "NAME": "Induced Dream",
+    "DESCRIPTION": "Look at 3 cards in your deck, choose 1 and add a copy of it to your hand. NL Exhaust."
+  },
+  "theFirst:InducedMemory": {
+    "NAME": "Induced Memory",
+    "DESCRIPTION": "Look at 3 cards in your deck, choose 1 to draw. NL Exhaust."
   }
 }
