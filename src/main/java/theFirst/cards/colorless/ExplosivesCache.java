@@ -11,8 +11,6 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.vfx.cardManip.ShowCardAndObtainEffect;
 import theFirst.FirstMod;
 import theFirst.cards.AbstractCustomCard;
-import theFirst.cards.Curses.Seed;
-import theFirst.characters.TheFirst;
 
 import static theFirst.FirstMod.makeCardPath;
 
