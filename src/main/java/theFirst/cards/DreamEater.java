@@ -50,7 +50,7 @@ public class DreamEater extends AbstractCustomCard {
         if (!upgraded) {
             upgradeName();
             upgradeDamage(UPGRADE_PLUS_DMG);
-            upgradeBaseCost(UPGRADED_COST);
+            //upgradeBaseCost(UPGRADED_COST);
             initializeDescription();
         }
     }

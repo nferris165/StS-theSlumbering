@@ -1,8 +1,4 @@
 {
-        "theFirst:CommonPower": {
-                "NAME": "Placeholder Power",
-                "DESCRIPTIONS": ["You applied ", " keyword.", " keywords."]
-        },
         "theFirst:AutoAttackPower": {
                 "NAME": "Auto-Attack",
                 "DESCRIPTIONS": ["At the start of your turn, #yBasicAttack a random enemy."]
@@ -40,6 +36,11 @@
                 "NAME": "Side Sleeper Power",
                 "DESCRIPTIONS": ["The leftmost card in your hand ALWAYS costs #b",
                         "."
+                ]
+        },
+        "theFirst:DoubleBlockPower": {
+                "NAME": "Double Block Power",
+                "DESCRIPTIONS": ["At the end of your turn, double your #yBlock."
                 ]
         }
 }

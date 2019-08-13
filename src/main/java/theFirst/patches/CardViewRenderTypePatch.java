@@ -1,6 +1,5 @@
 package theFirst.patches;
 
-import basemod.ReflectionHacks;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.evacipated.cardcrawl.modthespire.lib.*;
 import com.evacipated.cardcrawl.modthespire.patcher.PatchingException;
@@ -25,18 +24,17 @@ public class CardViewRenderTypePatch {
     private static UIStrings uiStrings;
     private static String[] TEXT;
     @SpireInsertPatch(
-            localvars = {"label"},
+            localvars = {"label", "card"},
             locator = Locator.class
     )
-    public static void Insert(SingleCardViewPopup __instance, SpriteBatch sb, @ByRef String[] label) {
+    public static void Insert(SingleCardViewPopup __instance, SpriteBatch sb, @ByRef String[] label, AbstractCard card) {
         if (uiStrings == null) {
             String UI_ID = makeID("RenderType");
             uiStrings = CardCrawlGame.languagePack.getUIString(UI_ID);
             TEXT = uiStrings.TEXT;
         }
-        AbstractCard reflectedCard = (AbstractCard) ReflectionHacks.getPrivate(__instance, SingleCardViewPopup.class, "card");
-        boolean isPassive = FirstMod.passiveCheck(reflectedCard);
-        if (isPassive) {
+
+        if (FirstMod.passiveCheck(card)) {
             label[0] = TEXT[0];
         }
     }

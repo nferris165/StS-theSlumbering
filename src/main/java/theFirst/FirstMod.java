@@ -13,7 +13,6 @@ import com.evacipated.cardcrawl.modthespire.Loader;
 import com.evacipated.cardcrawl.modthespire.lib.SpireConfig;
 import com.evacipated.cardcrawl.modthespire.lib.SpireInitializer;
 import com.google.gson.Gson;
-import com.megacrit.cardcrawl.actions.utility.ShowCardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -22,8 +21,8 @@ import com.megacrit.cardcrawl.helpers.CardHelper;
 import com.megacrit.cardcrawl.helpers.FontHelper;
 import com.megacrit.cardcrawl.localization.*;
 import com.megacrit.cardcrawl.monsters.MonsterInfo;
-import com.megacrit.cardcrawl.neow.NeowEvent;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
+import com.megacrit.cardcrawl.vfx.cardManip.PurgeCardEffect;
 import javassist.CtClass;
 import javassist.NotFoundException;
 import org.clapper.util.classutil.*;
@@ -32,7 +31,6 @@ import theFirst.characters.TheFirst;
 import theFirst.events.BasicEvent;
 import theFirst.monsters.SimpleMonster;
 import theFirst.patches.customTags;
-import theFirst.patches.customTypes;
 import theFirst.relics.AbstractCustomRelic;
 import com.megacrit.cardcrawl.unlock.UnlockTracker;
 import org.apache.logging.log4j.LogManager;
@@ -46,7 +44,6 @@ import theFirst.variables.DynamicMagicVariable;
 import theFirst.relics.FirstRelic;
 
 import java.io.File;
-import java.lang.reflect.Method;
 import java.lang.reflect.Modifier;
 import java.net.URISyntaxException;
 import java.net.URL;
@@ -406,23 +403,29 @@ public class FirstMod implements
     @Override
     public void receiveOnBattleStart(AbstractRoom abstractRoom) {
 
-        for(AbstractCard c: AbstractDungeon.player.masterDeck.group){
-            if(c.type == customTypes.PASSIVE){
-                AbstractDungeon.actionManager.addToBottom(new ShowCardAction(c));
+        ArrayList<AbstractCard> removeList = new ArrayList<>();
+
+        for(AbstractCard c: AbstractDungeon.player.drawPile.group){
+            if(c.hasTag(customTags.Passive)){
+                logger.info(AbstractDungeon.player.drawPile.group + "\n\n");
                 ((AbstractCustomCard) c).passiveEffect();
-                AbstractDungeon.player.drawPile.group.remove(c);
+                removeList.add(c);
             }
+        }
+
+        for (AbstractCard c: removeList) {
+            AbstractDungeon.topLevelEffects.add(new PurgeCardEffect(c,
+                    (float) Settings.WIDTH / 2.0F - 30.0F * Settings.scale - AbstractCard.IMG_WIDTH / 2.0F,(float) Settings.HEIGHT / 2.0F));
+            AbstractDungeon.player.drawPile.removeCard(c);
+            logger.info(AbstractDungeon.player.drawPile.group + "\n\n");
         }
     }
 
     @Override
     public void receiveStartAct() {
         if(AbstractDungeon.player.chosenClass == TheFirst.Enums.THE_FIRST){
-
             int a = AbstractDungeon.actNum;
-
             TheFirst.replaceCards(a);
-
         }
     }
 
@@ -433,20 +436,12 @@ public class FirstMod implements
             val = true;
         }
 
-        //logger.info(val + "\n\n");
         return val;
     }
 
     public static ArrayList<AbstractCard> generateByTag(int tag){
 
         ArrayList<AbstractCard> cardList = new ArrayList<>();
-
-        NeowEvent neowEvent = new NeowEvent();
-        try {
-            Method method = neowEvent.getClass().getDeclaredMethod("blessing");
-        } catch (NoSuchMethodException | SecurityException e) {
-            e.printStackTrace();
-        }
 
         switch (tag)
         {

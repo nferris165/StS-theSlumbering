@@ -32,8 +32,8 @@ public class LibraryRenderPatch {
             uiStrings = CardCrawlGame.languagePack.getUIString(UI_ID);
             TEXT = uiStrings.TEXT;
         }
-        boolean isPassive = FirstMod.passiveCheck(__instance);
-        if (isPassive) {
+
+        if (FirstMod.passiveCheck(__instance)) {
             text[0] = TEXT[0];
         }
     }

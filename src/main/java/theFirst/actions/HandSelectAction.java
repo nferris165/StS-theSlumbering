@@ -45,7 +45,7 @@ public class HandSelectAction extends AbstractGameAction {
 
         Iterator deck = pile.group.iterator();
         AbstractCard c;
-        ArrayList<AbstractCard> cardsToMove = new ArrayList();
+        ArrayList<AbstractCard> cardsToMove = new ArrayList<>();
 
         if(!this.returnedCard){
             cardsToMove.add(card);

@@ -177,8 +177,12 @@
     "NAME": "Side Sleeper",
     "DESCRIPTION": "The leftmost card in your hand ALWAYS costs !M!."
   },
-  "theFirst:PassiveTest": {
-    "NAME": "testing",
-    "DESCRIPTION": "thefirst:Passive. NL Does Something."
+  "theFirst:BagOfShields": {
+    "NAME": "Bag of Shields",
+    "DESCRIPTION": "thefirst:Passive. NL Block is not removed at the start of your turn."
+  },
+  "theFirst:SpectralDefender": {
+    "NAME": "Spectral Defender",
+    "DESCRIPTION": "thefirst:Passive. NL At the end of your turn, double your Block."
   }
 }

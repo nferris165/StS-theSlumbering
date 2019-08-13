@@ -1,13 +1,6 @@
 [
   {
     "NAMES": [
-      "keyword",
-      "keywords"
-    ],
-    "DESCRIPTION": "Whenever you play a card, gain 1 dexterity this turn only."
-  },
-  {
-    "NAMES": [
       "seed",
       "seeds"
     ],
@@ -65,7 +58,7 @@
       "passive",
       "passives"
     ],
-    "DESCRIPTION": "Unplayable cards that are automatically put into effect at the start of battle."
+    "DESCRIPTION": "Unplayable cards that are automatically put into effect at the start of battle. NL Cannot be upgraded."
   },
   {
     "PROPER_NAME": "Multiword Keyword",
