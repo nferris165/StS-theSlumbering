@@ -8,7 +8,6 @@ import com.megacrit.cardcrawl.powers.BarricadePower;
 import theFirst.FirstMod;
 import theFirst.characters.TheFirst;
 import theFirst.patches.customTags;
-import theFirst.powers.ToughSkinPower;
 
 import static theFirst.FirstMod.makeCardPath;
 

@@ -188,5 +188,17 @@
   "theFirst:ToughSkin": {
     "NAME": "Tough Skin",
     "DESCRIPTION": "thefirst:Passive. NL At the start of your turn, gain !M! Block."
+  },
+  "theFirst:StrongFooting": {
+    "NAME": "Strong Footing",
+    "DESCRIPTION": "If you have !M! or less Block, double your Block."
+  },
+  "theFirst:TheClock": {
+    "NAME": "The Clock",
+    "DESCRIPTION": "Deal !D! damage. NL [#c9c9c9]Tick.[] [#bca6bf]Tock.[]"
+  },
+  "theFirst:StoneHearth": {
+    "NAME": "Stone Hearth",
+    "DESCRIPTION": "Deal between !D! and !M! damage to a random enemy and gain that much Block."
   }
 }

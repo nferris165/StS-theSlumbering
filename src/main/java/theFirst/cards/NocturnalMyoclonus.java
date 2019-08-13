@@ -1,7 +1,6 @@
 package theFirst.cards;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
-import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.actions.common.PlayTopCardAction;
@@ -9,13 +8,11 @@ import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.powers.NextTurnBlockPower;
 import theFirst.FirstMod;
 import theFirst.characters.TheFirst;
 import theFirst.powers.DrowsyPower;
 
 import static theFirst.FirstMod.makeCardPath;
-import static theFirst.FirstMod.makeID;
 
 public class NocturnalMyoclonus extends AbstractCustomCard {
 

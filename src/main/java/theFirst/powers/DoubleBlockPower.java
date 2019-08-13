@@ -43,7 +43,9 @@ public class DoubleBlockPower extends AbstractCustomPower implements CloneablePo
     public void atEndOfTurn(boolean isPlayer) {
         int block = this.owner.currentBlock;
 
-        AbstractDungeon.actionManager.addToBottom(new GainBlockAction(this.owner, this.owner, block));
+        if( block > 0){
+            AbstractDungeon.actionManager.addToBottom(new GainBlockAction(this.owner, this.owner, block));
+        }
     }
 
     @Override
