@@ -10,6 +10,7 @@ import theFirst.characters.TheFirst;
 import theFirst.powers.DrowsyPower;
 
 import static theFirst.FirstMod.makeCardPath;
+import static theFirst.FirstMod.makeID;
 
 public class Insomnia extends AbstractCustomCard {
 

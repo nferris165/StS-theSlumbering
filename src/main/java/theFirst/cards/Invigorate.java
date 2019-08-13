@@ -1,6 +1,7 @@
 package theFirst.cards;
 
 import com.megacrit.cardcrawl.actions.common.ReducePowerAction;
+import com.megacrit.cardcrawl.cards.DescriptionLine;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
@@ -8,6 +9,7 @@ import theFirst.FirstMod;
 import theFirst.characters.TheFirst;
 import theFirst.powers.DrowsyPower;
 
+import static com.megacrit.cardcrawl.core.CardCrawlGame.languagePack;
 import static theFirst.FirstMod.makeCardPath;
 
 public class Invigorate extends AbstractCustomCard {
