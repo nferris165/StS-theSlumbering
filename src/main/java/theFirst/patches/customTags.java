@@ -16,4 +16,7 @@ public class customTags {
 
     @SpireEnum
     public static AbstractCard.CardTags Passive;
+
+    @SpireEnum
+    public static AbstractCard.CardTags ActionCurse;
 }

@@ -230,6 +230,7 @@ public class FirstMod implements
         BaseMod.addRelicToCustomPool(new HeartCollector(), TheFirst.Enums.COLOR_FIRST);
         BaseMod.addRelicToCustomPool(new FirstRelic(), TheFirst.Enums.COLOR_FIRST);
         BaseMod.addRelicToCustomPool(new StarMobile(), TheFirst.Enums.COLOR_FIRST);
+        BaseMod.addRelicToCustomPool(new PowerFromBeyond(), TheFirst.Enums.COLOR_FIRST);
 
         //shared
         BaseMod.addRelic(new GlassShield(), RelicType.SHARED);
@@ -245,6 +246,7 @@ public class FirstMod implements
         UnlockTracker.markRelicAsSeen(EnchantedHammer.ID);
         UnlockTracker.markRelicAsSeen(GamblerFolly.ID);
         UnlockTracker.markRelicAsSeen(StarMobile.ID);
+        UnlockTracker.markRelicAsSeen(PowerFromBeyond.ID);
 
     }
 
@@ -405,11 +407,15 @@ public class FirstMod implements
 
         ArrayList<AbstractCard> removeList = new ArrayList<>();
 
+        // Check for Tags
         for(AbstractCard c: AbstractDungeon.player.drawPile.group){
             if(c.hasTag(customTags.Passive)){
-                logger.info(AbstractDungeon.player.drawPile.group + "\n\n");
+                //logger.info(AbstractDungeon.player.drawPile.group + "\n\n");
                 ((AbstractCustomCard) c).passiveEffect();
                 removeList.add(c);
+            }
+            if(c.hasTag(customTags.ActionCurse)){
+                ((AbstractCustomCard) c).passiveEffect();
             }
         }
 
@@ -417,8 +423,9 @@ public class FirstMod implements
             AbstractDungeon.topLevelEffects.add(new PurgeCardEffect(c,
                     (float) Settings.WIDTH / 2.0F - 30.0F * Settings.scale - AbstractCard.IMG_WIDTH / 2.0F,(float) Settings.HEIGHT / 2.0F));
             AbstractDungeon.player.drawPile.removeCard(c);
-            logger.info(AbstractDungeon.player.drawPile.group + "\n\n");
+            //logger.info(AbstractDungeon.player.drawPile.group + "\n\n");
         }
+
     }
 
     @Override

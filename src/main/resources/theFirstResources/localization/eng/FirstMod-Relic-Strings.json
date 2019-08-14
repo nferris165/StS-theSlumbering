@@ -70,5 +70,14 @@
   "DESCRIPTIONS": [
     "When #ythefirst:Drowsy, deal #b30% increased damage rather than #b20%."
   ]
-}
+  },
+  "theFirst:PowerFromBeyond": {
+    "NAME": "Power From Beyond",
+    "FLAVOR": "UNLIMITED POWER! Itty-bitty living space.",
+    "DESCRIPTIONS": [
+      "Your cards cost #b0, however you cannot play more than #b2 cards per turn.",
+      "I can only play up to NL #r",
+      " cards per turn."
+    ]
+  }
 }

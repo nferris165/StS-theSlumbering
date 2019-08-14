@@ -208,5 +208,17 @@
   "theFirst:InducedMemory": {
     "NAME": "Induced Memory",
     "DESCRIPTION": "Look at 3 cards in your deck, choose 1 to draw. NL Exhaust."
+  },
+  "theFirst:LingeringDoubt": {
+    "NAME": "Lingering Doubt",
+    "DESCRIPTION": "If this card hasn't been played by the end of battle, lose !theFirst:Magic! Max HP. NL Exhaust."
+  },
+  "theFirst:Sloth": {
+    "NAME": "Sloth",
+    "DESCRIPTION": "Start battles with !theFirst:Magic! additional thefirst:Drowsy. NL Lose !theFirst:Magic! thefirst:Drowsy when played."
+  },
+  "theFirst:Insomniac": {
+    "NAME": "Insomniac",
+    "DESCRIPTION": "thefirst:Passive. NL At the start of battle, shuffle a thefirst:Sleepwalk into your deck !M! times."
   }
 }

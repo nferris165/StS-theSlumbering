@@ -47,5 +47,10 @@
                 "NAME": "Tough Skin Power",
                 "DESCRIPTIONS": ["At the start of your turn, gain #b", " #yBlock."
                 ]
+        },
+        "theFirst:DoubtPower": {
+                "NAME": "Doubt Power",
+                "DESCRIPTIONS": ["At the end of battle, lose #b", " Max HP."
+                ]
         }
 }

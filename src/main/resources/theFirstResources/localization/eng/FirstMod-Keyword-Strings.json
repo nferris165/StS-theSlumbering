@@ -48,6 +48,13 @@
   },
   {
     "NAMES": [
+      "sleepwalk",
+      "sleepwalks"
+    ],
+    "DESCRIPTION": "Sleepwalks are unplayable Attack cards which deal damage when drawn."
+  },
+  {
+    "NAMES": [
       "snooze",
       "snoozes"
     ],
