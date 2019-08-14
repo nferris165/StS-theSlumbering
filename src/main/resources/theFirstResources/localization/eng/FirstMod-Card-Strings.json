@@ -75,7 +75,7 @@
   },
   "theFirst:Seed": {
     "NAME": "Seed",
-    "DESCRIPTION": "Blossoms after being played 5 times. NL Currently has been played !M! times."
+    "DESCRIPTION": "Blossoms after being played 5 times. NL (Currently has been played !M! times)"
   },
   "theFirst:ExplosivesCache": {
     "NAME": "Explosives Cache",
@@ -220,5 +220,19 @@
   "theFirst:Insomniac": {
     "NAME": "Insomniac",
     "DESCRIPTION": "thefirst:Passive. NL At the start of battle, shuffle a thefirst:Sleepwalk into your deck !M! times."
+  },
+  "theFirst:EntombedWeapon": {
+    "NAME": "Entombed Blade",
+    "DESCRIPTION": "Deal !D! damage. NL Cannot be upgraded normally. NL Play !M! more times to upgrade this card.",
+    "UPGRADE_DESCRIPTION": "Deal !D! damage."
+  },
+  "theFirst:RunTheGamut": {
+    "NAME": "Run The Gamut",
+    "DESCRIPTION": "Deal !D! damage. NL Cannot be played if you've played fewer than 10 cards this turn.",
+    "UPGRADE_DESCRIPTION": "Deal !D! damage to all enemies. NL Cannot be played if you've played fewer than 10 cards this turn.",
+    "EXTENDED_DESCRIPTION": [
+      "I need to play NL #r",
+      " more cards to use this."
+      ]
   }
 }

@@ -1,8 +1,6 @@
 package theFirst.cards;
 
 import basemod.abstracts.CustomCard;
-import com.megacrit.cardcrawl.actions.utility.ShowCardAction;
-import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 
 import static com.megacrit.cardcrawl.core.CardCrawlGame.languagePack;
 
@@ -14,6 +12,7 @@ public abstract class AbstractCustomCard extends CustomCard {
     public boolean upgradedSecondMagicNumber;
     public boolean isSecondMagicNumberModified;
     public String updated_desc;
+    public String[] ext_desc;
     public static String BG_SMALL_PASSIVE_FIELD = "theFirstResources/images/512/bg_passive_field.png";
     public static String BG_LARGE_PASSIVE_FIELD = "theFirstResources/images/1024/bg_passive_field.png";
 
@@ -27,6 +26,7 @@ public abstract class AbstractCustomCard extends CustomCard {
 
         super(id, languagePack.getCardStrings(id).NAME, img, cost, languagePack.getCardStrings(id).DESCRIPTION, type, color, rarity, target);
         this.updated_desc = languagePack.getCardStrings(id).UPGRADE_DESCRIPTION;
+        this.ext_desc = languagePack.getCardStrings(id).EXTENDED_DESCRIPTION;
     }
 
     @Override
