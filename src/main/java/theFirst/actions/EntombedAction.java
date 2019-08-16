@@ -1,14 +1,12 @@
 package theFirst.actions;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
-import com.megacrit.cardcrawl.actions.utility.ShowCardAction;
-import com.megacrit.cardcrawl.actions.utility.ShowCardAndPoofAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.GetAllInBattleInstances;
-import com.megacrit.cardcrawl.vfx.campfire.CampfireSmithEffect;
+import com.megacrit.cardcrawl.vfx.cardManip.ShowCardBrieflyEffect;
 
 import java.util.UUID;
 
@@ -51,6 +49,7 @@ public class EntombedAction extends AbstractGameAction {
                 battleCard.upgrade();
                 battleCard.superFlash();
                 deckCard.upgrade();
+                AbstractDungeon.effectsQueue.add(new ShowCardBrieflyEffect(deckCard.makeStatEquivalentCopy()));
             }
         }
         this.isDone = true;

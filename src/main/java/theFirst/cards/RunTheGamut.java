@@ -65,6 +65,7 @@ public class RunTheGamut extends AbstractCustomCard {
             upgradeName();
             this.target = CardTarget.ALL_ENEMY;
             this.isMultiDamage = true;
+            this.rawDescription = this.updated_desc;
             initializeDescription();
         }
     }

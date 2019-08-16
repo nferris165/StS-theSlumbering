@@ -234,5 +234,12 @@
       "I need to play NL #r",
       " more cards to use this."
       ]
+  },
+  "theFirst:RecklessBlow": {
+    "NAME": "Reckless Blow",
+    "DESCRIPTION": "Additionally costs 10 Block. NL Deal !D! damage.",
+    "EXTENDED_DESCRIPTION": [
+      "I need more #yBlock to use this."
+    ]
   }
 }
