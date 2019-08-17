@@ -22,7 +22,7 @@ public class Reflect extends AbstractCustomCard {
     public static final CardColor COLOR = TheFirst.Enums.COLOR_FIRST;
 
     private static final int COST = 1;
-    private static final int UPGRADED_COST = 1;
+    private static final int UPGRADED_COST = 0;
 
     public Reflect() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);

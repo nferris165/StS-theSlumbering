@@ -241,5 +241,9 @@
     "EXTENDED_DESCRIPTION": [
       "I need more #yBlock to use this."
     ]
+  },
+  "theFirst:AlarmedStrike": {
+    "NAME": "Alarmed Strike",
+    "DESCRIPTION": "thefirst:Snooze. NL Deal !D! damage."
   }
 }

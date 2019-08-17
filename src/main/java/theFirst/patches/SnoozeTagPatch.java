@@ -6,9 +6,6 @@ import com.megacrit.cardcrawl.cards.AbstractCard;
 
 public class SnoozeTagPatch
 {
-    @SpireEnum
-    public static AbstractCard.CardTags FIRST_SNOOZE;
-
     @SpirePatch(
             clz=AbstractCard.class,
             method="makeStatEquivalentCopy"
@@ -17,11 +14,11 @@ public class SnoozeTagPatch
     {
         public static AbstractCard Postfix(AbstractCard __result, AbstractCard __instance)
         {
-            if (__instance.hasTag(FIRST_SNOOZE) != __result.hasTag(FIRST_SNOOZE)) {
-                if (__instance.hasTag(FIRST_SNOOZE)) {
-                    __result.tags.add(FIRST_SNOOZE);
+            if (__instance.hasTag(customTags.Snooze) != __result.hasTag(customTags.Snooze)) {
+                if (__instance.hasTag(customTags.Snooze)) {
+                    __result.tags.add(customTags.Snooze);
                 } else {
-                    __instance.tags.remove(FIRST_SNOOZE);
+                    __instance.tags.remove(customTags.Snooze);
                 }
             }
             return __result;

@@ -22,7 +22,8 @@
   },
   {
     "NAMES": [
-      "parry"
+      "parry",
+      "parried"
     ],
     "DESCRIPTION": "If the next attack this turn is fully blocked, the attacker takes the damage instead. If not, take double damage."
   },
@@ -56,9 +57,10 @@
   {
     "NAMES": [
       "snooze",
-      "snoozes"
+      "snoozes",
+      "snoozed"
     ],
-    "DESCRIPTION": "Snooze does something."
+    "DESCRIPTION": "Snoozed cards are shuffled back into your draw pile if they are not played."
   },
   {
     "NAMES": [

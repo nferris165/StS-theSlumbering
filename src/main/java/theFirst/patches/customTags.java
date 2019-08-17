@@ -19,4 +19,7 @@ public class customTags {
 
     @SpireEnum
     public static AbstractCard.CardTags ActionCurse;
+
+    @SpireEnum
+    public static AbstractCard.CardTags Snooze;
 }
