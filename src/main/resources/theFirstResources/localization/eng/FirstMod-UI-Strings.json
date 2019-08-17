@@ -18,5 +18,10 @@
     "TEXT": [
       "Passive"
     ]
+  },
+  "theFirst:PurgeAction": {
+    "TEXT": [
+      "Remove from Deck"
+    ]
   }
 }

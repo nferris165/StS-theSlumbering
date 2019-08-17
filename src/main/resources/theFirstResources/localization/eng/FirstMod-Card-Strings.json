@@ -284,5 +284,16 @@
   "theFirst:NightTerror": {
     "NAME": "Night Terror",
     "DESCRIPTION": "Stun and deal !D! damage to a random enemy."
+  },
+  "theFirst:Hallucinations": {
+    "NAME": "Hallucinations",
+    "DESCRIPTION": "Deal !D! damage. NL Permanently gain !theFirst:Magic! damage the first time played each combat. NL thefirst:Snooze."
+  },
+  "theFirst:SelectiveMemory": {
+    "NAME": "Selective Memory",
+    "DESCRIPTION": "Choose a card in your hand. Remove that card and this card from your deck.",
+    "EXTENDED_DESCRIPTION": [
+      "My hand is empty."
+    ]
   }
 }
