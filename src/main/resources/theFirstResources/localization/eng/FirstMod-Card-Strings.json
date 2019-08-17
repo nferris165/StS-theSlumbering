@@ -245,5 +245,28 @@
   "theFirst:AlarmedStrike": {
     "NAME": "Alarmed Strike",
     "DESCRIPTION": "thefirst:Snooze. NL Deal !D! damage."
+  },
+  "theFirst:ShieldToss": {
+    "NAME": "Shield Toss",
+    "DESCRIPTION": "Remove all your Block. NL For every 10 Block, deal !D! damage to a random enemy."
+  },
+  "theFirst:FalseNap": {
+    "NAME": "False Nap",
+    "DESCRIPTION": "Can only be played if no other card has been played. NL Deal !D! damage. NL Apply !M! Vulnerable.",
+    "EXTENDED_DESCRIPTION": [
+      "I have already played a card this turn."
+    ]
+  },
+  "theFirst:CountingSheep": {
+    "NAME": "Counting Sheep",
+    "DESCRIPTION": "thefirst:Search - Attack NL Deal !D! damage to all enemies for each card searched."
+  },
+  "theFirst:CustomDream": {
+    "NAME": "Custom Dream",
+    "DESCRIPTION": "Choose an #yOption."
+  },
+  "theFirst:Mulligan": {
+    "NAME": "Mulligan",
+    "DESCRIPTION": "Shuffle your hand and discard pile into your draw pile, then redraw your hand. NL Exhaust."
   }
 }
