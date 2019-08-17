@@ -24,7 +24,7 @@ public class SleepParalysis extends AbstractCustomCard {
     private static final int COST = 3;
     private static final int UPGRADE_COST = 2;
 
-    private static final int MAGIC = 5;
+    private static final int MAGIC = 2;
 
     public SleepParalysis() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);

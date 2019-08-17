@@ -46,7 +46,7 @@
   },
   "theFirst:Parry": {
     "NAME": "Parry",
-    "DESCRIPTION": "Gain 1 thefirst:Parry."
+    "DESCRIPTION": "Gain 1 thefirst:Parry. NL Gain !B! Block."
   },
   "theFirst:Invigorate": {
     "NAME": "Invigorate",
@@ -79,7 +79,7 @@
   },
   "theFirst:ExplosivesCache": {
     "NAME": "Explosives Cache",
-    "DESCRIPTION": "Deal !D! damage, but shuffle a thefirst:Bomb into your deck."
+    "DESCRIPTION": "Deal !D! damage, but shuffle a thefirst:Bomb into your draw pile."
   },
   "theFirst:Bomb": {
     "NAME": "Bomb",
@@ -91,7 +91,7 @@
   },
   "theFirst:BombToss": {
     "NAME": "Bomb Toss",
-    "DESCRIPTION": "Shuffle a thefirst:Detonator into your deck X times."
+    "DESCRIPTION": "Shuffle a thefirst:Detonator into your draw pile X times."
   },
   "theFirst:Dream": {
     "NAME": "Dream",
@@ -203,11 +203,11 @@
   },
   "theFirst:InducedDream": {
     "NAME": "Induced Dream",
-    "DESCRIPTION": "Look at 3 cards in your deck, choose 1 and add a copy of it to your hand. NL Exhaust."
+    "DESCRIPTION": "Look at 3 cards in your draw pile, choose 1 and add a copy of it to your hand. NL Exhaust."
   },
   "theFirst:InducedMemory": {
     "NAME": "Induced Memory",
-    "DESCRIPTION": "Look at 3 cards in your deck, choose 1 to draw. NL Exhaust."
+    "DESCRIPTION": "Look at 3 cards in your draw pile, choose 1 to draw. NL Exhaust."
   },
   "theFirst:LingeringDoubt": {
     "NAME": "Lingering Doubt",
@@ -219,7 +219,7 @@
   },
   "theFirst:Insomniac": {
     "NAME": "Insomniac",
-    "DESCRIPTION": "thefirst:Passive. NL At the start of battle, shuffle a thefirst:Sleepwalk into your deck !M! times."
+    "DESCRIPTION": "thefirst:Passive. NL At the start of battle, shuffle a thefirst:Sleepwalk into your draw pile !M! times."
   },
   "theFirst:EntombedWeapon": {
     "NAME": "Entombed Blade",
@@ -263,10 +263,26 @@
   },
   "theFirst:CustomDream": {
     "NAME": "Custom Dream",
-    "DESCRIPTION": "Choose an #yOption."
+    "DESCRIPTION": "Choose an [#ebc634]Option."
   },
   "theFirst:Mulligan": {
     "NAME": "Mulligan",
     "DESCRIPTION": "Shuffle your hand and discard pile into your draw pile, then redraw your hand. NL Exhaust."
+  },
+  "theFirst:Hypersomnia": {
+    "NAME": "Hypersomnia",
+    "DESCRIPTION": "Gain !M! Drowsy. NL Exhaust."
+  },
+  "theFirst:ReadyGaze": {
+    "NAME": "Ready Gaze",
+    "DESCRIPTION": "Gain 1 thefirst:Parry."
+  },
+  "theFirst:FullGuard": {
+    "NAME": "Full Guard",
+    "DESCRIPTION": "Gain !M! Block for each card played this turn."
+  },
+  "theFirst:NightTerror": {
+    "NAME": "Night Terror",
+    "DESCRIPTION": "Stun and deal !D! damage to a random enemy."
   }
 }
