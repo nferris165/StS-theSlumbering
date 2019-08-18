@@ -52,5 +52,10 @@
                 "NAME": "Doubt Power",
                 "DESCRIPTIONS": ["At the end of battle, lose #b", " Max HP."
                 ]
-        }
+        },
+        "theFirst:MoneyGamblePower": {
+        "NAME": "Gamble Power",
+        "DESCRIPTIONS": ["At the end of battle, gain #b", " Gold."
+        ]
+}
 }

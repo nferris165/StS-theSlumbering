@@ -315,5 +315,14 @@
       "thefirst:Search - Attack",
       "thefirst:Search - Skill"
     ]
+  },
+  "theFirst:GamblersDream": {
+    "NAME": "Gambler's Dream",
+    "DESCRIPTION": "Wager 10% of your gold. NL Exhaust."
+  },
+  "theFirst:Scavenge": {
+    "NAME": "Scavenge",
+    "DESCRIPTION": "If you have more than !M! attacks in your discard, deal !D! damage.",
+    "UPGRADE_DESCRIPTION": "If you have more than !M! attacks in your discard, deal !D! damage. NL If you have more than !M! skills, gain !B! Block."
   }
 }

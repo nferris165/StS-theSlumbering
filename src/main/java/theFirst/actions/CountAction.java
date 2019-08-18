@@ -56,7 +56,6 @@ public class CountAction extends AbstractGameAction {
         AbstractCard c;
         c = p.drawPile.getTopCard();
         while(c.type != this.type && p.drawPile.size() > 1){
-            //FirstMod.logger.info(c + "\n\n");
             AbstractDungeon.effectsQueue.add(new ShowCardBrieflyEffect(c.makeStatEquivalentCopy()));
             p.drawPile.moveToDiscardPile(c);
             if(this.damageDealt){

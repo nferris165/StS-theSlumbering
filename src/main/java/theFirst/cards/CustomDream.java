@@ -49,11 +49,11 @@ public class CustomDream extends AbstractCustomCard implements ModalChoice.Callb
         modal = new ModalChoiceBuilder()
                 .setCallback(this)
                 .setColor(CardColor.BLUE)
-                .addOption(ext_desc[0] + BLOCK + ext_desc[1], CardTarget.SELF)
+                .addOption("Defend", ext_desc[0] + BLOCK + ext_desc[1], CardTarget.SELF)
                 .setColor(CardColor.RED)
-                .addOption(ext_desc[2] + DAMAGE + ext_desc[3], CardTarget.ENEMY)
+                .addOption("Strong Attack", ext_desc[2] + DAMAGE + ext_desc[3], CardTarget.ENEMY)
                 .setColor(CardColor.GREEN)
-                .addOption(ext_desc[2] + ALL + ext_desc[4], CardTarget.ALL_ENEMY)
+                .addOption("Area Attack",ext_desc[2] + ALL + ext_desc[4], CardTarget.ALL_ENEMY)
                 .create();
     }
 
