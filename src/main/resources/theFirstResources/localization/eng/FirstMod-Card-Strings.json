@@ -263,7 +263,14 @@
   },
   "theFirst:CustomDream": {
     "NAME": "Custom Dream",
-    "DESCRIPTION": "Choose an [#ebc634]Option."
+    "DESCRIPTION": "Choose an [#ebc634]Option.",
+    "EXTENDED_DESCRIPTION": [
+      "Gain ",
+      " Block.",
+      "Deal ",
+      " damage to an enemy.",
+      " damage to all enemies."
+    ]
   },
   "theFirst:Mulligan": {
     "NAME": "Mulligan",
@@ -294,6 +301,19 @@
     "DESCRIPTION": "Choose a card in your hand. Remove that card and this card from your deck.",
     "EXTENDED_DESCRIPTION": [
       "My hand is empty."
+    ]
+  },
+  "theFirst:FocusedStrike": {
+    "NAME": "Focused Strike",
+    "DESCRIPTION": "Deal !D! damage. NL If you are not thefirst:Drowsy, deal !D! damage again."
+  },
+  "theFirst:ForcedThought": {
+    "NAME": "Forced Thought",
+    "DESCRIPTION": "thefirst:Search - Any NL (Choose to search for an attack, a skill, or a power card)",
+    "EXTENDED_DESCRIPTION": [
+      "thefirst:Search - Power",
+      "thefirst:Search - Attack",
+      "thefirst:Search - Skill"
     ]
   }
 }

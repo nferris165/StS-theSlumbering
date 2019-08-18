@@ -37,7 +37,7 @@ public class CountingSheep extends AbstractCustomCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        AbstractDungeon.actionManager.addToBottom(new CountAction(this.multiDamage, this.damageTypeForTurn));
+        AbstractDungeon.actionManager.addToBottom(new CountAction(this.multiDamage, this.damageTypeForTurn, CardType.ATTACK));
     }
 
 

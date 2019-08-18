@@ -74,7 +74,7 @@
       "search",
       "searched"
     ],
-    "DESCRIPTION": "Discard from your draw pile until you find a certain card, or the draw pile is empty. NL Keep the last card."
+    "DESCRIPTION": "Discard from your draw pile until you find a certain card, or the draw pile is empty. NL Keep the last card, regardless of type."
   },
   {
     "PROPER_NAME": "Multiword Keyword",
