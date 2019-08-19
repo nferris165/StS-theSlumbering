@@ -77,14 +77,13 @@
     "DESCRIPTION": "Discard from your draw pile until you find a certain card, or the draw pile is empty. NL Keep the last card, regardless of type."
   },
   {
-    "PROPER_NAME": "Multiword Keyword",
+    "PROPER_NAME": "Trial of Hypnos",
     "NAMES": [
-      "Multiword Keyword",
-      "multiword_keyword",
-      "multiword_keywords",
-      "multikey",
-      "multikeyword"
+      "Trial of Hypnos",
+      "trial_of_hypnos",
+      "trials_of_hypnos",
+      "Trial_of_Hypnos"
     ],
-    "DESCRIPTION": "Make sure the first element in the NAMES is the same as your PROPER_NAME. The rest is to match keywords like the single word keyword."
+    "DESCRIPTION": "Trials of Hypnos grant a task that must be completed by the end of the battle for a gold reward based on the offering."
   }
 ]

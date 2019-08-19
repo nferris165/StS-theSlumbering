@@ -316,9 +316,10 @@
       "thefirst:Search - Skill"
     ]
   },
-  "theFirst:GamblersDream": {
-    "NAME": "Gambler's Dream",
-    "DESCRIPTION": "Wager 10% of your gold. NL Exhaust."
+  "theFirst:TrialsofHypnos": {
+    "NAME": "Trials of Hypnos",
+    "DESCRIPTION": "Wager 10% of your gold to attempt a thefirst:Trial_of_Hypnos. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Wager 10% of your gold to attempt a thefirst:Trial_of_Hypnos. NL Exhaust. NL (Upgrading unlocks harder, but more rewarding trials)"
   },
   "theFirst:Scavenge": {
     "NAME": "Scavenge",

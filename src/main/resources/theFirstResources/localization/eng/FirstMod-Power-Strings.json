@@ -21,13 +21,15 @@
         },
         "theFirst:WakingPower": {
                 "NAME": "Waking...",
-                "DESCRIPTIONS": ["If you play Yawn this turn, wake up a little...",
+                "DESCRIPTIONS": [
+                        "If you play Yawn this turn, wake up a little...",
                         "If you play Stretch this turn, wake up a little..."
                 ]
         },
         "theFirst:NegatePower": {
                 "NAME": "Negation",
-                "DESCRIPTIONS": ["The next time you would take damage, negate it.",
+                "DESCRIPTIONS": [
+                        "The next time you would take damage, negate it.",
                         "The next #b",
                         " times you would take damage, negate it."
                 ]
@@ -54,8 +56,16 @@
                 ]
         },
         "theFirst:MoneyGamblePower": {
-        "NAME": "Gamble Power",
+        "NAME": "Trial",
         "DESCRIPTIONS": ["At the end of battle, gain #b", " Gold."
         ]
-}
+        },
+        "theFirst:TrialofHypnosPower": {
+                "NAME": "Trial of Hypnos",
+                "DESCRIPTIONS": [
+                        "Task: Play an attack with at least 30 damage.",
+                        "Task: Have 50 or more Block.",
+                        "Task: Play 5 cards in a turn."
+                ]
+        }
 }

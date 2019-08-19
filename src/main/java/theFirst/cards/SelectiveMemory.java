@@ -31,7 +31,7 @@ public class SelectiveMemory extends AbstractCustomCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        AbstractDungeon.actionManager.addToBottom(new PurgeAction());
+        AbstractDungeon.actionManager.addToBottom(new PurgeAction(p.masterDeck.findCardById(this.cardID), true));
     }
 
     @Override
