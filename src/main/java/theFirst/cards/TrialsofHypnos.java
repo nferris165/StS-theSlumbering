@@ -59,7 +59,7 @@ public class TrialsofHypnos extends AbstractCustomCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        AbstractDungeon.actionManager.addToBottom(new TrialSelectAction(p, (int)(p.gold*0.1)));
+        AbstractDungeon.actionManager.addToBottom(new TrialSelectAction(p, (int)(p.gold*0.1), this.upgraded));
     }
 
 

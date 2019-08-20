@@ -32,29 +32,43 @@ public class TrialofHypnosPower extends AbstractCustomPower implements Cloneable
 
     private int trialType;
     private int gold;
-    private boolean mightTrial, speedTrial, brainTrial;
+    private boolean mightTrial, speedTrial, brainTrial, patienceTrial;
+    private boolean upgraded;
 
     private int dThresh = 30;
     private int bThresh = 50;
     private int cThresh = 5;
+    private int pThresh = 1;
 
-    public TrialofHypnosPower(final AbstractCreature owner, int trialType, int gold) {
+    private int upMod = 0;
+
+    public TrialofHypnosPower(final AbstractCreature owner, int trialType, int gold, boolean upgraded) {
         name = NAME;
         ID = POWER_ID;
 
         this.owner = owner;
         this.trialType = trialType;
         this.gold = gold;
+        this.upgraded = upgraded;
 
         this.mightTrial = false;
         this.speedTrial = false;
         this.brainTrial = false;
+        this.patienceTrial = false;
 
         type = PowerType.BUFF;
         isTurnBased = false;
 
         this.region128 = new TextureAtlas.AtlasRegion(tex84, 0, 0, 84, 84);
         this.region48 = new TextureAtlas.AtlasRegion(tex32, 0, 0, 32, 32);
+
+        if(this.upgraded){
+            upMod = 2;
+            dThresh = 50;
+            bThresh = 80;
+            cThresh = 7;
+            pThresh = 0;
+        }
 
         updateDescription();
     }
@@ -66,7 +80,7 @@ public class TrialofHypnosPower extends AbstractCustomPower implements Cloneable
             this.mightTrial = true;
         }
         else{
-            AbstractDungeon.player.gainGold(this.gold * 3);
+            AbstractDungeon.player.gainGold(this.gold * (3 + upMod));
             this.flash();
             AbstractDungeon.effectsQueue.add(new ShowCardBrieflyEffect(new TrialsofHypnos()));
             AbstractDungeon.effectsQueue.add(new RainingGoldEffect(gold + 150));
@@ -80,7 +94,7 @@ public class TrialofHypnosPower extends AbstractCustomPower implements Cloneable
             this.brainTrial = true;
         }
         else{
-            AbstractDungeon.player.gainGold(this.gold * 3);
+            AbstractDungeon.player.gainGold(this.gold * (3 + upMod));
             this.flash();
             AbstractDungeon.effectsQueue.add(new ShowCardBrieflyEffect(new TrialsofHypnos()));
             AbstractDungeon.effectsQueue.add(new RainingGoldEffect(gold + 150));
@@ -94,13 +108,26 @@ public class TrialofHypnosPower extends AbstractCustomPower implements Cloneable
             this.speedTrial = true;
         }
         else{
-            AbstractDungeon.player.gainGold(this.gold * 3);
+            AbstractDungeon.player.gainGold(this.gold * (3 + upMod));
             this.flash();
             AbstractDungeon.effectsQueue.add(new ShowCardBrieflyEffect(new TrialsofHypnos()));
             AbstractDungeon.effectsQueue.add(new RainingGoldEffect(gold + 150));
             AbstractDungeon.actionManager.addToBottom(new RemoveSpecificPowerAction(owner, owner, this));
         }
+    }
 
+    private void patienceTrial(boolean init){
+        //Task: End two turns having played 1 or fewer cards
+        if(init){
+            this.patienceTrial = true;
+        }
+        else{
+            AbstractDungeon.player.gainGold(this.gold * (3 + upMod));
+            this.flash();
+            AbstractDungeon.effectsQueue.add(new ShowCardBrieflyEffect(new TrialsofHypnos()));
+            AbstractDungeon.effectsQueue.add(new RainingGoldEffect(gold + 150));
+            AbstractDungeon.actionManager.addToBottom(new RemoveSpecificPowerAction(owner, owner, this));
+        }
     }
 
     @Override
@@ -115,6 +142,9 @@ public class TrialofHypnosPower extends AbstractCustomPower implements Cloneable
             case 2:
                 speedTrial(true);
                 break;
+            case 3:
+                patienceTrial(true);
+                break;
             default:
                 break;
         }
@@ -124,16 +154,19 @@ public class TrialofHypnosPower extends AbstractCustomPower implements Cloneable
     public void updateDescription() {
         switch (trialType){
             case 0:
-                description = DESCRIPTIONS[0];
+                description = DESCRIPTIONS[0] + dThresh + DESCRIPTIONS[1];
                 break;
             case 1:
-                description = DESCRIPTIONS[1];
+                description = DESCRIPTIONS[2] + bThresh + DESCRIPTIONS[3];
                 break;
             case 2:
-                description = DESCRIPTIONS[2];
+                description = DESCRIPTIONS[4] + cThresh + DESCRIPTIONS[5];
+                break;
+            case 3:
+                description = DESCRIPTIONS[6] + pThresh + DESCRIPTIONS[7];
                 break;
             default:
-                description = DESCRIPTIONS[0];
+                description = "Error.";
                 break;
         }
     }
@@ -165,7 +198,18 @@ public class TrialofHypnosPower extends AbstractCustomPower implements Cloneable
     }
 
     @Override
+    public void atEndOfTurn(boolean isPlayer) {
+        if(!owner.isPlayer){
+            return;
+        }
+        AbstractPlayer p = (AbstractPlayer) owner;
+        if(this.patienceTrial && p.cardsPlayedThisTurn <= pThresh){
+            patienceTrial(false);
+        }
+    }
+
+    @Override
     public AbstractPower makeCopy() {
-        return new TrialofHypnosPower(owner, trialType, gold);
+        return new TrialofHypnosPower(owner, trialType, gold, upgraded);
     }
 }

@@ -14,11 +14,13 @@ public class TrialSelectAction extends AbstractGameAction {
 
     private AbstractPlayer p;
     private int gold;
+    private boolean upgraded;
 
-    public TrialSelectAction(AbstractPlayer p, int price) {
+    public TrialSelectAction(AbstractPlayer p, int price, boolean upgraded) {
 
         this.p = p;
         this.gold = price;
+        this.upgraded = upgraded;
         this.duration = Settings.ACTION_DUR_FAST;
         this.actionType = ActionType.SPECIAL;
     }
@@ -41,7 +43,7 @@ public class TrialSelectAction extends AbstractGameAction {
         rng = 0;
 
         if(!p.hasPower(TrialofHypnosPower.POWER_ID)){
-            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new TrialofHypnosPower(p, rng, gold)));
+            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new TrialofHypnosPower(p, rng, gold, upgraded)));
         }
         this.isDone = true;
     }

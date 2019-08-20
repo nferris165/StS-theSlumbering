@@ -63,9 +63,19 @@
         "theFirst:TrialofHypnosPower": {
                 "NAME": "Trial of Hypnos",
                 "DESCRIPTIONS": [
-                        "Task: Play an attack with at least 30 damage.",
-                        "Task: Have 50 or more Block.",
-                        "Task: Play 5 cards in a turn."
+                        "Task: Play an attack with at least ",
+                        " damage.",
+                        "Task: Have ",
+                        " or more Block.",
+                        "Task: Play ",
+                        "cards in a turn.",
+                        "End your turn having played no more than ",
+                        " cards."
+                ]
+        },
+        "theFirst:RepeatPower": {
+                "NAME": "Repeat Power",
+                "DESCRIPTIONS": ["Repeat the next card costing at least 1 that you play until it can no longer be played."
                 ]
         }
 }

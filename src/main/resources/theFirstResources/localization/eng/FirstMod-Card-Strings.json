@@ -325,5 +325,18 @@
     "NAME": "Scavenge",
     "DESCRIPTION": "If you have more than !M! attacks in your discard, deal !D! damage.",
     "UPGRADE_DESCRIPTION": "If you have more than !M! attacks in your discard, deal !D! damage. NL If you have more than !M! skills, gain !B! Block."
+  },
+  "theFirst:GuardedSwipe": {
+    "NAME": "Guarded Swipe",
+    "DESCRIPTION": "When drawn, gain !B! Block. NL Deal !D! damage.",
+    "UPGRADE_DESCRIPTION": "When drawn, gain !B! Block. NL Deal !D! damage. NL thefirst:Snooze."
+  },
+  "theFirst:RestedPunch": {
+    "NAME": "Rested Punch",
+    "DESCRIPTION": "Deal !D! damage. NL Each time you draw this card, it gains !M! damage on the next use. NL thefirst:Snooze."
+  },
+  "theFirst:InescapableThoughts": {
+    "NAME": "Unrelenting",
+    "DESCRIPTION": "Repeat the next card costing at least 1 that you play until it can no longer be played."
   }
 }
