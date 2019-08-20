@@ -71,7 +71,7 @@
   },
   "theFirst:TheSeed": {
     "NAME": "The Seed",
-    "DESCRIPTION": "Add a thefirst:Seed to your deck. NL Removed from your deck after playing."
+    "DESCRIPTION": "Add a thefirst:Seed to your deck. NL (Removed from your deck after playing)"
   },
   "theFirst:Seed": {
     "NAME": "Seed",
@@ -93,8 +93,8 @@
     "NAME": "Bomb Toss",
     "DESCRIPTION": "Shuffle a thefirst:Detonator into your draw pile X times."
   },
-  "theFirst:Dream": {
-    "NAME": "Dream",
+  "theFirst:Wake": {
+    "NAME": "Wake",
     "DESCRIPTION": "Add thefirst:Yawn and thefirst:Stretch to your discard pile. Play both to wake up a little.",
     "UPGRADE_DESCRIPTION": "Add thefirst:Yawn+ and thefirst:Stretch+ to your discard pile. Play both to wake up a little."
   },
@@ -244,7 +244,7 @@
   },
   "theFirst:AlarmedStrike": {
     "NAME": "Alarmed Strike",
-    "DESCRIPTION": "thefirst:Snooze. NL Deal !D! damage."
+    "DESCRIPTION": "Deal !D! damage. NL thefirst:Snooze."
   },
   "theFirst:ShieldToss": {
     "NAME": "Shield Toss",
@@ -338,5 +338,33 @@
   "theFirst:InescapableThoughts": {
     "NAME": "Unrelenting",
     "DESCRIPTION": "Repeat the next card costing at least 1 that you play until it can no longer be played."
+  },
+  "theFirst:Defend_Slumbering": {
+    "NAME": "Defend",
+    "DESCRIPTION": "Gain !B! Block."
+  },
+  "theFirst:Strike_Slumbering": {
+    "NAME": "Strike",
+    "DESCRIPTION": "Deal !D! damage."
+  },
+  "theFirst:NocturnalGifts": {
+    "NAME": "Nocturnal Gifts",
+    "DESCRIPTION": "Draw a card for each thefirst:Drowsy you have."
+  },
+  "theFirst:SoundBarrier": {
+    "NAME": "Sound Barrier",
+    "DESCRIPTION": "Gain !B! block for each thefirst:Snooze card in your deck."
+  },
+  "theFirst:SafeBarrage": {
+    "NAME": "Safe Barrage",
+    "DESCRIPTION": "Can only be played if your Block is greater than 20. NL Deal !D! damage to a random enemy !M! times."
+  },
+  "theFirst:PanicAttack": {
+    "NAME": "Panic Attack",
+    "DESCRIPTION": "Stun all enemies, but add a random Curse to your deck."
+  },
+  "theFirst:DreamPeace": {
+    "NAME": "Dream: Peace",
+    "DESCRIPTION": "Heal an enemy for !M! percent of its max health and gain that much Block."
   }
 }

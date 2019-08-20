@@ -25,9 +25,9 @@ public class WakeUpSlap extends AbstractCustomCard {
     public static final CardColor COLOR = TheFirst.Enums.COLOR_FIRST;
 
     private static final int COST = 1;
-    private static final int UPGRADED_COST = 0;
 
-    private static final int DAMAGE = 1;
+    private static final int DAMAGE = 3;
+    private static final int UP_DAM = -2;
 
     private static final int STRENGTH = 2;
     private static final int UPGRADE_STR = 1;
@@ -57,8 +57,8 @@ public class WakeUpSlap extends AbstractCustomCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            upgradeBaseCost(UPGRADED_COST);
             upgradeMagicNumber(UPGRADE_STR);
+            upgradeSecondMagicNumber(UP_DAM);
             initializeDescription();
         }
     }

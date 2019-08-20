@@ -34,11 +34,14 @@ public class TrialSelectAction extends AbstractGameAction {
         if(roll <= 20.0f){
             rng = 0;
         }
-        else if(roll <= 60.0f){
+        else if(roll <= 50.0f){
             rng = 1;
         }
-        else{
+        else if(roll <= 80.0f){
             rng = 2;
+        }
+        else{
+            rng = 3;
         }
         rng = 0;
 

@@ -27,7 +27,7 @@ public class Sleepwalk extends AbstractCustomCard {
     private static final int COST = -2;
 
     private static final int DAMAGE = 4;
-    private static final int UPGRADE_PLUS_DMG = 5;
+    private static final int UPGRADE_PLUS_DMG = 2;
 
     public Sleepwalk() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);

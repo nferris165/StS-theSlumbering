@@ -11,6 +11,7 @@ import theFirst.FirstMod;
 import theFirst.characters.TheFirst;
 import theFirst.patches.customTags;
 
+import static com.megacrit.cardcrawl.core.CardCrawlGame.languagePack;
 import static theFirst.FirstMod.makeCardPath;
 
 public class Hallucinations extends AbstractCustomCard {
@@ -57,8 +58,11 @@ public class Hallucinations extends AbstractCustomCard {
 
     @Override
     public void upgrade() {
-        upgradeName();
         upgradeDamage(UPGRADE_PLUS_DMG);
+        ++this.timesUpgraded;
+        this.upgraded = true;
+        this.name = languagePack.getCardStrings(ID).NAME + "+" + this.timesUpgraded;
+        this.initializeTitle();
         initializeDescription();
     }
 }
