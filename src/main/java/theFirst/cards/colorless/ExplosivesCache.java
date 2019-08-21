@@ -9,14 +9,14 @@ import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.vfx.cardManip.ShowCardAndObtainEffect;
-import theFirst.FirstMod;
+import theFirst.SlumberingMod;
 import theFirst.cards.AbstractCustomCard;
 
-import static theFirst.FirstMod.makeCardPath;
+import static theFirst.SlumberingMod.makeCardPath;
 
 public class ExplosivesCache extends AbstractCustomCard {
 
-    public static final String ID = FirstMod.makeID(ExplosivesCache.class.getSimpleName());
+    public static final String ID = SlumberingMod.makeID(ExplosivesCache.class.getSimpleName());
 
     public static final String IMG = makeCardPath("A_temp.png");
 

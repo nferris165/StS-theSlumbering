@@ -4,21 +4,18 @@ import basemod.interfaces.CloneablePowerInterface;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
-import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
-import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.powers.AbstractPower;
-import theFirst.FirstMod;
-import theFirst.cards.*;
+import theFirst.SlumberingMod;
 import theFirst.util.TextureLoader;
 
 public class ToughSkinPower extends AbstractCustomPower implements CloneablePowerInterface {
     @SuppressWarnings("WeakerAccess")
 
-    public static final String POWER_ID = FirstMod.makeID("ToughSkinPower");
+    public static final String POWER_ID = SlumberingMod.makeID("ToughSkinPower");
     private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
     public static final String NAME = powerStrings.NAME;
     public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;

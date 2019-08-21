@@ -9,7 +9,7 @@ import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.screens.SingleCardViewPopup;
-import theFirst.FirstMod;
+import theFirst.SlumberingMod;
 import theFirst.cards.AbstractCustomCard;
 
 import java.lang.reflect.InvocationTargetException;
@@ -44,7 +44,7 @@ public class RenderBgPatch {
                 }
             }
 
-            boolean isPassive = FirstMod.passiveCheck(__card_instance);
+            boolean isPassive = SlumberingMod.passiveCheck(__card_instance);
 
             if (isPassive) {
                 try {
@@ -86,7 +86,7 @@ public class RenderBgPatch {
                 }
             }
 
-            boolean isPassive = FirstMod.passiveCheck(reflectedCard);
+            boolean isPassive = SlumberingMod.passiveCheck(reflectedCard);
 
             if (isPassive) {
                 try {

@@ -3,16 +3,16 @@ package theFirst.patches;
 import com.evacipated.cardcrawl.modthespire.lib.SpirePatch;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.events.beyond.WindingHalls;
-import theFirst.FirstMod;
-import theFirst.characters.TheFirst;
+import theFirst.SlumberingMod;
+import theFirst.characters.TheSlumbering;
 import theFirst.events.BasicEvent;
-import theFirst.relics.FirstRelic;
+import theFirst.relics.SlumberingRelic;
 
 @SpirePatch(clz=AbstractDungeon.class,method="initializeCardPools")
 public class RemoveEventPatch {
 
     public static void Prefix(AbstractDungeon dungeon_instance) {
-        if (AbstractDungeon.player instanceof TheFirst) {
+        if (AbstractDungeon.player instanceof TheSlumbering) {
             //dungeon_instance.eventList.remove(GoopPuddle.ID);
             dungeon_instance.eventList.remove(WindingHalls.ID);
 
@@ -33,13 +33,13 @@ public class RemoveEventPatch {
 
         }
 
-        if (AbstractDungeon.player.hasRelic(FirstRelic.ID)) {
+        if (AbstractDungeon.player.hasRelic(SlumberingRelic.ID)) {
             //dungeon_instance.eventList.remove(ScrapOoze.ID);
         }
 
         /*
-        if (AbstractDungeon.player instanceof TheFirst) {
-            TheFirst sc = (TheFirst) AbstractDungeon.player;
+        if (AbstractDungeon.player instanceof TheSlumbering) {
+            TheSlumbering sc = (TheSlumbering) AbstractDungeon.player;
             if (sc.foughtSlimeBoss || sc.hasRelic(StudyCardRelic.ID)) {
                 dungeon_instance.eventList.remove(Hunted.ID);
             }
@@ -48,13 +48,13 @@ public class RemoveEventPatch {
         }
         */
 
-        if (!FirstMod.eventSharing) {
-            if (!(AbstractDungeon.player instanceof TheFirst)) {
+        if (!SlumberingMod.eventSharing) {
+            if (!(AbstractDungeon.player instanceof TheSlumbering)) {
                 //dungeon_instance.eventList.remove(ArtOfSlimeWar.ID);
             }
         }
 
-        //FirstMod.logger.info("patch worked\n\n\n");
+        //SlumberingMod.logger.info("patch worked\n\n\n");
 
     }
 }

@@ -6,23 +6,23 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
-import theFirst.FirstMod;
+import theFirst.SlumberingMod;
 import theFirst.actions.TrialSelectAction;
-import theFirst.characters.TheFirst;
+import theFirst.characters.TheSlumbering;
 
 import static com.megacrit.cardcrawl.core.CardCrawlGame.languagePack;
-import static theFirst.FirstMod.makeCardPath;
+import static theFirst.SlumberingMod.makeCardPath;
 
 public class TrialsofHypnos extends AbstractCustomCard {
 
-    public static final String ID = FirstMod.makeID(TrialsofHypnos.class.getSimpleName());
+    public static final String ID = SlumberingMod.makeID(TrialsofHypnos.class.getSimpleName());
 
     public static final String IMG = makeCardPath("P_temp.png");
 
     private static final CardRarity RARITY = CardRarity.UNCOMMON;
     private static final CardTarget TARGET = CardTarget.SELF;
     private static final CardType TYPE = CardType.POWER;
-    public static final CardColor COLOR = TheFirst.Enums.COLOR_FIRST;
+    public static final CardColor COLOR = TheSlumbering.Enums.COLOR_SLUMBERING;
 
     private String baseDesc = languagePack.getCardStrings(ID).DESCRIPTION;
 

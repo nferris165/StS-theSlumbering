@@ -8,21 +8,21 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.LoseStrengthPower;
 import com.megacrit.cardcrawl.powers.StrengthPower;
 import com.megacrit.cardcrawl.vfx.combat.OfferingEffect;
-import theFirst.FirstMod;
-import theFirst.characters.TheFirst;
+import theFirst.SlumberingMod;
+import theFirst.characters.TheSlumbering;
 
-import static theFirst.FirstMod.makeCardPath;
+import static theFirst.SlumberingMod.makeCardPath;
 
 public class WakeUpSlap extends AbstractCustomCard {
 
-    public static final String ID = FirstMod.makeID(WakeUpSlap.class.getSimpleName());
+    public static final String ID = SlumberingMod.makeID(WakeUpSlap.class.getSimpleName());
 
     public static final String IMG = makeCardPath("S_temp.png");
 
     private static final CardRarity RARITY = CardRarity.COMMON;
     private static final CardTarget TARGET = CardTarget.SELF;
     private static final CardType TYPE = CardType.SKILL;
-    public static final CardColor COLOR = TheFirst.Enums.COLOR_FIRST;
+    public static final CardColor COLOR = TheSlumbering.Enums.COLOR_SLUMBERING;
 
     private static final int COST = 1;
 

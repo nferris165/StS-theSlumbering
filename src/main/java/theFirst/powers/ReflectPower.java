@@ -12,7 +12,7 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.powers.AbstractPower;
-import theFirst.FirstMod;
+import theFirst.SlumberingMod;
 
 import theFirst.util.TextureLoader;
 
@@ -20,7 +20,7 @@ public class ReflectPower extends AbstractPower implements CloneablePowerInterfa
     @SuppressWarnings("WeakerAccess")
     public AbstractCreature source;
 
-    public static final String POWER_ID = FirstMod.makeID("ReflectPower");
+    public static final String POWER_ID = SlumberingMod.makeID("ReflectPower");
     private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
     public static final String NAME = powerStrings.NAME;
     public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;
@@ -67,7 +67,7 @@ public class ReflectPower extends AbstractPower implements CloneablePowerInterfa
             this.flash();
             int percentDamage = (int) (((float) this.amount / 100) * (float) damageAmount);
 
-            //FirstMod.logger.info(percentDamage + " " + this.amount + " " + damageAmount + "\n\n");
+            //SlumberingMod.logger.info(percentDamage + " " + this.amount + " " + damageAmount + "\n\n");
 
             this.reflectInfo = new DamageInfo(this.owner, percentDamage, DamageInfo.DamageType.THORNS);
             AbstractDungeon.actionManager.addToTop(new DamageAction(info.owner, this.reflectInfo, AbstractGameAction.AttackEffect.SLASH_DIAGONAL, true));

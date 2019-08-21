@@ -9,15 +9,15 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.PowerTip;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
-import theFirst.FirstMod;
+import theFirst.SlumberingMod;
 import theFirst.powers.DrowsyPower;
 import theFirst.util.TextureLoader;
 
-import static theFirst.FirstMod.*;
+import static theFirst.SlumberingMod.*;
 
-public class FirstRelic extends AbstractCustomRelic implements ClickableRelic {
+public class SlumberingRelic extends AbstractCustomRelic implements ClickableRelic {
 
-    public static final String ID = FirstMod.makeID("FirstRelic");
+    public static final String ID = SlumberingMod.makeID("SlumberingRelic");
 
     private static final Texture IMG = TextureLoader.getTexture(makeRelicPath("zzz.png"));
     private static final Texture OUTLINE = TextureLoader.getTexture(makeRelicOutlinePath("zzz.png"));
@@ -25,7 +25,7 @@ public class FirstRelic extends AbstractCustomRelic implements ClickableRelic {
     private static final float max_hp_ratio = 0.1F;
 
 
-    public FirstRelic() {
+    public SlumberingRelic() {
         super(ID, IMG, OUTLINE, RelicTier.STARTER, LandingSound.MAGICAL);
 
         this.counter = 1;

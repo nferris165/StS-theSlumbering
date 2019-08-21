@@ -6,14 +6,14 @@ import com.megacrit.cardcrawl.cards.CardQueueItem;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import theFirst.FirstMod;
+import theFirst.SlumberingMod;
 import theFirst.cards.AbstractCustomCard;
 
-import static theFirst.FirstMod.makeCardPath;
+import static theFirst.SlumberingMod.makeCardPath;
 
 public class Detonator extends AbstractCustomCard {
 
-    public static final String ID = FirstMod.makeID(Detonator.class.getSimpleName());
+    public static final String ID = SlumberingMod.makeID(Detonator.class.getSimpleName());
 
     public static final String IMG = makeCardPath("S_temp.png");
 

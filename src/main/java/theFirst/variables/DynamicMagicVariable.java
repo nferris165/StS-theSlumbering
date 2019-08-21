@@ -4,7 +4,7 @@ import basemod.abstracts.DynamicVariable;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import theFirst.cards.AbstractCustomCard;
 
-import static theFirst.FirstMod.makeID;
+import static theFirst.SlumberingMod.makeID;
 
 public class DynamicMagicVariable extends DynamicVariable {
 

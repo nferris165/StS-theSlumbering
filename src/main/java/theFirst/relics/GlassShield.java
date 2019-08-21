@@ -5,14 +5,14 @@ import com.evacipated.cardcrawl.mod.stslib.relics.OnLoseBlockRelic;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.PowerTip;
-import theFirst.FirstMod;
+import theFirst.SlumberingMod;
 import theFirst.util.TextureLoader;
 
-import static theFirst.FirstMod.*;
+import static theFirst.SlumberingMod.*;
 
 public class GlassShield extends AbstractCustomRelic implements OnLoseBlockRelic {
 
-    public static final String ID = FirstMod.makeID("GlassShield");
+    public static final String ID = SlumberingMod.makeID("GlassShield");
 
     private static final Texture IMG = TextureLoader.getTexture(makeRelicPath("GlassShield.png"));
     private static final Texture OUTLINE = TextureLoader.getTexture(makeRelicOutlinePath("GlassShield.png"));

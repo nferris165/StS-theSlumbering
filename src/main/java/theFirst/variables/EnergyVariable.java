@@ -4,7 +4,7 @@ import basemod.abstracts.DynamicVariable;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.ui.panels.EnergyPanel;
 
-import static theFirst.FirstMod.makeID;
+import static theFirst.SlumberingMod.makeID;
 
 public class EnergyVariable extends DynamicVariable
 {

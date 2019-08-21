@@ -7,7 +7,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.screens.CardRewardScreen;
 import javassist.CannotCompileException;
 import javassist.CtBehavior;
-import theFirst.FirstMod;
+import theFirst.SlumberingMod;
 
 import java.util.ArrayList;
 
@@ -42,7 +42,7 @@ public class DiscoveryPatch {
             while(derp[0].size() != 3) {
                 dup = false;
                 index = AbstractDungeon.miscRng.random(0, size - 1);
-                FirstMod.logger.info(size + " : " + index + "\n\n");
+                SlumberingMod.logger.info(size + " : " + index + "\n\n");
                 for (int i: list) {
                     if(index == i){
                         dup = true;

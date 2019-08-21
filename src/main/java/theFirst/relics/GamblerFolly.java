@@ -6,14 +6,14 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.helpers.PowerTip;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
-import theFirst.FirstMod;
+import theFirst.SlumberingMod;
 import theFirst.util.TextureLoader;
 
-import static theFirst.FirstMod.*;
+import static theFirst.SlumberingMod.*;
 
 public class GamblerFolly extends AbstractCustomRelic {
 
-    public static final String ID = FirstMod.makeID("GamblerFolly");
+    public static final String ID = SlumberingMod.makeID("GamblerFolly");
 
     private static final Texture IMG = TextureLoader.getTexture(makeRelicPath("GamblerFolly.png"));
     private static final Texture OUTLINE = TextureLoader.getTexture(makeRelicOutlinePath("GamblerFolly.png"));

@@ -9,7 +9,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.PowerTip;
 import com.megacrit.cardcrawl.vfx.UpgradeShineEffect;
 import com.megacrit.cardcrawl.vfx.cardManip.ShowCardBrieflyEffect;
-import theFirst.FirstMod;
+import theFirst.SlumberingMod;
 import theFirst.util.TextureLoader;
 
 import java.util.ArrayList;
@@ -17,12 +17,12 @@ import java.util.Collections;
 import java.util.Iterator;
 import java.util.Random;
 
-import static theFirst.FirstMod.makeRelicOutlinePath;
-import static theFirst.FirstMod.makeRelicPath;
+import static theFirst.SlumberingMod.makeRelicOutlinePath;
+import static theFirst.SlumberingMod.makeRelicPath;
 
 public class EnchantedHammer extends AbstractCustomRelic implements BetterOnSmithRelic {
 
-    public static final String ID = FirstMod.makeID("EnchantedHammer");
+    public static final String ID = SlumberingMod.makeID("EnchantedHammer");
 
     private static final Texture IMG = TextureLoader.getTexture(makeRelicPath("EnchantedHammer.png"));
     private static final Texture OUTLINE = TextureLoader.getTexture(makeRelicOutlinePath("EnchantedHammer.png"));

@@ -10,11 +10,11 @@ import com.megacrit.cardcrawl.localization.UIStrings;
 import com.megacrit.cardcrawl.screens.SingleCardViewPopup;
 import javassist.CannotCompileException;
 import javassist.CtBehavior;
-import theFirst.FirstMod;
+import theFirst.SlumberingMod;
 
 import java.util.ArrayList;
 
-import static theFirst.FirstMod.makeID;
+import static theFirst.SlumberingMod.makeID;
 
 @SpirePatch(
         clz = SingleCardViewPopup.class,
@@ -34,7 +34,7 @@ public class CardViewRenderTypePatch {
             TEXT = uiStrings.TEXT;
         }
 
-        if (FirstMod.passiveCheck(card)) {
+        if (SlumberingMod.passiveCheck(card)) {
             label[0] = TEXT[0];
         }
     }

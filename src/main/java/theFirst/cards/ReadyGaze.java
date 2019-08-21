@@ -1,23 +1,22 @@
 package theFirst.cards;
 
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
-import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import theFirst.FirstMod;
-import theFirst.characters.TheFirst;
+import theFirst.SlumberingMod;
+import theFirst.characters.TheSlumbering;
 
-import static theFirst.FirstMod.makeCardPath;
+import static theFirst.SlumberingMod.makeCardPath;
 
 public class ReadyGaze extends AbstractCustomCard {
 
-    public static final String ID = FirstMod.makeID(ReadyGaze.class.getSimpleName());
+    public static final String ID = SlumberingMod.makeID(ReadyGaze.class.getSimpleName());
 
     public static final String IMG = makeCardPath("P_temp.png");
 
     private static final CardRarity RARITY = CardRarity.UNCOMMON;
     private static final CardTarget TARGET = CardTarget.SELF;
     private static final CardType TYPE = CardType.POWER;
-    public static final CardColor COLOR = TheFirst.Enums.COLOR_FIRST;
+    public static final CardColor COLOR = TheSlumbering.Enums.COLOR_SLUMBERING;
 
     private static final int COST = 2;
     private static final int UPGRADED_COST = 1;

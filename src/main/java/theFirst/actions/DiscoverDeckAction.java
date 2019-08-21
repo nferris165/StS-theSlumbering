@@ -4,13 +4,11 @@ import basemod.BaseMod;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
-import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
-import com.megacrit.cardcrawl.localization.UIStrings;
 import com.megacrit.cardcrawl.vfx.cardManip.ShowCardAndAddToDiscardEffect;
 import com.megacrit.cardcrawl.vfx.cardManip.ShowCardAndAddToHandEffect;
-import theFirst.FirstMod;
+import theFirst.SlumberingMod;
 import theFirst.patches.customTypes;
 
 public class DiscoverDeckAction extends AbstractGameAction {
@@ -19,7 +17,7 @@ public class DiscoverDeckAction extends AbstractGameAction {
     private boolean retrieveCard = false;
     private boolean draw;
 
-    public static final String ACTION_ID = FirstMod.makeID("DiscoverDeckAction");
+    public static final String ACTION_ID = SlumberingMod.makeID("DiscoverDeckAction");
 
     public DiscoverDeckAction() {
         this(true);

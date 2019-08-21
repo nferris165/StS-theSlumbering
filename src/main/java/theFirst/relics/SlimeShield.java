@@ -7,14 +7,14 @@ import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.helpers.PowerTip;
 import com.evacipated.cardcrawl.mod.stslib.relics.OnLoseBlockRelic;
-import theFirst.FirstMod;
+import theFirst.SlumberingMod;
 import theFirst.util.TextureLoader;
 
-import static theFirst.FirstMod.*;
+import static theFirst.SlumberingMod.*;
 
 public class SlimeShield extends AbstractCustomRelic implements BetterOnLoseHpRelic, OnLoseBlockRelic, CustomSavable<Integer> {
 
-    public static final String ID = FirstMod.makeID("SlimeShield");
+    public static final String ID = SlumberingMod.makeID("SlimeShield");
 
     private static final Texture IMG = TextureLoader.getTexture(makeRelicPath("SlimeShield.png"));
     private static final Texture OUTLINE = TextureLoader.getTexture(makeRelicOutlinePath("GlassShield.png"));

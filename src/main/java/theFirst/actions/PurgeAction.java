@@ -1,6 +1,5 @@
 package theFirst.actions;
 
-import basemod.BaseMod;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.CardGroup;
@@ -10,7 +9,7 @@ import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.UIStrings;
 import com.megacrit.cardcrawl.vfx.cardManip.PurgeCardEffect;
-import theFirst.FirstMod;
+import theFirst.SlumberingMod;
 
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -21,7 +20,7 @@ public class PurgeAction extends AbstractGameAction {
     private AbstractCard card;
     private boolean purgeSource;
 
-    public static final String ACTION_ID = FirstMod.makeID("PurgeAction");
+    public static final String ACTION_ID = SlumberingMod.makeID("PurgeAction");
     private static final UIStrings uiStrings = CardCrawlGame.languagePack.getUIString(ACTION_ID);
     private static final String[] TEXT = uiStrings.TEXT;
 

@@ -4,16 +4,13 @@ import basemod.interfaces.CloneablePowerInterface;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.evacipated.cardcrawl.mod.stslib.powers.interfaces.InvisiblePower;
-import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
-import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.powers.AbstractPower;
-import theFirst.FirstMod;
-import theFirst.cards.*;
-import theFirst.characters.TheFirst;
+import theFirst.SlumberingMod;
+import theFirst.characters.TheSlumbering;
 import theFirst.util.TextureLoader;
 
 public class DoubtPower extends AbstractCustomPower implements CloneablePowerInterface, InvisiblePower {
@@ -21,7 +18,7 @@ public class DoubtPower extends AbstractCustomPower implements CloneablePowerInt
 
     private int val;
 
-    public static final String POWER_ID = FirstMod.makeID("DoubtPower");
+    public static final String POWER_ID = SlumberingMod.makeID("DoubtPower");
     private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
     public static final String NAME = powerStrings.NAME;
     public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;
@@ -52,7 +49,7 @@ public class DoubtPower extends AbstractCustomPower implements CloneablePowerInt
 
     @Override
     public void onVictory() {
-        if(AbstractDungeon.player.chosenClass == TheFirst.Enums.THE_FIRST){
+        if(AbstractDungeon.player.chosenClass == TheSlumbering.Enums.THE_SLUMBERING){
             AbstractDungeon.player.decreaseMaxHealth(10);
 
         }else{

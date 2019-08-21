@@ -1,5 +1,5 @@
 {
-  "theFirst:GlassShield": {
+  "theSlumbering:GlassShield": {
     "NAME": "Glass Shield",
     "FLAVOR": "WARNING: Fragile.",
     "DESCRIPTIONS": [
@@ -7,18 +7,18 @@
       " hits."
     ]
   },
-  "theFirst:SlimeShield": {
+  "theSlumbering:SlimeShield": {
     "NAME": "Slime Shield",
     "FLAVOR": "Not very protective, but regenerates constantly.",
     "DESCRIPTIONS": [
       "Negates #b15 damage and then breaks. Regenerates between battles, but loses power."
     ]
   },
-  "theFirst:FirstRelic": {
+  "theSlumbering:SlumberingRelic": {
     "NAME": "The Deep Slumber",
     "FLAVOR": "Yaaaaaaaawn...",
     "DESCRIPTIONS": [
-      "Right Click to remove all #ythefirst:Drowsy stacks, but fall deeper into your slumber...",
+      "Right Click to remove all #ytheslumbering:Drowsy stacks, but fall deeper into your slumber...",
       "[#2aecd7]This relic will gain power as you wake up. NL ",
       "You are entirely asleep. Falling any further asleep will end the turn. NL ",
       "You have just begun to awaken... NL ",
@@ -29,7 +29,7 @@
       "You feel fully awake. NL "
     ]
   },
-  "theFirst:HeartCollector": {
+  "theSlumbering:HeartCollector": {
     "NAME": "Heart Collector",
     "FLAVOR": "It's hunger cannot be sated.",
     "DESCRIPTIONS": [
@@ -38,7 +38,7 @@
       "Hearts grant #yBlock, and will grant more #yBlock the more awake you are."
     ]
   },
-  "theFirst:CursedAnvil": {
+  "theSlumbering:CursedAnvil": {
     "NAME": "Cursed Anvil",
     "FLAVOR": "Improvement at a cost.",
     "DESCRIPTIONS": [
@@ -46,14 +46,14 @@
       " random upgraded cards and replace them with their base versions."
     ]
   },
-  "theFirst:EnchantedHammer": {
+  "theSlumbering:EnchantedHammer": {
     "NAME": "Enchanted Hammer",
     "FLAVOR": "Blessed by a powerful being.",
     "DESCRIPTIONS": [
       "Whenever you #ySmith a card, #yUpgrade another random card."
     ]
   },
-  "theFirst:GamblerFolly": {
+  "theSlumbering:GamblerFolly": {
     "NAME": "Gambler's Folly",
     "FLAVOR": "No gambler worth their salt has ever been able to resist.",
     "DESCRIPTIONS": [
@@ -64,14 +64,14 @@
       " #yGold"
     ]
   },
-  "theFirst:StarMobile": {
+  "theSlumbering:StarMobile": {
   "NAME": "Star Mobile",
   "FLAVOR": "Twinkle, twinkle, little star...",
   "DESCRIPTIONS": [
-    "When #ythefirst:Drowsy, deal #b30% increased damage rather than #b20%."
+    "When #ytheslumbering:Drowsy, deal #b30% increased damage rather than #b20%."
   ]
   },
-  "theFirst:PowerFromBeyond": {
+  "theSlumbering:PowerFromBeyond": {
     "NAME": "Power From Beyond",
     "FLAVOR": "UNLIMITED POWER! Itty-bitty living space.",
     "DESCRIPTIONS": [

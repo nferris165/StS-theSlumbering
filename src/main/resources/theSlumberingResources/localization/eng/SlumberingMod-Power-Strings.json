@@ -1,9 +1,9 @@
 {
-        "theFirst:AutoAttackPower": {
+        "theSlumbering:AutoAttackPower": {
                 "NAME": "Auto-Attack",
                 "DESCRIPTIONS": ["At the start of your turn, #yBasicAttack a random enemy."]
         },
-        "theFirst:DrowsyPower": {
+        "theSlumbering:DrowsyPower": {
                 "NAME": "Drowsy",
                 "DESCRIPTIONS": [
                         "#yAttacks deal #b",
@@ -11,22 +11,22 @@
                         " fewer [E] ."
                 ]
         },
-        "theFirst:ReflectPower": {
+        "theSlumbering:ReflectPower": {
                 "NAME": "Reflect",
                 "DESCRIPTIONS": ["Whenever you are attacked this turn, reflect #b", " percent of damage."]
         },
-        "theFirst:ParryPower": {
+        "theSlumbering:ParryPower": {
                 "NAME": "Parry",
                 "DESCRIPTIONS": ["If the next attack this turn is fully blocked, the attacker takes the damage instead. If not, take double damage."]
         },
-        "theFirst:WakingPower": {
+        "theSlumbering:WakingPower": {
                 "NAME": "Waking...",
                 "DESCRIPTIONS": [
                         "If you play Yawn this turn, wake up a little...",
                         "If you play Stretch this turn, wake up a little..."
                 ]
         },
-        "theFirst:NegatePower": {
+        "theSlumbering:NegatePower": {
                 "NAME": "Negation",
                 "DESCRIPTIONS": [
                         "The next time you would take damage, negate it.",
@@ -34,33 +34,33 @@
                         " times you would take damage, negate it."
                 ]
         },
-        "theFirst:SideSleeperPower": {
+        "theSlumbering:SideSleeperPower": {
                 "NAME": "Side Sleeper Power",
                 "DESCRIPTIONS": ["The leftmost card in your hand ALWAYS costs #b",
                         "."
                 ]
         },
-        "theFirst:DoubleBlockPower": {
+        "theSlumbering:DoubleBlockPower": {
                 "NAME": "Double Block Power",
                 "DESCRIPTIONS": ["At the end of your turn, double your #yBlock."
                 ]
         },
-        "theFirst:ToughSkinPower": {
+        "theSlumbering:ToughSkinPower": {
                 "NAME": "Tough Skin Power",
                 "DESCRIPTIONS": ["At the start of your turn, gain #b", " #yBlock."
                 ]
         },
-        "theFirst:DoubtPower": {
+        "theSlumbering:DoubtPower": {
                 "NAME": "Doubt Power",
                 "DESCRIPTIONS": ["At the end of battle, lose #b", " Max HP."
                 ]
         },
-        "theFirst:MoneyGamblePower": {
+        "theSlumbering:MoneyGamblePower": {
         "NAME": "Trial",
         "DESCRIPTIONS": ["At the end of battle, gain #b", " Gold."
         ]
         },
-        "theFirst:TrialofHypnosPower": {
+        "theSlumbering:TrialofHypnosPower": {
                 "NAME": "Trial of Hypnos",
                 "DESCRIPTIONS": [
                         "Task: Play an attack with at least ",
@@ -73,12 +73,12 @@
                         " cards."
                 ]
         },
-        "theFirst:RepeatPower": {
+        "theSlumbering:RepeatPower": {
                 "NAME": "Repeat Power",
                 "DESCRIPTIONS": ["Repeat the next card costing at least 1 that you play until it can no longer be played."
                 ]
         },
-        "theFirst:BoundPower": {
+        "theSlumbering:BoundPower": {
                 "NAME": "Bound Power",
                 "DESCRIPTIONS": ["Cannot play cards until the binding source has been removed."
                 ]

@@ -21,7 +21,7 @@ import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.UIStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import theFirst.FirstMod;
+import theFirst.SlumberingMod;
 
 public class DiscardEffectAction extends AbstractGameAction {
 
@@ -30,7 +30,7 @@ public class DiscardEffectAction extends AbstractGameAction {
     private boolean isRandom;
     private boolean upgraded;
 
-    public static final String ACTION_ID = FirstMod.makeID("DiscardEffectAction");
+    public static final String ACTION_ID = SlumberingMod.makeID("DiscardEffectAction");
     private static final UIStrings uiStrings = CardCrawlGame.languagePack.getUIString(ACTION_ID);
     private static final String[] TEXT = uiStrings.TEXT;
 

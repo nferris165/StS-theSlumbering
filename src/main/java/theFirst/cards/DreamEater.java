@@ -7,28 +7,28 @@ import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import theFirst.FirstMod;
-import theFirst.characters.TheFirst;
+import theFirst.SlumberingMod;
+import theFirst.characters.TheSlumbering;
 import theFirst.powers.DrowsyPower;
 
-import static theFirst.FirstMod.makeCardPath;
+import static theFirst.SlumberingMod.makeCardPath;
 
 public class DreamEater extends AbstractCustomCard {
 
-    public static final String ID = FirstMod.makeID(DreamEater.class.getSimpleName());
+    public static final String ID = SlumberingMod.makeID(DreamEater.class.getSimpleName());
 
     public static final String IMG = makeCardPath("A_temp.png");
 
-    private static final CardRarity RARITY = CardRarity.COMMON;
+    private static final CardRarity RARITY = CardRarity.BASIC;
     private static final CardTarget TARGET = CardTarget.ENEMY;
     private static final CardType TYPE = CardType.ATTACK;
-    public static final CardColor COLOR = TheFirst.Enums.COLOR_FIRST;
+    public static final CardColor COLOR = TheSlumbering.Enums.COLOR_SLUMBERING;
 
     private static final int COST = 1;
     private static final int UPGRADED_COST = 0;
 
     private static final int DAMAGE = 8;
-    private static final int UPGRADE_PLUS_DMG = 5;
+    private static final int UPGRADE_PLUS_DMG = 4;
 
     public DreamEater() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);

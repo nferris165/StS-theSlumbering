@@ -9,11 +9,11 @@ import com.megacrit.cardcrawl.helpers.FontHelper;
 import com.megacrit.cardcrawl.localization.UIStrings;
 import javassist.CannotCompileException;
 import javassist.CtBehavior;
-import theFirst.FirstMod;
+import theFirst.SlumberingMod;
 
 import java.util.ArrayList;
 
-import static theFirst.FirstMod.makeID;
+import static theFirst.SlumberingMod.makeID;
 
 @SpirePatch(
         clz=AbstractCard.class,
@@ -33,7 +33,7 @@ public class LibraryRenderPatch {
             TEXT = uiStrings.TEXT;
         }
 
-        if (FirstMod.passiveCheck(__instance)) {
+        if (SlumberingMod.passiveCheck(__instance)) {
             text[0] = TEXT[0];
         }
     }

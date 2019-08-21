@@ -1,25 +1,25 @@
 {
-  "theFirst:HandSelectAction": {
+  "theSlumbering:HandSelectAction": {
     "TEXT": [
       "Use"
     ]
   },
-  "theFirst:HandReduceAction": {
+  "theSlumbering:HandReduceAction": {
     "TEXT": [
       "Reduce the Cost"
     ]
   },
-  "theFirst:DiscardEffectAction": {
+  "theSlumbering:DiscardEffectAction": {
     "TEXT": [
       "Discard"
     ]
   },
-  "theFirst:RenderType": {
+  "theSlumbering:RenderType": {
     "TEXT": [
       "Passive"
     ]
   },
-  "theFirst:PurgeAction": {
+  "theSlumbering:PurgeAction": {
     "TEXT": [
       "Remove from your Deck"
     ]

@@ -12,7 +12,7 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.powers.AbstractPower;
-import theFirst.FirstMod;
+import theFirst.SlumberingMod;
 import theFirst.util.TextureLoader;
 
 public class NegatePower extends AbstractPower implements CloneablePowerInterface, OnLoseBlockPower {
@@ -20,7 +20,7 @@ public class NegatePower extends AbstractPower implements CloneablePowerInterfac
     @SuppressWarnings("WeakerAccess")
     public AbstractCreature source;
 
-    public static final String POWER_ID = FirstMod.makeID("NegatePower");
+    public static final String POWER_ID = SlumberingMod.makeID("NegatePower");
     private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
     public static final String NAME = powerStrings.NAME;
     public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;

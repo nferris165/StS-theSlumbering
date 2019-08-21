@@ -10,7 +10,7 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.powers.AbstractPower;
-import theFirst.FirstMod;
+import theFirst.SlumberingMod;
 import theFirst.cards.*;
 import theFirst.util.TextureLoader;
 
@@ -20,7 +20,7 @@ public class WakingPower extends AbstractCustomPower implements CloneablePowerIn
     public AbstractCard card;
     public static boolean needYawn;
 
-    public static final String POWER_ID = FirstMod.makeID("WakingPower");
+    public static final String POWER_ID = SlumberingMod.makeID("WakingPower");
     private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
     public static final String NAME = powerStrings.NAME;
     public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;
@@ -75,7 +75,7 @@ public class WakingPower extends AbstractCustomPower implements CloneablePowerIn
     @Override
     public void onSpecificTrigger() {
         AbstractDungeon.actionManager.addToTop(new RemoveSpecificPowerAction(this.owner, this.owner, ID));
-        FirstMod.incFirstRelic(1);
+        SlumberingMod.incSlumberingRelic(1);
 
     }
 

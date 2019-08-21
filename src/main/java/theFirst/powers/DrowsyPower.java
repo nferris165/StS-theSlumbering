@@ -3,22 +3,20 @@ package theFirst.powers;
 import basemod.interfaces.CloneablePowerInterface;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
-import com.megacrit.cardcrawl.actions.common.ReducePowerAction;
-import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.powers.AbstractPower;
-import theFirst.FirstMod;
+import theFirst.SlumberingMod;
 import theFirst.util.TextureLoader;
 
-import static theFirst.FirstMod.makeID;
-import static theFirst.FirstMod.makePowerPath;
+import static theFirst.SlumberingMod.makeID;
+import static theFirst.SlumberingMod.makePowerPath;
 
 public class DrowsyPower  extends AbstractCustomPower implements CloneablePowerInterface {
-    public static final String POWER_ID = FirstMod.makeID("DrowsyPower");
+    public static final String POWER_ID = SlumberingMod.makeID("DrowsyPower");
     private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
     public static final String NAME = powerStrings.NAME;
     public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;

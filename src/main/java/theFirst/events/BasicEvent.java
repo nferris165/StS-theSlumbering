@@ -11,16 +11,16 @@ import com.megacrit.cardcrawl.helpers.ScreenShake;
 import com.megacrit.cardcrawl.localization.EventStrings;
 import com.megacrit.cardcrawl.vfx.cardManip.PurgeCardEffect;
 import com.megacrit.cardcrawl.vfx.cardManip.ShowCardAndObtainEffect;
-import theFirst.FirstMod;
+import theFirst.SlumberingMod;
 
 import java.util.ArrayList;
 
-import static theFirst.FirstMod.makeEventPath;
+import static theFirst.SlumberingMod.makeEventPath;
 
 public class BasicEvent extends AbstractImageEvent {
 
 
-    public static final String ID = FirstMod.makeID("BasicEvent");
+    public static final String ID = SlumberingMod.makeID("BasicEvent");
     private static final EventStrings eventStrings = CardCrawlGame.languagePack.getEventString(ID);
 
     private static final String NAME = eventStrings.NAME;
@@ -63,7 +63,7 @@ public class BasicEvent extends AbstractImageEvent {
                 switch (i) {
                     case 0: // button = 0
                         AbstractDungeon.player.loseGold(goldLoss);
-                        FirstMod.incFirstRelic(1);
+                        SlumberingMod.incSlumberingRelic(1);
                         this.imageEventText.updateBodyText(DESCRIPTIONS[1]);
                         this.imageEventText.updateDialogOption(0, OPTIONS[5]);
                         this.imageEventText.clearRemainingOptions();
@@ -88,7 +88,7 @@ public class BasicEvent extends AbstractImageEvent {
                         break;
                     case 2:
 
-                        FirstMod.incFirstRelic(-1);
+                        SlumberingMod.incSlumberingRelic(-1);
 
                         this.imageEventText.updateBodyText(DESCRIPTIONS[4]);
                         this.imageEventText.updateDialogOption(0, OPTIONS[5]);
@@ -108,7 +108,7 @@ public class BasicEvent extends AbstractImageEvent {
                 switch (i) {
                     case 0:
                         //generate basic cards
-                        ArrayList<AbstractCard> basicCards = FirstMod.generateByTag(0);
+                        ArrayList<AbstractCard> basicCards = SlumberingMod.generateByTag(0);
                         AbstractDungeon.effectList.add(new ShowCardAndObtainEffect(
                                 ((AbstractCard)basicCards.get(AbstractDungeon.miscRng.random(0,1))).makeStatEquivalentCopy(),
                                 (float)Settings.WIDTH / 2.0F - AbstractCard.IMG_WIDTH / 2.0F - 20.0F * Settings.scale,

@@ -22,13 +22,13 @@ import com.megacrit.cardcrawl.helpers.ScreenShake.ShakeIntensity;
 import com.megacrit.cardcrawl.localization.MonsterStrings;
 import com.megacrit.cardcrawl.powers.StrengthPower;
 import com.megacrit.cardcrawl.vfx.combat.BiteEffect;
-import theFirst.FirstMod;
+import theFirst.SlumberingMod;
 
-import static theFirst.FirstMod.makeMonsterPath;
+import static theFirst.SlumberingMod.makeMonsterPath;
 
 
 public class SimpleMonster extends CustomMonster {
-    public static final String ID = FirstMod.makeID("SimpleMonster");
+    public static final String ID = SlumberingMod.makeID("SimpleMonster");
     private static final MonsterStrings monsterstrings = CardCrawlGame.languagePack.getMonsterStrings(ID);
     public static final String NAME = monsterstrings.NAME;
     public static final String[] MOVES = monsterstrings.MOVES;

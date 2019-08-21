@@ -5,16 +5,15 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.PowerTip;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
-import theFirst.FirstMod;
-import theFirst.powers.AbstractCustomPower;
+import theFirst.SlumberingMod;
 import theFirst.powers.DrowsyPower;
 import theFirst.util.TextureLoader;
 
-import static theFirst.FirstMod.*;
+import static theFirst.SlumberingMod.*;
 
 public class StarMobile extends AbstractCustomRelic {
 
-    public static final String ID = FirstMod.makeID("StarMobile");
+    public static final String ID = SlumberingMod.makeID("StarMobile");
 
     //TODO: make art
     private static final Texture IMG = TextureLoader.getTexture(makeRelicPath("zzz.png"));

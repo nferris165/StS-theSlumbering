@@ -9,7 +9,7 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.UIStrings;
-import theFirst.FirstMod;
+import theFirst.SlumberingMod;
 
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -18,7 +18,7 @@ public class HandSelectAction extends AbstractGameAction {
     private AbstractPlayer p;
     private boolean upgraded;
     private boolean returnedCard;
-    public static final String ACTION_ID = FirstMod.makeID("HandSelectAction");
+    public static final String ACTION_ID = SlumberingMod.makeID("HandSelectAction");
     private static final UIStrings uiStrings = CardCrawlGame.languagePack.getUIString(ACTION_ID);
     private static final String[] TEXT = uiStrings.TEXT;
 

@@ -27,7 +27,7 @@ import javassist.CtClass;
 import javassist.NotFoundException;
 import org.clapper.util.classutil.*;
 import theFirst.cards.BasicDefend;
-import theFirst.characters.TheFirst;
+import theFirst.characters.TheSlumbering;
 import theFirst.events.BasicEvent;
 import theFirst.monsters.SimpleMonster;
 import theFirst.patches.customTags;
@@ -41,7 +41,7 @@ import theFirst.relics.*;
 import theFirst.util.TextureLoader;
 import theFirst.variables.EnergyVariable;
 import theFirst.variables.DynamicMagicVariable;
-import theFirst.relics.FirstRelic;
+import theFirst.relics.SlumberingRelic;
 
 import java.io.File;
 import java.lang.reflect.Modifier;
@@ -55,7 +55,7 @@ import java.util.Properties;
 
 @SuppressWarnings("WeakerAccess")
 @SpireInitializer
-public class FirstMod implements
+public class SlumberingMod implements
         StartActSubscriber,
         OnStartBattleSubscriber,
         MaxHPChangeSubscriber,
@@ -67,48 +67,48 @@ public class FirstMod implements
         PostExhaustSubscriber,
         PostInitializeSubscriber {
 
-    public static final Logger logger = LogManager.getLogger(FirstMod.class.getName());
+    public static final Logger logger = LogManager.getLogger(SlumberingMod.class.getName());
 
     //mod settings
     public static Properties defaultSettings = new Properties();
     public static final String event_sharing_settings = "eventSharing";
     public static boolean eventSharing = false;
 
-    private static final String MODNAME = "First Mod";
+    private static final String MODNAME = "Slumbering Mod";
     private static final String AUTHOR = "Nichilas";
-    private static final String DESCRIPTION = "My first mod, ft. the First.";
+    private static final String DESCRIPTION = "My first mod, ft. the Slumbering.";
 
 
 
     //char main color
-    public static final Color FIRST_TEAL = CardHelper.getColor(59.0f, 125.0f, 99.0f);
+    public static final Color SLUMBERING_TEAL = CardHelper.getColor(59.0f, 125.0f, 99.0f);
 
-    public static final Color FIRST_POTION_RUST = CardHelper.getColor(211.0f, 40.0f, 2.0f);
+    public static final Color SLUMBERING_POTION_RUST = CardHelper.getColor(211.0f, 40.0f, 2.0f);
 
-    private static final String ATTACK_CARD_FIRST = "theFirstResources/images/512/bg_attack_first_color.png";
-    private static final String SKILL_CARD_FIRST = "theFirstResources/images/512/bg_skill_first_color.png";
-    private static final String POWER_CARD_FIRST = "theFirstResources/images/512/bg_power_first_color.png";
+    private static final String ATTACK_CARD_SLUMBERING = "theSlumberingResources/images/512/bg_attack_first_color.png";
+    private static final String SKILL_CARD_SLUMBERING = "theSlumberingResources/images/512/bg_skill_first_color.png";
+    private static final String POWER_CARD_SLUMBERING = "theSlumberingResources/images/512/bg_power_first_color.png";
 
-    private static final String ENERGY_ORB_FIRST = "theFirstResources/images/512/card_first_color_orb.png";
-    private static final String CARD_ENERGY_ORB = "theFirstResources/images/512/card_small_orb.png";
+    private static final String ENERGY_ORB_SLUMBERING = "theSlumberingResources/images/512/card_first_color_orb.png";
+    private static final String CARD_ENERGY_ORB = "theSlumberingResources/images/512/card_small_orb.png";
 
-    private static final String ATTACK_FIRST_PORTRAIT = "theFirstResources/images/1024/bg_attack_first_color.png";
-    private static final String SKILL_FIRST_PORTRAIT = "theFirstResources/images/1024/bg_skill_first_color.png";
-    private static final String POWER_FIRST_PORTRAIT = "theFirstResources/images/1024/bg_power_first_color.png";
-    private static final String ENERGY_ORB_FIRST_PORTRAIT = "theFirstResources/images/1024/card_first_color_orb.png";
+    private static final String ATTACK_SLUMBERING_PORTRAIT = "theSlumberingResources/images/1024/bg_attack_first_color.png";
+    private static final String SKILL_SLUMBERING_PORTRAIT = "theSlumberingResources/images/1024/bg_skill_first_color.png";
+    private static final String POWER_SLUMBERING_PORTRAIT = "theSlumberingResources/images/1024/bg_power_first_color.png";
+    private static final String ENERGY_ORB_SLUMBERING_PORTRAIT = "theSlumberingResources/images/1024/card_first_color_orb.png";
 
-    private static final String THE_FIRST_BUTTON = "theFirstResources/images/charSelect/firstButton.png";
-    private static final String THE_FIRST_PORTRAIT = "theFirstResources/images/charSelect/FirstPortraitBG.png";
-    public static final String THE_FIRST_SHOULDER_1 = "theFirstResources/images/char/defaultCharacter/shoulder.png";
-    public static final String THE_FIRST_SHOULDER_2 = "theFirstResources/images/char/defaultCharacter/shoulder2.png";
-    public static final String THE_FIRST_CORPSE = "theFirstResources/images/char/defaultCharacter/corpse.png";
+    private static final String THE_SLUMBERING_BUTTON = "theSlumberingResources/images/charSelect/firstButton.png";
+    private static final String THE_SLUMBERING_PORTRAIT = "theSlumberingResources/images/charSelect/FirstPortraitBG.png";
+    public static final String THE_SLUMBERING_SHOULDER_1 = "theSlumberingResources/images/char/slumberingCharacter/shoulder.png";
+    public static final String THE_SLUMBERING_SHOULDER_2 = "theSlumberingResources/images/char/slumberingCharacter/shoulder2.png";
+    public static final String THE_SLUMBERING_CORPSE = "theSlumberingResources/images/char/slumberingCharacter/corpse.png";
 
-    public static final String BADGE_IMAGE = "theFirstResources/images/Badge.png";
+    public static final String BADGE_IMAGE = "theSlumberingResources/images/Badge.png";
 
-    public static final String THE_FIRST_SKELETON_ATLAS = "theFirstResources/images/char/defaultCharacter/skeleton.atlas";
-    public static final String THE_FIRST_SKELETON_JSON = "theFirstResources/images/char/defaultCharacter/skeleton.json";
+    public static final String THE_SLUMBERING_SKELETON_ATLAS = "theSlumberingResources/images/char/slumberingCharacter/skeleton.atlas";
+    public static final String THE_SLUMBERING_SKELETON_JSON = "theSlumberingResources/images/char/slumberingCharacter/skeleton.json";
 
-    private static final String modID = "theFirst";
+    private static final String modID = "theSlumbering";
 
 
     //Image Directories
@@ -144,14 +144,14 @@ public class FirstMod implements
         return modID + "Resources/images/vfx/" + resourcePath;
     }
 
-    public FirstMod() {
+    public SlumberingMod() {
         BaseMod.subscribe(this);
 
-        BaseMod.addColor(TheFirst.Enums.COLOR_FIRST, FIRST_TEAL, FIRST_TEAL, FIRST_TEAL,
-                FIRST_TEAL, FIRST_TEAL, FIRST_TEAL, FIRST_TEAL,
-                ATTACK_CARD_FIRST, SKILL_CARD_FIRST, POWER_CARD_FIRST, ENERGY_ORB_FIRST,
-                ATTACK_FIRST_PORTRAIT, SKILL_FIRST_PORTRAIT, POWER_FIRST_PORTRAIT,
-                ENERGY_ORB_FIRST_PORTRAIT, CARD_ENERGY_ORB);
+        BaseMod.addColor(TheSlumbering.Enums.COLOR_SLUMBERING, SLUMBERING_TEAL, SLUMBERING_TEAL, SLUMBERING_TEAL,
+                SLUMBERING_TEAL, SLUMBERING_TEAL, SLUMBERING_TEAL, SLUMBERING_TEAL,
+                ATTACK_CARD_SLUMBERING, SKILL_CARD_SLUMBERING, POWER_CARD_SLUMBERING, ENERGY_ORB_SLUMBERING,
+                ATTACK_SLUMBERING_PORTRAIT, SKILL_SLUMBERING_PORTRAIT, POWER_SLUMBERING_PORTRAIT,
+                ENERGY_ORB_SLUMBERING_PORTRAIT, CARD_ENERGY_ORB);
 
         //TODO finalize mod settings
         logger.info("Adding mod settings");
@@ -166,14 +166,14 @@ public class FirstMod implements
     }
     @SuppressWarnings("unused")
     public static void initialize() {
-        FirstMod firstmod = new FirstMod();
+        SlumberingMod slumberingmod = new SlumberingMod();
     }
 
     @Override
     public void receiveEditCharacters() {
 
-        BaseMod.addCharacter(new TheFirst("the First", TheFirst.Enums.THE_FIRST),
-                THE_FIRST_BUTTON, THE_FIRST_PORTRAIT, TheFirst.Enums.THE_FIRST);
+        BaseMod.addCharacter(new TheSlumbering("the Slumbering", TheSlumbering.Enums.THE_SLUMBERING),
+                THE_SLUMBERING_BUTTON, THE_SLUMBERING_PORTRAIT, TheSlumbering.Enums.THE_SLUMBERING);
 
         receiveEditPotions();
     }
@@ -218,8 +218,8 @@ public class FirstMod implements
     }
 
     public void receiveEditPotions() {
-        BaseMod.addPotion(NewPotion.class, FIRST_POTION_RUST, FIRST_TEAL, FIRST_POTION_RUST, NewPotion.POTION_ID, TheFirst.Enums.THE_FIRST);
-        //BaseMod.addPotion(NewPotion.class, FIRST_POTION_RUST, FIRST_TEAL, FIRST_POTION_RUST, NewPotion.POTION_ID);
+        BaseMod.addPotion(NewPotion.class, SLUMBERING_POTION_RUST, SLUMBERING_TEAL, SLUMBERING_POTION_RUST, NewPotion.POTION_ID, TheSlumbering.Enums.THE_SLUMBERING);
+        //BaseMod.addPotion(NewPotion.class, SLUMBERING_POTION_RUST, SLUMBERING_TEAL, SLUMBERING_POTION_RUST, NewPotion.POTION_ID);
 
     }
 
@@ -227,10 +227,10 @@ public class FirstMod implements
     @Override
     public void receiveEditRelics() {
         //character only
-        BaseMod.addRelicToCustomPool(new HeartCollector(), TheFirst.Enums.COLOR_FIRST);
-        BaseMod.addRelicToCustomPool(new FirstRelic(), TheFirst.Enums.COLOR_FIRST);
-        BaseMod.addRelicToCustomPool(new StarMobile(), TheFirst.Enums.COLOR_FIRST);
-        BaseMod.addRelicToCustomPool(new PowerFromBeyond(), TheFirst.Enums.COLOR_FIRST);
+        BaseMod.addRelicToCustomPool(new HeartCollector(), TheSlumbering.Enums.COLOR_SLUMBERING);
+        BaseMod.addRelicToCustomPool(new SlumberingRelic(), TheSlumbering.Enums.COLOR_SLUMBERING);
+        BaseMod.addRelicToCustomPool(new StarMobile(), TheSlumbering.Enums.COLOR_SLUMBERING);
+        BaseMod.addRelicToCustomPool(new PowerFromBeyond(), TheSlumbering.Enums.COLOR_SLUMBERING);
 
         //shared
         BaseMod.addRelic(new GlassShield(), RelicType.SHARED);
@@ -271,29 +271,29 @@ public class FirstMod implements
     @Override
     public void receiveEditStrings() {
         BaseMod.loadCustomStringsFile(CardStrings.class,
-                modID + "Resources/localization/eng/FirstMod-Card-Strings.json");
+                modID + "Resources/localization/eng/SlumberingMod-Card-Strings.json");
         BaseMod.loadCustomStringsFile(CharacterStrings.class,
-                modID + "Resources/localization/eng/FirstMod-Character-Strings.json");
+                modID + "Resources/localization/eng/SlumberingMod-Character-Strings.json");
         BaseMod.loadCustomStringsFile(EventStrings.class,
-                modID + "Resources/localization/eng/FirstMod-Event-Strings.json");
+                modID + "Resources/localization/eng/SlumberingMod-Event-Strings.json");
         BaseMod.loadCustomStringsFile(MonsterStrings.class,
-                modID + "Resources/localization/eng/FirstMod-Monster-Strings.json");
+                modID + "Resources/localization/eng/SlumberingMod-Monster-Strings.json");
         BaseMod.loadCustomStringsFile(OrbStrings.class,
-                modID + "Resources/localization/eng/FirstMod-Orb-Strings.json");
+                modID + "Resources/localization/eng/SlumberingMod-Orb-Strings.json");
         BaseMod.loadCustomStringsFile(PotionStrings.class,
-                modID + "Resources/localization/eng/FirstMod-Potion-Strings.json");
+                modID + "Resources/localization/eng/SlumberingMod-Potion-Strings.json");
         BaseMod.loadCustomStringsFile(PowerStrings.class,
-                modID + "Resources/localization/eng/FirstMod-Power-Strings.json");
+                modID + "Resources/localization/eng/SlumberingMod-Power-Strings.json");
         BaseMod.loadCustomStringsFile(RelicStrings.class,
-                modID + "Resources/localization/eng/FirstMod-Relic-Strings.json");
+                modID + "Resources/localization/eng/SlumberingMod-Relic-Strings.json");
         BaseMod.loadCustomStringsFile(UIStrings.class,
-                modID + "Resources/localization/eng/FirstMod-UI-Strings.json");
+                modID + "Resources/localization/eng/SlumberingMod-UI-Strings.json");
     }
 
     @Override
     public void receiveEditKeywords() {
         Gson gson = new Gson();
-        String json = Gdx.files.internal(modID + "Resources/localization/eng/FirstMod-Keyword-Strings.json").readString(String.valueOf(StandardCharsets.UTF_8));
+        String json = Gdx.files.internal(modID + "Resources/localization/eng/SlumberingMod-Keyword-Strings.json").readString(String.valueOf(StandardCharsets.UTF_8));
         com.evacipated.cardcrawl.mod.stslib.Keyword[] keywords = gson.fromJson(json, com.evacipated.cardcrawl.mod.stslib.Keyword[].class);
 
         if (keywords != null) {
@@ -306,7 +306,7 @@ public class FirstMod implements
     private static void autoAddCards() throws URISyntaxException, IllegalAccessException, InstantiationException, NotFoundException, ClassNotFoundException
     {
         ClassFinder finder = new ClassFinder();
-        URL url = FirstMod.class.getProtectionDomain().getCodeSource().getLocation();
+        URL url = SlumberingMod.class.getProtectionDomain().getCodeSource().getLocation();
         finder.add(new File(url.toURI()));
 
         ClassFilter filter =
@@ -370,9 +370,9 @@ public class FirstMod implements
     @Override
     public int receiveMaxHPChange(int amt){
 
-        incFirstRelicFloat(amt);
+        incSlumberingRelicFloat(amt);
 
-        if(AbstractDungeon.player.chosenClass == TheFirst.Enums.THE_FIRST){
+        if(AbstractDungeon.player.chosenClass == TheSlumbering.Enums.THE_SLUMBERING){
             return 0;
         }
 
@@ -385,18 +385,18 @@ public class FirstMod implements
 
 
 
-    public static void incFirstRelic(int amt)
+    public static void incSlumberingRelic(int amt)
     {
-        if(AbstractDungeon.player.hasRelic(FirstRelic.ID)){
-            AbstractCustomRelic r = (AbstractCustomRelic) AbstractDungeon.player.getRelic(FirstRelic.ID);
+        if(AbstractDungeon.player.hasRelic(SlumberingRelic.ID)){
+            AbstractCustomRelic r = (AbstractCustomRelic) AbstractDungeon.player.getRelic(SlumberingRelic.ID);
             r.onTrigger(amt);
         }
     }
 
-    public static void incFirstRelicFloat(int amt)
+    public static void incSlumberingRelicFloat(int amt)
     {
-        if(AbstractDungeon.player.hasRelic(FirstRelic.ID)){
-            AbstractCustomRelic r = (AbstractCustomRelic) AbstractDungeon.player.getRelic(FirstRelic.ID);
+        if(AbstractDungeon.player.hasRelic(SlumberingRelic.ID)){
+            AbstractCustomRelic r = (AbstractCustomRelic) AbstractDungeon.player.getRelic(SlumberingRelic.ID);
             r.onTriggerFloat(amt);
         }
     }
@@ -430,9 +430,9 @@ public class FirstMod implements
 
     @Override
     public void receiveStartAct() {
-        if(AbstractDungeon.player.chosenClass == TheFirst.Enums.THE_FIRST){
+        if(AbstractDungeon.player.chosenClass == TheSlumbering.Enums.THE_SLUMBERING){
             int a = AbstractDungeon.actNum;
-            TheFirst.replaceCards(a);
+            TheSlumbering.replaceCards(a);
         }
     }
 

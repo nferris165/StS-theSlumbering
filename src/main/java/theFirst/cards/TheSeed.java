@@ -6,22 +6,22 @@ import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.vfx.cardManip.ShowCardAndObtainEffect;
-import theFirst.FirstMod;
+import theFirst.SlumberingMod;
 import theFirst.cards.Curses.Seed;
-import theFirst.characters.TheFirst;
+import theFirst.characters.TheSlumbering;
 
-import static theFirst.FirstMod.makeCardPath;
+import static theFirst.SlumberingMod.makeCardPath;
 
 public class TheSeed extends AbstractCustomCard {
 
-    public static final String ID = FirstMod.makeID(TheSeed.class.getSimpleName());
+    public static final String ID = SlumberingMod.makeID(TheSeed.class.getSimpleName());
 
     public static final String IMG = makeCardPath("S_temp.png");
 
     private static final CardRarity RARITY = CardRarity.RARE;
     private static final CardTarget TARGET = CardTarget.SELF;
     private static final CardType TYPE = CardType.SKILL;
-    public static final CardColor COLOR = TheFirst.Enums.COLOR_FIRST;
+    public static final CardColor COLOR = TheSlumbering.Enums.COLOR_SLUMBERING;
 
     private static final int COST = 2;
     private static final int UPGRADED_COST = 1;

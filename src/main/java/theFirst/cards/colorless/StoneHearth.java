@@ -7,14 +7,14 @@ import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import theFirst.FirstMod;
+import theFirst.SlumberingMod;
 import theFirst.cards.AbstractCustomCard;
 
-import static theFirst.FirstMod.makeCardPath;
+import static theFirst.SlumberingMod.makeCardPath;
 
 public class StoneHearth extends AbstractCustomCard {
 
-    public static final String ID = FirstMod.makeID(StoneHearth.class.getSimpleName());
+    public static final String ID = SlumberingMod.makeID(StoneHearth.class.getSimpleName());
 
     public static final String IMG = makeCardPath("A_temp.png");
 

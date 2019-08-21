@@ -1,5 +1,5 @@
 {
-        "theFirst:NewPotion": {
+        "theSlumbering:NewPotion": {
                 "NAME": "New Potion",
                 "DESCRIPTIONS": ["Wake up a little..."]
         }

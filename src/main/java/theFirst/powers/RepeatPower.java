@@ -14,13 +14,13 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.AbstractPower;
-import theFirst.FirstMod;
+import theFirst.SlumberingMod;
 import theFirst.util.TextureLoader;
 
 public class RepeatPower extends AbstractCustomPower implements CloneablePowerInterface {
     @SuppressWarnings("WeakerAccess")
 
-    public static final String POWER_ID = FirstMod.makeID("RepeatPower");
+    public static final String POWER_ID = SlumberingMod.makeID("RepeatPower");
     private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
     public static final String NAME = powerStrings.NAME;
     public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;

@@ -11,222 +11,223 @@
     "NAME": "Drowsy Attack",
     "DESCRIPTION": "Deal !D! damage. NL Gain !B! Block. NL You are feeling [#666646]groggy...[]"
   },
-  "theFirst:DrowsyDefend": {
+  "theSlumbering:DrowsyDefend": {
     "NAME": "Drowsy Defend",
     "DESCRIPTION": "Gain !B! Block. NL You hear [#666646]screams...[] in your mind."
   },
-  "theFirst:WokeAttack": {
+  "theSlumbering:WokeAttack": {
     "NAME": "Woke Attack",
     "DESCRIPTION": "Deal !D! damage. NL Gain !B! Block. NL You are feeling [#666646]groggy...[]"
   },
-  "theFirst:WokeDefend": {
+  "theSlumbering:WokeDefend": {
     "NAME": "Woke Defend",
     "DESCRIPTION": "Gain !B! Block. NL You hear [#666646]screams...[] in your mind."
   },
-  "theFirst:Jab": {
+  "theSlumbering:Jab": {
     "NAME": "Jab",
-    "DESCRIPTION": "Deal !D! damage."
+    "DESCRIPTION": "Deal !D! damage.",
+    "UPGRADE_DESCRIPTION": "Innate. NL Deal !D! damage."
   },
-  "theFirst:StumblingBlow": {
+  "theSlumbering:StumblingBlow": {
     "NAME": "Stumbling Blow",
     "DESCRIPTION": "Deal !D! damage. NL Gain !M! Weak."
   },
-  "theFirst:NocturnalMyoclonus": {
+  "theSlumbering:NocturnalMyoclonus": {
     "NAME": "Nocturnal Strike",
-    "DESCRIPTION": "Deal !D! damage. NL If thefirst:Drowsy, gain that much Block.",
-    "UPGRADE_DESCRIPTION": "Deal !D! damage. NL If thefirst:Drowsy, gain that much Block. NL Play the top card of your draw pile."
+    "DESCRIPTION": "Deal !D! damage. NL If theslumbering:Drowsy, gain that much Block.",
+    "UPGRADE_DESCRIPTION": "Deal !D! damage. NL If theslumbering:Drowsy, gain that much Block. NL Play the top card of your draw pile."
   },
-  "theFirst:WakeUpSlap": {
+  "theSlumbering:WakeUpSlap": {
     "NAME": "Wake-Up Slap",
-    "DESCRIPTION": "Take !theFirst:Magic! damage. NL Draw a card. NL Gain !M! Strength this turn."
+    "DESCRIPTION": "Take !theSlumbering:Magic! damage. NL Draw a card. NL Gain !M! Strength this turn."
   },
-  "theFirst:ThornCloak": {
+  "theSlumbering:ThornCloak": {
     "NAME": "Cloak of Thorns",
     "DESCRIPTION": "Gain !B! Block. NL Whenever you are attacked this turn, deal !M! damage back."
   },
-  "theFirst:Parry": {
+  "theSlumbering:Parry": {
     "NAME": "Parry",
-    "DESCRIPTION": "Gain 1 thefirst:Parry. NL Gain !B! Block."
+    "DESCRIPTION": "Gain 1 theslumbering:Parry. NL Gain !B! Block."
   },
-  "theFirst:Invigorate": {
+  "theSlumbering:Invigorate": {
     "NAME": "Invigorate",
-    "DESCRIPTION": "Reduce thefirst:Drowsy by 1.",
-    "UPGRADE_DESCRIPTION": "Innate. NL Reduce thefirst:Drowsy by 1."
+    "DESCRIPTION": "Reduce theslumbering:Drowsy by 1.",
+    "UPGRADE_DESCRIPTION": "Innate. NL Reduce theslumbering:Drowsy by 1."
   },
-  "theFirst:ExtraArm": {
+  "theSlumbering:ExtraArm": {
     "NAME": "Extra Arm",
     "DESCRIPTION": "At the start of your turn, play a bonus attack."
   },
-  "theFirst:Reflect": {
+  "theSlumbering:Reflect": {
     "NAME": "Reflect",
     "DESCRIPTION": "Whenever you are attacked this turn, reflect 30% of the damage."
   },
-  "theFirst:MagicVarTest": {
+  "theSlumbering:MagicVarTest": {
     "NAME": "Testing",
-    "DESCRIPTION": "Do !theFirst:Magic! things and deal !theFirst:ED! damage."
+    "DESCRIPTION": "Do !theSlumbering:Magic! things and deal !theSlumbering:ED! damage."
   },
-  "theFirst:ChannelSkill": {
+  "theSlumbering:ChannelSkill": {
     "NAME": "Channel Orb",
     "DESCRIPTION": "Channel 1 First Orb."
   },
-  "theFirst:TheSeed": {
+  "theSlumbering:TheSeed": {
     "NAME": "The Seed",
-    "DESCRIPTION": "Add a thefirst:Seed to your deck. NL (Removed from your deck after playing)"
+    "DESCRIPTION": "Add a theslumbering:Seed to your deck. NL (Removed from your deck after playing)"
   },
-  "theFirst:Seed": {
+  "theSlumbering:Seed": {
     "NAME": "Seed",
     "DESCRIPTION": "Blossoms after being played 5 times. NL (Currently has been played !M! times)"
   },
-  "theFirst:ExplosivesCache": {
+  "theSlumbering:ExplosivesCache": {
     "NAME": "Explosives Cache",
-    "DESCRIPTION": "Deal !D! damage, but shuffle a thefirst:Bomb into your draw pile."
+    "DESCRIPTION": "Deal !D! damage, but shuffle a theslumbering:Bomb into your draw pile."
   },
-  "theFirst:Bomb": {
+  "theSlumbering:Bomb": {
     "NAME": "Bomb",
     "DESCRIPTION": "Unplayable. NL At the end of your turn, take 10 damage. NL Ethereal."
   },
-  "theFirst:Detonator": {
+  "theSlumbering:Detonator": {
     "NAME": "Detonator",
     "DESCRIPTION": "Unplayable. NL When drawn, deal !D! damage to all enemies."
   },
-  "theFirst:BombToss": {
+  "theSlumbering:BombToss": {
     "NAME": "Bomb Toss",
-    "DESCRIPTION": "Shuffle a thefirst:Detonator into your draw pile X times."
+    "DESCRIPTION": "Shuffle a theslumbering:Detonator into your draw pile X times."
   },
-  "theFirst:Wake": {
+  "theSlumbering:Wake": {
     "NAME": "Wake",
-    "DESCRIPTION": "Add thefirst:Yawn and thefirst:Stretch to your discard pile. Play both to wake up a little.",
-    "UPGRADE_DESCRIPTION": "Add thefirst:Yawn+ and thefirst:Stretch+ to your discard pile. Play both to wake up a little."
+    "DESCRIPTION": "Add theslumbering:Yawn and theslumbering:Stretch to your discard pile. Play both to wake up a little.",
+    "UPGRADE_DESCRIPTION": "Add theslumbering:Yawn+ and theslumbering:Stretch+ to your discard pile. Play both to wake up a little."
   },
-  "theFirst:Yawn": {
+  "theSlumbering:Yawn": {
     "NAME": "Yawn",
-    "DESCRIPTION": "Gain !B! Block. NL More powerful if played with thefirst:Stretch. NL Exhaust."
+    "DESCRIPTION": "Gain !B! Block. NL More powerful if played with theslumbering:Stretch. NL Exhaust."
   },
-  "theFirst:Stretch": {
+  "theSlumbering:Stretch": {
     "NAME": "Stretch",
-    "DESCRIPTION": "Deal !D! damage. NL More powerful if played with thefirst:Yawn. NL Exhaust."
+    "DESCRIPTION": "Deal !D! damage. NL More powerful if played with theslumbering:Yawn. NL Exhaust."
   },
-  "theFirst:DreamEater": {
+  "theSlumbering:DreamEater": {
     "NAME": "Dream Eater",
-    "DESCRIPTION": "Deal !D! damage. NL Gain 1 thefirst:Drowsy."
+    "DESCRIPTION": "Deal !D! damage. NL Gain 1 theslumbering:Drowsy."
   },
-  "theFirst:Nightmare": {
+  "theSlumbering:Nightmare": {
     "NAME": "Nightmare",
-    "DESCRIPTION": "Deal !D! damage. NL Deals !M! additional damage for each thefirst:Drowsy. NL Reduce thefirst:Drowsy by !theFirst:Magic!."
+    "DESCRIPTION": "Deal !D! damage. NL Deals !M! additional damage for each theslumbering:Drowsy. NL Reduce theslumbering:Drowsy by !theSlumbering:Magic!."
   },
-  "theFirst:Insomnia": {
+  "theSlumbering:Insomnia": {
     "NAME": "Insomnia",
-    "DESCRIPTION": "Gain !B! Block. NL Gain !M! additional Block for each thefirst:Drowsy. NL Reduce thefirst:Drowsy by !theFirst:Magic!."
+    "DESCRIPTION": "Gain !B! Block. NL Gain !M! additional Block for each theslumbering:Drowsy. NL Reduce theslumbering:Drowsy by !theSlumbering:Magic!."
   },
-  "theFirst:CurlUp": {
+  "theSlumbering:CurlUp": {
     "NAME": "Curl Up",
     "DESCRIPTION": "Gain !B! Block. NL Lose 1 Dexterity."
   },
-  "theFirst:SleepParalysis": {
+  "theSlumbering:SleepParalysis": {
     "NAME": "Sleep Paralysis",
     "DESCRIPTION": "Negate the first !M! attacks this turn. NL End your turn."
   },
-  "theFirst:Lullaby": {
+  "theSlumbering:Lullaby": {
     "NAME": "Lullaby",
     "DESCRIPTION": "ALL enemies lose !M! Strength. NL Exhaust.",
-    "UPGRADE_DESCRIPTION": "ALL enemies lose !M! Strength. Apply !theFirst:Magic! Weak to ALL enemies. NL Exhaust."
+    "UPGRADE_DESCRIPTION": "ALL enemies lose !M! Strength. Apply !theSlumbering:Magic! Weak to ALL enemies. NL Exhaust."
   },
-  "theFirst:Taunt": {
+  "theSlumbering:Taunt": {
     "NAME": "Taunt",
     "DESCRIPTION": "Gain !B! Block. NL ALL enemies gain !M! Strength."
   },
-  "theFirst:ImagineSkill": {
+  "theSlumbering:ImagineSkill": {
     "NAME": "Imagine: Skill",
     "DESCRIPTION": "Draw a card. If you draw a Skill, Refund this card's cost.",
     "UPGRADE_DESCRIPTION": "Draw two cards. For each Skill, Refund this card's cost."
   },
-  "theFirst:ImagineAttack": {
+  "theSlumbering:ImagineAttack": {
     "NAME": "Imagine: Attack",
     "DESCRIPTION": "Draw a card. If you draw a Attack, Refund this card's cost.",
     "UPGRADE_DESCRIPTION": "Draw two cards. For each Attack, Refund this card's cost."
   },
-  "theFirst:ImaginePower": {
+  "theSlumbering:ImaginePower": {
     "NAME": "Imagine: Power",
     "DESCRIPTION": "Draw a card. If you draw a Power, Refund this card's cost.",
     "UPGRADE_DESCRIPTION": "Draw two cards. For each Power, Refund this card's cost."
   },
-  "theFirst:RecurringDream": {
+  "theSlumbering:RecurringDream": {
     "NAME": "Recurring Dream",
     "DESCRIPTION": "Select a card in your hand. NL Draw all copies of it in your draw pile.",
     "UPGRADE_DESCRIPTION": "Select a card in your hand. NL Draw all copies of it in your draw pile and discard pile."
   },
-  "theFirst:EnergyShift": {
+  "theSlumbering:EnergyShift": {
     "NAME": "Energy Shift",
     "DESCRIPTION": "Select a card. NL This turn, it costs !M! less."
   },
-  "theFirst:Offering": {
+  "theSlumbering:Offering": {
     "NAME": "Offering",
     "DESCRIPTION": "Discard a card. NL Play a new card based on the discarded card type.",
     "UPGRADE_DESCRIPTION": "Discard a card. NL Play a new upgraded card based on the discarded card type."
   },
-  "theFirst:Sleepwalk": {
+  "theSlumbering:Sleepwalk": {
     "NAME": "Sleepwalk",
     "DESCRIPTION": "Unplayable. NL Deal !D! to a random enemy when drawn."
   },
-  "theFirst:Comfortable": {
+  "theSlumbering:Comfortable": {
     "NAME": "Comfortable",
     "DESCRIPTION": "Unplayable. NL Gain [E] when drawn.",
     "UPGRADE_DESCRIPTION": "Unplayable. NL Gain [E] and 1 Artifact when drawn."
   },
-  "theFirst:SideSleeper": {
+  "theSlumbering:SideSleeper": {
     "NAME": "Side Sleeper",
     "DESCRIPTION": "The leftmost card in your hand ALWAYS costs !M!."
   },
-  "theFirst:BagOfShields": {
+  "theSlumbering:BagOfShields": {
     "NAME": "Bag of Shields",
-    "DESCRIPTION": "thefirst:Passive. NL Block is not removed at the start of your turn."
+    "DESCRIPTION": "theslumbering:Passive. NL Block is not removed at the start of your turn."
   },
-  "theFirst:SpectralDefender": {
+  "theSlumbering:SpectralDefender": {
     "NAME": "Spectral Defender",
-    "DESCRIPTION": "thefirst:Passive. NL At the end of your turn, double your Block."
+    "DESCRIPTION": "theslumbering:Passive. NL At the end of your turn, double your Block."
   },
-  "theFirst:ToughSkin": {
+  "theSlumbering:ToughSkin": {
     "NAME": "Tough Skin",
-    "DESCRIPTION": "thefirst:Passive. NL At the start of your turn, gain !M! Block."
+    "DESCRIPTION": "theslumbering:Passive. NL At the start of your turn, gain !M! Block."
   },
-  "theFirst:StrongFooting": {
+  "theSlumbering:StrongFooting": {
     "NAME": "Strong Footing",
     "DESCRIPTION": "If you have !M! or less Block, double your Block."
   },
-  "theFirst:TheClock": {
+  "theSlumbering:TheClock": {
     "NAME": "The Clock",
     "DESCRIPTION": "Deal !D! damage. NL [#c9c9c9]Tick.[] [#bca6bf]Tock.[]"
   },
-  "theFirst:StoneHearth": {
+  "theSlumbering:StoneHearth": {
     "NAME": "Stone Hearth",
     "DESCRIPTION": "Deal between !D! and !M! damage to a random enemy and gain that much Block."
   },
-  "theFirst:InducedDream": {
+  "theSlumbering:InducedDream": {
     "NAME": "Induced Dream",
     "DESCRIPTION": "Look at 3 cards in your draw pile, choose 1 and add a copy of it to your hand. NL Exhaust."
   },
-  "theFirst:InducedMemory": {
+  "theSlumbering:InducedMemory": {
     "NAME": "Induced Memory",
     "DESCRIPTION": "Look at 3 cards in your draw pile, choose 1 to draw. NL Exhaust."
   },
-  "theFirst:LingeringDoubt": {
+  "theSlumbering:LingeringDoubt": {
     "NAME": "Lingering Doubt",
-    "DESCRIPTION": "If this card hasn't been played by the end of battle, lose !theFirst:Magic! Max HP. NL Exhaust."
+    "DESCRIPTION": "If this card hasn't been played by the end of battle, lose !theSlumbering:Magic! Max HP. NL Exhaust."
   },
-  "theFirst:Sloth": {
+  "theSlumbering:Sloth": {
     "NAME": "Sloth",
-    "DESCRIPTION": "Start battles with !theFirst:Magic! additional thefirst:Drowsy. NL Lose !theFirst:Magic! thefirst:Drowsy when played."
+    "DESCRIPTION": "Start battles with !theSlumbering:Magic! additional theslumbering:Drowsy. NL Lose !theSlumbering:Magic! theslumbering:Drowsy when played."
   },
-  "theFirst:Insomniac": {
+  "theSlumbering:Insomniac": {
     "NAME": "Insomniac",
-    "DESCRIPTION": "thefirst:Passive. NL At the start of battle, shuffle a thefirst:Sleepwalk into your draw pile !M! times."
+    "DESCRIPTION": "theslumbering:Passive. NL At the start of battle, shuffle a theslumbering:Sleepwalk into your draw pile !M! times."
   },
-  "theFirst:EntombedWeapon": {
+  "theSlumbering:EntombedWeapon": {
     "NAME": "Entombed Blade",
     "DESCRIPTION": "Deal !D! damage. NL Cannot be upgraded normally. NL Play !M! more times to upgrade this card.",
     "UPGRADE_DESCRIPTION": "Deal !D! damage."
   },
-  "theFirst:RunTheGamut": {
+  "theSlumbering:RunTheGamut": {
     "NAME": "Run The Gamut",
     "DESCRIPTION": "Deal !D! damage. NL Cannot be played if you've played fewer than 10 cards this turn.",
     "UPGRADE_DESCRIPTION": "Deal !D! damage to all enemies. NL Cannot be played if you've played fewer than 10 cards this turn.",
@@ -235,33 +236,33 @@
       " more cards to use this."
       ]
   },
-  "theFirst:RecklessBlow": {
+  "theSlumbering:RecklessBlow": {
     "NAME": "Reckless Blow",
     "DESCRIPTION": "Additionally costs 10 Block. NL Deal !D! damage.",
     "EXTENDED_DESCRIPTION": [
       "I need more #yBlock to use this."
     ]
   },
-  "theFirst:AlarmedStrike": {
+  "theSlumbering:AlarmedStrike": {
     "NAME": "Alarmed Strike",
-    "DESCRIPTION": "Deal !D! damage. NL thefirst:Snooze."
+    "DESCRIPTION": "Deal !D! damage. NL theslumbering:Snooze."
   },
-  "theFirst:ShieldToss": {
+  "theSlumbering:ShieldToss": {
     "NAME": "Shield Toss",
     "DESCRIPTION": "Remove all your Block. NL For every 10 Block, deal !D! damage to a random enemy."
   },
-  "theFirst:FalseNap": {
+  "theSlumbering:FalseNap": {
     "NAME": "False Nap",
     "DESCRIPTION": "Can only be played if no other card has been played. NL Deal !D! damage. NL Apply !M! Vulnerable.",
     "EXTENDED_DESCRIPTION": [
       "I have already played a card this turn."
     ]
   },
-  "theFirst:CountingSheep": {
+  "theSlumbering:CountingSheep": {
     "NAME": "Counting Sheep",
-    "DESCRIPTION": "thefirst:Search - Attack NL Deal !D! damage to all enemies for each card searched."
+    "DESCRIPTION": "theslumbering:Search - Attack NL Deal !D! damage to all enemies for each card searched."
   },
-  "theFirst:CustomDream": {
+  "theSlumbering:CustomDream": {
     "NAME": "Custom Dream",
     "DESCRIPTION": "Choose an [#ebc634]Option.",
     "EXTENDED_DESCRIPTION": [
@@ -272,113 +273,113 @@
       " damage to all enemies."
     ]
   },
-  "theFirst:Mulligan": {
+  "theSlumbering:Mulligan": {
     "NAME": "Mulligan",
     "DESCRIPTION": "Shuffle your hand and discard pile into your draw pile, then redraw your hand. NL Exhaust."
   },
-  "theFirst:Hypersomnia": {
+  "theSlumbering:Hypersomnia": {
     "NAME": "Hypersomnia",
     "DESCRIPTION": "Gain !M! Drowsy. NL Exhaust."
   },
-  "theFirst:ReadyGaze": {
+  "theSlumbering:ReadyGaze": {
     "NAME": "Ready Gaze",
-    "DESCRIPTION": "Gain 1 thefirst:Parry."
+    "DESCRIPTION": "Gain 1 theslumbering:Parry."
   },
-  "theFirst:FullGuard": {
+  "theSlumbering:FullGuard": {
     "NAME": "Full Guard",
     "DESCRIPTION": "Gain !M! Block for each card played this turn."
   },
-  "theFirst:NightTerror": {
+  "theSlumbering:NightTerror": {
     "NAME": "Night Terror",
     "DESCRIPTION": "Stun and deal !D! damage to a random enemy."
   },
-  "theFirst:Hallucinations": {
+  "theSlumbering:Hallucinations": {
     "NAME": "Hallucinations",
-    "DESCRIPTION": "Deal !D! damage. NL Permanently gain !theFirst:Magic! damage the first time played each combat. NL thefirst:Snooze."
+    "DESCRIPTION": "Deal !D! damage. NL Permanently gain !theSlumbering:Magic! damage the first time played each combat. NL theslumbering:Snooze."
   },
-  "theFirst:SelectiveMemory": {
+  "theSlumbering:SelectiveMemory": {
     "NAME": "Selective Memory",
     "DESCRIPTION": "Choose a card in your hand. Remove that card and this card from your deck.",
     "EXTENDED_DESCRIPTION": [
       "My hand is empty."
     ]
   },
-  "theFirst:FocusedStrike": {
+  "theSlumbering:FocusedStrike": {
     "NAME": "Focused Strike",
-    "DESCRIPTION": "Deal !D! damage. NL If you are not thefirst:Drowsy, deal !D! damage again."
+    "DESCRIPTION": "Deal !D! damage. NL If you are not theslumbering:Drowsy, deal !D! damage again."
   },
-  "theFirst:ForcedThought": {
+  "theSlumbering:ForcedThought": {
     "NAME": "Forced Thought",
-    "DESCRIPTION": "thefirst:Search - Any NL (Choose to search for an attack, a skill, or a power card)",
+    "DESCRIPTION": "theslumbering:Search - Any NL (Choose to search for an attack, a skill, or a power card)",
     "EXTENDED_DESCRIPTION": [
-      "thefirst:Search - Power",
-      "thefirst:Search - Attack",
-      "thefirst:Search - Skill"
+      "theslumbering:Search - Power",
+      "theslumbering:Search - Attack",
+      "theslumbering:Search - Skill"
     ]
   },
-  "theFirst:TrialsofHypnos": {
+  "theSlumbering:TrialsofHypnos": {
     "NAME": "Trials of Hypnos",
-    "DESCRIPTION": "Wager 10% of your gold to attempt a thefirst:Trial_of_Hypnos. NL Exhaust.",
-    "UPGRADE_DESCRIPTION": "Wager 10% of your gold to attempt a thefirst:Trial_of_Hypnos. NL Exhaust. NL (Upgrading unlocks harder, but more rewarding trials)"
+    "DESCRIPTION": "Wager 10% of your gold to attempt a theslumbering:Trial_of_Hypnos. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Wager 10% of your gold to attempt a theslumbering:Trial_of_Hypnos. NL Exhaust. NL (Upgrading unlocks harder, but more rewarding trials)"
   },
-  "theFirst:Scavenge": {
+  "theSlumbering:Scavenge": {
     "NAME": "Scavenge",
     "DESCRIPTION": "If you have more than !M! attacks in your discard, deal !D! damage.",
     "UPGRADE_DESCRIPTION": "If you have more than !M! attacks in your discard, deal !D! damage. NL If you have more than !M! skills, gain !B! Block."
   },
-  "theFirst:GuardedSwipe": {
+  "theSlumbering:GuardedSwipe": {
     "NAME": "Guarded Swipe",
     "DESCRIPTION": "When drawn, gain !B! Block. NL Deal !D! damage.",
-    "UPGRADE_DESCRIPTION": "When drawn, gain !B! Block. NL Deal !D! damage. NL thefirst:Snooze."
+    "UPGRADE_DESCRIPTION": "When drawn, gain !B! Block. NL Deal !D! damage. NL theslumbering:Snooze."
   },
-  "theFirst:RestedPunch": {
+  "theSlumbering:RestedPunch": {
     "NAME": "Rested Punch",
-    "DESCRIPTION": "Deal !D! damage. NL Each time you draw this card, it gains !M! damage on the next use. NL thefirst:Snooze."
+    "DESCRIPTION": "Deal !D! damage. NL Each time you draw this card, it gains !M! damage on the next use. NL theslumbering:Snooze."
   },
-  "theFirst:InescapableThoughts": {
+  "theSlumbering:InescapableThoughts": {
     "NAME": "Unrelenting",
     "DESCRIPTION": "Repeat the next card costing at least 1 that you play until it can no longer be played."
   },
-  "theFirst:Defend_Slumbering": {
+  "theSlumbering:Defend_Slumbering": {
     "NAME": "Defend",
     "DESCRIPTION": "Gain !B! Block."
   },
-  "theFirst:Strike_Slumbering": {
+  "theSlumbering:Strike_Slumbering": {
     "NAME": "Strike",
     "DESCRIPTION": "Deal !D! damage."
   },
-  "theFirst:NocturnalGifts": {
+  "theSlumbering:NocturnalGifts": {
     "NAME": "Nocturnal Gifts",
-    "DESCRIPTION": "Draw a card for each thefirst:Drowsy you have."
+    "DESCRIPTION": "Draw a card for each theslumbering:Drowsy you have."
   },
-  "theFirst:SoundBarrier": {
+  "theSlumbering:SoundBarrier": {
     "NAME": "Sound Barrier",
-    "DESCRIPTION": "Gain !B! block for each thefirst:Snooze card in your deck."
+    "DESCRIPTION": "Gain !B! block for each theslumbering:Snooze card in your deck."
   },
-  "theFirst:SafeBarrage": {
+  "theSlumbering:SafeBarrage": {
     "NAME": "Safe Barrage",
     "DESCRIPTION": "Can only be played if your Block is greater than 20. NL Deal !D! damage to a random enemy !M! times."
   },
-  "theFirst:PanicAttack": {
+  "theSlumbering:PanicAttack": {
     "NAME": "Panic Attack",
     "DESCRIPTION": "Stun all enemies, but add a random Curse to your deck."
   },
-  "theFirst:DreamPeace": {
+  "theSlumbering:DreamPeace": {
     "NAME": "Dream: Peace",
     "DESCRIPTION": "Heal an enemy for !M! percent of its max health and gain that much Block."
   },
-  "theFirst:LastResort": {
+  "theSlumbering:LastResort": {
     "NAME": "Last Resort",
     "DESCRIPTION": "Can only be played if no other cards can be played. NL Deal !D! damage to ALL enemies."
   },
-  "theFirst:BindingBlow": {
+  "theSlumbering:BindingBlow": {
     "NAME": "Binding Blow",
     "DESCRIPTION": "You cannot play other cards this turn until this card has been played. NL Deal !D! damage.",
     "EXTENDED_DESCRIPTION": [
       "I am bound by more than one source."
     ]
   },
-  "theFirst:DreamDeath": {
+  "theSlumbering:DreamDeath": {
     "NAME": "Dream: Death",
     "DESCRIPTION": "Deal !D! damage to an enemy. If it dies, return this card to you hand.",
     "UPGRADE_DESCRIPTION": "Deal !D! damage to an enemy. If it dies, return this card to you hand and Refund."

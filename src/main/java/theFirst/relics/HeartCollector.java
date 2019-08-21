@@ -11,15 +11,15 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.MinionPower;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
-import theFirst.FirstMod;
+import theFirst.SlumberingMod;
 import theFirst.util.TextureLoader;
 
-import static theFirst.FirstMod.makeRelicOutlinePath;
-import static theFirst.FirstMod.makeRelicPath;
+import static theFirst.SlumberingMod.makeRelicOutlinePath;
+import static theFirst.SlumberingMod.makeRelicPath;
 
 public class HeartCollector extends CustomRelic implements ClickableRelic {
 
-    public static final String ID = FirstMod.makeID("HeartCollector");
+    public static final String ID = SlumberingMod.makeID("HeartCollector");
 
     private static final Texture IMG = TextureLoader.getTexture(makeRelicPath("HeartCollector.png"));
     private static final Texture OUTLINE = TextureLoader.getTexture(makeRelicOutlinePath("HeartCollector.png"));
@@ -46,8 +46,8 @@ public class HeartCollector extends CustomRelic implements ClickableRelic {
 
             //gain block
             int woke = 0;
-            if(AbstractDungeon.player.hasRelic(FirstRelic.ID)){
-                AbstractRelic r = AbstractDungeon.player.getRelic(FirstRelic.ID);
+            if(AbstractDungeon.player.hasRelic(SlumberingRelic.ID)){
+                AbstractRelic r = AbstractDungeon.player.getRelic(SlumberingRelic.ID);
                 woke = r.counter;
             }
 

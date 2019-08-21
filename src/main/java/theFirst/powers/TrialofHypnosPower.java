@@ -3,7 +3,6 @@ package theFirst.powers;
 import basemod.interfaces.CloneablePowerInterface;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
-import com.badlogic.gdx.math.MathUtils;
 import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
@@ -15,14 +14,14 @@ import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.vfx.RainingGoldEffect;
 import com.megacrit.cardcrawl.vfx.cardManip.ShowCardBrieflyEffect;
-import theFirst.FirstMod;
+import theFirst.SlumberingMod;
 import theFirst.cards.*;
 import theFirst.util.TextureLoader;
 
 public class TrialofHypnosPower extends AbstractCustomPower implements CloneablePowerInterface {
     @SuppressWarnings("WeakerAccess")
 
-    public static final String POWER_ID = FirstMod.makeID("TrialofHypnosPower");
+    public static final String POWER_ID = SlumberingMod.makeID("TrialofHypnosPower");
     private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
     public static final String NAME = powerStrings.NAME;
     public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;

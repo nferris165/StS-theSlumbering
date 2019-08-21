@@ -6,24 +6,23 @@ import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import theFirst.FirstMod;
-import theFirst.characters.TheFirst;
+import theFirst.SlumberingMod;
+import theFirst.characters.TheSlumbering;
 
-import static theFirst.FirstMod.makeCardPath;
+import static theFirst.SlumberingMod.makeCardPath;
 
 public class Jab extends AbstractCustomCard {
 
-    public static final String ID = FirstMod.makeID(Jab.class.getSimpleName());
+    public static final String ID = SlumberingMod.makeID(Jab.class.getSimpleName());
 
     public static final String IMG = makeCardPath("A_temp.png");
 
     private static final CardRarity RARITY = CardRarity.COMMON;
     private static final CardTarget TARGET = CardTarget.ENEMY;
     private static final CardType TYPE = CardType.ATTACK;
-    public static final CardColor COLOR = TheFirst.Enums.COLOR_FIRST;
+    public static final CardColor COLOR = TheSlumbering.Enums.COLOR_SLUMBERING;
 
     private static final int COST = 1;
-    private static final int UPGRADED_COST = 1;
 
     private static final int DAMAGE = 6;
     private static final int UPGRADE_PLUS_DMG = 3;
@@ -31,7 +30,6 @@ public class Jab extends AbstractCustomCard {
     public Jab() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         baseDamage = damage = DAMAGE;
-        //this.tags.add(CardTags.STRIKE);
     }
 
 
@@ -47,7 +45,8 @@ public class Jab extends AbstractCustomCard {
         if (!upgraded) {
             upgradeName();
             upgradeDamage(UPGRADE_PLUS_DMG);
-            //upgradeBaseCost(UPGRADED_COST);
+            this.isInnate = true;
+            this.rawDescription = updated_desc;
             initializeDescription();
         }
     }

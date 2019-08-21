@@ -6,15 +6,15 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.helpers.PowerTip;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
-import theFirst.FirstMod;
+import theFirst.SlumberingMod;
 import theFirst.util.TextureLoader;
 
-import static theFirst.FirstMod.makeRelicOutlinePath;
-import static theFirst.FirstMod.makeRelicPath;
+import static theFirst.SlumberingMod.makeRelicOutlinePath;
+import static theFirst.SlumberingMod.makeRelicPath;
 
 public class PowerFromBeyond extends AbstractCustomRelic {
 
-    public static final String ID = FirstMod.makeID("PowerFromBeyond");
+    public static final String ID = SlumberingMod.makeID("PowerFromBeyond");
 
     private static final Texture IMG = TextureLoader.getTexture(makeRelicPath("zzz.png"));
     private static final Texture OUTLINE = TextureLoader.getTexture(makeRelicOutlinePath("zzz.png"));

@@ -4,22 +4,22 @@ import com.megacrit.cardcrawl.actions.unique.DoubleYourBlockAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import theFirst.FirstMod;
-import theFirst.characters.TheFirst;
+import theFirst.SlumberingMod;
+import theFirst.characters.TheSlumbering;
 
 import static com.megacrit.cardcrawl.cards.green.Reflex.EXTENDED_DESCRIPTION;
-import static theFirst.FirstMod.makeCardPath;
+import static theFirst.SlumberingMod.makeCardPath;
 
 public class StrongFooting extends AbstractCustomCard {
 
-    public static final String ID = FirstMod.makeID(StrongFooting.class.getSimpleName());
+    public static final String ID = SlumberingMod.makeID(StrongFooting.class.getSimpleName());
 
     public static final String IMG = makeCardPath("S_temp.png");
 
     private static final CardRarity RARITY = CardRarity.COMMON;
     private static final CardTarget TARGET = CardTarget.SELF;
     private static final CardType TYPE = CardType.SKILL;
-    public static final CardColor COLOR = TheFirst.Enums.COLOR_FIRST;
+    public static final CardColor COLOR = TheSlumbering.Enums.COLOR_SLUMBERING;
 
     private static final int COST = 1;
     private static final int UP_COST = 0;

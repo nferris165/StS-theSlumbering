@@ -9,16 +9,16 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.PowerTip;
 import com.megacrit.cardcrawl.vfx.UpgradeShineEffect;
 import com.megacrit.cardcrawl.vfx.cardManip.ShowCardBrieflyEffect;
-import theFirst.FirstMod;
+import theFirst.SlumberingMod;
 import theFirst.util.TextureLoader;
 
 import java.util.*;
 
-import static theFirst.FirstMod.*;
+import static theFirst.SlumberingMod.*;
 
 public class CursedAnvil extends AbstractCustomRelic {
 
-    public static final String ID = FirstMod.makeID("CursedAnvil");
+    public static final String ID = SlumberingMod.makeID("CursedAnvil");
 
     private static final Texture IMG = TextureLoader.getTexture(makeRelicPath("CursedAnvil2.png"));
     private static final Texture OUTLINE = TextureLoader.getTexture(makeRelicOutlinePath("CursedAnvil.png"));

@@ -4,15 +4,15 @@ import com.megacrit.cardcrawl.actions.common.SetDontTriggerAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import theFirst.FirstMod;
+import theFirst.SlumberingMod;
 import theFirst.actions.SeedAction;
 import theFirst.cards.AbstractCustomCard;
 
-import static theFirst.FirstMod.makeCardPath;
+import static theFirst.SlumberingMod.makeCardPath;
 
 public class Seed extends AbstractCustomCard {
 
-    public static final String ID = FirstMod.makeID(Seed.class.getSimpleName());
+    public static final String ID = SlumberingMod.makeID(Seed.class.getSimpleName());
 
     public static final String IMG = makeCardPath("S_temp.png");
 

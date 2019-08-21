@@ -8,7 +8,6 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.vfx.cardManip.ShowCardAndAddToDrawPileEffect;
 import javassist.CannotCompileException;
 import javassist.CtBehavior;
-import theFirst.FirstMod;
 
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -27,7 +26,7 @@ public class SnoozePatch {
     public static void Insert(DiscardAtEndOfTurnAction __instance, Iterator c, AbstractCard e){
 
         if(e.hasTag(customTags.Snooze)){
-            //FirstMod.logger.info(c + " " + e + " \n\n");
+            //SlumberingMod.logger.info(c + " " + e + " \n\n");
             AbstractDungeon.player.limbo.addToTop(e);
             c.remove();
         }

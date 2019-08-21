@@ -9,13 +9,13 @@ import com.megacrit.cardcrawl.localization.PotionStrings;
 import com.megacrit.cardcrawl.potions.AbstractPotion;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
 import com.megacrit.cardcrawl.rooms.AbstractRoom.RoomPhase;
-import theFirst.FirstMod;
-import theFirst.relics.FirstRelic;
+import theFirst.SlumberingMod;
+import theFirst.relics.SlumberingRelic;
 
 public class NewPotion extends AbstractPotion {
 
 
-    public static final String POTION_ID = FirstMod.makeID("NewPotion");
+    public static final String POTION_ID = SlumberingMod.makeID("NewPotion");
     private static final PotionStrings potionStrings = CardCrawlGame.languagePack.getPotionString(POTION_ID);
 
     public static final String NAME = potionStrings.NAME;
@@ -34,8 +34,8 @@ public class NewPotion extends AbstractPotion {
     @Override
     public void use(AbstractCreature target) {
 
-        if(AbstractDungeon.player.hasRelic(FirstRelic.ID)){
-            AbstractRelic r = AbstractDungeon.player.getRelic(FirstRelic.ID);
+        if(AbstractDungeon.player.hasRelic(SlumberingRelic.ID)){
+            AbstractRelic r = AbstractDungeon.player.getRelic(SlumberingRelic.ID);
             r.onTrigger();
         }
     }

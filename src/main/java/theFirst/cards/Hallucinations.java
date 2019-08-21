@@ -7,23 +7,23 @@ import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import theFirst.FirstMod;
-import theFirst.characters.TheFirst;
+import theFirst.SlumberingMod;
+import theFirst.characters.TheSlumbering;
 import theFirst.patches.customTags;
 
 import static com.megacrit.cardcrawl.core.CardCrawlGame.languagePack;
-import static theFirst.FirstMod.makeCardPath;
+import static theFirst.SlumberingMod.makeCardPath;
 
 public class Hallucinations extends AbstractCustomCard {
 
-    public static final String ID = FirstMod.makeID(Hallucinations.class.getSimpleName());
+    public static final String ID = SlumberingMod.makeID(Hallucinations.class.getSimpleName());
 
     public static final String IMG = makeCardPath("A_temp.png");
 
     private static final CardRarity RARITY = CardRarity.UNCOMMON;
     private static final CardTarget TARGET = CardTarget.ENEMY;
     private static final CardType TYPE = CardType.ATTACK;
-    public static final CardColor COLOR = TheFirst.Enums.COLOR_FIRST;
+    public static final CardColor COLOR = TheSlumbering.Enums.COLOR_SLUMBERING;
 
     private static final int COST = 2;
 

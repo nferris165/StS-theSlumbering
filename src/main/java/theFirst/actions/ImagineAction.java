@@ -5,7 +5,7 @@ import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 
-import static theFirst.FirstMod.logger;
+import static theFirst.SlumberingMod.logger;
 
 public class ImagineAction extends AbstractGameAction {
     private AbstractCard.CardType cardType;

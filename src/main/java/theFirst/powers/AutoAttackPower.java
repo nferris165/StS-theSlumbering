@@ -11,7 +11,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.AbstractPower;
-import theFirst.FirstMod;
+import theFirst.SlumberingMod;
 import theFirst.cards.BasicAttack;
 import theFirst.cards.DrowsyAttack;
 import theFirst.cards.WokeAttack;
@@ -21,7 +21,7 @@ public class AutoAttackPower extends AbstractPower implements CloneablePowerInte
     @SuppressWarnings("WeakerAccess")
     public AbstractCreature source;
 
-    public static final String POWER_ID = FirstMod.makeID("AutoAttackPower");
+    public static final String POWER_ID = SlumberingMod.makeID("AutoAttackPower");
     private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
     public static final String NAME = powerStrings.NAME;
     public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;

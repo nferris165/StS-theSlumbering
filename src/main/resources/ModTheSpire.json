@@ -1,8 +1,8 @@
 {
-  "modid": "firstmod",
-  "name": "First Mod",
+  "modid": "slumberingmod",
+  "name": "Slumbering Mod",
   "author_list": ["Nichilas"],
-  "description": "My first mod.",
+  "description": "The Slumbering character pack.",
   "version": "${project.version}",
   "sts_version": "${SlayTheSpire.version}",
   "mts_version": "${ModTheSpire.version}",
