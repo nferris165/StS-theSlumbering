@@ -27,7 +27,7 @@ public class SnoozePatch {
     public static void Insert(DiscardAtEndOfTurnAction __instance, Iterator c, AbstractCard e){
 
         if(e.hasTag(customTags.Snooze)){
-            FirstMod.logger.info(c + " " + e + " \n\n");
+            //FirstMod.logger.info(c + " " + e + " \n\n");
             AbstractDungeon.player.limbo.addToTop(e);
             c.remove();
         }

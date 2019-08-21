@@ -366,5 +366,22 @@
   "theFirst:DreamPeace": {
     "NAME": "Dream: Peace",
     "DESCRIPTION": "Heal an enemy for !M! percent of its max health and gain that much Block."
+  },
+  "theFirst:LastResort": {
+    "NAME": "Last Resort",
+    "DESCRIPTION": "Can only be played if no other cards can be played. NL Deal !D! damage to ALL enemies."
+  },
+  "theFirst:BindingBlow": {
+    "NAME": "Binding Blow",
+    "DESCRIPTION": "You cannot play other cards this turn until this card has been played. NL Deal !D! damage.",
+    "EXTENDED_DESCRIPTION": [
+      "I am bound by more than one source."
+    ]
+  },
+  "theFirst:DreamDeath": {
+    "NAME": "Dream: Death",
+    "DESCRIPTION": "Deal !D! damage to an enemy. If it dies, return this card to you hand.",
+    "UPGRADE_DESCRIPTION": "Deal !D! damage to an enemy. If it dies, return this card to you hand and Refund."
+
   }
 }

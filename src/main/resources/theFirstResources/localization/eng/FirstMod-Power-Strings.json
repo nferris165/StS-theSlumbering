@@ -77,5 +77,10 @@
                 "NAME": "Repeat Power",
                 "DESCRIPTIONS": ["Repeat the next card costing at least 1 that you play until it can no longer be played."
                 ]
+        },
+        "theFirst:BoundPower": {
+                "NAME": "Bound Power",
+                "DESCRIPTIONS": ["Cannot play cards until the binding source has been removed."
+                ]
         }
 }

@@ -9,6 +9,7 @@ import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.common.DamageAllEnemiesAction;
 import com.megacrit.cardcrawl.actions.common.DrawCardAction;
+import com.megacrit.cardcrawl.actions.common.GainEnergyAction;
 import com.megacrit.cardcrawl.actions.utility.SFXAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -68,10 +69,7 @@ public class FirstOrb extends AbstractOrb {
     @Override
     public void onEvoke() {
 
-        AbstractDungeon.actionManager.addToBottom(
-                new DamageAllEnemiesAction(AbstractDungeon.player,
-                        DamageInfo.createDamageMatrix(evokeAmount, true, true),
-                        DamageInfo.DamageType.THORNS, AbstractGameAction.AttackEffect.NONE));
+        AbstractDungeon.actionManager.addToBottom(new GainEnergyAction(evokeAmount));
 
         AbstractDungeon.actionManager.addToBottom(new SFXAction("TINGSHA"));
     }
@@ -99,10 +97,14 @@ public class FirstOrb extends AbstractOrb {
     @Override
     public void render(SpriteBatch sb) {
         sb.setColor(new Color(1.0f, 1.0f, 1.0f, c.a / 2.0f));
-        sb.draw(img, cX - 48.0f, cY - 48.0f + bobEffect.y, 48.0f, 48.0f, 96.0f, 96.0f, scale + MathUtils.sin(angle / PI_4) * ORB_WAVY_DIST * Settings.scale, scale, angle, 0, 0, 96, 96, false, false);
+        sb.draw(img, cX - 48.0f, cY - 48.0f + bobEffect.y, 48.0f, 48.0f, 96.0f,
+                96.0f, scale + MathUtils.sin(angle / PI_4) * ORB_WAVY_DIST * Settings.scale,
+                scale, angle, 0, 0, 96, 96, false, false);
         sb.setColor(new Color(1.0f, 1.0f, 1.0f, this.c.a / 2.0f));
         sb.setBlendFunction(770, 1);
-        sb.draw(img, cX - 48.0f, cY - 48.0f + bobEffect.y, 48.0f, 48.0f, 96.0f, 96.0f, scale, scale + MathUtils.sin(angle / PI_4) * ORB_WAVY_DIST * Settings.scale, -angle, 0, 0, 96, 96, false, false);
+        sb.draw(img, cX - 48.0f, cY - 48.0f + bobEffect.y, 48.0f, 48.0f, 96.0f,
+                96.0f, scale, scale + MathUtils.sin(angle / PI_4) * ORB_WAVY_DIST * Settings.scale,
+                -angle, 0, 0, 96, 96, false, false);
         sb.setBlendFunction(770, 771);
         renderText(sb);
         hb.render(sb);
