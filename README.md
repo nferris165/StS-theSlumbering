@@ -1,4 +1,4 @@
-# StS-theFirst
+# StS-theSlumbering
 
 This is the mod for The First, a brand new character class for Slay the Spire.
 

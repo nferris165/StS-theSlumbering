@@ -1,13 +1,13 @@
 {
-  "theFirst:BasicAttack": {
+  "theSlumbering:BasicAttack": {
     "NAME": "Basic Attack",
     "DESCRIPTION": "Deal !D! damage. NL Gain !B! Block. NL You are feeling [#666646]groggy...[]"
   },
-  "theFirst:BasicDefend": {
+  "theSlumbering:BasicDefend": {
     "NAME": "Basic Defend",
     "DESCRIPTION": "Gain !B! Block. NL You hear [#666646]screams...[] in your mind."
   },
-  "theFirst:DrowsyAttack": {
+  "theSlumbering:DrowsyAttack": {
     "NAME": "Drowsy Attack",
     "DESCRIPTION": "Deal !D! damage. NL Gain !B! Block. NL You are feeling [#666646]groggy...[]"
   },
