@@ -17,16 +17,16 @@ import java.util.ArrayList;
 
 import static theSlumbering.SlumberingMod.makeEventPath;
 
-public class BasicEvent extends AbstractImageEvent {
+public class MysteriousOrb extends AbstractImageEvent {
 
 
-    public static final String ID = SlumberingMod.makeID("BasicEvent");
+    public static final String ID = SlumberingMod.makeID("MysteriousOrb");
     private static final EventStrings eventStrings = CardCrawlGame.languagePack.getEventString(ID);
 
     private static final String NAME = eventStrings.NAME;
     private static final String[] DESCRIPTIONS = eventStrings.DESCRIPTIONS;
     private static final String[] OPTIONS = eventStrings.OPTIONS;
-    public static final String IMG = makeEventPath("BasicEvent.png");
+    public static final String IMG = makeEventPath("MysteriousOrb.png");
     private AbstractCard c;
     private boolean attack;
 
@@ -34,7 +34,7 @@ public class BasicEvent extends AbstractImageEvent {
 
     private int goldLoss;
 
-    public BasicEvent() {
+    public MysteriousOrb() {
         super(NAME, DESCRIPTIONS[0], IMG);
 
         if (AbstractDungeon.ascensionLevel >= 15) {
@@ -119,7 +119,6 @@ public class BasicEvent extends AbstractImageEvent {
                                 (float)Settings.HEIGHT / 2.0F));
 
                         this.imageEventText.updateBodyText(DESCRIPTIONS[3]);
-                        //TODO fix leave button placement
                         this.imageEventText.updateDialogOption(0, OPTIONS[5]);
                         this.imageEventText.clearRemainingOptions();
                         screenNum = 1;

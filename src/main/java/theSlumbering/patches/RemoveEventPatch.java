@@ -5,7 +5,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.events.beyond.WindingHalls;
 import theSlumbering.SlumberingMod;
 import theSlumbering.characters.TheSlumbering;
-import theSlumbering.events.BasicEvent;
+import theSlumbering.events.MysteriousOrb;
 import theSlumbering.relics.SlumberingRelic;
 
 @SpirePatch(clz=AbstractDungeon.class,method="initializeCardPools")
@@ -29,7 +29,7 @@ public class RemoveEventPatch {
 
 
         } else {
-            dungeon_instance.eventList.remove(BasicEvent.ID);
+            dungeon_instance.eventList.remove(MysteriousOrb.ID);
 
         }
 

@@ -28,7 +28,7 @@ import javassist.NotFoundException;
 import org.clapper.util.classutil.*;
 import theSlumbering.cards.BasicDefend;
 import theSlumbering.characters.TheSlumbering;
-import theSlumbering.events.BasicEvent;
+import theSlumbering.events.MysteriousOrb;
 import theSlumbering.monsters.SimpleMonster;
 import theSlumbering.patches.customTags;
 import theSlumbering.relics.AbstractCustomRelic;
@@ -207,7 +207,7 @@ public class SlumberingMod implements
         BaseMod.registerModBadge(badgeTexture, MODNAME, AUTHOR, DESCRIPTION, settingsPanel);
 
         //events
-        BaseMod.addEvent(BasicEvent.ID, BasicEvent.class, Exordium.ID);
+        BaseMod.addEvent(MysteriousOrb.ID, MysteriousOrb.class, Exordium.ID);
 
         //monsters
         BaseMod.addMonster(SimpleMonster.ID, "SimpleMon", () -> new SimpleMonster(0.0F, 25.0F));
@@ -238,6 +238,7 @@ public class SlumberingMod implements
         BaseMod.addRelic(new CursedAnvil(), RelicType.SHARED);
         BaseMod.addRelic(new EnchantedHammer(), RelicType.SHARED);
         BaseMod.addRelic(new GamblerFolly(), RelicType.SHARED);
+        BaseMod.addRelic(new CrystalEffigy(), RelicType.SHARED);
 
         //unlock?
         UnlockTracker.markRelicAsSeen(GlassShield.ID);
@@ -247,6 +248,7 @@ public class SlumberingMod implements
         UnlockTracker.markRelicAsSeen(GamblerFolly.ID);
         UnlockTracker.markRelicAsSeen(StarMobile.ID);
         UnlockTracker.markRelicAsSeen(PowerFromBeyond.ID);
+        UnlockTracker.markRelicAsSeen(CrystalEffigy.ID);
 
     }
 

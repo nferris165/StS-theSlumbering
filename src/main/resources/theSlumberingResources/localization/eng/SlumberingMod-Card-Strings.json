@@ -9,19 +9,19 @@
   },
   "theSlumbering:DrowsyAttack": {
     "NAME": "Drowsy Attack",
-    "DESCRIPTION": "Deal !D! damage. NL Gain !B! Block. NL You are feeling [#666646]groggy...[]"
+    "DESCRIPTION": "Deal !D! damage. NL Gain !B! Block. NL Gain 1 theslumbering:Drowsy. NL You can feel [#666646]energy[] returning to your body."
   },
   "theSlumbering:DrowsyDefend": {
     "NAME": "Drowsy Defend",
-    "DESCRIPTION": "Gain !B! Block. NL You hear [#666646]screams...[] in your mind."
+    "DESCRIPTION": "Gain !B! Block. NL Lose 1 theslumbering:Drowsy. NL [#666646]Whispers[] echo through your mind."
   },
   "theSlumbering:WokeAttack": {
-    "NAME": "Woke Attack",
-    "DESCRIPTION": "Deal !D! damage. NL Gain !B! Block. NL You are feeling [#666646]groggy...[]"
+    "NAME": "Awakened Attack",
+    "DESCRIPTION": "Deal !D! damage to all enemies. NL Gain !B! Block. NL Gain 1 theslumbering:Drowsy."
   },
   "theSlumbering:WokeDefend": {
-    "NAME": "Woke Defend",
-    "DESCRIPTION": "Gain !B! Block. NL You hear [#666646]screams...[] in your mind."
+    "NAME": "Awakened Defend",
+    "DESCRIPTION": "Gain !B! Block. NL Next turn, gain !B! Block. NL Lose 1 theslumbering:Drowsy."
   },
   "theSlumbering:Jab": {
     "NAME": "Jab",

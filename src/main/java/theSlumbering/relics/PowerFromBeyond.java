@@ -16,8 +16,8 @@ public class PowerFromBeyond extends AbstractCustomRelic {
 
     public static final String ID = SlumberingMod.makeID("PowerFromBeyond");
 
-    private static final Texture IMG = TextureLoader.getTexture(makeRelicPath("zzz.png"));
-    private static final Texture OUTLINE = TextureLoader.getTexture(makeRelicOutlinePath("zzz.png"));
+    private static final Texture IMG = TextureLoader.getTexture(makeRelicPath("temp.png"));
+    private static final Texture OUTLINE = TextureLoader.getTexture(makeRelicOutlinePath("temp.png"));
 
     private static final int LIMIT = 2;
 

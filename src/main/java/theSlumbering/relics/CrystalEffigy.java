@@ -4,38 +4,52 @@ import com.badlogic.gdx.graphics.Texture;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.PowerTip;
-import com.megacrit.cardcrawl.relics.AbstractRelic;
 import theSlumbering.SlumberingMod;
-import theSlumbering.powers.DrowsyPower;
 import theSlumbering.util.TextureLoader;
 
-import static theSlumbering.SlumberingMod.*;
+import static theSlumbering.SlumberingMod.makeRelicOutlinePath;
+import static theSlumbering.SlumberingMod.makeRelicPath;
 
-public class StarMobile extends AbstractCustomRelic {
+public class CrystalEffigy extends AbstractCustomRelic {
 
-    public static final String ID = SlumberingMod.makeID("StarMobile");
+    public static final String ID = SlumberingMod.makeID("CrystalEffigy");
 
-    //TODO: make art
     private static final Texture IMG = TextureLoader.getTexture(makeRelicPath("temp.png"));
     private static final Texture OUTLINE = TextureLoader.getTexture(makeRelicOutlinePath("temp.png"));
 
+    private boolean damaged;
 
-    public StarMobile() {
-        super(ID, IMG, OUTLINE, AbstractRelic.RelicTier.UNCOMMON, LandingSound.MAGICAL);
+
+    public CrystalEffigy() {
+        super(ID, IMG, OUTLINE, RelicTier.RARE, LandingSound.CLINK);
 
         this.counter = -1;
         this.floatCounter = 0;
+        this.damaged = false;
     }
 
     @Override
     public String getUpdatedDescription() {
         return DESCRIPTIONS[0];
+
     }
 
     @Override
-    public void onEquip() {
-        if(AbstractDungeon.player.hasPower(DrowsyPower.POWER_ID)){
-            AbstractDungeon.player.getPower(DrowsyPower.POWER_ID).updateDescription();
+    public void atBattleStart() {
+        this.damaged = false;
+    }
+
+    @Override
+    public void onLoseHp(int damageAmount) {
+        this.damaged = true;
+        super.onLoseHp(damageAmount);
+    }
+
+    @Override
+    public void onVictory() {
+        if(!this.damaged){
+            this.flash();
+            AbstractDungeon.player.increaseMaxHp(10, true);
         }
     }
 

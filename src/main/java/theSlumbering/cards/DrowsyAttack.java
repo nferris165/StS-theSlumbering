@@ -30,8 +30,8 @@ public class DrowsyAttack extends AbstractCustomCard {
     private static final int BLOCK = 2;
     private static final int UPGRADE_BLOCK = 2;
 
-    private static final int DAMAGE = 7;
-    private static final int UPGRADE_PLUS_DMG = 3;
+    private static final int DAMAGE = 6;
+    private static final int UPGRADE_PLUS_DMG = 2;
 
 
     public DrowsyAttack() {
@@ -42,7 +42,6 @@ public class DrowsyAttack extends AbstractCustomCard {
 
         //tags
         this.tags.add(BaseModCardTags.BASIC_STRIKE);
-        //this.tags.add(CardTags.STRIKE);
         this.tags.add(customTags.Drowsy);
 
     }
