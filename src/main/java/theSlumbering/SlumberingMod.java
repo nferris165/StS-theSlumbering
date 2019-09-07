@@ -17,6 +17,7 @@ import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.dungeons.Exordium;
+import com.megacrit.cardcrawl.dungeons.TheCity;
 import com.megacrit.cardcrawl.helpers.CardHelper;
 import com.megacrit.cardcrawl.helpers.FontHelper;
 import com.megacrit.cardcrawl.localization.*;
@@ -29,6 +30,7 @@ import org.clapper.util.classutil.*;
 import theSlumbering.cards.BasicDefend;
 import theSlumbering.characters.TheSlumbering;
 import theSlumbering.events.MysteriousOrb;
+import theSlumbering.events.PoweredUp;
 import theSlumbering.monsters.SimpleMonster;
 import theSlumbering.patches.customTags;
 import theSlumbering.relics.AbstractCustomRelic;
@@ -208,6 +210,7 @@ public class SlumberingMod implements
 
         //events
         BaseMod.addEvent(MysteriousOrb.ID, MysteriousOrb.class, Exordium.ID);
+        BaseMod.addEvent(PoweredUp.ID, PoweredUp.class, TheCity.ID);
 
         //monsters
         BaseMod.addMonster(SimpleMonster.ID, "SimpleMon", () -> new SimpleMonster(0.0F, 25.0F));

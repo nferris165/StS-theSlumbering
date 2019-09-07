@@ -124,6 +124,7 @@ public class MysteriousOrb extends AbstractImageEvent {
                         screenNum = 1;
                         break;
                 }
+                break;
         }
     }
 }

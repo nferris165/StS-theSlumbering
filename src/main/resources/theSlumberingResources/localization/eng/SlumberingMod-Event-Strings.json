@@ -18,5 +18,35 @@
       "[Obtain Reward]",
       "[Locked] Requires: Attack Card"
     ]
+  },
+  "theSlumbering:PoweredUp": {
+    "NAME": "Powered Up",
+    "DESCRIPTIONS": [
+      "You notice a crack in the hallway wall. You move to peer inside, but as you lean against the wall, it crumbles to the floor revealing a hidden room! NL NL At the center of the room is a well filled with a mysterious swirling liquid that is constantly changing colors.",
+      "As you lean over the side of the well, suddenly the liquid shoots out above you, pulling you beneath the surface. NL NL When you look up you see a vision of you past playing out in front of you. ",
+      "As these scenes play out, you begin to feel words burning into your mind. NL You try to focus on the one that most matches your history... NL ",
+      "You continue on your way, confident that you have avoided yet another trap.",
+      " NL A - Think NL B - Sense NL C - Feel",
+      " NL A - Seek NL B - Protect NL C - Serve",
+      " NL A - Lead NL B - Save NL C - Escape",
+      " NL A - Work NL B - Relax NL C - Play",
+      " NL A - Greed NL B - Apathy NL C - Charity",
+      " NL A - Impress NL B - Advise NL C - Comfort",
+      " NL A - Mind NL B - Heart NL C - Spirit",
+      " NL A - Impossible NL B - Eternal NL C - Pervasive",
+      " NL A - Touch NL B - Watch NL C - Listen",
+      " NL A - Glory NL B - Security NL C - Serenity",
+      "The burning sensation begins to fade away. NL When you open your eyes again, you are standing at the edge of the well, your arm soaking wet. You notice that the liquid in the well, now as transparent as water, no longer has any colors. ",
+      "You turn to leave, feeling as though a dormant power has awakened inside you."
+
+    ],
+    "OPTIONS": [
+      "[Reach into the Well] #rFall #rdeeper #rinto #ryour #pslumber...",
+      "[Leave]",
+      "[Continue]",
+      "A",
+      "B",
+      "C"
+    ]
   }
 }
