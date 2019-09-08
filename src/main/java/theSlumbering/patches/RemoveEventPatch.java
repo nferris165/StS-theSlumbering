@@ -53,8 +53,5 @@ public class RemoveEventPatch {
                 //dungeon_instance.eventList.remove(ArtOfSlimeWar.ID);
             }
         }
-
-        //SlumberingMod.logger.info("patch worked\n\n\n");
-
     }
 }
