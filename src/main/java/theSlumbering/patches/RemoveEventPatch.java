@@ -8,7 +8,10 @@ import theSlumbering.characters.TheSlumbering;
 import theSlumbering.events.MysteriousOrb;
 import theSlumbering.relics.SlumberingRelic;
 
-@SpirePatch(clz=AbstractDungeon.class,method="initializeCardPools")
+@SpirePatch(
+        clz=AbstractDungeon.class,
+        method="initializeCardPools"
+)
 public class RemoveEventPatch {
 
     public static void Prefix(AbstractDungeon dungeon_instance) {

@@ -135,6 +135,7 @@ public class SlumberingRelic extends AbstractCustomRelic implements ClickableRel
 
     @Override
     public void onTrigger(int s){
+        this.flash();
         this.counter += s;
         if(this.counter < 0) {
             this.counter = 0;

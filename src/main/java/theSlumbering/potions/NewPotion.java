@@ -22,7 +22,7 @@ public class NewPotion extends AbstractPotion {
     public static final String[] DESCRIPTIONS = potionStrings.DESCRIPTIONS;
 
     public NewPotion() {
-        super(NAME, POTION_ID, PotionRarity.COMMON, PotionSize.HEART, PotionColor.POWER);
+        super(NAME, POTION_ID, PotionRarity.RARE, PotionSize.HEART, PotionColor.POWER);
 
         potency = getPotency();
         description = DESCRIPTIONS[0];
@@ -34,10 +34,7 @@ public class NewPotion extends AbstractPotion {
     @Override
     public void use(AbstractCreature target) {
 
-        if(AbstractDungeon.player.hasRelic(SlumberingRelic.ID)){
-            AbstractRelic r = AbstractDungeon.player.getRelic(SlumberingRelic.ID);
-            r.onTrigger();
-        }
+        SlumberingMod.incSlumberingRelic(potency);
     }
 
     //TODO use on map? ui.panels.potion
