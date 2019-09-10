@@ -6,6 +6,7 @@ import com.megacrit.cardcrawl.events.beyond.WindingHalls;
 import theSlumbering.SlumberingMod;
 import theSlumbering.characters.TheSlumbering;
 import theSlumbering.events.MysteriousOrb;
+import theSlumbering.events.PoweredUp;
 import theSlumbering.relics.SlumberingRelic;
 
 @SpirePatch(
@@ -33,6 +34,7 @@ public class RemoveEventPatch {
 
         } else {
             dungeon_instance.eventList.remove(MysteriousOrb.ID);
+            dungeon_instance.eventList.remove(PoweredUp.ID);
 
         }
 

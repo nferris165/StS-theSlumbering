@@ -19,28 +19,30 @@ public class RelicRemovePatch {
         if (AbstractDungeon.player instanceof TheSlumbering) {
 
             //healing
-            BaseMod.removeRelic(new BloodVial());  //Ironclad
+            BaseMod.removeRelic(new BloodVial());  //better out
             BaseMod.removeRelic(new BurningBlood());  //Ironclad
             BaseMod.removeRelic(new BlackBlood());  //Ironclad
-            BaseMod.removeRelic(new RegalPillow()); //tweak
-            BaseMod.removeRelic(new MeatOnTheBone());
-            BaseMod.removeRelic(new Pantograph());
-            BaseMod.removeRelic(new BirdFacedUrn()); //tweak
-            BaseMod.removeRelic(new EternalFeather()); //tweak
-            BaseMod.removeRelic(new BloodyIdol()); //tweak
-            BaseMod.removeRelic(new MealTicket()); //tweak
-            BaseMod.removeRelic(new ToyOrnithopter()); //tweak
+            BaseMod.removeRelic(new MagicFlower());  //Ironclad
+            BaseMod.removeRelic(new MeatOnTheBone()); //better out
+            BaseMod.removeRelic(new Pantograph());  //better out
+            BaseMod.removeRelic(new BirdFacedUrn()); //better out
+            BaseMod.removeRelic(new EternalFeather()); //better out
+            BaseMod.removeRelic(new MealTicket()); //better out
+            BaseMod.removeRelic(new ToyOrnithopter()); //better out
 
             //TODO: tweak relics
             //hp interaction
-            BaseMod.removeRelic(new CentennialPuzzle());
+            BaseMod.removeRelic(new CentennialPuzzle()); // better out
             BaseMod.removeRelic(new RunicCube());  //Ironclad
             BaseMod.removeRelic(new SelfFormingClay());  //Ironclad
             BaseMod.removeRelic(new RedSkull()); //Ironclad    - tweak
-            BaseMod.removeRelic(new BlueCandle()); // tweak
+
+            //event
             //BaseMod.removeRelic(new MarkOfTheBloom()); //tweak
+            //BaseMod.removeRelic(new BloodyIdol()); //tweak
 
             //resting
+            BaseMod.removeRelic(new RegalPillow()); //tweak
             BaseMod.removeRelic(new DreamCatcher()); //look at
             BaseMod.removeRelic(new CoffeeDripper()); //look at
 

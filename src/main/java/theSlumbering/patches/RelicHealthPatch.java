@@ -2,8 +2,13 @@ package theSlumbering.patches;
 
 import com.evacipated.cardcrawl.modthespire.lib.*;
 import com.evacipated.cardcrawl.modthespire.patcher.PatchingException;
+import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
+import com.megacrit.cardcrawl.actions.utility.UseCardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
+import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.powers.FrailPower;
+import com.megacrit.cardcrawl.powers.WeakPower;
 import com.megacrit.cardcrawl.relics.*;
 import javassist.CannotCompileException;
 import javassist.CtBehavior;
@@ -17,7 +22,8 @@ public class RelicHealthPatch {
     private static String[] TEXT = {
             "Wake up a little...",
             "Wake up a lot...",
-            "Whenever you obtain a #rCurse, wake up a litte..."
+            "Whenever you obtain a #rCurse, wake up a litte...",
+            "#yUnplayable #rCurse cards can now be played. NL Whenever you play a #rCurse, #yExhaust it, and gain #b1 #yFrail and #b1 #yWeak."
     };
     @SpirePatch(
             clz= Strawberry.class,
@@ -174,6 +180,47 @@ public class RelicHealthPatch {
     }
 
 
+    @SpirePatch(
+            clz = BlueCandle.class,
+            method = "onUseCard"
+    )
+    public static class BlueCandlePatch{
+        @SpireInsertPatch(
+                locator = BlueLocator.class
+        )
+        public static SpireReturn Insert(BlueCandle __instance, AbstractCard card, UseCardAction action){
+            if(card.color == AbstractCard.CardColor.CURSE){
+                AbstractPlayer p = AbstractDungeon.player;
+                if(p instanceof TheSlumbering) {
+                    p.getRelic("Blue Candle").flash();
+                    AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p,
+                            new WeakPower(p, 1, false), 1));
+                    AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p,
+                            new FrailPower(p, 1, false), 1));
+                    card.exhaust = true;
+                    action.exhaustCard = true;
+
+                    return SpireReturn.Return(null);
+                }
+            }
+            return SpireReturn.Continue();
+        }
+    }
+
+    @SpirePatch(
+            clz = BlueCandle.class,
+            method = "getUpdatedDescription"
+    )
+    public static class BlueCandleDescPatch{
+        public static SpireReturn<String> Prefix(){
+            if(AbstractDungeon.player instanceof TheSlumbering){
+                return SpireReturn.Return(TEXT[3]);
+            }
+            return SpireReturn.Continue();
+        }
+    }
+
+
     // Locators
     public static class StrawLocator extends SpireInsertLocator {
         public int[] Locate(CtBehavior ctMethodToPatch) throws CannotCompileException, PatchingException {
@@ -185,6 +232,13 @@ public class RelicHealthPatch {
     public static class DarkstoneLocator extends SpireInsertLocator {
         public int[] Locate(CtBehavior ctMethodToPatch) throws CannotCompileException, PatchingException {
             Matcher finalMatcher = new Matcher.FieldAccessMatcher(AbstractCard.class, "color");
+            return LineFinder.findInOrder(ctMethodToPatch, new ArrayList<>(), finalMatcher);
+        }
+    }
+
+    public static class BlueLocator extends SpireInsertLocator {
+        public int[] Locate(CtBehavior ctMethodToPatch) throws CannotCompileException, PatchingException {
+            Matcher finalMatcher = new Matcher.FieldAccessMatcher(AbstractCard.class, "type");
             return LineFinder.findInOrder(ctMethodToPatch, new ArrayList<>(), finalMatcher);
         }
     }
