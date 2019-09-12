@@ -1,4 +1,17 @@
 {
+  "theSlumbering:Patches": {
+    "NAME": "Patches",
+    "DESCRIPTIONS": [
+      "The flames grow slightly brighter. NL The spirits continue dancing. You feel slightly warmer from their presence. NL You wake up ever so slightly...",
+      "The flames erupt, growing significantly stronger! NL The spirits dance around you excitedly, filling you with a ~sense~ ~of~ ~warmth.~ NL You wake up a little...",
+      "The flames @burst,@ nearly knocking you off your feet, as the fire @doubles@ in strength. NL The spirits dance around you excitedly before ~merging~ ~into~ ~your~ ~form,~ filling you with warmth and strength. NL You wake up a lot...",
+      ""
+
+    ],
+    "OPTIONS": [
+      "[]"
+    ]
+  },
   "theSlumbering:MysteriousOrb": {
     "NAME": "Mysterious Orb",
     "DESCRIPTIONS": [

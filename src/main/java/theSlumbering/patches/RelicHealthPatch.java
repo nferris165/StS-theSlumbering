@@ -6,6 +6,7 @@ import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.utility.UseCardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.powers.FrailPower;
 import com.megacrit.cardcrawl.powers.WeakPower;
@@ -16,18 +17,13 @@ import theSlumbering.SlumberingMod;
 import theSlumbering.characters.TheSlumbering;
 
 import java.util.ArrayList;
+
+import static theSlumbering.SlumberingMod.makeID;
+
 @SuppressWarnings("unused")
 
 public class RelicHealthPatch {
-    private static String[] TEXT = {
-            "Wake up a little...",
-            "Wake up a lot...",
-            "Whenever you obtain a #rCurse, wake up a litte...",
-            "#yUnplayable #rCurse cards can now be played. NL Whenever you play a #rCurse, #yExhaust it, and gain #b1 #yFrail and #b1 #yWeak.",
-            "Whenever you gain #yGold, wake up ever so slightly...",
-            "When adding cards into your deck, wake up ever so slightly...",
-            "At the end of combat, wake up ever so slightly..."
-    };
+    private static String[] TEXT = CardCrawlGame.languagePack.getRelicStrings(makeID("Patches")).DESCRIPTIONS;
     @SpirePatch(
             clz= Strawberry.class,
             method="onEquip"

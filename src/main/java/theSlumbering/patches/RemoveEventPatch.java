@@ -34,28 +34,12 @@ public class RemoveEventPatch {
 
         } else {
             dungeon_instance.eventList.remove(MysteriousOrb.ID);
-            dungeon_instance.eventList.remove(PoweredUp.ID);
 
         }
-
-        if (AbstractDungeon.player.hasRelic(SlumberingRelic.ID)) {
-            //dungeon_instance.eventList.remove(ScrapOoze.ID);
-        }
-
-        /*
-        if (AbstractDungeon.player instanceof TheSlumbering) {
-            TheSlumbering sc = (TheSlumbering) AbstractDungeon.player;
-            if (sc.foughtSlimeBoss || sc.hasRelic(StudyCardRelic.ID)) {
-                dungeon_instance.eventList.remove(Hunted.ID);
-            }
-        } else {
-            dungeon_instance.eventList.remove(Hunted.ID);
-        }
-        */
 
         if (!SlumberingMod.eventSharing) {
             if (!(AbstractDungeon.player instanceof TheSlumbering)) {
-                //dungeon_instance.eventList.remove(ArtOfSlimeWar.ID);
+                dungeon_instance.eventList.remove(PoweredUp.ID);
             }
         }
     }
