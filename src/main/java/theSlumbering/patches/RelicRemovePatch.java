@@ -19,10 +19,11 @@ public class RelicRemovePatch {
         if (AbstractDungeon.player instanceof TheSlumbering) {
 
             //healing
-            BaseMod.removeRelic(new BloodVial());  //better out
             BaseMod.removeRelic(new BurningBlood());  //Ironclad
             BaseMod.removeRelic(new BlackBlood());  //Ironclad
             BaseMod.removeRelic(new MagicFlower());  //Ironclad
+
+            BaseMod.removeRelic(new BloodVial());  //better out
             BaseMod.removeRelic(new MeatOnTheBone()); //better out
             BaseMod.removeRelic(new Pantograph());  //better out
             BaseMod.removeRelic(new BirdFacedUrn()); //better out
@@ -30,17 +31,24 @@ public class RelicRemovePatch {
             BaseMod.removeRelic(new MealTicket()); //better out
             BaseMod.removeRelic(new ToyOrnithopter()); //better out
 
-            //TODO: tweak relics
             //hp interaction
-            BaseMod.removeRelic(new CentennialPuzzle()); // better out
             BaseMod.removeRelic(new RunicCube());  //Ironclad
             BaseMod.removeRelic(new SelfFormingClay());  //Ironclad
-            BaseMod.removeRelic(new RedSkull()); //Ironclad    - tweak
+            BaseMod.removeRelic(new RedSkull()); //Ironclad
+
+            BaseMod.removeRelic(new CentennialPuzzle()); // better out
+
 
             //event
-            //BaseMod.removeRelic(new MarkOfTheBloom()); //tweak
-            //BaseMod.removeRelic(new BloodyIdol()); //tweak
+            //BaseMod.removeRelic(new MarkOfTheBloom()); //tweak?
 
+            // special
+            //BaseMod.removeRelic(new LizardTail()); //already has proper error checking
+            //BaseMod.removeRelic(new SingingBowl()); //text adjusted
+            //BaseMod.removeRelic(new TinyHouse());  //HP value adjusted
+            //BaseMod.removeRelic(new FaceOfCleric()); //HP value adjusted
+
+            //TODO: tweak resting relics
             //resting
             BaseMod.removeRelic(new RegalPillow()); //tweak
             BaseMod.removeRelic(new DreamCatcher()); //look at

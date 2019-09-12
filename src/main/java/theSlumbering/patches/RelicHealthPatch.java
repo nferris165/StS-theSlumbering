@@ -23,7 +23,10 @@ public class RelicHealthPatch {
             "Wake up a little...",
             "Wake up a lot...",
             "Whenever you obtain a #rCurse, wake up a litte...",
-            "#yUnplayable #rCurse cards can now be played. NL Whenever you play a #rCurse, #yExhaust it, and gain #b1 #yFrail and #b1 #yWeak."
+            "#yUnplayable #rCurse cards can now be played. NL Whenever you play a #rCurse, #yExhaust it, and gain #b1 #yFrail and #b1 #yWeak.",
+            "Whenever you gain #yGold, wake up ever so slightly...",
+            "When adding cards into your deck, wake up ever so slightly...",
+            "At the end of combat, wake up ever so slightly..."
     };
     @SpirePatch(
             clz= Strawberry.class,
@@ -221,6 +224,93 @@ public class RelicHealthPatch {
     }
 
 
+    @SpirePatch(
+            clz = BloodyIdol.class,
+            method = "onGainGold"
+    )
+    public static class BloodyIdolPatch{
+        @SpireInsertPatch(
+                locator = IdolLocator.class
+        )
+        public static SpireReturn Insert(BloodyIdol __instance){
+            AbstractPlayer p = AbstractDungeon.player;
+            if(p instanceof TheSlumbering) {
+                SlumberingMod.incSlumberingRelicFloat(2);
+
+                return SpireReturn.Return(null);
+            }
+            return SpireReturn.Continue();
+        }
+    }
+
+    @SpirePatch(
+            clz = BloodyIdol.class,
+            method = "getUpdatedDescription"
+    )
+    public static class BloodyIdolDescPatch{
+        public static SpireReturn<String> Prefix(){
+            if(AbstractDungeon.player instanceof TheSlumbering){
+                return SpireReturn.Return(TEXT[4]);
+            }
+            return SpireReturn.Continue();
+        }
+    }
+
+    @SpirePatch(
+            clz = TinyHouse.class,
+            method = "onEquip"
+    )
+    public static class TinyHousePatch{
+        public static void Prefix(TinyHouse __instance){
+            AbstractPlayer p = AbstractDungeon.player;
+            if(p instanceof TheSlumbering) {
+                SlumberingMod.incSlumberingRelicFloat(5);
+            }
+        }
+    }
+
+
+    @SpirePatch(
+            clz = FaceOfCleric.class,
+            method = "onVictory"
+    )
+    public static class FaceOfClericPatch{
+        public static void Prefix(FaceOfCleric __instance){
+            AbstractPlayer p = AbstractDungeon.player;
+            if(p instanceof TheSlumbering) {
+                SlumberingMod.incSlumberingRelicFloat(1);
+            }
+        }
+    }
+
+    @SpirePatch(
+            clz = FaceOfCleric.class,
+            method = "getUpdatedDescription"
+    )
+    public static class FaceOfClericDescPatch{
+        public static SpireReturn<String> Prefix(){
+            if(AbstractDungeon.player instanceof TheSlumbering){
+                return SpireReturn.Return(TEXT[6]);
+            }
+            return SpireReturn.Continue();
+        }
+    }
+
+
+    @SpirePatch(
+            clz = SingingBowl.class,
+            method = "getUpdatedDescription"
+    )
+    public static class SingingBowlDescPatch{
+        public static SpireReturn<String> Prefix(){
+            if(AbstractDungeon.player instanceof TheSlumbering){
+                return SpireReturn.Return(TEXT[5]);
+            }
+            return SpireReturn.Continue();
+        }
+    }
+
+
     // Locators
     public static class StrawLocator extends SpireInsertLocator {
         public int[] Locate(CtBehavior ctMethodToPatch) throws CannotCompileException, PatchingException {
@@ -240,6 +330,13 @@ public class RelicHealthPatch {
         public int[] Locate(CtBehavior ctMethodToPatch) throws CannotCompileException, PatchingException {
             Matcher finalMatcher = new Matcher.FieldAccessMatcher(AbstractCard.class, "type");
             return LineFinder.findInOrder(ctMethodToPatch, new ArrayList<>(), finalMatcher);
+        }
+    }
+
+    public static class IdolLocator extends SpireInsertLocator {
+        public int[] Locate(CtBehavior ctMethodToPatch) throws CannotCompileException, PatchingException {
+            Matcher finalMatcher = new Matcher.FieldAccessMatcher(AbstractDungeon.class, "player");
+            return new int[]{LineFinder.findAllInOrder(ctMethodToPatch, finalMatcher)[1]};
         }
     }
 }
