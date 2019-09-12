@@ -5,8 +5,9 @@
       "The flames grow slightly brighter. NL The spirits continue dancing. You feel slightly warmer from their presence. NL You wake up ever so slightly...",
       "The flames erupt, growing significantly stronger! NL The spirits dance around you excitedly, filling you with a ~sense~ ~of~ ~warmth.~ NL You wake up a little...",
       "The flames @burst,@ nearly knocking you off your feet, as the fire @doubles@ in strength. NL The spirits dance around you excitedly before ~merging~ ~into~ ~your~ ~form,~ filling you with warmth and strength. NL You wake up a lot...",
-      ""
-
+      "\" Oooh, a fine addition to your #gHeart #gCollection! \"",
+      "You eat the #ybanana. It is nutritious and slightly #bmagical, increasing your Heart Collection.",
+      "You eat the #ydonut. It really hits the spot! You wake up ever so slightly..."
     ],
     "OPTIONS": [
       "[Punch]",
@@ -14,7 +15,12 @@
       "[Touch]",
       " #rCollected #rHearts, #ggain #g",
       " #gGold.",
-      "[Locked] Requires: Collected Hearts"
+      "[Locked] Requires: Collected Hearts",
+      "{Leave]",
+      "[Prize!] #gDouble #gyour #gCollected #gHearts.",
+      "[Prize?] #rLose #r2 #rCollected #rHearts.",
+      "[Banana] #gGain #g3 #gCollected #gHearts",
+      "[Donut] #gWake #gup #gever #gso #gslightly..."
     ]
   },
   "theSlumbering:MysteriousOrb": {
