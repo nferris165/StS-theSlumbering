@@ -8,6 +8,7 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.events.exordium.BigFish;
+import com.megacrit.cardcrawl.events.exordium.GoldenIdolEvent;
 import com.megacrit.cardcrawl.events.shrines.*;
 import javassist.CannotCompileException;
 import javassist.CtBehavior;
@@ -241,6 +242,60 @@ public class EventHealthPatch {
         }
     }
 
+    //Golden Idol
+    @SpirePatch(
+            clz = GoldenIdolEvent.class,
+            method = "buttonEffect"
+    )
+
+    public static class GoldenIdolEventPatch {
+        private static int value = 2;
+        @SpireInsertPatch(
+                localvars = {"damage"},
+                locator = DamageLocator.class
+        )
+        public static void Insert(GoldenIdolEvent __instance, int buttonPressed, @ByRef int[] damage) {
+            if (AbstractDungeon.player instanceof TheSlumbering) {
+                damage[0] = 0;
+                if (AbstractDungeon.ascensionLevel >= 15) {
+                    value = 3;
+                }
+                SlumberingMod.decHeartCollectorRelic(value);
+            }
+        }
+
+        @SpireInsertPatch(
+                localvars = {"maxHpLoss"},
+                locator = DecMaxHPLocator.class
+        )
+        public static void Insert2(GoldenIdolEvent __instance, int buttonPressed, @ByRef int[] maxHpLoss) {
+            if (AbstractDungeon.player instanceof TheSlumbering) {
+                maxHpLoss[0] = 0;
+                SlumberingMod.incSlumberingRelic(-1);
+            }
+        }
+
+        public static void Postfix(GoldenIdolEvent __instance, int buttonPressed) {
+            if (AbstractDungeon.player instanceof TheSlumbering) {
+                if(__instance.imageEventText.optionList.size() == 3){
+                    if (AbstractDungeon.ascensionLevel >= 15) {
+                        value = 3;
+                    }
+
+                    if(AbstractDungeon.player.hasRelic(HeartCollector.ID)){
+                        if(AbstractDungeon.player.getRelic(HeartCollector.ID).counter < value){
+                            __instance.imageEventText.updateDialogOption(1, OPTIONS[5], true);
+                        }
+                        else{
+                            __instance.imageEventText.updateDialogOption(1, OPTIONS[11] + OPTIONS[1] + value + " #rCollected #rHearts.");
+                        }
+                    }
+                    __instance.imageEventText.updateDialogOption(2, OPTIONS[12] + OPTIONS[13]);
+                }
+            }
+        }
+    }
+
 
     // Locators
     public static class BonfireLocator1 extends SpireInsertLocator {
@@ -267,6 +322,13 @@ public class EventHealthPatch {
     public static class HealLocator extends SpireInsertLocator {
         public int[] Locate(CtBehavior ctMethodToPatch) throws CannotCompileException, PatchingException {
             Matcher finalMatcher = new Matcher.MethodCallMatcher(AbstractPlayer.class, "heal");
+            return LineFinder.findInOrder(ctMethodToPatch, new ArrayList<>(), finalMatcher);
+        }
+    }
+
+    public static class DecMaxHPLocator extends SpireInsertLocator {
+        public int[] Locate(CtBehavior ctMethodToPatch) throws CannotCompileException, PatchingException {
+            Matcher finalMatcher = new Matcher.MethodCallMatcher(AbstractPlayer.class, "decreaseMaxHealth");
             return LineFinder.findInOrder(ctMethodToPatch, new ArrayList<>(), finalMatcher);
         }
     }
