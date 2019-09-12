@@ -9,7 +9,12 @@
 
     ],
     "OPTIONS": [
-      "[]"
+      "[Punch]",
+      " #rLose #r",
+      "[Touch]",
+      " #rCollected #rHearts, #ggain #g",
+      " #gGold.",
+      "[Locked] Requires: Collected Hearts"
     ]
   },
   "theSlumbering:MysteriousOrb": {

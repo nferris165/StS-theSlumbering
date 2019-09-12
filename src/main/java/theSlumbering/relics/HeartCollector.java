@@ -17,7 +17,7 @@ import theSlumbering.util.TextureLoader;
 import static theSlumbering.SlumberingMod.makeRelicOutlinePath;
 import static theSlumbering.SlumberingMod.makeRelicPath;
 
-public class HeartCollector extends CustomRelic implements ClickableRelic {
+public class HeartCollector extends AbstractCustomRelic implements ClickableRelic {
 
     public static final String ID = SlumberingMod.makeID("HeartCollector");
 
@@ -38,8 +38,9 @@ public class HeartCollector extends CustomRelic implements ClickableRelic {
         if (AbstractDungeon.getCurrRoom() != null && AbstractDungeon.getCurrRoom().phase == AbstractRoom.RoomPhase.COMBAT) {
             flash();
             this.counter--;
-            if(this.counter > 0) {
+            if(this.counter <= 0) {
                 stopPulse();
+                this.counter = 0;
             }
 
             AbstractDungeon.actionManager.addToBottom(new SFXAction("MONSTER_COLLECTOR_DEBUFF"));
@@ -75,6 +76,15 @@ public class HeartCollector extends CustomRelic implements ClickableRelic {
     public void atPreBattle() {
         if(this.counter > 0) {
             beginLongPulse();
+        }
+    }
+
+    @Override
+    public void onTrigger(int amt) {
+        this.flash();
+        this.counter -= amt;
+        if(this.counter < 0){
+            this.counter = 0;
         }
     }
 

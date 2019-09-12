@@ -10,10 +10,6 @@ import java.util.HashMap;
 
 // Thank you Blank The Evil!
 
-// Welcome to the utilities package. This package is for small utilities that make our life easier.
-// You honestly don't need to bother with this unless you want to know how we're loading the textures.
-
-
 public class TextureLoader {
     private static HashMap<String, Texture> textures = new HashMap<String, Texture>();
     public static final Logger logger = LogManager.getLogger(TextureLoader.class.getName());
@@ -29,7 +25,7 @@ public class TextureLoader {
                 loadTexture(textureString);
             } catch (GdxRuntimeException e) {
                 logger.error("Could not find texture: " + textureString);
-                return getTexture("theFirstResources/images/ui/missing_texture.png");
+                return getTexture("theSlumberingResources/images/ui/missing_texture.png");
             }
         }
         return textures.get(textureString);
@@ -43,7 +39,7 @@ public class TextureLoader {
      * @throws GdxRuntimeException
      */
     private static void loadTexture(final String textureString) throws GdxRuntimeException {
-        logger.info("FirstMod | Loading Texture: " + textureString);
+        logger.info("SlumberingMod | Loading Texture: " + textureString);
         Texture texture = new Texture(textureString);
         texture.setFilter(TextureFilter.Linear, TextureFilter.Linear);
         textures.put(textureString, texture);

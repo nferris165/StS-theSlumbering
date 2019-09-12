@@ -18,7 +18,7 @@ public class RemoveEventPatch {
     public static void Prefix(AbstractDungeon dungeon_instance) {
         if (AbstractDungeon.player instanceof TheSlumbering) {
             //dungeon_instance.eventList.remove(GoopPuddle.ID);
-            dungeon_instance.eventList.remove(WindingHalls.ID);
+            //dungeon_instance.eventList.remove(WindingHalls.ID);
 
             /*dungeon_instance.eventList.remove(BigFish.ID);
             dungeon_instance.eventList.remove(Cleric.ID);

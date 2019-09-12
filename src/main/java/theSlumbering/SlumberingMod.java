@@ -406,6 +406,13 @@ public class SlumberingMod implements
         }
     }
 
+    public static void decHeartCollectorRelic(int amt){
+        if(AbstractDungeon.player.hasRelic(HeartCollector.ID)){
+            AbstractCustomRelic r = (AbstractCustomRelic) AbstractDungeon.player.getRelic(HeartCollector.ID);
+            r.onTrigger(amt);
+        }
+    }
+
 
     @Override
     public void receiveOnBattleStart(AbstractRoom abstractRoom) {
