@@ -6,8 +6,10 @@
       "The flames erupt, growing significantly stronger! NL The spirits dance around you excitedly, filling you with a ~sense~ ~of~ ~warmth.~ NL You wake up a little...",
       "The flames @burst,@ nearly knocking you off your feet, as the fire @doubles@ in strength. NL The spirits dance around you excitedly before ~merging~ ~into~ ~your~ ~form,~ filling you with warmth and strength. NL You wake up a lot...",
       "\" Oooh, a fine addition to your #gHeart #gCollection! \"",
-      "You eat the #ybanana. It is nutritious and slightly #bmagical, increasing your Heart Collection.",
-      "You eat the #ydonut. It really hits the spot! You wake up ever so slightly..."
+      "You stuff the #ybanana into your Heart Collector. It is nutritious and slightly #bmagical, increasing your Heart Collection.",
+      "You eat the #ydonut. It really hits the spot! You wake up ever so slightly...",
+      "You give in to the unnatural desire for the mushrooms. As you stuff mushroom after mushroom into your Heart Collector, you feel very odd. NL You #ggain #g4 #gCollected #gHearts, but you also get #rinfected.",
+      "You use a Collected Heart to carefully retrieve the #ygold moments before the Heart dissolves completely into the goop."
     ],
     "OPTIONS": [
       "[Punch]",
@@ -23,7 +25,13 @@
       "[Donut] #gWake #gup #gever #gso #gslightly...",
       "[Smash]",
       "[Hide]",
-      " #rFall #rdeeper #rinto #ryour #pslumber..."
+      " #rFall #rdeeper #rinto #ryour #pslumber...",
+      "[Eat] #gGain #g4 #gCollected #gHearts. #rBecome #rCursed #r- #rParasite.",
+      "[Reach Inside] #rLose #r1 #rCollected #rHeart. #g",
+      "%: #gFind #ga #gRelic.",
+      "[Enter] #gUpgrade #g2 #grandom #gcards. #rLose #r",
+      "[Heal] #y35 #yGold: #gGain #g",
+      "[Gather Gold] #gGain #g75 #gGold. #rLose #r"
     ]
   },
   "theSlumbering:MysteriousOrb": {
