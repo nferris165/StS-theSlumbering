@@ -25,6 +25,8 @@ import static theSlumbering.SlumberingMod.makeID;
 
 public class RelicHealthPatch {
     private static String[] TEXT = CardCrawlGame.languagePack.getRelicStrings(makeID("Patches")).DESCRIPTIONS;
+
+    //Strawberry
     @SpirePatch(
             clz= Strawberry.class,
             method="onEquip"
@@ -45,7 +47,7 @@ public class RelicHealthPatch {
 
 
     @SpirePatch(
-            clz= Pear.class,
+            clz= Strawberry.class,
             method="getUpdatedDescription"
     )
     public static class StrawberryDescPatch{
@@ -57,6 +59,7 @@ public class RelicHealthPatch {
         }
     }
 
+    //Pear
     @SpirePatch(
             clz= Pear.class,
             method="onEquip"
@@ -87,6 +90,7 @@ public class RelicHealthPatch {
         }
     }
 
+    //Mango
     @SpirePatch(
             clz= Mango.class,
             method="onEquip"
@@ -117,6 +121,7 @@ public class RelicHealthPatch {
         }
     }
 
+    //Waffle
     @SpirePatch(
             clz= Waffle.class,
             method="onEquip"
@@ -147,6 +152,7 @@ public class RelicHealthPatch {
         }
     }
 
+    //Darkstone Periapt
     @SpirePatch(
             clz= DarkstonePeriapt.class,
             method="onObtainCard"
@@ -179,7 +185,7 @@ public class RelicHealthPatch {
         }
     }
 
-
+    //Blue Candle
     @SpirePatch(
             clz = BlueCandle.class,
             method = "onUseCard"
@@ -220,7 +226,7 @@ public class RelicHealthPatch {
         }
     }
 
-
+    //Bloody Idol
     @SpirePatch(
             clz = BloodyIdol.class,
             method = "onGainGold"
@@ -255,6 +261,7 @@ public class RelicHealthPatch {
         }
     }
 
+    //TinyHouse
     @SpirePatch(
             clz = TinyHouse.class,
             method = "onEquip"
@@ -268,7 +275,7 @@ public class RelicHealthPatch {
         }
     }
 
-
+    //FaceOfCleric
     @SpirePatch(
             clz = FaceOfCleric.class,
             method = "onVictory"
@@ -295,7 +302,7 @@ public class RelicHealthPatch {
         }
     }
 
-
+    //SingingBowl
     @SpirePatch(
             clz = SingingBowl.class,
             method = "getUpdatedDescription"
@@ -309,6 +316,7 @@ public class RelicHealthPatch {
         }
     }
 
+    //MarkOfTheBloom
     @SpirePatch(
             clz = MarkOfTheBloom.class,
             method = "getUpdatedDescription"
@@ -322,6 +330,7 @@ public class RelicHealthPatch {
         }
     }
 
+    //Meat on the Bone
     @SpirePatch(
             clz = MeatOnTheBone.class,
             method = "onTrigger"
@@ -347,6 +356,129 @@ public class RelicHealthPatch {
         public static SpireReturn<String> Prefix(){
             if(AbstractDungeon.player instanceof TheSlumbering){
                 return SpireReturn.Return(TEXT[8]);
+            }
+            return SpireReturn.Continue();
+        }
+    }
+
+    //Pantograph
+    @SpirePatch(
+            clz = Pantograph.class,
+            method = "atBattleStart"
+    )
+    public static class PantographPatch{
+        @SpireInsertPatch(
+                locator = HealLocator.class
+        )
+        public static SpireReturn Insert(Pantograph __instance){
+            if(AbstractDungeon.player instanceof TheSlumbering){
+                SlumberingMod.decHeartCollectorRelic(-2);
+                return SpireReturn.Return(null);
+            }
+            return SpireReturn.Continue();
+        }
+    }
+
+    @SpirePatch(
+            clz = Pantograph.class,
+            method = "getUpdatedDescription"
+    )
+    public static class PantographDescPatch{
+        public static SpireReturn<String> Prefix(){
+            if(AbstractDungeon.player instanceof TheSlumbering){
+                return SpireReturn.Return(TEXT[9]);
+            }
+            return SpireReturn.Continue();
+        }
+    }
+
+    //Eternal Feather
+    @SpirePatch(
+            clz = EternalFeather.class,
+            method = "onEnterRoom"
+    )
+    public static class EternalFeatherPatch{
+        @SpireInsertPatch(
+                locator = HealLocator.class
+        )
+        public static SpireReturn Insert(EternalFeather __instance){
+            if(AbstractDungeon.player instanceof TheSlumbering){
+                int amountToGain = AbstractDungeon.player.masterDeck.size() / 5;
+                SlumberingMod.decHeartCollectorRelic(-amountToGain);
+                return SpireReturn.Return(null);
+            }
+            return SpireReturn.Continue();
+        }
+    }
+
+    @SpirePatch(
+            clz = EternalFeather.class,
+            method = "getUpdatedDescription"
+    )
+    public static class EternalFeatherDescPatch{
+        public static SpireReturn<String> Prefix(){
+            if(AbstractDungeon.player instanceof TheSlumbering){
+                return SpireReturn.Return(TEXT[10]);
+            }
+            return SpireReturn.Continue();
+        }
+    }
+
+    //Meal Ticket
+    @SpirePatch(
+            clz = MealTicket.class,
+            method = "justEnteredRoom"
+    )
+    public static class MealTicketPatch{
+        @SpireInsertPatch(
+                locator = HealLocator.class
+        )
+        public static SpireReturn Insert(MealTicket __instance){
+            if(AbstractDungeon.player instanceof TheSlumbering){
+                SlumberingMod.decHeartCollectorRelic(-2);
+                return SpireReturn.Return(null);
+            }
+            return SpireReturn.Continue();
+        }
+    }
+
+    @SpirePatch(
+            clz = MealTicket.class,
+            method = "getUpdatedDescription"
+    )
+    public static class MealTicketDescPatch{
+        public static SpireReturn<String> Prefix(){
+            if(AbstractDungeon.player instanceof TheSlumbering){
+                return SpireReturn.Return(TEXT[11]);
+            }
+            return SpireReturn.Continue();
+        }
+    }
+
+    //Toy Ornithopter
+    @SpirePatch(
+            clz = ToyOrnithopter.class,
+            method = "onUsePotion"
+    )
+    public static class ToyOrnithopterPatch{
+        public static SpireReturn Prefix(ToyOrnithopter __instance){
+            __instance.flash();
+            if(AbstractDungeon.player instanceof TheSlumbering){
+                SlumberingMod.decHeartCollectorRelic(-1);
+                return SpireReturn.Return(null);
+            }
+            return SpireReturn.Continue();
+        }
+    }
+
+    @SpirePatch(
+            clz = ToyOrnithopter.class,
+            method = "getUpdatedDescription"
+    )
+    public static class ToyOrnithopterDescPatch{
+        public static SpireReturn<String> Prefix(){
+            if(AbstractDungeon.player instanceof TheSlumbering){
+                return SpireReturn.Return(TEXT[12]);
             }
             return SpireReturn.Continue();
         }
@@ -379,6 +511,13 @@ public class RelicHealthPatch {
         public int[] Locate(CtBehavior ctMethodToPatch) throws CannotCompileException, PatchingException {
             Matcher finalMatcher = new Matcher.FieldAccessMatcher(AbstractDungeon.class, "player");
             return new int[]{LineFinder.findAllInOrder(ctMethodToPatch, finalMatcher)[1]};
+        }
+    }
+
+    public static class HealLocator extends SpireInsertLocator {
+        public int[] Locate(CtBehavior ctMethodToPatch) throws CannotCompileException, PatchingException {
+            Matcher finalMatcher = new Matcher.MethodCallMatcher(AbstractPlayer.class, "heal");
+            return LineFinder.findInOrder(ctMethodToPatch, new ArrayList<>(), finalMatcher);
         }
     }
 }

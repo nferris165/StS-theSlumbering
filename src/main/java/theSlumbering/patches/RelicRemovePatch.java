@@ -24,12 +24,7 @@ public class RelicRemovePatch {
             BaseMod.removeRelic(new MagicFlower());  //Ironclad
 
             BaseMod.removeRelic(new BloodVial());  //better out
-            //BaseMod.removeRelic(new MeatOnTheBone()); //better out
-            BaseMod.removeRelic(new Pantograph());  //better out
             BaseMod.removeRelic(new BirdFacedUrn()); //better out
-            BaseMod.removeRelic(new EternalFeather()); //better out
-            BaseMod.removeRelic(new MealTicket()); //better out
-            BaseMod.removeRelic(new ToyOrnithopter()); //better out
 
             //hp interaction
             BaseMod.removeRelic(new RunicCube());  //Ironclad

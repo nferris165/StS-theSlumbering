@@ -11,7 +11,11 @@
       "When adding cards into your deck, wake up ever so slightly...",
       "At the end of combat, wake up ever so slightly...",
       "You can no longer gain Collected Hearts from sources other than monsters.",
-      "If you have fewer than #b5 Collected Hearts at the end of combat, gain a Collected Heart."
+      "If you have fewer than #b5 Collected Hearts at the end of combat, gain a Collected Heart.",
+      "At the start of Boss combats, gain #b2 Collected Hearts.",
+      "For every #b5 cards in your deck, gain #b1 Collected Heart whenever you enter a Rest Site.",
+      "Whenever you enter a shop, gain #b2 Collected Hearts.",
+      "Whenever you use a potion, gain #b1 Collected Heart."
     ]
   },
   "theSlumbering:GlassShield": {
