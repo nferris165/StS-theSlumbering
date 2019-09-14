@@ -24,7 +24,7 @@ public class RelicRemovePatch {
             BaseMod.removeRelic(new MagicFlower());  //Ironclad
 
             BaseMod.removeRelic(new BloodVial());  //better out
-            BaseMod.removeRelic(new MeatOnTheBone()); //better out
+            //BaseMod.removeRelic(new MeatOnTheBone()); //better out
             BaseMod.removeRelic(new Pantograph());  //better out
             BaseMod.removeRelic(new BirdFacedUrn()); //better out
             BaseMod.removeRelic(new EternalFeather()); //better out
@@ -37,10 +37,6 @@ public class RelicRemovePatch {
             BaseMod.removeRelic(new RedSkull()); //Ironclad
 
             BaseMod.removeRelic(new CentennialPuzzle()); // better out
-
-
-            //event
-            //BaseMod.removeRelic(new MarkOfTheBloom()); //tweak?
 
             // special
             //BaseMod.removeRelic(new LizardTail()); //already has proper error checking

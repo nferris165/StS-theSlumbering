@@ -10,6 +10,7 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.events.beyond.*;
 import com.megacrit.cardcrawl.events.city.*;
 import com.megacrit.cardcrawl.events.exordium.*;
 import com.megacrit.cardcrawl.events.shrines.*;
@@ -791,6 +792,210 @@ public class EventHealthPatch {
         }
     }
 
+    //MindBloom
+    @SpirePatch(
+            clz = MindBloom.class,
+            method = "buttonEffect"
+    )
+
+    public static class MindBloomEventPatch {
+        @SpireInsertPatch(
+                locator = HealLocator.class
+        )
+        public static void Insert(MindBloom __instance, int buttonPressed) {
+            if (AbstractDungeon.player instanceof TheSlumbering) {
+                if(AbstractDungeon.player.hasRelic(HeartCollector.ID)) {
+                    SlumberingMod.decHeartCollectorRelic(-(AbstractDungeon.player.getRelic(HeartCollector.ID).counter));
+                }
+            }
+        }
+    }
+
+    @SpirePatch(
+            clz = MindBloom.class,
+            method = SpirePatch.CONSTRUCTOR
+    )
+
+    public static class MindBloomDescPatch {
+        public static void Postfix(MindBloom __instance) {
+            if (AbstractDungeon.player instanceof TheSlumbering) {
+                if (AbstractDungeon.floorNum % 50 > 40){
+                    __instance.imageEventText.updateDialogOption(2, OPTIONS[30]);
+                }
+            }
+        }
+    }
+
+    //SensoryStone
+    @SpirePatch(
+            clz = SensoryStone.class,
+            method = "buttonEffect"
+    )
+
+    public static class SensoryStoneEventPatch {
+        private static int val = 2;
+        @SpireInsertPatch(
+                locator = DamageLocator.class
+        )
+        public static SpireReturn Insert(SensoryStone __instance, int buttonPressed) {
+            if (AbstractDungeon.player instanceof TheSlumbering) {
+                SlumberingMod.decHeartCollectorRelic(buttonPressed);
+                __instance.imageEventText.updateDialogOption(0, "[Leave]");
+                __instance.imageEventText.clearRemainingOptions();
+                return SpireReturn.Return(null);
+            }
+            return SpireReturn.Continue();
+        }
+
+        public static void Postfix(SensoryStone __instance, int buttonPressed) {
+            if (AbstractDungeon.player instanceof TheSlumbering) {
+                if(__instance.imageEventText.optionList.size() == 3) {
+                    if (AbstractDungeon.player.hasRelic(HeartCollector.ID)) {
+                        if (AbstractDungeon.player.getRelic(HeartCollector.ID).counter < 1) {
+                            __instance.imageEventText.updateDialogOption(1, OPTIONS[5], true);
+                        } else {
+                            __instance.imageEventText.updateDialogOption(1, OPTIONS[31] + val + OPTIONS[32] + (val - 1) + GENERICS[2]);
+                        }
+                        if (AbstractDungeon.player.getRelic(HeartCollector.ID).counter < 2) {
+                            __instance.imageEventText.updateDialogOption(2, OPTIONS[5], true);
+                        } else {
+                            __instance.imageEventText.updateDialogOption(2, OPTIONS[31] + (val + 1) + OPTIONS[32] + val + GENERICS[1]);
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    //Moai Head
+    @SpirePatch(
+            clz = MoaiHead.class,
+            method = "buttonEffect"
+    )
+
+    public static class MoaiHeadEventPatch {
+        private static int value = 1;
+        @SpireInsertPatch(
+                locator = HealLocator.class
+        )
+        public static void Insert(MoaiHead __instance, int buttonPressed) {
+            if (AbstractDungeon.player instanceof TheSlumbering) {
+                if (AbstractDungeon.ascensionLevel >= 15) {
+                    SlumberingMod.incSlumberingRelic(-2);
+                }
+                else{
+                    SlumberingMod.incSlumberingRelic(-1);
+                }
+                if(AbstractDungeon.player.hasRelic(HeartCollector.ID)) {
+                    SlumberingMod.decHeartCollectorRelic(-(AbstractDungeon.player.getRelic(HeartCollector.ID).counter));
+                }
+            }
+        }
+    }
+
+    @SpirePatch(
+            clz = MoaiHead.class,
+            method = SpirePatch.CONSTRUCTOR
+    )
+
+    public static class MoaiHeadDescPatch {
+        public static void Postfix(MoaiHead __instance, @ByRef int[] ___hpAmt) {
+            if (AbstractDungeon.player instanceof TheSlumbering) {
+                ___hpAmt[0] = 0;
+                if (AbstractDungeon.ascensionLevel >= 15) {
+                    __instance.imageEventText.updateDialogOption(0, OPTIONS[33] + GENERICS[7]);
+                }
+                else{
+                    __instance.imageEventText.updateDialogOption(0, OPTIONS[33] + GENERICS[6]);
+
+                }
+            }
+        }
+    }
+
+    //Winding Halls
+    @SpirePatch(
+            clz = WindingHalls.class,
+            method = "buttonEffect"
+    )
+
+    public static class WindingHallsEventPatch {
+        private static int value = 2;
+        @SpireInsertPatch(
+                localvars = {"hpAmt"},
+                locator = DamageLocator.class
+        )
+        public static void Insert(WindingHalls __instance, int buttonPressed, @ByRef int[] hpAmt) {
+            if (AbstractDungeon.player instanceof TheSlumbering) {
+                hpAmt[0] = 0;
+                if (AbstractDungeon.ascensionLevel >= 15) {
+                    SlumberingMod.decHeartCollectorRelic(value+1);
+                }
+                else{
+                    SlumberingMod.decHeartCollectorRelic(value);
+                }
+            }
+        }
+
+        @SpireInsertPatch(
+                localvars = {"healAmt"},
+                locator = HealLocator.class
+        )
+        public static void Insert2(WindingHalls __instance, int buttonPressed, @ByRef int[] healAmt) {
+            if (AbstractDungeon.player instanceof TheSlumbering) {
+                healAmt[0] = 0;
+                if (AbstractDungeon.ascensionLevel >= 15) {
+                    SlumberingMod.decHeartCollectorRelic(-value);
+                }
+                else{
+                    SlumberingMod.decHeartCollectorRelic(-(value+1));
+                }
+            }
+        }
+
+        @SpireInsertPatch(
+                localvars = {"maxHPAmt"},
+                locator = DecMaxHPLocator.class
+        )
+        public static void Insert3(WindingHalls __instance, int buttonPressed, @ByRef int[] maxHPAmt) {
+            if (AbstractDungeon.player instanceof TheSlumbering) {
+                maxHPAmt[0] = 0;
+                SlumberingMod.incSlumberingRelic(-1);
+            }
+        }
+
+        public static void Postfix(WindingHalls __instance) {
+            if (AbstractDungeon.player instanceof TheSlumbering) {
+                if(__instance.imageEventText.optionList.size() == 3) {
+                    if (AbstractDungeon.player.hasRelic(HeartCollector.ID)) {
+                        // slot 0
+                        if (AbstractDungeon.player.getRelic(HeartCollector.ID).counter < 1) {
+                            __instance.imageEventText.updateDialogOption(1, OPTIONS[5], true);
+                        } else {
+                            if (AbstractDungeon.ascensionLevel >= 15) {
+                                __instance.imageEventText.updateDialogOption(0, OPTIONS[34] + (value+1) + GENERICS[1]);
+                            }
+                            else{
+                                __instance.imageEventText.updateDialogOption(0, OPTIONS[34] + value + GENERICS[1]);
+                            }
+                        }
+                        // slot 1
+                        if (AbstractDungeon.ascensionLevel >= 15) {
+                            __instance.imageEventText.updateDialogOption(1, OPTIONS[35] + value + GENERICS[4]);
+                        }
+                        else{
+                            __instance.imageEventText.updateDialogOption(1, OPTIONS[35] + (value+1) + GENERICS[4]);
+                        }
+                        // slot 2
+                        __instance.imageEventText.updateDialogOption(2, OPTIONS[36] + GENERICS[6]);
+                    }
+                }
+
+            }
+        }
+    }
+
+
 
     // Locators
     public static class BonfireLocator1 extends SpireInsertLocator {
@@ -810,7 +1015,7 @@ public class EventHealthPatch {
     public static class DamageLocator extends SpireInsertLocator {
         public int[] Locate(CtBehavior ctMethodToPatch) throws CannotCompileException, PatchingException {
             Matcher finalMatcher = new Matcher.MethodCallMatcher(AbstractPlayer.class, "damage");
-            return LineFinder.findInOrder(ctMethodToPatch, new ArrayList<>(), finalMatcher);
+            return LineFinder.findAllInOrder(ctMethodToPatch, finalMatcher);
         }
     }
 

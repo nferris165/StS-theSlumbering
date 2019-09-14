@@ -19,11 +19,8 @@ public class RemoveEventPatch {
 
     public static void Prefix(AbstractDungeon dungeon_instance) {
         if (AbstractDungeon.player instanceof TheSlumbering) {
-            //dungeon_instance.eventList.remove(GoopPuddle.ID);
-            //dungeon_instance.eventList.remove(WindingHalls.ID);
 
             dungeon_instance.eventList.remove(CursedTome.ID); // damage hardcoded
-            //dungeon_instance.eventList.remove(Nest.ID); // damage hardcoded
 
         } else {
             dungeon_instance.eventList.remove(MysteriousOrb.ID);

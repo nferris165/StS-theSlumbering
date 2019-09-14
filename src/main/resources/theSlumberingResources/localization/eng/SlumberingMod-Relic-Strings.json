@@ -9,7 +9,9 @@
       "#yUnplayable #rCurse cards can now be played. NL Whenever you play a #rCurse, #yExhaust it, and gain #b1 #yFrail and #b1 #yWeak.",
       "Whenever you gain #yGold, you have a chance to collect a heart.",
       "When adding cards into your deck, wake up ever so slightly...",
-      "At the end of combat, wake up ever so slightly..."
+      "At the end of combat, wake up ever so slightly...",
+      "You can no longer gain Collected Hearts from sources other than monsters.",
+      "If you have fewer than #b5 Collected Hearts at the end of combat, gain a Collected Heart."
     ]
   },
   "theSlumbering:GlassShield": {

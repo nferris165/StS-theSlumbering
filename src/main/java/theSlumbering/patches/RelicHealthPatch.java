@@ -15,6 +15,7 @@ import javassist.CannotCompileException;
 import javassist.CtBehavior;
 import theSlumbering.SlumberingMod;
 import theSlumbering.characters.TheSlumbering;
+import theSlumbering.relics.HeartCollector;
 
 import java.util.ArrayList;
 
@@ -303,6 +304,49 @@ public class RelicHealthPatch {
         public static SpireReturn<String> Prefix(){
             if(AbstractDungeon.player instanceof TheSlumbering){
                 return SpireReturn.Return(TEXT[5]);
+            }
+            return SpireReturn.Continue();
+        }
+    }
+
+    @SpirePatch(
+            clz = MarkOfTheBloom.class,
+            method = "getUpdatedDescription"
+    )
+    public static class MarkOfTheBloomDescPatch{
+        public static SpireReturn<String> Prefix(){
+            if(AbstractDungeon.player instanceof TheSlumbering){
+                return SpireReturn.Return(TEXT[7]);
+            }
+            return SpireReturn.Continue();
+        }
+    }
+
+    @SpirePatch(
+            clz = MeatOnTheBone.class,
+            method = "onTrigger"
+    )
+    public static class MeatOnTheBonePatch{
+        public static SpireReturn Prefix(MeatOnTheBone __instance){
+            AbstractPlayer p = AbstractDungeon.player;
+            if(p instanceof TheSlumbering) {
+                if(p.hasRelic(HeartCollector.ID) && p.getRelic(HeartCollector.ID).counter < 5){
+                    SlumberingMod.decHeartCollectorRelic(-1);
+                }
+                return SpireReturn.Return(null);
+            }
+            return SpireReturn.Continue();
+        }
+    }
+
+    @SpirePatch(
+            clz = MeatOnTheBone.class,
+            method = "getUpdatedDescription"
+    )
+    public static class MeatOnTheBoneDescPatch{
+        public static SpireReturn<String> Prefix(){
+            if(AbstractDungeon.player instanceof TheSlumbering){
+                return SpireReturn.Return(TEXT[8]);
             }
             return SpireReturn.Continue();
         }

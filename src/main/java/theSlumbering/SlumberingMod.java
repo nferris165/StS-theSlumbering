@@ -22,6 +22,7 @@ import com.megacrit.cardcrawl.helpers.CardHelper;
 import com.megacrit.cardcrawl.helpers.FontHelper;
 import com.megacrit.cardcrawl.localization.*;
 import com.megacrit.cardcrawl.monsters.MonsterInfo;
+import com.megacrit.cardcrawl.relics.MarkOfTheBloom;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import com.megacrit.cardcrawl.vfx.cardManip.PurgeCardEffect;
 import javassist.CtClass;
@@ -409,7 +410,12 @@ public class SlumberingMod implements
     public static void decHeartCollectorRelic(int amt){
         if(AbstractDungeon.player.hasRelic(HeartCollector.ID)){
             AbstractCustomRelic r = (AbstractCustomRelic) AbstractDungeon.player.getRelic(HeartCollector.ID);
-            r.onTrigger(amt);
+            if(amt < 0 && AbstractDungeon.player.hasRelic(MarkOfTheBloom.ID)){
+                AbstractDungeon.player.getRelic(MarkOfTheBloom.ID).flash();
+            }
+            else{
+                r.onTrigger(amt);
+            }
         }
     }
 

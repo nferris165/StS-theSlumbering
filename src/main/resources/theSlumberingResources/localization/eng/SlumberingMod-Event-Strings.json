@@ -43,7 +43,14 @@
       "[Riches?] #gGain #g",
       "[How do I leave?] #rLose #r",
       "[Sleep] #gGain #g",
-      "[Stay in Line] #gObtain Ritual Dagger. #rLose #r"
+      "[Stay in Line] #gObtain Ritual Dagger. #rLose #r",
+      "[I am Healthy] #gDouble #gyour #gCollected #gHearts. #rCursed #r- #rDoubt.",
+      "[Recall] #gAdd #g",
+      " #gColorless #gcards #gto #gyour #gdeck. #rLose #r",
+      "[Jump Inside] #gDouble #gyour #gCollected #gHearts.",
+      "[Embrace Madness] #gReceive #g2 Madness. #rLose #r",
+      "[Focus] #rBecome #rCursed #r- #rWrithe. #gGain #g",
+      "[Retrace Your Steps]"
     ]
   },
   "theSlumbering:MysteriousOrb": {
