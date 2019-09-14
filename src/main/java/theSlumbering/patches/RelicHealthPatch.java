@@ -484,6 +484,20 @@ public class RelicHealthPatch {
         }
     }
 
+    //Regal Pillow
+    @SpirePatch(
+            clz = RegalPillow.class,
+            method = "getUpdatedDescription"
+    )
+    public static class RegalPillowDescPatch{
+        public static SpireReturn<String> Prefix(){
+            if(AbstractDungeon.player instanceof TheSlumbering){
+                return SpireReturn.Return(TEXT[13]);
+            }
+            return SpireReturn.Continue();
+        }
+    }
+
 
     // Locators
     public static class StrawLocator extends SpireInsertLocator {

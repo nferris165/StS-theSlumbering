@@ -38,13 +38,6 @@ public class RelicRemovePatch {
             //BaseMod.removeRelic(new SingingBowl()); //text adjusted
             //BaseMod.removeRelic(new TinyHouse());  //HP value adjusted
             //BaseMod.removeRelic(new FaceOfCleric()); //HP value adjusted
-
-            //TODO: tweak resting relics
-            //resting
-            BaseMod.removeRelic(new RegalPillow()); //tweak
-            BaseMod.removeRelic(new DreamCatcher()); //look at
-            BaseMod.removeRelic(new CoffeeDripper()); //look at
-
         }
 
         if (AbstractDungeon.player.hasRelic(SlumberingRelic.ID)) {

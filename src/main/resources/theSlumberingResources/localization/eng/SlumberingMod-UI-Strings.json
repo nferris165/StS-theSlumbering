@@ -11,6 +11,12 @@
       " #rFall #rmuch #rdeeper #rinto #ryour #pslumber..."
     ]
   },
+  "theSlumbering:CampfirePatch": {
+    "TEXT": [
+      "Enter the dream world, and collect ",
+      " hearts, \n but fall deeper into your slumber..."
+    ]
+  },
   "theSlumbering:HandSelectAction": {
     "TEXT": [
       "Use"

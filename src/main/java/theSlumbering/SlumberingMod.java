@@ -143,6 +143,10 @@ public class SlumberingMod implements
         return modID + "Resources/images/relics/outline/" + resourcePath;
     }
 
+    public static String makeUIPath(String resourcePath) {
+        return modID + "Resources/images/ui/" + resourcePath;
+    }
+
     public static String makeVfxPath(String resourcePath) {
         return modID + "Resources/images/vfx/" + resourcePath;
     }

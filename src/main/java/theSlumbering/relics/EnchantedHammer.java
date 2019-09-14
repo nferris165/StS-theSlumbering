@@ -38,7 +38,14 @@ public class EnchantedHammer extends AbstractCustomRelic implements BetterOnSmit
     @Override
     public String getUpdatedDescription() {
         return DESCRIPTIONS[0];
+    }
 
+    @Override
+    public boolean canSpawn() {
+        if (AbstractDungeon.floorNum >= 48 && !Settings.isEndless) {
+            return false;
+        }
+        return super.canSpawn();
     }
 
     @Override

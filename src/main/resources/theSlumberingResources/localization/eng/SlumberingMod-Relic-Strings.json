@@ -15,7 +15,8 @@
       "At the start of Boss combats, gain #b2 Collected Hearts.",
       "For every #b5 cards in your deck, gain #b1 Collected Heart whenever you enter a Rest Site.",
       "Whenever you enter a shop, gain #b2 Collected Hearts.",
-      "Whenever you use a potion, gain #b1 Collected Heart."
+      "Whenever you use a potion, gain #b1 Collected Heart.",
+      "Whenever you #yRest, gain #b2 Collected Hearts."
     ]
   },
   "theSlumbering:GlassShield": {
