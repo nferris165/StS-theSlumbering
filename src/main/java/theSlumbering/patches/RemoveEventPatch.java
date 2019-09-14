@@ -3,6 +3,8 @@ package theSlumbering.patches;
 import com.evacipated.cardcrawl.modthespire.lib.SpirePatch;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.events.beyond.WindingHalls;
+import com.megacrit.cardcrawl.events.city.CursedTome;
+import com.megacrit.cardcrawl.events.city.Nest;
 import theSlumbering.SlumberingMod;
 import theSlumbering.characters.TheSlumbering;
 import theSlumbering.events.MysteriousOrb;
@@ -20,17 +22,8 @@ public class RemoveEventPatch {
             //dungeon_instance.eventList.remove(GoopPuddle.ID);
             //dungeon_instance.eventList.remove(WindingHalls.ID);
 
-            /*dungeon_instance.eventList.remove(BigFish.ID);
-            dungeon_instance.eventList.remove(Cleric.ID);
-            dungeon_instance.eventList.remove(DeadAdventurer.ID);
-            dungeon_instance.eventList.remove(LivingWall.ID);
-            dungeon_instance.eventList.remove(Mushrooms.ID);
-            dungeon_instance.eventList.remove(GoldenIdolEvent.ID);
-            dungeon_instance.eventList.remove(GoldenWing.ID);
-            dungeon_instance.eventList.remove(Sssserpent.ID);
-            dungeon_instance.eventList.remove(ScrapOoze.ID);
-            */
-
+            dungeon_instance.eventList.remove(CursedTome.ID); // damage hardcoded
+            //dungeon_instance.eventList.remove(Nest.ID); // damage hardcoded
 
         } else {
             dungeon_instance.eventList.remove(MysteriousOrb.ID);

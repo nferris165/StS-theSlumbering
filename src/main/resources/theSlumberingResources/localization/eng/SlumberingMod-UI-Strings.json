@@ -1,4 +1,15 @@
 {
+  "theSlumbering:Patches": {
+    "TEXT": [
+      " #rLose #r",
+      " #rCollected #rHearts.",
+      " #rCollected #rHeart.",
+      " #gGain #g",
+      " #gCollected #gHearts.",
+      " #gCollected #gHeart.",
+      " #rFall #rdeeper #rinto #ryour #pslumber..."
+    ]
+  },
   "theSlumbering:HandSelectAction": {
     "TEXT": [
       "Use"

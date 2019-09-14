@@ -3,17 +3,23 @@ package theSlumbering.patches;
 import basemod.ReflectionHacks;
 import com.evacipated.cardcrawl.modthespire.lib.*;
 import com.evacipated.cardcrawl.modthespire.patcher.PatchingException;
+import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.AbstractCard.CardRarity;
+import com.megacrit.cardcrawl.cards.colorless.Apparition;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
+import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.events.city.*;
 import com.megacrit.cardcrawl.events.exordium.*;
 import com.megacrit.cardcrawl.events.shrines.*;
+import com.megacrit.cardcrawl.vfx.cardManip.ShowCardAndObtainEffect;
 import javassist.CannotCompileException;
 import javassist.CtBehavior;
 import theSlumbering.SlumberingMod;
 import theSlumbering.characters.TheSlumbering;
 import theSlumbering.relics.HeartCollector;
+import theSlumbering.relics.SlumberingRelic;
 
 import java.util.ArrayList;
 
@@ -24,6 +30,7 @@ import static theSlumbering.SlumberingMod.makeID;
 public class EventHealthPatch {
     private static String[] TEXT = CardCrawlGame.languagePack.getEventString(makeID("Patches")).DESCRIPTIONS;
     private static String[] OPTIONS = CardCrawlGame.languagePack.getEventString(makeID("Patches")).OPTIONS;
+    private static String[] GENERICS = CardCrawlGame.languagePack.getUIString(makeID("Patches")).TEXT;
 
     // Bonfire
     @SpirePatch(
@@ -286,10 +293,10 @@ public class EventHealthPatch {
                             __instance.imageEventText.updateDialogOption(1, OPTIONS[5], true);
                         }
                         else{
-                            __instance.imageEventText.updateDialogOption(1, OPTIONS[11] + OPTIONS[1] + value + " #rCollected #rHearts.");
+                            __instance.imageEventText.updateDialogOption(1, OPTIONS[11] + OPTIONS[1] + value + GENERICS[1]);
                         }
                     }
-                    __instance.imageEventText.updateDialogOption(2, OPTIONS[12] + OPTIONS[13]);
+                    __instance.imageEventText.updateDialogOption(2, OPTIONS[12] + GENERICS[6]);
                 }
             }
         }
@@ -387,13 +394,14 @@ public class EventHealthPatch {
     public static class ScrapOozeDescPatch {
         public static void Postfix(ScrapOoze __instance) {
             if (AbstractDungeon.player instanceof TheSlumbering) {
-                if(AbstractDungeon.player.getRelic(HeartCollector.ID).counter < 1){
-                    __instance.imageEventText.updateDialogOption(0, OPTIONS[5], true);
-                }
-                else {
-                    int relicObtainChance = (int) ReflectionHacks.getPrivate(
-                            __instance, ScrapOoze.class, "relicObtainChance");
-                    __instance.imageEventText.updateDialogOption(0, OPTIONS[15] + relicObtainChance + OPTIONS[16]);
+                if(AbstractDungeon.player.hasRelic(HeartCollector.ID)) {
+                    if (AbstractDungeon.player.getRelic(HeartCollector.ID).counter < 1) {
+                        __instance.imageEventText.updateDialogOption(0, OPTIONS[5], true);
+                    } else {
+                        int relicObtainChance = (int) ReflectionHacks.getPrivate(
+                                __instance, ScrapOoze.class, "relicObtainChance");
+                        __instance.imageEventText.updateDialogOption(0, OPTIONS[15] + relicObtainChance + OPTIONS[16]);
+                    }
                 }
             }
         }
@@ -428,11 +436,12 @@ public class EventHealthPatch {
         private static int value = 3;
         public static void Postfix(ShiningLight __instance) {
             if (AbstractDungeon.player instanceof TheSlumbering) {
-                if(AbstractDungeon.player.getRelic(HeartCollector.ID).counter < value){
-                    __instance.imageEventText.updateDialogOption(0, OPTIONS[5], true);
-                }
-                else {
-                    __instance.imageEventText.updateDialogOption(0, OPTIONS[17] + value + " #rCollected #rHearts.");
+                if(AbstractDungeon.player.hasRelic(HeartCollector.ID)) {
+                    if (AbstractDungeon.player.getRelic(HeartCollector.ID).counter < value) {
+                        __instance.imageEventText.updateDialogOption(0, OPTIONS[5], true);
+                    } else {
+                        __instance.imageEventText.updateDialogOption(0, OPTIONS[17] + value + GENERICS[1]);
+                    }
                 }
             }
         }
@@ -467,7 +476,7 @@ public class EventHealthPatch {
         public static void Postfix(Cleric __instance) {
             if (AbstractDungeon.player instanceof TheSlumbering) {
                 if(AbstractDungeon.player.gold > 35){
-                    __instance.imageEventText.updateDialogOption(0, OPTIONS[18] + 2 + " #gCollected #gHearts.");
+                    __instance.imageEventText.updateDialogOption(0, OPTIONS[18] + 2 + GENERICS[4]);
                 }
             }
         }
@@ -510,11 +519,273 @@ public class EventHealthPatch {
         private static int value = 1;
         public static void Postfix(GoopPuddle __instance) {
             if (AbstractDungeon.player instanceof TheSlumbering) {
-                if(AbstractDungeon.player.getRelic(HeartCollector.ID).counter < value){
-                    __instance.imageEventText.updateDialogOption(0, OPTIONS[5], true);
+                if(AbstractDungeon.player.hasRelic(HeartCollector.ID)) {
+                    if (AbstractDungeon.player.getRelic(HeartCollector.ID).counter < value) {
+                        __instance.imageEventText.updateDialogOption(0, OPTIONS[5], true);
+                    } else {
+                        __instance.imageEventText.updateDialogOption(0, OPTIONS[19] + value + GENERICS[2]);
+                    }
+                }
+            }
+        }
+    }
+
+    //Wing
+    @SpirePatch(
+            clz = GoldenWing.class,
+            method = "buttonEffect"
+    )
+
+    public static class GoldenWingEventPatch {
+        private static int value = 1;
+        @SpireInsertPatch(
+                localvars = {"damage"},
+                locator = DamageLocator.class
+        )
+        public static void Insert(GoldenWing __instance, int buttonPressed, @ByRef int[] damage) {
+            if (AbstractDungeon.player instanceof TheSlumbering) {
+                damage[0] = 0;
+                SlumberingMod.decHeartCollectorRelic(value);
+            }
+        }
+    }
+
+    @SpirePatch(
+            clz = GoldenWing.class,
+            method = SpirePatch.CONSTRUCTOR
+    )
+
+    public static class GoldenWingDescPatch {
+        private static int value = 1;
+        public static void Postfix(GoldenWing __instance) {
+            if (AbstractDungeon.player instanceof TheSlumbering) {
+                if(AbstractDungeon.player.hasRelic(HeartCollector.ID)) {
+                    if (AbstractDungeon.player.getRelic(HeartCollector.ID).counter < value) {
+                        __instance.imageEventText.updateDialogOption(0, OPTIONS[5], true);
+                    } else {
+                        __instance.imageEventText.updateDialogOption(0, OPTIONS[20] + value + GENERICS[2]);
+                    }
+                }
+            }
+        }
+    }
+
+    //Council for Ghosts
+    @SpirePatch(
+            clz = Ghosts.class,
+            method = "buttonEffect"
+    )
+
+    public static class GhostsEventPatch {
+        @SpireInsertPatch(
+                localvars = {"hpLoss"},
+                locator = DecMaxHPLocator.class
+        )
+        public static void Insert(Ghosts __instance, int buttonPressed, @ByRef int[] hpLoss) {
+            if (AbstractDungeon.player instanceof TheSlumbering) {
+                hpLoss[0] = 0;
+                if(AbstractDungeon.player.hasRelic(SlumberingRelic.ID)) {
+                    int loss = AbstractDungeon.player.getRelic(SlumberingRelic.ID).counter / 2;
+                    SlumberingMod.incSlumberingRelic(-loss);
+                }
+            }
+        }
+    }
+
+    @SpirePatch(
+            clz = Ghosts.class,
+            method = SpirePatch.CONSTRUCTOR
+    )
+
+    public static class GhostsDescPatch {
+        public static void Postfix(Ghosts __instance) {
+            if (AbstractDungeon.player instanceof TheSlumbering) {
+                if (AbstractDungeon.ascensionLevel >= 15) {
+                    __instance.imageEventText.updateDialogOption(0, OPTIONS[21] + 3 + " Apparition." + OPTIONS[22], new Apparition());
+                } else {
+                    __instance.imageEventText.updateDialogOption(0, OPTIONS[21] + 5 + " Apparition." + OPTIONS[22], new Apparition());
+                }
+            }
+        }
+    }
+
+    //Forgotten Altar
+    @SpirePatch(
+            clz = ForgottenAltar.class,
+            method = "buttonEffect"
+    )
+
+    public static class ForgottenAltarEventPatch {
+        private static int value = 3;
+        @SpireInsertPatch(
+                locator = MaxHPLocator.class
+        )
+        public static SpireReturn Insert2(ForgottenAltar __instance, int buttonPressed) {
+            if (AbstractDungeon.player instanceof TheSlumbering) {
+                SlumberingMod.decHeartCollectorRelic(value);
+                SlumberingMod.incSlumberingRelic(1);
+                __instance.showProceedScreen(TEXT[8]);
+                return SpireReturn.Return(null);
+            }
+            return SpireReturn.Continue();
+        }
+    }
+
+    @SpirePatch(
+            clz = ForgottenAltar.class,
+            method = SpirePatch.CONSTRUCTOR
+    )
+
+    public static class ForgottenAltarDescPatch {
+        private static int value = 3;
+        public static void Postfix(ForgottenAltar __instance) {
+            if (AbstractDungeon.player instanceof TheSlumbering) {
+                if(AbstractDungeon.player.hasRelic(HeartCollector.ID)) {
+                    if (AbstractDungeon.player.getRelic(HeartCollector.ID).counter < value) {
+                        __instance.imageEventText.updateDialogOption(1, OPTIONS[5], true);
+                    } else {
+                        __instance.imageEventText.updateDialogOption(1, OPTIONS[23] + value + GENERICS[1]);
+                    }
+                }
+            }
+        }
+    }
+
+    //Knowing Skull
+    @SpirePatch(
+            clz = KnowingSkull.class,
+            method = "buttonEffect"
+    )
+
+    public static class KnowingSkullEventPatch {
+        private static int value = 1;
+        @SpireInsertPatch(
+                localvars = {"hpCost"},
+                locator = DamageLocator.class
+        )
+        public static void Insert(KnowingSkull __instance, int buttonPressed, @ByRef int[] hpCost) {
+            if (AbstractDungeon.player instanceof TheSlumbering) {
+                if (AbstractDungeon.player.hasRelic(HeartCollector.ID)
+                        && AbstractDungeon.player.getRelic(HeartCollector.ID).counter == 0
+                        && buttonPressed == 3) {
+                    hpCost[0] = 6;
                 }
                 else {
-                    __instance.imageEventText.updateDialogOption(0, OPTIONS[19] + value + " #rCollected #rHeart.");
+                    hpCost[0] = 0;
+                    SlumberingMod.decHeartCollectorRelic(value);
+                }
+            }
+        }
+
+        public static void Postfix(KnowingSkull __instance, int buttonPressed){
+            if (AbstractDungeon.player instanceof TheSlumbering) {
+                if(buttonPressed != 3) {
+                    if (AbstractDungeon.player.hasRelic(HeartCollector.ID)) {
+                        if (AbstractDungeon.player.getRelic(HeartCollector.ID).counter < value) {
+                            __instance.imageEventText.updateDialogOption(0, OPTIONS[5], true);
+                        } else {
+                            __instance.imageEventText.updateDialogOption(0, OPTIONS[25] + value + GENERICS[2]);
+                        }
+                        if (AbstractDungeon.player.getRelic(HeartCollector.ID).counter < value) {
+                            __instance.imageEventText.updateDialogOption(1, OPTIONS[5], true);
+                        } else {
+                            __instance.imageEventText.updateDialogOption(1, OPTIONS[26] + 90 + OPTIONS[4] + OPTIONS[1] + value + GENERICS[2]);
+                        }
+                        if (AbstractDungeon.player.getRelic(HeartCollector.ID).counter < value) {
+                            __instance.imageEventText.updateDialogOption(2, OPTIONS[5], true);
+                        } else {
+                            __instance.imageEventText.updateDialogOption(2, OPTIONS[24] + value + GENERICS[2]);
+                        }
+                        if (AbstractDungeon.player.getRelic(HeartCollector.ID).counter < value) {
+                            __instance.imageEventText.updateDialogOption(3, OPTIONS[13]);
+                        } else {
+                            __instance.imageEventText.updateDialogOption(3, OPTIONS[27] + value + GENERICS[2]);
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    //Library
+    @SpirePatch(
+            clz = TheLibrary.class,
+            method = "buttonEffect"
+    )
+
+    public static class TheLibraryEventPatch {
+        private static int value = -3;
+        @SpireInsertPatch(
+                localvars = {"healAmt"},
+                locator = HealLocator.class
+        )
+        public static void Insert(TheLibrary __instance, int buttonPressed, @ByRef int[] healAmt) {
+            if (AbstractDungeon.player instanceof TheSlumbering) {
+                healAmt[0] = 0;
+                SlumberingMod.incSlumberingRelic(-1);
+                __instance.imageEventText.updateBodyText(TEXT[9]);
+                if(AbstractDungeon.ascensionLevel >= 15){
+                    SlumberingMod.decHeartCollectorRelic(value + 1);
+                }
+                else{
+                    SlumberingMod.decHeartCollectorRelic(value);
+                }
+            }
+        }
+    }
+
+    @SpirePatch(
+            clz = TheLibrary.class,
+            method = SpirePatch.CONSTRUCTOR
+    )
+
+    public static class TheLibraryDescPatch {
+        public static void Postfix(TheLibrary __instance) {
+            if (AbstractDungeon.player instanceof TheSlumbering) {
+                if(AbstractDungeon.ascensionLevel >= 15){
+                    __instance.imageEventText.updateDialogOption(1, OPTIONS[28] + 2 + GENERICS[4] + GENERICS[6]);
+                }
+                else{
+                    __instance.imageEventText.updateDialogOption(1, OPTIONS[28] + 3 + GENERICS[4] + GENERICS[6]);
+                }
+            }
+        }
+    }
+
+    //Nest
+    @SpirePatch(
+            clz = Nest.class,
+            method = "buttonEffect"
+    )
+
+    public static class NestEventPatch {
+        private static int value = 1;
+        @SpireInsertPatch(
+                localvars = {"screenNum", "c"},
+                locator = DamageLocator.class
+        )
+        public static SpireReturn Insert(Nest __instance, int buttonPressed, @ByRef int[] screenNum, AbstractCard c) {
+            if (AbstractDungeon.player instanceof TheSlumbering) {
+                SlumberingMod.decHeartCollectorRelic(value);
+                AbstractDungeon.effectList.add(new ShowCardAndObtainEffect(c, (float) Settings.WIDTH * 0.3F, (float)Settings.HEIGHT / 2.0F));
+                screenNum[0] = 2;
+                __instance.imageEventText.updateDialogOption(0, "[Leave]");
+                __instance.imageEventText.clearRemainingOptions();
+                return SpireReturn.Return(null);
+            }
+            return SpireReturn.Continue();
+        }
+
+        public static void Postfix(Nest __instance, int buttonPressed, int ___screenNum) {
+            if (AbstractDungeon.player instanceof TheSlumbering) {
+                if(___screenNum == 1) {
+                    if (AbstractDungeon.player.hasRelic(HeartCollector.ID)) {
+                        if (AbstractDungeon.player.getRelic(HeartCollector.ID).counter < value) {
+                            __instance.imageEventText.updateDialogOption(1, OPTIONS[5], true);
+                        } else {
+                            __instance.imageEventText.updateDialogOption(1, OPTIONS[29] + value + GENERICS[2]);
+                        }
+                    }
                 }
             }
         }

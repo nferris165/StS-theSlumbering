@@ -231,7 +231,9 @@ public class RelicHealthPatch {
         public static SpireReturn Insert(BloodyIdol __instance){
             AbstractPlayer p = AbstractDungeon.player;
             if(p instanceof TheSlumbering) {
-                SlumberingMod.incSlumberingRelicFloat(2);
+                if(AbstractDungeon.relicRng.random(0, 99) >= 40){
+                    SlumberingMod.decHeartCollectorRelic(1);
+                }
 
                 return SpireReturn.Return(null);
             }

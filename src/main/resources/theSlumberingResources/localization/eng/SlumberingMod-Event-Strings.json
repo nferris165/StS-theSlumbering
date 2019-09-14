@@ -9,7 +9,9 @@
       "You stuff the #ybanana into your Heart Collector. It is nutritious and slightly #bmagical, increasing your Heart Collection.",
       "You eat the #ydonut. It really hits the spot! You wake up ever so slightly...",
       "You give in to the unnatural desire for the mushrooms. As you stuff mushroom after mushroom into your Heart Collector, you feel very odd. NL You #ggain #g4 #gCollected #gHearts, but you also get #rinfected.",
-      "You use a Collected Heart to carefully retrieve the #ygold moments before the Heart dissolves completely into the goop."
+      "You use a Collected Heart to carefully retrieve the #ygold moments before the Heart dissolves completely into the goop.",
+      "You stand on the altar and place your Heart Collector. NL #rBlood spills out in sacrifice, until suddenly, the arms of the statue reach out and close around your eyes. NL Everything goes dark. NL You wake up a short time later feeling a new potential surging through you.",
+      "Reading is for chumps. NL You doze off in a comfy chair instead. NL ~Zzz...~ ~zzz...~ ~..Zz....~ NL You are embraced by the power of the dream world. NL When you wake up, you can feel the call of slumber pulling you even more intensely. NL You also notice your Heart Collector has a few additions from your recent escapade."
     ],
     "OPTIONS": [
       "[Punch]",
@@ -25,13 +27,23 @@
       "[Donut] #gWake #gup #gever #gso #gslightly...",
       "[Smash]",
       "[Hide]",
-      " #rFall #rdeeper #rinto #ryour #pslumber...",
+      "[How do I leave?] You have no Collected Hearts to trade. #rLose #r6 #rHP.",
       "[Eat] #gGain #g4 #gCollected #gHearts. #rBecome #rCursed #r- #rParasite.",
       "[Reach Inside] #rLose #r1 #rCollected #rHeart. #g",
       "%: #gFind #ga #gRelic.",
       "[Enter] #gUpgrade #g2 #grandom #gcards. #rLose #r",
       "[Heal] #y35 #yGold: #gGain #g",
-      "[Gather Gold] #gGain #g75 #gGold. #rLose #r"
+      "[Gather Gold] #gGain #g75 #gGold. #rLose #r",
+      "[Pray] #gRemove #ga #gcard #gfrom #gyour #gdeck. #rLose #r",
+      "[Accept] #gReceive #g",
+      " #rFall #rsignificantly #rdeeper #rinto #ryour #pslumber...",
+      "[Sacrifice] #gWake #gup #ga #glittle... #rLose #r",
+      "[Success?] #gGet #ga #gColorless #gCard. #rLose #r",
+      "[A Pick Me Up?] #gGet #ga #gPotion. #rLose #r",
+      "[Riches?] #gGain #g",
+      "[How do I leave?] #rLose #r",
+      "[Sleep] #gGain #g",
+      "[Stay in Line] #gObtain Ritual Dagger. #rLose #r"
     ]
   },
   "theSlumbering:MysteriousOrb": {
