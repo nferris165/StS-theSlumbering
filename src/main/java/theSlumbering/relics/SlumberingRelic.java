@@ -28,7 +28,12 @@ public class SlumberingRelic extends AbstractCustomRelic implements ClickableRel
     public SlumberingRelic() {
         super(ID, IMG, OUTLINE, RelicTier.STARTER, LandingSound.MAGICAL);
 
-        this.counter = 1;
+        if(AbstractDungeon.ascensionLevel >= 14){
+            this.counter = 2;
+        }
+        else{
+            this.counter = 3;
+        }
         this.floatCounter = 0;
     }
 
@@ -79,6 +84,7 @@ public class SlumberingRelic extends AbstractCustomRelic implements ClickableRel
         updateDescription(AbstractDungeon.player.chosenClass);
         switch(s)
         {
+            //TODO: update relic art?
             case 1 :
                 //effect 1
                 break;
@@ -120,11 +126,10 @@ public class SlumberingRelic extends AbstractCustomRelic implements ClickableRel
 
     @Override
     public void onMonsterDeath(AbstractMonster m) {
-        if (m.currentHealth <= 0 && m.type == AbstractMonster.EnemyType.ELITE) {
+        if (m.currentHealth <= 0 && (m.type == AbstractMonster.EnemyType.ELITE || m.type == AbstractMonster.EnemyType.BOSS)) {
             this.flash();
             AbstractDungeon.actionManager.addToBottom(new RelicAboveCreatureAction(m, this));
-            this.counter++;
-            checkWake();
+            onTrigger(1);
         }
     }
 
@@ -134,9 +139,9 @@ public class SlumberingRelic extends AbstractCustomRelic implements ClickableRel
     }
 
     @Override
-    public void onTrigger(int s){
+    public void onTrigger(int amt){
         this.flash();
-        this.counter += s;
+        this.counter += amt;
         if(this.counter < 0) {
             this.counter = 0;
             AbstractDungeon.overlayMenu.endTurnButton.disable(true);
@@ -145,9 +150,9 @@ public class SlumberingRelic extends AbstractCustomRelic implements ClickableRel
     }
 
     @Override
-    public void onTriggerFloat(int s)
+    public void onTriggerFloat(int amt)
     {
-        this.floatCounter += ((float)s * max_hp_ratio);
+        this.floatCounter += ((float)amt * max_hp_ratio);
         checkFloat();
     }
 
@@ -159,7 +164,8 @@ public class SlumberingRelic extends AbstractCustomRelic implements ClickableRel
             AbstractCreature p = AbstractDungeon.player;
             int amt = AbstractDungeon.player.getPower(DrowsyPower.POWER_ID).amount;
             AbstractDungeon.actionManager.addToBottom(new RemoveSpecificPowerAction(p, p, DrowsyPower.POWER_ID));
-            onTrigger(-amt);
+            //onTrigger(-amt);
+            onTrigger(-1);
         }
     }
 }

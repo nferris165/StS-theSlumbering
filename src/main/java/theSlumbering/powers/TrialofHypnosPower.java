@@ -72,7 +72,7 @@ public class TrialofHypnosPower extends AbstractCustomPower implements Cloneable
         updateDescription();
     }
 
-    //TODO: Better victory effect
+    //TODO: Better victory vfx
     private void mightTrial(boolean init){
         //Task: Play an attack with at least 30 damage
         if(init){

@@ -2,8 +2,10 @@ package theSlumbering.patches;
 
 import com.evacipated.cardcrawl.modthespire.lib.*;
 import com.megacrit.cardcrawl.cards.AbstractCard;
+import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.localization.CharacterStrings;
 import com.megacrit.cardcrawl.neow.NeowEvent;
 import com.megacrit.cardcrawl.neow.NeowReward;
 import com.megacrit.cardcrawl.neow.NeowReward.NeowRewardDef;
@@ -13,25 +15,16 @@ import theSlumbering.SlumberingMod;
 import theSlumbering.characters.TheSlumbering;
 
 import java.util.ArrayList;
+
+import static theSlumbering.SlumberingMod.makeID;
+import static theSlumbering.patches.NeowEnumsPatch.*;
+
 @SuppressWarnings("unused")
 
 
 public class NeowPatch {
-    private static final String[] text = {"[ #gWake #gup #ga #glittle... ]",
-            "[ #gWake #gup #ga #glot... ]",
-            "[ #gObtain #ga #grandom #gBasic #gCard ]"};
-
-    @SpireEnum
-    private static NeowReward.NeowRewardType WAKE;
-
-    @SpireEnum
-    private static NeowReward.NeowRewardType WAKE_MORE;
-
-    @SpireEnum
-    private static NeowReward.NeowRewardType SLUMBER_BOSS_RELIC;
-
-    @SpireEnum
-    private static NeowReward.NeowRewardType BASIC_CARD;
+    private static final CharacterStrings characterStrings = CardCrawlGame.languagePack.getCharacterString(makeID("NeowPatch"));
+    private static final String[] text = characterStrings.TEXT;
 
     @SpirePatch(
             clz= NeowReward.class,
@@ -49,8 +42,8 @@ public class NeowPatch {
                     //do usual
                 }
                 else{
-                    __instance.optionLabel = text[0];
-                    __instance.type = WAKE;
+                    __instance.optionLabel = text[3];
+                    __instance.type = START_SLUMBER;
                 }
             }
         }
@@ -154,6 +147,10 @@ public class NeowPatch {
                 ArrayList<AbstractCard> list = SlumberingMod.generateByTag(0);
                 AbstractCard c = list.get((NeowEvent.rng.random(0, list.size() - 1)));
                 AbstractDungeon.topLevelEffects.add(new ShowCardAndObtainEffect(c, (float)Settings.WIDTH / 2.0F, (float)Settings.HEIGHT / 2.0F));
+            }
+            else if (__instance.type == START_SLUMBER) {
+                SlumberingMod.incSlumberingRelic(1);
+                SlumberingMod.decHeartCollectorRelic(-5);
             }
         }
     }

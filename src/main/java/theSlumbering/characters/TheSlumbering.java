@@ -48,11 +48,11 @@ public class TheSlumbering extends AbstractCustomPlayer {
     private static boolean calledTransform = true;
 
     //base stats
-    private static final int ENERGY_PER_TURN = 4;
-    private static final int STARTING_HP = 800;
-    private static final int MAX_HP = 800;
-    private static final int STARTING_GOLD = 10000;
-    private static final int CARD_DRAW = 6;
+    private static final int ENERGY_PER_TURN = 5;
+    private static final int STARTING_HP = 1;
+    private static final int MAX_HP = 1;
+    private static final int STARTING_GOLD = 100;
+    private static final int CARD_DRAW = 5;
     private static final int ORB_SLOTS = 0;
 
     //init settings
@@ -330,20 +330,20 @@ public class TheSlumbering extends AbstractCustomPlayer {
                 break;
             case 2:
                 replaceBasic();
-                incSlumberingRelic(4);
+                incSlumberingRelic(3);
                 break;
             case 3:
                 replaceDrowsy();
-                //replaceBasic(); //maybe not?
-                incSlumberingRelic(5);
+                replaceBasic(); //maybe not?
+                incSlumberingRelic(4);
                 break;
             case 4:
-                incSlumberingRelic(6);
+                incSlumberingRelic(5);
                 break;
             default:
                 replaceDrowsy();
                 replaceBasic(); //maybe not?
-                incSlumberingRelic(4);
+                incSlumberingRelic(3);
                 break;
         }
 

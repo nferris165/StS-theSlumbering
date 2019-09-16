@@ -164,7 +164,7 @@ public class SlumberingMod implements
         logger.info("Adding mod settings");
         defaultSettings.setProperty(event_sharing_settings, "FALSE");
         try {
-            SpireConfig config = new SpireConfig("firstMod", "theFirstConfig", defaultSettings);
+            SpireConfig config = new SpireConfig("slumberingMod", "theSlumberingConfig", defaultSettings);
             config.load();
             eventSharing = config.getBool(event_sharing_settings);
         } catch (Exception e) {
@@ -202,7 +202,7 @@ public class SlumberingMod implements
 
                     eventSharing = button.enabled;
                     try {
-                        SpireConfig config = new SpireConfig("firstMod", "theFirstConfig", defaultSettings);
+                        SpireConfig config = new SpireConfig("slumberingMod", "theSlumberingConfig", defaultSettings);
                         config.setBool(event_sharing_settings, eventSharing);
                         config.save();
                     } catch (Exception e) {
