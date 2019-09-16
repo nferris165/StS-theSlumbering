@@ -24,7 +24,7 @@ public class FullGuard extends AbstractCustomCard {
     private static final int COST = 2;
 
     private static final int BLOCK = 3;
-    private static final int UPGRADE_BLOCK = 2;
+    private static final int UPGRADE_BLOCK = 3;
 
     public FullGuard() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);

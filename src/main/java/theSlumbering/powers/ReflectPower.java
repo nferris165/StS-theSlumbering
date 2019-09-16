@@ -3,6 +3,7 @@ package theSlumbering.powers;
 import basemod.interfaces.CloneablePowerInterface;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
+import com.evacipated.cardcrawl.mod.stslib.powers.interfaces.OnLoseBlockPower;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
@@ -16,7 +17,7 @@ import theSlumbering.SlumberingMod;
 
 import theSlumbering.util.TextureLoader;
 
-public class ReflectPower extends AbstractPower implements CloneablePowerInterface {
+public class ReflectPower extends AbstractPower implements CloneablePowerInterface, OnLoseBlockPower {
     @SuppressWarnings("WeakerAccess")
     public AbstractCreature source;
 
@@ -29,6 +30,7 @@ public class ReflectPower extends AbstractPower implements CloneablePowerInterfa
     private static final Texture tex32 = TextureLoader.getTexture("theFirstResources/images/powers/placeholder_power32.png");
 
     private DamageInfo reflectInfo;
+    private boolean blocked = false;
 
     public ReflectPower(final AbstractCreature owner, final AbstractCreature source, final int percent) {
         name = NAME;
@@ -60,20 +62,24 @@ public class ReflectPower extends AbstractPower implements CloneablePowerInterfa
     }
 
     @Override
-    public int onAttacked(DamageInfo info, int damageAmount) {
+    public int onAttackedToChangeDamage(DamageInfo info, int i) {
+        SlumberingMod.logger.info(info.output + " no block " + i + " " + this.owner.currentBlock + "\n\n");
 
-        //info.type != DamageInfo.DamageType.THORNS && info.type != DamageInfo.DamageType.HP_LOSS
-        if (info.type == DamageInfo.DamageType.NORMAL && info.owner != null && info.owner != this.owner) {
+        if (info.type == DamageInfo.DamageType.NORMAL && info.owner != null
+                && info.owner != this.owner && !this.blocked) {
+
             this.flash();
-            int percentDamage = (int) (((float) this.amount / 100) * (float) damageAmount);
-
-            //SlumberingMod.logger.info(percentDamage + " " + this.amount + " " + damageAmount + "\n\n");
-
+            int percentDamage = (int) (((float) this.amount / 100.0f) * (float) info.output);
             this.reflectInfo = new DamageInfo(this.owner, percentDamage, DamageInfo.DamageType.THORNS);
-            AbstractDungeon.actionManager.addToTop(new DamageAction(info.owner, this.reflectInfo, AbstractGameAction.AttackEffect.SLASH_DIAGONAL, true));
-        }
+            i -= percentDamage;
 
-        return damageAmount;
+            SlumberingMod.logger.info(percentDamage + " " + this.amount + " " + info.output + " " + i + " " + this.owner.currentBlock + "\n\n");
+
+            AbstractDungeon.actionManager.addToTop(new DamageAction(info.owner, this.reflectInfo, AbstractGameAction.AttackEffect.SHIELD, true));
+
+        }
+        this.blocked = false;
+        return i;
     }
 
     @Override
@@ -84,5 +90,24 @@ public class ReflectPower extends AbstractPower implements CloneablePowerInterfa
     @Override
     public AbstractPower makeCopy() {
         return new ReflectPower(owner, source, amount);
+    }
+
+    @Override
+    public int onLoseBlock(DamageInfo info, int i) {
+        this.blocked = true;
+        SlumberingMod.logger.info(info.output + " " + i + " " + this.owner.currentBlock + "\n\n");
+        if (info.type == DamageInfo.DamageType.NORMAL && info.owner != null
+                && info.owner != this.owner) {
+
+            this.flash();
+            int percentDamage = (int) (((float) this.amount / 100.0f) * (float) info.output);
+            this.reflectInfo = new DamageInfo(this.owner, percentDamage, DamageInfo.DamageType.THORNS);
+            i -= percentDamage;
+
+            SlumberingMod.logger.info(percentDamage + " " + this.amount + " " + info.output + " " + i + " " + this.owner.currentBlock + "\n\n");
+
+            AbstractDungeon.actionManager.addToTop(new DamageAction(info.owner, this.reflectInfo, AbstractGameAction.AttackEffect.SHIELD, true));
+        }
+        return i;
     }
 }

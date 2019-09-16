@@ -23,6 +23,7 @@ public class SlumberingRelic extends AbstractCustomRelic implements ClickableRel
     private static final Texture OUTLINE = TextureLoader.getTexture(makeRelicOutlinePath("zzz.png"));
 
     private static final float max_hp_ratio = 0.1F;
+    private boolean firstElite;
 
 
     public SlumberingRelic() {
@@ -126,11 +127,17 @@ public class SlumberingRelic extends AbstractCustomRelic implements ClickableRel
 
     @Override
     public void onMonsterDeath(AbstractMonster m) {
-        if (m.currentHealth <= 0 && (m.type == AbstractMonster.EnemyType.ELITE || m.type == AbstractMonster.EnemyType.BOSS)) {
+        if (m.currentHealth <= 0 && firstElite && (m.type == AbstractMonster.EnemyType.ELITE || m.type == AbstractMonster.EnemyType.BOSS)) {
             this.flash();
+            this.firstElite = false;
             AbstractDungeon.actionManager.addToBottom(new RelicAboveCreatureAction(m, this));
             onTrigger(1);
         }
+    }
+
+    @Override
+    public void atBattleStartPreDraw() {
+        this.firstElite = true;
     }
 
     @Override

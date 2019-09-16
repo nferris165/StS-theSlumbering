@@ -88,7 +88,7 @@
   "NAME": "Star Mobile",
   "FLAVOR": "Twinkle, twinkle, little star...",
   "DESCRIPTIONS": [
-    "When #ytheslumbering:Drowsy, deal #b30% increased damage rather than #b20%."
+    "When #ytheslumbering:Drowsy, deal #b40% increased damage rather than #b25%."
   ]
   },
   "theSlumbering:PowerFromBeyond": {

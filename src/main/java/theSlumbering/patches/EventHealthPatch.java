@@ -214,11 +214,22 @@ public class EventHealthPatch {
 
     public static class BigFishPatch {
         @SpireInsertPatch(
+                localvars = {"healAmt"},
                 locator = HealLocator.class
         )
-        public static void Insert(BigFish __instance, int buttonPressed) {
+        public static void Insert(BigFish __instance, int buttonPressed, @ByRef int[] healAmt) {
             if (AbstractDungeon.player instanceof TheSlumbering) {
                 SlumberingMod.decHeartCollectorRelic(-3);
+                healAmt[0] = 0;
+            }
+        }
+
+        @SpireInsertPatch(
+                locator = MaxHPLocator.class
+        )
+        public static void Insert2(BigFish __instance, int buttonPressed) {
+            if (AbstractDungeon.player instanceof TheSlumbering) {
+                SlumberingMod.incSlumberingRelicFloat(5);
             }
         }
 

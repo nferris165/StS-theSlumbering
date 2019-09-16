@@ -25,8 +25,10 @@ public class DrowsyPower  extends AbstractCustomPower implements CloneablePowerI
     private static final Texture tex32 = TextureLoader.getTexture(makePowerPath("placeholder_power32.png"));
 
     private boolean justApplied = false;
-    private int percent = 20;
-    private int bonus = 10;
+    private int percent = 25;
+    private int bonus = 15;
+    private float percentF = ((float) percent) / 100.0f;
+    private float buffF = ((float) bonus) / 100.0f;
 
     public DrowsyPower(AbstractCreature owner, int amount, boolean isSourceMonster) {
         name = NAME;
@@ -50,8 +52,8 @@ public class DrowsyPower  extends AbstractCustomPower implements CloneablePowerI
 
     @Override
     public float atDamageGive(float damage, DamageInfo.DamageType type) {
-        float regBuf = damage * 0.2F * this.amount + damage;
-        float incBuf = damage * 0.3F * this.amount + damage;
+        float regBuf = damage * percentF * this.amount + damage;
+        float incBuf = damage * (percentF + buffF) * this.amount + damage;
         if (type == DamageInfo.DamageType.NORMAL) {
             return AbstractDungeon.player.hasRelic(makeID("StarMobile")) ? incBuf : regBuf;
         } else {

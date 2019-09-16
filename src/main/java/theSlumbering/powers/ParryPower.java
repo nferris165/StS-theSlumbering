@@ -3,6 +3,7 @@ package theSlumbering.powers;
 import basemod.interfaces.CloneablePowerInterface;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
+import com.evacipated.cardcrawl.mod.stslib.powers.interfaces.OnLoseBlockPower;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.actions.common.ReducePowerAction;
@@ -16,10 +17,8 @@ import com.megacrit.cardcrawl.powers.AbstractPower;
 import theSlumbering.SlumberingMod;
 import theSlumbering.util.TextureLoader;
 
-public class ParryPower extends AbstractPower implements CloneablePowerInterface {
+public class ParryPower extends AbstractPower implements CloneablePowerInterface, OnLoseBlockPower {
     @SuppressWarnings("WeakerAccess")
-    public AbstractCreature source;
-
     public static final String POWER_ID = SlumberingMod.makeID("ParryPower");
     private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
     public static final String NAME = powerStrings.NAME;
@@ -27,6 +26,8 @@ public class ParryPower extends AbstractPower implements CloneablePowerInterface
 
     private static final Texture tex84 = TextureLoader.getTexture("theFirstResources/images/powers/placeholder_power84.png");
     private static final Texture tex32 = TextureLoader.getTexture("theFirstResources/images/powers/placeholder_power32.png");
+
+    private boolean blocked = false;
 
     public ParryPower(final AbstractCreature owner, final int amount) {
         name = NAME;
@@ -60,7 +61,7 @@ public class ParryPower extends AbstractPower implements CloneablePowerInterface
         return new ParryPower(owner, amount);
     }
 
-    public void decrement(){
+    private void decrement(){
         if (this.amount <= 1) {
             AbstractDungeon.actionManager.addToTop(new RemoveSpecificPowerAction(this.owner, this.owner, ID));
         } else {
@@ -69,22 +70,36 @@ public class ParryPower extends AbstractPower implements CloneablePowerInterface
     }
 
     @Override
-    public int onAttackedToChangeDamage(DamageInfo info, int i) {
-
+    public int onAttacked(DamageInfo info, int i) {
         if (info.type == DamageInfo.DamageType.NORMAL && info.owner != null
-                && info.owner != this.owner && this.owner.currentBlock >= info.output) {
+                && info.owner != this.owner && !this.blocked){
+            decrement();
+            i *= 2;
+        }
+        this.blocked = false;
+        return i;
+    }
+
+    @Override
+    public int onLoseBlock(DamageInfo info, int i) {
+        //SlumberingMod.logger.info(info.output + " block " + i + " " + this.owner.currentBlock + "\n\n");
+        this.blocked = true;
+        if (info.type == DamageInfo.DamageType.NORMAL && info.owner != null
+                && info.owner != this.owner) {
+
+            if(this.owner.currentBlock >= info.output){
+                this.flash();
+                DamageInfo parryInfo = new DamageInfo(this.owner, info.output, DamageInfo.DamageType.THORNS);
+                AbstractDungeon.actionManager.addToTop(new DamageAction(info.owner, parryInfo, AbstractGameAction.AttackEffect.SLASH_HEAVY, true));
+
+                decrement();
+                return 0;
+            }
 
             this.flash();
-            DamageInfo parryInfo = new DamageInfo(this.owner, info.output, DamageInfo.DamageType.THORNS);
-            AbstractDungeon.actionManager.addToTop(new DamageAction(info.owner, parryInfo, AbstractGameAction.AttackEffect.SLASH_HEAVY, true));
-
             decrement();
-
-            return 0;
+            return i * 2;
         }
-
-        decrement();
-
-        return i * 2;
+        return i;
     }
 }
