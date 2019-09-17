@@ -3,10 +3,13 @@ package theSlumbering.relics;
 import basemod.abstracts.CustomSavable;
 import com.badlogic.gdx.graphics.Texture;
 import com.evacipated.cardcrawl.mod.stslib.relics.BetterOnLoseHpRelic;
+import com.megacrit.cardcrawl.actions.common.RelicAboveCreatureAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.PowerTip;
 import com.evacipated.cardcrawl.mod.stslib.relics.OnLoseBlockRelic;
+import com.megacrit.cardcrawl.vfx.RelicAboveCreatureEffect;
 import theSlumbering.SlumberingMod;
 import theSlumbering.util.TextureLoader;
 
@@ -78,6 +81,7 @@ public class SlimeShield extends AbstractCustomRelic implements BetterOnLoseHpRe
         if(this.active){
             if(i >= this.counter){
                 flash();
+                AbstractDungeon.actionManager.addToBottom(new RelicAboveCreatureAction(AbstractDungeon.player, this));
                 int j = i - this.counter;
                 this.counter = -1;
                 this.active = false;
@@ -86,6 +90,7 @@ public class SlimeShield extends AbstractCustomRelic implements BetterOnLoseHpRe
             }
             else{
                 flash();
+                AbstractDungeon.actionManager.addToBottom(new RelicAboveCreatureAction(AbstractDungeon.player, this));
                 this.counter -= i;
                 return 0;
             }

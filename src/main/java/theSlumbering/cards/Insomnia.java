@@ -52,7 +52,12 @@ public class Insomnia extends AbstractCustomCard {
 
     @Override
     public void applyPowers() {
-        this.baseBlock = BLOCK + this.magicNumber * AbstractDungeon.player.getPower(DrowsyPower.POWER_ID).amount;
+        if(AbstractDungeon.player.hasPower(DrowsyPower.POWER_ID)){
+            this.baseBlock = BLOCK + this.magicNumber * AbstractDungeon.player.getPower(DrowsyPower.POWER_ID).amount;
+        }
+        else{
+            this.baseBlock = BLOCK;
+        }
         super.applyPowers();
         this.isBlockModified = this.block != BLOCK;
     }

@@ -2,6 +2,7 @@ package theSlumbering.cards;
 
 import basemod.helpers.BaseModCardTags;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
+import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
@@ -11,6 +12,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import theSlumbering.SlumberingMod;
 import theSlumbering.characters.TheSlumbering;
 import theSlumbering.patches.customTags;
+import theSlumbering.powers.DrowsyPower;
 
 import static theSlumbering.SlumberingMod.makeCardPath;
 
@@ -53,6 +55,8 @@ public class DrowsyAttack extends AbstractCustomCard {
         AbstractDungeon.actionManager.addToBottom(
                 new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn),
                         AbstractGameAction.AttackEffect.SLASH_HORIZONTAL));
+
+        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new DrowsyPower(p, 1, false), 1));
         //AbstractDungeon.actionManager.addToBottom(new DamageAllEnemiesAction(p, this.multiDamage, this.damageTypeForTurn, AbstractGameAction.AttackEffect.NONE));
 
     }

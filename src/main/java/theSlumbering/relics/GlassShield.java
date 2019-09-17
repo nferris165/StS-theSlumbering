@@ -2,6 +2,7 @@ package theSlumbering.relics;
 
 import com.badlogic.gdx.graphics.Texture;
 import com.evacipated.cardcrawl.mod.stslib.relics.OnLoseBlockRelic;
+import com.megacrit.cardcrawl.actions.common.RelicAboveCreatureAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.PowerTip;
@@ -48,6 +49,7 @@ public class GlassShield extends AbstractCustomRelic implements OnLoseBlockRelic
         //logger.info(i + " got here\n\n");
         this.counter--;
         flash();
+        AbstractDungeon.actionManager.addToBottom(new RelicAboveCreatureAction(AbstractDungeon.player, this));
         return i - 3;
     }
 }

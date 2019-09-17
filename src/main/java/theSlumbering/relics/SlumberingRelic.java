@@ -30,10 +30,10 @@ public class SlumberingRelic extends AbstractCustomRelic implements ClickableRel
         super(ID, IMG, OUTLINE, RelicTier.STARTER, LandingSound.MAGICAL);
 
         if(AbstractDungeon.ascensionLevel >= 14){
-            this.counter = 2;
+            this.counter = 3;
         }
         else{
-            this.counter = 3;
+            this.counter = 4;
         }
         this.floatCounter = 0;
     }
@@ -46,7 +46,7 @@ public class SlumberingRelic extends AbstractCustomRelic implements ClickableRel
         else if(this.counter == 0){
             return 2;
         }
-        else if(this.counter < 5){
+        else if(this.counter < 6){
             return 3;
         }
         else if(this.counter < 10){

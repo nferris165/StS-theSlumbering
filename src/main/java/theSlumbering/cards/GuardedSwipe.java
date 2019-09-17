@@ -1,6 +1,7 @@
 package theSlumbering.cards;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
+import com.megacrit.cardcrawl.actions.GameActionManager;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
@@ -46,8 +47,12 @@ public class GuardedSwipe extends AbstractCustomCard {
 
     @Override
     public void triggerWhenDrawn() {
-        AbstractDungeon.actionManager.addToBottom(new GainBlockAction(AbstractDungeon.player, AbstractDungeon.player, block));
+        if(GameActionManager.turn != 1 || AbstractDungeon.overlayMenu.endTurnButton.enabled){
+            AbstractDungeon.actionManager.addToBottom(new GainBlockAction(AbstractDungeon.player, AbstractDungeon.player, block));
+        }
     }
+
+
 
     @Override
     public void upgrade() {

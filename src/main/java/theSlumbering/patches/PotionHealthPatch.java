@@ -18,7 +18,7 @@ public class PotionHealthPatch {
 
     public static void Postfix(PlayerClass chosenClass){
         if(chosenClass == TheSlumbering.Enums.THE_SLUMBERING){
-            BaseMod.removePotion(FairyPotion.POTION_ID);
+            //BaseMod.removePotion(FairyPotion.POTION_ID);
             BaseMod.removePotion(RegenPotion.POTION_ID);
             BaseMod.removePotion(FruitJuice.POTION_ID);
         }

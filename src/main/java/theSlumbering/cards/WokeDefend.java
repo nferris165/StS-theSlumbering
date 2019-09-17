@@ -3,6 +3,7 @@ package theSlumbering.cards;
 import basemod.helpers.BaseModCardTags;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
+import com.megacrit.cardcrawl.actions.common.ReducePowerAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
@@ -10,6 +11,7 @@ import com.megacrit.cardcrawl.powers.NextTurnBlockPower;
 import theSlumbering.SlumberingMod;
 import theSlumbering.characters.TheSlumbering;
 import theSlumbering.patches.customTags;
+import theSlumbering.powers.DrowsyPower;
 
 import static theSlumbering.SlumberingMod.makeCardPath;
 
@@ -43,6 +45,8 @@ public class WokeDefend extends AbstractCustomCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
         AbstractDungeon.actionManager.addToBottom(new GainBlockAction(p, p, block));
         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new NextTurnBlockPower(p, block)));
+        AbstractDungeon.actionManager.addToBottom(new ReducePowerAction(p, p, DrowsyPower.POWER_ID, 1));
+
 
     }
 

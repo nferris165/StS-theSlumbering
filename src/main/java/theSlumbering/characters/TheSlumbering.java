@@ -52,7 +52,7 @@ public class TheSlumbering extends AbstractCustomPlayer {
     private static final int STARTING_HP = 1;
     private static final int MAX_HP = 1;
     private static final int STARTING_GOLD = 100;
-    private static final int CARD_DRAW = 5;
+    private static final int CARD_DRAW = 6;
     private static final int ORB_SLOTS = 0;
 
     //init settings
