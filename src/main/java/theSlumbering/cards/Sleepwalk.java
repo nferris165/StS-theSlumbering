@@ -32,6 +32,9 @@ public class Sleepwalk extends AbstractCustomCard {
     public Sleepwalk() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         baseDamage = damage = DAMAGE;
+        this.exhaust = false;
+        this.exhaustOnFire = false;
+        this.exhaustOnUseOnce = false;
     }
 
 

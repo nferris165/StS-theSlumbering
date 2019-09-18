@@ -8,6 +8,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.vfx.cardManip.ShowCardAndAddToDrawPileEffect;
 import javassist.CannotCompileException;
 import javassist.CtBehavior;
+import theSlumbering.SlumberingMod;
 
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -44,6 +45,10 @@ public class SnoozePatch {
             if (e.hasTag(customTags.Snooze)) {
                 AbstractDungeon.topLevelEffects.add(new ShowCardAndAddToDrawPileEffect(e, true, false));
                 c.remove();
+
+                int old = ActionManagerPatch.snoozeCount.get(AbstractDungeon.actionManager);
+                ActionManagerPatch.snoozeCount.set(AbstractDungeon.actionManager, old + 1);
+                //SlumberingMod.logger.info(old + " " + ActionManagerPatch.snoozeCount.get(AbstractDungeon.actionManager) + "\n\n");
             }
         }
     }

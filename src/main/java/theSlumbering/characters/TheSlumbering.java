@@ -24,6 +24,7 @@ import com.megacrit.cardcrawl.vfx.cardManip.ShowCardAndObtainEffect;
 import theSlumbering.SlumberingMod;
 import theSlumbering.cards.*;
 import theSlumbering.cards.BasicDefend;
+import theSlumbering.patches.ActionManagerPatch;
 import theSlumbering.powers.DrowsyPower;
 import theSlumbering.relics.*;
 
@@ -243,6 +244,8 @@ public class TheSlumbering extends AbstractCustomPlayer {
             AbstractDungeon.actionManager.addToTop(new ApplyPowerAction(AbstractDungeon.player,
                     AbstractDungeon.player, new DrowsyPower(AbstractDungeon.player, 99, false), 1));
         }
+
+        ActionManagerPatch.snoozeCount.set(AbstractDungeon.actionManager, 0);
     }
 
     private static void replaceBasic() {
