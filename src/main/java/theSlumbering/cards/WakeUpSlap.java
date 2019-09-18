@@ -24,7 +24,7 @@ public class WakeUpSlap extends AbstractCustomCard {
     private static final CardType TYPE = CardType.SKILL;
     public static final CardColor COLOR = TheSlumbering.Enums.COLOR_SLUMBERING;
 
-    private static final int COST = 1;
+    private static final int COST = 0;
 
     private static final int DAMAGE = 3;
     private static final int UP_DAM = -2;

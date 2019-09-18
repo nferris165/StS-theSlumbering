@@ -10,6 +10,7 @@ import com.megacrit.cardcrawl.vfx.DarkSmokePuffEffect;
 import theSlumbering.SlumberingMod;
 import theSlumbering.actions.DeathAction;
 import theSlumbering.characters.TheSlumbering;
+import theSlumbering.patches.customTags;
 
 import static theSlumbering.SlumberingMod.makeCardPath;
 
@@ -32,6 +33,7 @@ public class DreamDeath extends AbstractCustomCard {
     public DreamDeath() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         baseDamage = damage = DAMAGE;
+        this.tags.add(customTags.Snooze);
     }
 
 

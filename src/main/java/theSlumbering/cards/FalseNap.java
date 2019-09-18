@@ -24,10 +24,10 @@ public class FalseNap extends AbstractCustomCard {
     private static final CardType TYPE = CardType.ATTACK;
     public static final CardColor COLOR = TheSlumbering.Enums.COLOR_SLUMBERING;
 
-    private static final int COST = 0;
+    private static final int COST = 1;
 
     private static final int DAMAGE = 7;
-    private static final int UPGRADE_PLUS_DMG = 5;
+    private static final int UPGRADE_PLUS_DMG = 6;
 
     private static final int MAGIC = 2;
 

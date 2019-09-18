@@ -24,8 +24,8 @@ public class ForcedThought extends AbstractCustomCard  implements ModalChoice.Ca
 
     private ModalChoice modal;
 
-    private static final int COST = 2;
-    private static final int UPGRADED_COST = 1;
+    private static final int COST = 1;
+    private static final int UPGRADED_COST = 0;
 
     public ForcedThought() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);

@@ -23,6 +23,7 @@ public class Jab extends AbstractCustomCard {
     public static final CardColor COLOR = TheSlumbering.Enums.COLOR_SLUMBERING;
 
     private static final int COST = 1;
+    private static final int U_COST = 0;
 
     private static final int DAMAGE = 6;
     private static final int UPGRADE_PLUS_DMG = 3;
@@ -30,6 +31,7 @@ public class Jab extends AbstractCustomCard {
     public Jab() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         baseDamage = damage = DAMAGE;
+        this.isInnate = true;
     }
 
 
@@ -45,8 +47,8 @@ public class Jab extends AbstractCustomCard {
         if (!upgraded) {
             upgradeName();
             upgradeDamage(UPGRADE_PLUS_DMG);
-            this.isInnate = true;
-            this.rawDescription = updated_desc;
+            upgradeBaseCost(U_COST);
+            //this.rawDescription = updated_desc;
             initializeDescription();
         }
     }

@@ -21,10 +21,10 @@ public class FullGuard extends AbstractCustomCard {
     private static final CardType TYPE = CardType.SKILL;
     public static final CardColor COLOR = TheSlumbering.Enums.COLOR_SLUMBERING;
 
-    private static final int COST = 2;
+    private static final int COST = 1;
 
     private static final int BLOCK = 3;
-    private static final int UPGRADE_BLOCK = 3;
+    private static final int UPGRADE_BLOCK = 2;
 
     public FullGuard() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
@@ -41,6 +41,7 @@ public class FullGuard extends AbstractCustomCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
+        this.secondMagicNumber = magicNumber * AbstractDungeon.player.cardsPlayedThisTurn;
         AbstractDungeon.actionManager.addToBottom(new GainBlockAction(p, p, this.secondMagicNumber));
     }
 

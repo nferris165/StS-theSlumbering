@@ -45,7 +45,7 @@ public class SafeBarrage extends AbstractCustomCard {
 
     @Override
     public boolean canUse(AbstractPlayer p, AbstractMonster m) {
-        if(p.currentBlock < 50){
+        if(p.currentBlock <= 20){
             return false;
         }
         return super.canUse(p, m);

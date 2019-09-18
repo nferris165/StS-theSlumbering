@@ -26,6 +26,7 @@ public class Wake extends AbstractCustomCard {
 
     public Wake() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
+        this.exhaust = true;
 
     }
 

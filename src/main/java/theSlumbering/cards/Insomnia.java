@@ -22,11 +22,11 @@ public class Insomnia extends AbstractCustomCard {
     private static final CardType TYPE = CardType.SKILL;
     public static final CardColor COLOR = TheSlumbering.Enums.COLOR_SLUMBERING;
 
-    private static final int COST = 3;
+    private static final int COST = 2;
 
     private static final int BLOCK = 4;
 
-    private static final int MAGIC = 4;
+    private static final int MAGIC = 5;
     private static final int UPGRADE_MAGIC = 3;
 
     private static final int MAGIC2 = 2;

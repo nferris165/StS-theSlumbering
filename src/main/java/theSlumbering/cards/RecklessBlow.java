@@ -29,7 +29,7 @@ public class RecklessBlow extends AbstractCustomCard {
     private static final int DAMAGE = 15;
     private static final int UPGRADE_PLUS_DMG = 5;
 
-    private static final int BL_COST = 10;
+    private static final int BL_COST = 8;
 
     public RecklessBlow() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
@@ -48,7 +48,7 @@ public class RecklessBlow extends AbstractCustomCard {
 
     @Override
     public boolean canUse(AbstractPlayer p, AbstractMonster m) {
-        if(AbstractDungeon.player.currentBlock < 10){
+        if(AbstractDungeon.player.currentBlock < BL_COST){
             this.cantUseMessage = ext_desc[0];
             return false;
         }
