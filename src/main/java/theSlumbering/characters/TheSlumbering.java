@@ -248,6 +248,15 @@ public class TheSlumbering extends AbstractCustomPlayer {
         ActionManagerPatch.snoozeCount.set(AbstractDungeon.actionManager, 0);
     }
 
+    private static void applyState(AbstractCard Old, AbstractCard New){
+        if(Old.upgraded){
+            New.upgrade();
+        }
+        New.inBottleFlame = Old.inBottleFlame;
+        New.inBottleTornado = Old.inBottleTornado;
+        New.inBottleLightning = Old.inBottleLightning;
+    }
+
     private static void replaceBasic() {
 
         calledTransform = false;
@@ -266,18 +275,14 @@ public class TheSlumbering extends AbstractCustomPlayer {
             if(e instanceof BasicAttack){
 
                 AbstractCard c = new DrowsyAttack();
-                if(e.upgraded){
-                    c.upgrade();
-                }
+                applyState(e, c);
                 AbstractDungeon.effectList.add(new ShowCardAndObtainEffect(c, x, y));
                 //group.addToBottom(c);
                 i.remove();
             }
             else if(e instanceof BasicDefend){
                 AbstractCard c = new DrowsyDefend();
-                if(e.upgraded){
-                    c.upgrade();
-                }
+                applyState(e, c);
                 AbstractDungeon.effectList.add(new ShowCardAndObtainEffect(c, x, y));
                 //group.addToBottom(c);
                 i.remove();
@@ -304,17 +309,15 @@ public class TheSlumbering extends AbstractCustomPlayer {
             if(e instanceof DrowsyAttack){
 
                 AbstractCard c = new WokeAttack();
-                if(e.upgraded){
-                    c.upgrade();
-                }
+                applyState(e, c);
+
                 AbstractDungeon.effectList.add(new ShowCardAndObtainEffect(c, x, y));
                 i.remove();
             }
             else if(e instanceof DrowsyDefend){
                 AbstractCard c = new WokeDefend();
-                if(e.upgraded){
-                    c.upgrade();
-                }
+                applyState(e, c);
+
                 AbstractDungeon.effectList.add(new ShowCardAndObtainEffect(c, x, y));
                 i.remove();
             }

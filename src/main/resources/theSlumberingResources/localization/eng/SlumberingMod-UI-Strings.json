@@ -11,6 +11,12 @@
       " #rFall #rmuch #rdeeper #rinto #ryour #pslumber..."
     ]
   },
+  "theSlumbering:CursePatch": {
+    "TEXT": [
+      "Unplayable. NL While in hand, NL gain 1 Frail whenever you play another card.",
+      "Unplayable. NL At the end of your turn, lose 1 Collected Heart."
+    ]
+  },
   "theSlumbering:CampfirePatch": {
     "TEXT": [
       "Enter the dream world, and collect ",
