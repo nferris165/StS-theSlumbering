@@ -32,7 +32,7 @@ public class WokeAttack extends AbstractCustomCard {
     private static final int UPGRADE_BLOCK = 2;
 
     private static final int DAMAGE = 7;
-    private static final int UPGRADE_PLUS_DMG = 3;
+    private static final int UPGRADE_PLUS_DMG = 2;
 
     public WokeAttack() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);

@@ -28,6 +28,7 @@ public class LastResort extends AbstractCustomCard {
     private static final int UPGRADE_PLUS_DMG = 10;
 
     private static boolean checking = false;
+    private boolean check = false;
 
     public LastResort() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
@@ -45,16 +46,18 @@ public class LastResort extends AbstractCustomCard {
 
     @Override
     public boolean canUse(AbstractPlayer p, AbstractMonster m) {
-        if(checking){
+        if(checking && !check){
             return false;
         }
         checking = true;
+        check = true;
         for(AbstractCard c: p.hand.group){
             if(c.uuid != this.uuid && c.canUse(p, m)){
                 return false;
             }
         }
         checking = false;
+        check = false;
         return this.cardPlayable(m) && this.hasEnoughEnergy();
     }
 

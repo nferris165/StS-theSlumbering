@@ -27,8 +27,8 @@ public class DrowsyDefend extends AbstractCustomCard {
     private static final int COST = 1;
     private static final int UPGRADED_COST = 0;
 
-    private static final int BLOCK = 5;
-    private static final int UPGRADE_BLOCK = 4;
+    private static final int BLOCK = 6;
+    private static final int UPGRADE_BLOCK = 3;
 
     public DrowsyDefend() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);

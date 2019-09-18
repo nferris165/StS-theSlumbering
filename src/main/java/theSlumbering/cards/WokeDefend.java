@@ -28,8 +28,8 @@ public class WokeDefend extends AbstractCustomCard {
     private static final int COST = 1;
     private static final int UPGRADED_COST = 0;
 
-    private static final int BLOCK = 8;
-    private static final int UPGRADE_BLOCK = 4;
+    private static final int BLOCK = 7;
+    private static final int UPGRADE_BLOCK = 3;
 
     public WokeDefend() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
