@@ -275,11 +275,12 @@
   },
   "theSlumbering:Mulligan": {
     "NAME": "Mulligan",
-    "DESCRIPTION": "Shuffle your hand and discard pile into your draw pile, then redraw your hand. NL Exhaust."
+    "DESCRIPTION": "Shuffle your hand and discard pile into your draw pile, then redraw your hand. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Shuffle your hand and discard pile into your draw pile, then redraw your hand."
   },
   "theSlumbering:Hypersomnia": {
     "NAME": "Hypersomnia",
-    "DESCRIPTION": "Gain !M! Drowsy. NL Exhaust."
+    "DESCRIPTION": "Gain !M! Drowsy. NL Gain !theSlumbering:Magic! Strength. NL At the end of this turn, lose !theSlumbering:Magic! Strength."
   },
   "theSlumbering:ReadyGaze": {
     "NAME": "Ready Gaze",

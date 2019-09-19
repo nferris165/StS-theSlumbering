@@ -50,7 +50,7 @@ public class DoubtPower extends AbstractCustomPower implements CloneablePowerInt
     @Override
     public void onVictory() {
         if(AbstractDungeon.player.chosenClass == TheSlumbering.Enums.THE_SLUMBERING){
-            AbstractDungeon.player.decreaseMaxHealth(10);
+            AbstractDungeon.player.decreaseMaxHealth(5);
 
         }else{
             AbstractDungeon.player.decreaseMaxHealth(this.val);

@@ -45,6 +45,8 @@ public class Mulligan extends AbstractCustomCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
+            this.exhaust = false;
+            this.rawDescription = updated_desc;
             initializeDescription();
         }
     }

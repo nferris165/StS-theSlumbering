@@ -3,6 +3,7 @@ package theSlumbering;
 import basemod.BaseMod;
 import basemod.ModLabeledToggleButton;
 import basemod.ModPanel;
+import basemod.ReflectionHacks;
 import basemod.helpers.RelicType;
 import basemod.interfaces.*;
 import com.badlogic.gdx.Gdx;
@@ -13,7 +14,10 @@ import com.evacipated.cardcrawl.modthespire.Loader;
 import com.evacipated.cardcrawl.modthespire.lib.SpireConfig;
 import com.evacipated.cardcrawl.modthespire.lib.SpireInitializer;
 import com.google.gson.Gson;
+import com.megacrit.cardcrawl.audio.Sfx;
+import com.megacrit.cardcrawl.audio.SoundMaster;
 import com.megacrit.cardcrawl.cards.AbstractCard;
+import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.dungeons.Exordium;
@@ -53,6 +57,7 @@ import java.net.URL;
 import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.HashMap;
 import java.util.Properties;
 
 
@@ -110,6 +115,8 @@ public class SlumberingMod implements
 
     public static final String THE_SLUMBERING_SKELETON_ATLAS = "theSlumberingResources/images/char/slumberingCharacter/skeleton.atlas";
     public static final String THE_SLUMBERING_SKELETON_JSON = "theSlumberingResources/images/char/slumberingCharacter/skeleton.json";
+
+    private static final String AUDIO_PATH = "theSlumberingResources/audio/";
 
     private static final String modID = "theSlumbering";
 
@@ -223,6 +230,9 @@ public class SlumberingMod implements
         //encounters
         BaseMod.addMonsterEncounter(Exordium.ID, new MonsterInfo(SimpleMonster.ID, 5));
 
+        //audio
+        loadAudio();
+
     }
 
     public void receiveEditPotions() {
@@ -311,6 +321,11 @@ public class SlumberingMod implements
                 BaseMod.addKeyword(modID.toLowerCase(), keyword.PROPER_NAME, keyword.NAMES, keyword.DESCRIPTION);
             }
         }
+    }
+
+    public void loadAudio() {
+        HashMap<String, Sfx> map = (HashMap<String, Sfx>) ReflectionHacks.getPrivate(CardCrawlGame.sound, SoundMaster.class, "map");
+        map.put("Pop", new Sfx(AUDIO_PATH + "pop.ogg", false));
     }
 
     private static void autoAddCards() throws URISyntaxException, IllegalAccessException, InstantiationException, NotFoundException, ClassNotFoundException

@@ -4,6 +4,9 @@ import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.powers.GainStrengthPower;
+import com.megacrit.cardcrawl.powers.LoseStrengthPower;
+import com.megacrit.cardcrawl.powers.StrengthPower;
 import theSlumbering.SlumberingMod;
 import theSlumbering.characters.TheSlumbering;
 import theSlumbering.powers.DrowsyPower;
@@ -25,12 +28,14 @@ public class Hypersomnia extends AbstractCustomCard {
     private static final int UPGRADED_COST = 0;
 
     private static final int MAGIC = 2;
+    private static final int SEC_MAGIC = 1;
 
 
     public Hypersomnia() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
 
         this.baseMagicNumber = magicNumber = MAGIC;
+        this.baseSecondMagicNumber = secondMagicNumber = SEC_MAGIC;
         this.exhaust = true;
     }
 
@@ -39,6 +44,10 @@ public class Hypersomnia extends AbstractCustomCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p,
                 new DrowsyPower(p, this.magicNumber, false), this.magicNumber));
+        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p,
+                        new StrengthPower(p, this.secondMagicNumber), this.secondMagicNumber));
+        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p,
+                new LoseStrengthPower(p, this.secondMagicNumber), this.secondMagicNumber));
     }
 
 
