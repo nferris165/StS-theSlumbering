@@ -22,4 +22,7 @@ public class customTags {
 
     @SpireEnum
     public static AbstractCard.CardTags Snooze;
+
+    @SpireEnum
+    public static AbstractCard.CardTags Renewable;
 }

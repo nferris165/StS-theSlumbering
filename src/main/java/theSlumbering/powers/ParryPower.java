@@ -6,8 +6,10 @@ import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.evacipated.cardcrawl.mod.stslib.powers.interfaces.OnLoseBlockPower;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
+import com.megacrit.cardcrawl.actions.common.MakeTempCardInDiscardAction;
 import com.megacrit.cardcrawl.actions.common.ReducePowerAction;
 import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
+import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -15,6 +17,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import theSlumbering.SlumberingMod;
+import theSlumbering.patches.customTags;
 import theSlumbering.util.TextureLoader;
 
 public class ParryPower extends AbstractPower implements CloneablePowerInterface, OnLoseBlockPower {
@@ -28,13 +31,15 @@ public class ParryPower extends AbstractPower implements CloneablePowerInterface
     private static final Texture tex32 = TextureLoader.getTexture("theFirstResources/images/powers/placeholder_power32.png");
 
     private boolean blocked = false;
+    private AbstractCard card;
 
-    public ParryPower(final AbstractCreature owner, final int amount) {
+    public ParryPower(final AbstractCreature owner, final int amount, final AbstractCard card) {
         name = NAME;
         ID = POWER_ID;
 
         this.owner = owner;
         this.amount = amount;
+        this.card = card;
 
         type = PowerType.BUFF;
         isTurnBased = true;
@@ -53,17 +58,17 @@ public class ParryPower extends AbstractPower implements CloneablePowerInterface
 
     @Override
     public void atEndOfRound() {
-        AbstractDungeon.actionManager.addToTop(new RemoveSpecificPowerAction(this.owner, this.owner, ID));
+        renew();
     }
 
     @Override
     public AbstractPower makeCopy() {
-        return new ParryPower(owner, amount);
+        return new ParryPower(owner, amount, card);
     }
 
     private void decrement(){
         if (this.amount <= 1) {
-            AbstractDungeon.actionManager.addToTop(new RemoveSpecificPowerAction(this.owner, this.owner, ID));
+            renew();
         } else {
             AbstractDungeon.actionManager.addToTop(new ReducePowerAction(this.owner, this.owner, ID, 1));
         }
@@ -78,6 +83,14 @@ public class ParryPower extends AbstractPower implements CloneablePowerInterface
         }
         this.blocked = false;
         return i;
+    }
+
+    private void renew(){
+        if(card.hasTag(customTags.Renewable)){
+            AbstractDungeon.actionManager.addToBottom(new MakeTempCardInDiscardAction(this.card, 1));
+        }
+        AbstractDungeon.actionManager.addToTop(new RemoveSpecificPowerAction(this.owner, this.owner, ID));
+
     }
 
     @Override
