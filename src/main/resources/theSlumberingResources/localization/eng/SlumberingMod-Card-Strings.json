@@ -47,7 +47,7 @@
   },
   "theSlumbering:Parry": {
     "NAME": "Parry",
-    "DESCRIPTION": "Gain 1 theslumbering:Parry. NL Gain !B! Block."
+    "DESCRIPTION": "Gain 1 theslumbering:Parry. NL Gain !B! Block. NL theslumbering:Renewable."
   },
   "theSlumbering:Invigorate": {
     "NAME": "Invigorate",
@@ -284,7 +284,7 @@
   },
   "theSlumbering:ReadyGaze": {
     "NAME": "Ready Gaze",
-    "DESCRIPTION": "Gain 1 theslumbering:Parry."
+    "DESCRIPTION": "Gain 1 theslumbering:Parry. NL theslumbering:Renewable."
   },
   "theSlumbering:FullGuard": {
     "NAME": "Full Guard",
