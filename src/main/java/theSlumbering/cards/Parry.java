@@ -7,7 +7,6 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import theSlumbering.SlumberingMod;
 import theSlumbering.characters.TheSlumbering;
-import theSlumbering.patches.customTags;
 import theSlumbering.powers.ParryPower;
 
 import static theSlumbering.SlumberingMod.makeCardPath;
@@ -32,14 +31,13 @@ public class Parry extends AbstractCustomCard {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
 
         this.baseBlock = block = BLOCK;
-        this.tags.add(customTags.Renewable);
     }
 
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         AbstractDungeon.actionManager.addToBottom(new GainBlockAction(p, p, block));
-        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new ParryPower(p, 1, this), 1));
+        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new ParryPower(p, 1), 1));
     }
 
 

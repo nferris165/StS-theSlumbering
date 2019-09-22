@@ -2,7 +2,6 @@ package theSlumbering.cards;
 
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.common.*;
-import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
@@ -47,8 +46,7 @@ public class WakeUpSlap extends AbstractCustomCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
 
         AbstractDungeon.actionManager.addToBottom(new VFXAction(new OfferingEffect(), 0.5F));
-        //AbstractDungeon.actionManager.addToBottom(new LoseHPAction(p, p, secondMagicNumber));
-        p.damage(new DamageInfo(p, secondMagicNumber, DamageInfo.DamageType.NORMAL));
+        AbstractDungeon.actionManager.addToBottom(new LoseHPAction(p, p, secondMagicNumber));
         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new StrengthPower(p, this.magicNumber), this.magicNumber));
         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new LoseStrengthPower(p, this.magicNumber), this.magicNumber));
         AbstractDungeon.actionManager.addToBottom(new DrawCardAction(p, DRAW));
