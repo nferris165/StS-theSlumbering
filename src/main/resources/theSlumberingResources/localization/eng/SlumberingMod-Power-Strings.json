@@ -82,5 +82,13 @@
                 "NAME": "Bound Power",
                 "DESCRIPTIONS": ["Cannot play cards until the binding source has been removed."
                 ]
+        },
+        "theSlumbering:DreamRitualPower": {
+                "NAME": "Dream Ritual",
+                "DESCRIPTIONS": [
+                        "At the end of its turn, loses #b",
+                        " #yDexterity, but gains #b",
+                        " #yStrength."
+                ]
         }
 }

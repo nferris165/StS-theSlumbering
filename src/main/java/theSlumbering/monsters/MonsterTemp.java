@@ -56,9 +56,9 @@ public class MonsterTemp extends CustomMonster {
     private boolean firstTurn = true;
 
     public MonsterTemp(float x, float y) {
-        super(NAME, "JawWorm", 44, HB_X, HB_Y, HB_W, HB_H, (String)null, x, y);
+        super(NAME, ID, 44, HB_X, HB_Y, HB_W, HB_H, (String)null, x, y);
 
-        elder = AbstractDungeon.aiRng.random(99) >= 95;
+        this.elder = AbstractDungeon.aiRng.random(99) >= 95;
 
         if (AbstractDungeon.ascensionLevel >= 7) {
             if(elder){
@@ -105,6 +105,7 @@ public class MonsterTemp extends CustomMonster {
 
     public void usePreBattleAction() {
         //start with buffs
+        AbstractDungeon.actionManager.addToBottom(new GainBlockAction(this, this, this.buffBlock));
         if(elder){
             //elders?
         }

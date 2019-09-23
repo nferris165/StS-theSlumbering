@@ -63,7 +63,7 @@ public class SimpleMonster extends CustomMonster {
     private boolean firstTurn = true;
 
     public SimpleMonster(float x, float y) {
-        super(NAME, "JawWorm", 44, HB_X, HB_Y, HB_W, HB_H, (String)null, x, y);
+        super(NAME, ID, 44, HB_X, HB_Y, HB_W, HB_H, (String)null, x, y);
 
         elder = AbstractDungeon.aiRng.random(99) >= 95;
 

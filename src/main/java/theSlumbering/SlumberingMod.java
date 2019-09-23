@@ -36,6 +36,8 @@ import theSlumbering.cards.BasicDefend;
 import theSlumbering.characters.TheSlumbering;
 import theSlumbering.events.MysteriousOrb;
 import theSlumbering.events.PoweredUp;
+import theSlumbering.monsters.MonsterTemp;
+import theSlumbering.monsters.NewCultist;
 import theSlumbering.monsters.SimpleMonster;
 import theSlumbering.patches.customTags;
 import theSlumbering.relics.AbstractCustomRelic;
@@ -225,10 +227,14 @@ public class SlumberingMod implements
         BaseMod.addEvent(PoweredUp.ID, PoweredUp.class, TheCity.ID);
 
         //monsters
-        BaseMod.addMonster(SimpleMonster.ID, "SimpleMon", () -> new SimpleMonster(0.0F, 25.0F));
+        BaseMod.addMonster(SimpleMonster.ID, "Simple Monster", () -> new SimpleMonster(0.0F, 25.0F));
+        BaseMod.addMonster(MonsterTemp.ID, "Temp", () -> new MonsterTemp(0.0F, 25.0F));
+        BaseMod.addMonster(MonsterTemp.ID, "NewCultist", () -> new NewCultist(0.0F, 25.0F));
 
         //encounters
-        BaseMod.addMonsterEncounter(Exordium.ID, new MonsterInfo(SimpleMonster.ID, 5));
+        BaseMod.addMonsterEncounter(Exordium.ID, new MonsterInfo(SimpleMonster.ID, 2));
+        BaseMod.addMonsterEncounter(Exordium.ID, new MonsterInfo(MonsterTemp.ID, 3));
+        BaseMod.addMonsterEncounter(Exordium.ID, new MonsterInfo(NewCultist.ID, 5));
 
         //audio
         loadAudio();
@@ -447,7 +453,6 @@ public class SlumberingMod implements
         // Check for Tags
         for(AbstractCard c: AbstractDungeon.player.drawPile.group){
             if(c.hasTag(customTags.Passive)){
-                //logger.info(AbstractDungeon.player.drawPile.group + "\n\n");
                 ((AbstractCustomCard) c).passiveEffect();
                 removeList.add(c);
             }
@@ -460,14 +465,13 @@ public class SlumberingMod implements
             AbstractDungeon.topLevelEffects.add(new PurgeCardEffect(c,
                     (float) Settings.WIDTH / 2.0F - 30.0F * Settings.scale - AbstractCard.IMG_WIDTH / 2.0F,(float) Settings.HEIGHT / 2.0F));
             AbstractDungeon.player.drawPile.removeCard(c);
-            //logger.info(AbstractDungeon.player.drawPile.group + "\n\n");
         }
 
     }
 
     @Override
     public void receiveStartAct() {
-        if(AbstractDungeon.player.chosenClass == TheSlumbering.Enums.THE_SLUMBERING){
+        if(AbstractDungeon.player instanceof TheSlumbering){
             int a = AbstractDungeon.actNum;
             TheSlumbering.replaceCards(a);
         }

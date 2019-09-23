@@ -8,5 +8,18 @@
   "DIALOG": [
     ""
   ]
-}
+  },
+  "theSlumbering:NewCultist": {
+    "MOVES": [
+      "Dream Strike",
+      "Powered Blow",
+      "Incantation"
+    ],
+    "NAME": "New Cultist",
+    "DIALOG": [
+      "@YOU@ @DO@ @NOT@ NL @BELONG@ @HERE!@",
+      "~Maybe~ ~I~ NL ~don't~ ~belong...~",
+      "@RETURN@ @TO@ @WHERE@ @YOU@ @BELONG!@"
+    ]
+  }
 }
