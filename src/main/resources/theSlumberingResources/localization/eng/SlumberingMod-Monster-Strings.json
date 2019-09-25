@@ -15,11 +15,30 @@
       "Powered Blow",
       "Incantation"
     ],
-    "NAME": "New Cultist",
+    "NAME": "Nocturne Cultist",
     "DIALOG": [
       "@YOU@ @DO@ @NOT@ NL @BELONG@ @HERE!@",
-      "~Maybe~ ~I~ NL ~don't~ ~belong...~",
+      "~Maybe~ ~*I*~ NL ~don't~ ~belong...~",
       "@RETURN@ @TO@ @WHERE@ @YOU@ @BELONG!@"
+    ]
+  },
+  "theSlumbering:NewSlaver": {
+    "MOVES": [
+      "Shred",
+      "Drowse"
+    ],
+    "NAME": "Nightmare Slaver",
+    "DIALOG": [
+      ""
+    ]
+  },
+  "theSlumbering:Adrasteia": {
+    "MOVES": [
+      ""
+    ],
+    "NAME": "Adrasteia",
+    "DIALOG": [
+      ""
     ]
   }
 }

@@ -55,7 +55,7 @@ public class NewCultist extends CustomMonster {
     private boolean elder;
 
     public NewCultist(float x, float y, boolean talk) {
-        super(NAME, ID, 44, HB_X, HB_Y, HB_W, HB_H, (String)null, x, y);
+        super(NAME, ID, HP_MAX, HB_X, HB_Y, HB_W, HB_H, (String)null, x, y);
 
         this.elder = AbstractDungeon.aiRng.random(99) >= 95;
 

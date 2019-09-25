@@ -2,7 +2,7 @@
 
 This is the mod for The Slumbering, a brand new character class for Slay the Spire.
 
-The mod adds a new character, including a full set of 75 cards, new neutral cards, monsters, relics, events, potions, a new card type, and much more!
+The mod adds a new character, including a full set of 75 cards, new neutral cards, monsters, relics, events, potions, elites, a new card type, and much more!
 
 The Slumbering is a creature that has been asleep for so long, it no longer remembers who it is. It has grow frail in its slumber, but has learned how to harness the power of the dream world.
 
