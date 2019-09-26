@@ -34,7 +34,10 @@
   },
   "theSlumbering:Adrasteia": {
     "MOVES": [
-      ""
+      "BUFF",
+      "Scythe",
+      "Cripple",
+      "Obliterate"
     ],
     "NAME": "Adrasteia",
     "DIALOG": [

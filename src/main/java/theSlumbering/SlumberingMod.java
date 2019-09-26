@@ -36,10 +36,9 @@ import theSlumbering.cards.BasicDefend;
 import theSlumbering.characters.TheSlumbering;
 import theSlumbering.events.MysteriousOrb;
 import theSlumbering.events.PoweredUp;
-import theSlumbering.monsters.NewElite;
+import theSlumbering.monsters.Adrasteia;
 import theSlumbering.monsters.NewSlaver;
 import theSlumbering.monsters.NewCultist;
-import theSlumbering.monsters.SimpleMonster;
 import theSlumbering.patches.customTags;
 import theSlumbering.relics.AbstractCustomRelic;
 import com.megacrit.cardcrawl.unlock.UnlockTracker;
@@ -232,14 +231,14 @@ public class SlumberingMod implements
         BaseMod.addMonster(NewSlaver.ID, "NewSlaver", () -> new NewSlaver(0.0F, 0.0F));
         BaseMod.addMonster(NewCultist.ID, "NewCultist", () -> new NewCultist(0.0F, -10.0F));
 
-        BaseMod.addMonster(NewElite.ID, "NewElite", () -> new NewElite(0.0F, 0.0F));
+        BaseMod.addMonster(Adrasteia.ID, "Adrasteia", () -> new Adrasteia(0.0F, 0.0F));
 
         //encounters
         //BaseMod.addMonsterEncounter(Exordium.ID, new MonsterInfo(SimpleMonster.ID, 2));
         BaseMod.addMonsterEncounter(Exordium.ID, new MonsterInfo(NewCultist.ID, 3.0F));  //normal weight 2
         BaseMod.addStrongMonsterEncounter(Exordium.ID, new MonsterInfo(NewSlaver.ID, 1.5F));
 
-        BaseMod.addEliteEncounter(Exordium.ID, new MonsterInfo(NewElite.ID, 1.5F)); //normal weight 1
+        BaseMod.addEliteEncounter(Exordium.ID, new MonsterInfo(Adrasteia.ID, 1.5F)); //normal weight 1
 
         //audio
         loadAudio();

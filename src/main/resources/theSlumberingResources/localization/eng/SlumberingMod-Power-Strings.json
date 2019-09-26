@@ -41,17 +41,17 @@
                 ]
         },
         "theSlumbering:DoubleBlockPower": {
-                "NAME": "Double Block Power",
+                "NAME": "Double Block",
                 "DESCRIPTIONS": ["At the end of your turn, double your #yBlock."
                 ]
         },
         "theSlumbering:ToughSkinPower": {
-                "NAME": "Tough Skin Power",
+                "NAME": "Tough Skin",
                 "DESCRIPTIONS": ["At the start of your turn, gain #b", " #yBlock."
                 ]
         },
         "theSlumbering:DoubtPower": {
-                "NAME": "Doubt Power",
+                "NAME": "Doubt",
                 "DESCRIPTIONS": ["At the end of battle, lose #b", " Max HP."
                 ]
         },
@@ -74,12 +74,12 @@
                 ]
         },
         "theSlumbering:RepeatPower": {
-                "NAME": "Repeat Power",
+                "NAME": "Repeat",
                 "DESCRIPTIONS": ["Repeat the next card costing at least 1 that you play until it can no longer be played."
                 ]
         },
         "theSlumbering:BoundPower": {
-                "NAME": "Bound Power",
+                "NAME": "Bound",
                 "DESCRIPTIONS": ["Cannot play cards until the binding source has been removed."
                 ]
         },
@@ -89,6 +89,12 @@
                         "At the end of its turn, loses #b",
                         " #yDexterity, but gains #b",
                         " #yStrength."
+                ]
+        },
+        "theSlumbering:DiscardPower": {
+                "NAME": "Amnesia Aura",
+                "DESCRIPTIONS": [
+                        "Whenever this creature takes damage, discard the leftmost card in your hand."
                 ]
         }
 }
