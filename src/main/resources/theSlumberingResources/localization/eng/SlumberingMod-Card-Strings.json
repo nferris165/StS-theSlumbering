@@ -382,8 +382,11 @@
   },
   "theSlumbering:DreamDeath": {
     "NAME": "Dream: Death",
-    "DESCRIPTION": "Deal !D! damage to an enemy. If it dies, return this card to you hand. NL theslumbering:Snooze",
+    "DESCRIPTION": "Deal !D! damage to an enemy. If it dies, return this card to you hand. NL theslumbering:Snooze.",
     "UPGRADE_DESCRIPTION": "Deal !D! damage to an enemy. If it dies, return this card to you hand and Refund. NL theslumbering:Snooze."
-
+  },
+  "theSlumbering:MentalBlock": {
+    "NAME": "Mental Block",
+    "DESCRIPTION": "Unplayable. NL Retain."
   }
 }
