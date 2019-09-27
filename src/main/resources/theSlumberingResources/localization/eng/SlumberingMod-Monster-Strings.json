@@ -34,14 +34,14 @@
   },
   "theSlumbering:Adrasteia": {
     "MOVES": [
-      "BUFF",
+      "Amnesiac",
       "Scythe",
       "Cripple",
       "Obliterate"
     ],
     "NAME": "Adrasteia",
     "DIALOG": [
-      ""
+      "~You~ ~should~ ~never~ ~have~ ~come~ ~back.~"
     ]
   }
 }

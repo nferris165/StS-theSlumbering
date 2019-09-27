@@ -1,21 +1,18 @@
 package theSlumbering.cards.colorless;
 
-import com.megacrit.cardcrawl.actions.AbstractGameAction;
-import com.megacrit.cardcrawl.actions.common.DamageAction;
-import com.megacrit.cardcrawl.cards.DamageInfo;
+import com.megacrit.cardcrawl.cards.CardQueueItem;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import theSlumbering.SlumberingMod;
 import theSlumbering.cards.AbstractCustomCard;
-import theSlumbering.characters.TheSlumbering;
 
 import static theSlumbering.SlumberingMod.makeCardPath;
 
 public class MentalBlock extends AbstractCustomCard {
 
 
-    public static final String ID = SlumberingMod.makeID(Detonator.class.getSimpleName());
+    public static final String ID = SlumberingMod.makeID(MentalBlock.class.getSimpleName());
 
     public static final String IMG = makeCardPath("S_temp.png");
 
@@ -30,11 +27,18 @@ public class MentalBlock extends AbstractCustomCard {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         this.purgeOnUse = true;
         this.dontTriggerOnUseCard = true;
+        this.retain = true;
+        //this.cantUseMessage = "";
     }
 
     @Override
     public void use(AbstractPlayer abstractPlayer, AbstractMonster abstractMonster) {
-        
+
+    }
+
+    @Override
+    public void onMoveToDiscard() {
+        AbstractDungeon.player.discardPile.removeCard(this);
     }
 
     @Override

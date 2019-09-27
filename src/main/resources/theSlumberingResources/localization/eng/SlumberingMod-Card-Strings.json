@@ -335,7 +335,7 @@
   },
   "theSlumbering:RestedPunch": {
     "NAME": "Rested Punch",
-    "DESCRIPTION": "Deal !D! damage. NL Each time you draw this card, it gains !M! damage on the next use. NL theslumbering:Snooze."
+    "DESCRIPTION": "Deal !D! damage. NL When drawn, this card gains !M! damage for one use. NL theslumbering:Snooze."
   },
   "theSlumbering:InescapableThoughts": {
     "NAME": "Unrelenting",
@@ -387,6 +387,6 @@
   },
   "theSlumbering:MentalBlock": {
     "NAME": "Mental Block",
-    "DESCRIPTION": "Unplayable. NL Retain."
+    "DESCRIPTION": "Unplayable. NL Retain. NL Removed when discarded."
   }
 }

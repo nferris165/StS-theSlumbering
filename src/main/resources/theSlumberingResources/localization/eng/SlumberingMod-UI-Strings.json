@@ -47,5 +47,10 @@
     "TEXT": [
       "Remove from your Deck"
     ]
+  },
+  "theSlumbering:BowlPatch": {
+    "TEXT": [
+      "Wake up..."
+    ]
   }
 }

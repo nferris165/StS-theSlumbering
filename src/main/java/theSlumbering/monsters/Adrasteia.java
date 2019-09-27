@@ -6,6 +6,7 @@ import com.badlogic.gdx.math.MathUtils;
 import com.esotericsoftware.spine.AnimationState.TrackEntry;
 import com.esotericsoftware.spine.Bone;
 import com.megacrit.cardcrawl.actions.AbstractGameAction.AttackEffect;
+import com.megacrit.cardcrawl.actions.animations.TalkAction;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.common.*;
 import com.megacrit.cardcrawl.actions.utility.SFXAction;
@@ -24,6 +25,7 @@ import com.megacrit.cardcrawl.vfx.NemesisFireParticle;
 import com.megacrit.cardcrawl.vfx.cardManip.ShowCardBrieflyEffect;
 import com.megacrit.cardcrawl.vfx.combat.ShockWaveEffect;
 import theSlumbering.SlumberingMod;
+import theSlumbering.cards.colorless.MentalBlock;
 import theSlumbering.powers.DiscardPower;
 
 import static theSlumbering.SlumberingMod.makeMonsterPath;
@@ -35,24 +37,27 @@ public class Adrasteia extends CustomMonster {
     public static final String NAME = monsterstrings.NAME;
     public static final String[] MOVES = monsterstrings.MOVES;
     public static final String[] DIALOG = monsterstrings.DIALOG;
-    private static final int HP = 86;
-    private static final int A_8_HP = 92;
+    private static final int HP = 106;
+    private static final int A_8_HP = 112;
     private static final int SCYTHE_COOLDOWN_TURNS = 2;
     private static final float HB_X = 5.0F;
     private static final float HB_Y = -10.0F;
     private static final float HB_W = 350.0F;
     private static final float HB_H = 440.0F;
-    private static final int SCYTHE_DMG = 15;
-    private static final int CRIPPLE_DMG = 3;
+    private static final int SCYTHE_DMG = 17;
+    private static final int CRIPPLE_DMG = 4;
     private static final int CRIPPLE_TIMES = 3;
     private static final int A_18_CRIPPLE_TIMES = 4;
     private static final int A_3_CRIPPLE_DMG = 7;
-    private static final int BURN_AMT = 3;
-    private static final int A_18_BURN_AMT = 5;
+    private static final int BLANK_AMT = 3;
+    private static final int A_18_BLANK_AMT = 2;
+    private static final int BLOCK_AMT = 10;
+    private static final int A_8_BLOCK_AMT = 12;
     private int crippleDmg;
     private int crippleTimes;
+    private int blockAmt;
     private int scytheCooldown = 0;
-    private int burnAmt;
+    private int blankAmt;
     private static final byte BUFF  = 1;
     private static final byte SCYTHE = 2;
     private static final byte CRIPPLE = 3;
@@ -69,11 +74,14 @@ public class Adrasteia extends CustomMonster {
         super(NAME, ID, HP, HB_X, HB_Y, HB_W, HB_H, (String) null, x, y);
 
         this.type = EnemyType.ELITE;
+        int bonus = AbstractDungeon.aiRng.random(0, 8);
 
         if (AbstractDungeon.ascensionLevel >= 8) {
-            this.setHp(A_8_HP);
+            this.setHp(A_8_HP + bonus);
+            this.blockAmt = A_8_BLOCK_AMT;
         } else {
-            this.setHp(HP);
+            this.setHp(HP + bonus);
+            this.blockAmt = BLOCK_AMT;
         }
 
         if (AbstractDungeon.ascensionLevel >= 3) {
@@ -83,10 +91,10 @@ public class Adrasteia extends CustomMonster {
         }
 
         if (AbstractDungeon.ascensionLevel >= 18) {
-            this.burnAmt = A_18_BURN_AMT;
+            this.blankAmt = A_18_BLANK_AMT;
             this.crippleTimes = A_18_CRIPPLE_TIMES;
         } else {
-            this.burnAmt = BURN_AMT;
+            this.blankAmt = BLANK_AMT;
             this.crippleTimes = CRIPPLE_TIMES;
         }
 
@@ -110,7 +118,7 @@ public class Adrasteia extends CustomMonster {
 
     public void takeTurn() {
         if (this.firstTurn) {
-            //AbstractDungeon.actionManager.addToBottom(new TalkAction(this, DIALOG[0], 0.5F, 2.0F));
+            AbstractDungeon.actionManager.addToBottom(new TalkAction(this, DIALOG[0], 0.5F, 2.0F));
             this.firstTurn = false;
         }
 
@@ -119,7 +127,7 @@ public class Adrasteia extends CustomMonster {
                 AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this, this, new DiscardPower(this)));
                 //add cards
                 AbstractDungeon.actionManager.addToBottom(new SFXAction("VO_NEMESIS_1C"));
-                AbstractDungeon.actionManager.addToBottom(new MakeTempCardInDiscardAction(new Burn(), this.burnAmt));
+                AbstractDungeon.actionManager.addToBottom(new MakeTempCardInHandAction(new MentalBlock(), this.blankAmt));
                 break;
             case 2:
                 AbstractDungeon.actionManager.addToBottom(new ChangeStateAction(this, "ATTACK"));
@@ -143,6 +151,7 @@ public class Adrasteia extends CustomMonster {
                 group.clear();
                 break;
             case 4:
+                AbstractDungeon.actionManager.addToBottom(new GainBlockAction(this, this, blockAmt));
                 AbstractDungeon.actionManager.addToBottom(new VFXAction(this, new ShockWaveEffect(
                         this.hb.cX, this.hb.cY, Settings.RED_TEXT_COLOR, ShockWaveEffect.ShockWaveType.CHAOTIC), 1.5F));
                 discardTop();
@@ -157,66 +166,27 @@ public class Adrasteia extends CustomMonster {
             this.setMove(MOVES[0], (byte)1, Intent.BUFF);
             this.firstMove = false;
         } else if(num < 30){
-            this.setMove(MOVES[1], (byte)2, Intent.ATTACK, SCYTHE_DMG);
-        } else if(num < 60){
-            this.setMove(MOVES[2], (byte)3, Intent.ATTACK_DEBUFF, crippleDmg, crippleTimes, true);
+            if(!this.lastTwoMoves((byte)2)){
+                this.setMove(MOVES[1], (byte)2, Intent.ATTACK, SCYTHE_DMG);
+            } else{
+                this.setMove(MOVES[2], (byte)3, Intent.ATTACK_DEBUFF, crippleDmg, crippleTimes, true);
+            }
+        } else if(num < 55){
+            if(!this.lastTwoMoves((byte)3)){
+                this.setMove(MOVES[2], (byte)3, Intent.ATTACK_DEBUFF, crippleDmg, crippleTimes, true);
+            } else{
+                this.setMove(MOVES[1], (byte)2, Intent.ATTACK, SCYTHE_DMG);
+            }
+        } else if(!this.lastMove((byte)4) || AbstractDungeon.ascensionLevel >= 18){
+            this.setMove(MOVES[3], (byte)4, Intent.DEFEND_DEBUFF);
         } else{
-            this.setMove(MOVES[3], (byte)4, Intent.STRONG_DEBUFF);
-        }
-
-
-
-
-
-        /*
-        --this.scytheCooldown;
-        if (this.firstMove) {
-            this.firstMove = false;
-            if (num < 50) {
-                this.setMove((byte)2, Intent.ATTACK, this.crippleDmg, FIRE_TIMES, true);
-            } else {
-                this.setMove((byte)4, Intent.DEBUFF);
+            if(AbstractDungeon.aiRng.randomBoolean()){
+                this.setMove(MOVES[2], (byte)3, Intent.ATTACK_DEBUFF, crippleDmg, crippleTimes, true);
             }
-
-        } else {
-            if (num < 30) {
-                if (!this.lastMove((byte)3) && this.scytheCooldown <= 0) {
-                    this.setMove((byte)3, Intent.ATTACK, SCYTHE_DMG);
-                    this.scytheCooldown = SCYTHE_COOLDOWN_TURNS;
-                } else if (AbstractDungeon.aiRng.randomBoolean()) {
-                    if (!this.lastTwoMoves((byte)2)) {
-                        this.setMove((byte)2, Intent.ATTACK, this.crippleDmg, FIRE_TIMES, true);
-                    } else {
-                        this.setMove((byte)4, Intent.DEBUFF);
-                    }
-                } else if (!this.lastMove((byte)4)) {
-                    this.setMove((byte)4, Intent.DEBUFF);
-                } else {
-                    this.setMove((byte)2, Intent.ATTACK, this.crippleDmg, FIRE_TIMES, true);
-                }
-            } else if (num < 65) {
-                if (!this.lastTwoMoves((byte)2)) {
-                    this.setMove((byte)2, Intent.ATTACK, this.crippleDmg, FIRE_TIMES, true);
-                } else if (AbstractDungeon.aiRng.randomBoolean()) {
-                    if (this.scytheCooldown > 0) {
-                        this.setMove((byte)4, Intent.DEBUFF);
-                    } else {
-                        this.setMove((byte)3, Intent.ATTACK, SCYTHE_DMG);
-                        this.scytheCooldown = SCYTHE_COOLDOWN_TURNS;
-                    }
-                } else {
-                    this.setMove((byte)4, Intent.DEBUFF);
-                }
-            } else if (!this.lastMove((byte)4)) {
-                this.setMove((byte)4, Intent.DEBUFF);
-            } else if (AbstractDungeon.aiRng.randomBoolean() && this.scytheCooldown <= 0) {
-                this.setMove((byte)3, Intent.ATTACK, SCYTHE_DMG);
-                this.scytheCooldown = SCYTHE_COOLDOWN_TURNS;
-            } else {
-                this.setMove((byte)2, Intent.ATTACK, this.crippleDmg, 3, true);
+            else{
+                this.setMove(MOVES[1], (byte)2, Intent.ATTACK, SCYTHE_DMG);
             }
         }
-        */
     }
 
     private void playSfx() {
