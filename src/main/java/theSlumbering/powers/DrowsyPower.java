@@ -21,8 +21,8 @@ public class DrowsyPower  extends AbstractCustomPower implements CloneablePowerI
     public static final String NAME = powerStrings.NAME;
     public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;
 
-    private static final Texture tex84 = TextureLoader.getTexture(makePowerPath("placeholder_power84.png"));
-    private static final Texture tex32 = TextureLoader.getTexture(makePowerPath("placeholder_power32.png"));
+    private static final Texture tex84 = TextureLoader.getTexture(makePowerPath("drowsy_power84.png"));
+    private static final Texture tex32 = TextureLoader.getTexture(makePowerPath("drowsy_power32.png"));
 
     private boolean justApplied = false;
     private int percent = 25;
@@ -40,7 +40,7 @@ public class DrowsyPower  extends AbstractCustomPower implements CloneablePowerI
         if (isSourceMonster) {
             this.justApplied = true;
         }
-        this.type = PowerType.DEBUFF;
+        this.type = PowerType.BUFF;
         this.isTurnBased = false;
         this.priority = 99;
 

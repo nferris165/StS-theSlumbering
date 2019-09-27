@@ -69,10 +69,10 @@ public class HeartCollector extends AbstractCustomRelic implements ClickableReli
             AbstractDungeon.actionManager.addToBottom(new RelicAboveCreatureAction(m, this));
             if(m.type == AbstractMonster.EnemyType.BOSS){
                 if(AbstractDungeon.ascensionLevel >= 14){
-                    this.counter += 3;
+                    this.counter += 2;
                 }
                 else{
-                    this.counter += 4;
+                    this.counter += 3;
                 }
             }
             else{

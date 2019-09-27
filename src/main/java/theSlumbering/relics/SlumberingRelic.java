@@ -46,16 +46,16 @@ public class SlumberingRelic extends AbstractCustomRelic implements ClickableRel
         else if(this.counter == 0){
             return 2;
         }
-        else if(this.counter < 6){
+        else if(this.counter < 7){
             return 3;
         }
-        else if(this.counter < 10){
+        else if(this.counter < 13){
             return 4;
         }
-        else if(this.counter < 15){
+        else if(this.counter < 18){
             return 5;
         }
-        else if (this.counter < 20){
+        else if (this.counter < 24){
             return 6;
         }
         else //if(this.counter >= 20)

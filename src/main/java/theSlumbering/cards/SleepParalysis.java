@@ -29,6 +29,7 @@ public class SleepParalysis extends AbstractCustomCard {
     public SleepParalysis() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         baseMagicNumber = magicNumber = MAGIC;
+        this.exhaust = true;
     }
 
 

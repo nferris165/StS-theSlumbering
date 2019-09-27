@@ -25,10 +25,11 @@ public class Lullaby extends AbstractCustomCard {
 
     private static final int COST = 1;
 
-    private static final int MAGIC = 2;
+    private static final int MAGIC = 1;
     private static final int UPGRADE_MAGIC = 1;
 
-    private static final int MAGIC2 = 1;
+    private static final int MAGIC2 = 2;
+    private static final int UPGRADE_MAGIC2 = 2;
 
 
     public Lullaby() {
@@ -49,9 +50,7 @@ public class Lullaby extends AbstractCustomCard {
             for (AbstractMonster monster : AbstractDungeon.getMonsters().monsters) {
                 if (!monster.isDead && !monster.isDying) {
                     AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(monster, p, new StrengthPower(monster, -this.magicNumber), -this.magicNumber));
-                    if(this.upgraded) {
-                        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(monster, p, new WeakPower(monster, this.secondMagicNumber, false), this.secondMagicNumber));
-                    }
+                    AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(monster, p, new WeakPower(monster, this.secondMagicNumber, false), this.secondMagicNumber));
                 }
             }
         }
@@ -62,7 +61,8 @@ public class Lullaby extends AbstractCustomCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            upgradeMagicNumber(UPGRADE_MAGIC);
+            //upgradeMagicNumber(UPGRADE_MAGIC);
+            upgradeSecondMagicNumber(UPGRADE_MAGIC2);
             this.rawDescription = this.updated_desc;
             initializeDescription();
         }

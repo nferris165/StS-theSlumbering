@@ -337,15 +337,15 @@ public class TheSlumbering extends AbstractCustomPlayer {
                 break;
             case 2:
                 replaceBasic();
-                incSlumberingRelic(3);
+                incSlumberingRelic(2);
                 break;
             case 3:
                 replaceDrowsy();
                 replaceBasic(); //maybe not?
-                incSlumberingRelic(4);
+                incSlumberingRelic(3);
                 break;
             case 4:
-                incSlumberingRelic(5);
+                incSlumberingRelic(4);
                 break;
             default:
                 replaceDrowsy();

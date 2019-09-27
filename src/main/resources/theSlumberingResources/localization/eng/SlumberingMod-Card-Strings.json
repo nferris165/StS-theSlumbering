@@ -125,12 +125,12 @@
   },
   "theSlumbering:SleepParalysis": {
     "NAME": "Sleep Paralysis",
-    "DESCRIPTION": "Negate the first !M! attacks this turn. NL End your turn."
+    "DESCRIPTION": "Negate the first !M! attack this turn. NL End your turn. NL Exhaust."
   },
   "theSlumbering:Lullaby": {
     "NAME": "Lullaby",
-    "DESCRIPTION": "ALL enemies lose !M! Strength. NL Exhaust.",
-    "UPGRADE_DESCRIPTION": "ALL enemies lose !M! Strength. Apply !theSlumbering:Magic! Weak to ALL enemies. NL Exhaust."
+    "DESCRIPTION": "ALL enemies lose !M! Strength. NL Apply !theSlumbering:Magic! Weak to ALL enemies. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "ALL enemies lose !M! Strength. NL Apply !theSlumbering:Magic! Weak to ALL enemies. NL Exhaust."
   },
   "theSlumbering:Taunt": {
     "NAME": "Taunt",

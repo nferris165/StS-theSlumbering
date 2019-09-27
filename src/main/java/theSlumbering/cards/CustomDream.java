@@ -45,6 +45,7 @@ public class CustomDream extends AbstractCustomCard implements ModalChoice.Callb
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         baseDamage = DAMAGE;
         baseBlock = BLOCK;
+        this.dontTriggerOnUseCard = true;
 
         modal = new ModalChoiceBuilder()
                 .setCallback(this)

@@ -29,6 +29,7 @@ public class ForcedThought extends AbstractCustomCard  implements ModalChoice.Ca
 
     public ForcedThought() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
+        this.dontTriggerOnUseCard = true;
 
         modal = new ModalChoiceBuilder()
                 .setCallback(this)

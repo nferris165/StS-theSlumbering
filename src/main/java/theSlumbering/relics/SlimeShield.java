@@ -23,7 +23,7 @@ public class SlimeShield extends AbstractCustomRelic implements BetterOnLoseHpRe
     private static final Texture OUTLINE = TextureLoader.getTexture(makeRelicOutlinePath("GlassShield.png"));
 
     public boolean active;
-    private int powerLevel = 15;
+    private int powerLevel = 20;
 
     public SlimeShield() {
         super(ID, IMG, OUTLINE, RelicTier.COMMON, LandingSound.MAGICAL);
@@ -75,6 +75,13 @@ public class SlimeShield extends AbstractCustomRelic implements BetterOnLoseHpRe
             }
         }
         return i;
+    }
+
+    @Override
+    public void onVictory() {
+        if(this.counter != this.powerLevel){
+            this.powerLevel--;
+        }
     }
 
     @Override
