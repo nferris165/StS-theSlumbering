@@ -34,6 +34,7 @@ import javassist.NotFoundException;
 import org.clapper.util.classutil.*;
 import theSlumbering.cards.BasicDefend;
 import theSlumbering.characters.TheSlumbering;
+import theSlumbering.events.JustInTime;
 import theSlumbering.events.MysteriousOrb;
 import theSlumbering.events.PoweredUp;
 import theSlumbering.monsters.Adrasteia;
@@ -224,6 +225,7 @@ public class SlumberingMod implements
 
         //events
         BaseMod.addEvent(MysteriousOrb.ID, MysteriousOrb.class, Exordium.ID);
+        BaseMod.addEvent(JustInTime.ID, JustInTime.class, Exordium.ID);
         BaseMod.addEvent(PoweredUp.ID, PoweredUp.class, TheCity.ID);
 
         //monsters

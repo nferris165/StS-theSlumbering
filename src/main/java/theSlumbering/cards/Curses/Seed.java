@@ -16,7 +16,7 @@ public class Seed extends AbstractCustomCard {
 
     public static final String IMG = makeCardPath("S_temp.png");
 
-    private static final CardRarity RARITY = CardRarity.CURSE;
+    private static final CardRarity RARITY = CardRarity.SPECIAL;
     private static final CardTarget TARGET = CardTarget.SELF;
     private static final CardType TYPE = CardType.CURSE;
     public static final CardColor COLOR = CardColor.CURSE;

@@ -1,6 +1,6 @@
 {
   "theSlumbering:Patches": {
-    "NAME": "Patches",
+    "NAME": "Dev - Patches",
     "DESCRIPTIONS": [
       "The flames grow slightly brighter. NL The spirits continue dancing. You feel slightly warmer from their presence. NL You wake up ever so slightly...",
       "The flames erupt, growing significantly stronger! NL The spirits dance around you excitedly, filling you with a ~sense~ ~of~ ~warmth.~ NL You wake up a little...",
@@ -101,6 +101,31 @@
       "A",
       "B",
       "C"
+    ]
+  },
+  "theSlumbering:JustInTime": {
+    "NAME": "Just In Time",
+    "DESCRIPTIONS": [
+      "You stumble across a floating #bBlue #bOrb. NL As you approach, you begin to feel the winds of a far off land.",
+      "A portal bursts forth from the #borb, and whisks you away. NL As you examine your new surroundings, you notice the ruins of a house that you immediately recall as belonging to someone you held dear. NL Your body pulses with #ranger. NL Suddenly, you are whisked back, noticing that your pockets are a little bit lighter.",
+      "You put everything you have into a hefty strike on the #borb. It shatters, falling to the ground and leaving your hand stinging with pain. NL Inside the ruined fragments of the orb, you notice something sparkling.",
+      "lose gold",
+      "lose hp",
+      "lose max hp",
+      "lose card",
+      "get cursed",
+      "lose relic"
+    ],
+    "OPTIONS": [
+      "[Leave]",
+      "[Enter]",
+      "[Continue]",
+      "#rLose #rALL #rGold.",
+      "#rLose #r20 #rHP.",
+      "#rLose #r10 #rMax #rHP.",
+      "#rLose #ra #rrandom #rcard.",
+      "#rBecome #rCursed.",
+      "#rLose #rthis #rrelic."
     ]
   }
 }
