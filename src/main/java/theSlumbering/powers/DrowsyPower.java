@@ -3,6 +3,8 @@ package theSlumbering.powers;
 import basemod.interfaces.CloneablePowerInterface;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
+import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
+import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -80,6 +82,8 @@ public class DrowsyPower  extends AbstractCustomPower implements CloneablePowerI
         for(int i = 0; i < this.amount; i++) {
             --AbstractDungeon.player.energy.energyMaster;
         }
+        AbstractDungeon.actionManager.addToBottom(new RemoveSpecificPowerAction(
+                AbstractDungeon.player, AbstractDungeon.player, AwakePower.POWER_ID));
     }
 
     @Override
@@ -87,7 +91,10 @@ public class DrowsyPower  extends AbstractCustomPower implements CloneablePowerI
         incEnergy(this.amount);
         for(int i = 0; i < this.val; i++) {
             ++AbstractDungeon.player.energy.energyMaster;
-        }    }
+        }
+        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(AbstractDungeon.player,
+                AbstractDungeon.player, new AwakePower(AbstractDungeon.player)));
+    }
 
     @Override
     public void onVictory() {

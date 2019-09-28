@@ -5,6 +5,7 @@ import com.evacipated.cardcrawl.mod.stslib.relics.ClickableRelic;
 import com.megacrit.cardcrawl.actions.common.*;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.AbstractCreature;
+import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.helpers.PowerTip;
@@ -36,6 +37,9 @@ public class SlumberingRelic extends AbstractCustomRelic implements ClickableRel
         else{
             this.counter = 4;
         }
+        if(CardCrawlGame.dungeon != null){
+            checkWake();
+        }
         this.floatCounter = 0;
     }
 
@@ -56,7 +60,7 @@ public class SlumberingRelic extends AbstractCustomRelic implements ClickableRel
         else if(this.counter < 6){
             return 3;
         }
-        else if(this.counter < 14){
+        else if(this.counter < 13){
             return 4;
         }
         else if(this.counter < 21){

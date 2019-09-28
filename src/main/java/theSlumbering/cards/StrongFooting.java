@@ -25,7 +25,7 @@ public class StrongFooting extends AbstractCustomCard {
     private static final int UP_COST = 0;
 
     private static final int MAGIC = 8;
-    private static final int UPGRADE_MAGIC = 5;
+    private static final int UPGRADE_MAGIC = 6;
 
     public StrongFooting() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
@@ -52,7 +52,7 @@ public class StrongFooting extends AbstractCustomCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            upgradeBaseCost(UP_COST);
+            //upgradeBaseCost(UP_COST);
             upgradeMagicNumber(UPGRADE_MAGIC);
             initializeDescription();
         }

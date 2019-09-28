@@ -5,7 +5,8 @@
   },
   "theSlumbering:BasicDefend": {
     "NAME": "Basic Defend",
-    "DESCRIPTION": "Gain !B! Block. NL You hear [#666646]screams...[] in your mind."
+    "DESCRIPTION": "Gain !B! Block. NL You hear [#666646]screams...[] in your mind.",
+    "UPGRADE_DESCRIPTION": "Gain !B! Block. NL Lose 1 theslumbering:Drowsy. NL You hear [#666646]screams...[] in your mind."
   },
   "theSlumbering:DrowsyAttack": {
     "NAME": "Drowsy Attack",

@@ -11,6 +11,14 @@
                         " fewer [E] ."
                 ]
         },
+        "theSlumbering:AwakePower": {
+                "NAME": "Awake",
+                "DESCRIPTIONS": [
+                        "You have lost connection to the dream world. NL #yAttacks deal #b",
+                        "% less damage. Gain #b",
+                        "% less #yBlock from cards."
+                ]
+        },
         "theSlumbering:ReflectPower": {
                 "NAME": "Reflect",
                 "DESCRIPTIONS": ["Whenever you are attacked this turn, reflect #b", " percent of damage."]

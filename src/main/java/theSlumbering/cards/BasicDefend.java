@@ -2,12 +2,14 @@ package theSlumbering.cards;
 
 import basemod.helpers.BaseModCardTags;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
+import com.megacrit.cardcrawl.actions.common.ReducePowerAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import theSlumbering.SlumberingMod;
 import theSlumbering.characters.TheSlumbering;
 import theSlumbering.patches.customTags;
+import theSlumbering.powers.DrowsyPower;
 
 import static theSlumbering.SlumberingMod.makeCardPath;
 
@@ -26,7 +28,7 @@ public class BasicDefend extends AbstractCustomCard {
     private static final int COST = 1;
 
     private static final int BLOCK = 3;
-    private static final int UPGRADE_BLOCK = 3;
+    private static final int UPGRADE_BLOCK = 2;
 
     public BasicDefend() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
@@ -42,6 +44,10 @@ public class BasicDefend extends AbstractCustomCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
         AbstractDungeon.actionManager.addToBottom(new GainBlockAction(p, p, block));
 
+        if(this.upgraded){
+            AbstractDungeon.actionManager.addToBottom(new ReducePowerAction(p, p, DrowsyPower.POWER_ID, 1));
+        }
+
     }
 
 
@@ -50,6 +56,7 @@ public class BasicDefend extends AbstractCustomCard {
         if (!upgraded) {
             upgradeName();
             upgradeBlock(UPGRADE_BLOCK);
+            this.rawDescription = updated_desc;
             initializeDescription();
         }
     }
