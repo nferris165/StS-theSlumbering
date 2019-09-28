@@ -44,8 +44,8 @@ public class Adrasteia extends CustomMonster {
     private static final float HB_Y = -10.0F;
     private static final float HB_W = 350.0F;
     private static final float HB_H = 440.0F;
-    private static final int SCYTHE_DMG = 17;
-    private static final int CRIPPLE_DMG = 4;
+    private static final int SCYTHE_DMG = 21;
+    private static final int CRIPPLE_DMG = 5;
     private static final int CRIPPLE_TIMES = 3;
     private static final int A_18_CRIPPLE_TIMES = 4;
     private static final int A_3_CRIPPLE_DMG = 7;

@@ -106,26 +106,36 @@
   "theSlumbering:JustInTime": {
     "NAME": "Just In Time",
     "DESCRIPTIONS": [
-      "You stumble across a floating #bBlue #bOrb. NL As you approach, you begin to feel the winds of a far off land.",
-      "A portal bursts forth from the #borb, and whisks you away. NL As you examine your new surroundings, you notice the ruins of a house that you immediately recall as belonging to someone you held dear. NL Your body pulses with #ranger. NL Suddenly, you are whisked back, noticing that your pockets are a little bit lighter.",
-      "You put everything you have into a hefty strike on the #borb. It shatters, falling to the ground and leaving your hand stinging with pain. NL Inside the ruined fragments of the orb, you notice something sparkling.",
-      "lose gold",
-      "lose hp",
-      "lose max hp",
-      "lose card",
-      "get cursed",
-      "lose relic"
+      "You arrive upon the entrance to a mystical temple. From inside, you think you can make out the sounds of laughter, and mechanical whirring.",
+      "You decide it isn't worth the effort, and make your way back to the path up the spire.",
+      "",
+      "You step through the doorway into a small room. An empty bag sits upon a large scale. When you stand on the scale, the door to the next room opens, but closes as soon as you step off.",
+      "As you step through the doorway, you see a series of blades swinging back and forth from the ceiling. You think you could run through safely, if you time it correctly.",
+      "As you step through the doorway, you spot a pedestal at the center of the room with a vial of foul smelling liquid on top. The door to the next room is sealed shut. NL Do you drink the vial?",
+      "You enter into a small room. The wall in front of you is littered with strange writings. You make out a passage near the center. 'An offering to the gods will light the way.'",
+      "You enter into a large room. The word 'patience' is scrawled across every wall, but the door to the next room is already open. You wait for a while, but nothing happens.",
+      "You make your way down a long hallway until you come across an obstacle in the path. A statue of a gaunt man stands in front of you, with one arm outstretched, hand open. NL It seems to want something from you.",
+      "You barge into the next room, and immediately notice a small man wearing vibrant robes giggling to himself and playing with a small clock. NL He whispers to you, \" Tell me, friend, if you had a second chance, what would you do differently?\" ",
+      "You close your eyes and recall all the bad purchases you've made, wishing you had never wasted your money on such trivial things. NL NL When you open your eyes, you are once again outside the temple, but there is no door this time. You can't help but notice your pockets feel much heavier.",
+      "You close your eyes and recall all the time you wasted sitting around the campfire, doing nothing productive when you could have been improving yourself. NL NL When you open your eyes, you are once again outside the temple, but there is no door this time. You feel stronger than you ever thought possible.",
+      "You regret nothing, and instead charge the hunched old man, knocking him to the floor. You seize the clock he was playing with and bolt for the exit. NL NL You hear the old man's cries for help as you retrace your steps out of the temple, but you do not care."
     ],
     "OPTIONS": [
       "[Leave]",
       "[Enter]",
-      "[Continue]",
-      "#rLose #rALL #rGold.",
-      "#rLose #r20 #rHP.",
-      "#rLose #r10 #rMax #rHP.",
-      "#rLose #ra #rrandom #rcard.",
-      "#rBecome #rCursed.",
-      "#rLose #rthis #rrelic."
+      "",
+      "[Fill the Bag] #rLose #rALL #rGold.",
+      "[Run Through] #rLose #r20 #rHP.",
+      "[Drink the Vial] #rLose #r10 #rMax #rHP.",
+      "[Make Offering] #rLose #ra #rrandom #rcard.",
+      "[Keep Going] #rBecome #rCursed.",
+      "[Donate] #rLose #rthis #rrelic.",
+      "[Dream] #gRegain #gall #gspent #ggold.",
+      "[Dream] #gUpgrade #g4 #grandom #gcards.",
+      "[Attack] #gObatin The Clock.",
+      "[Run Through] #rLose #r2 #rCollected #rHearts.",
+      "[Drink the Vial] #rFall #rdeeper #rinto #ryour #pslumber..."
+
     ]
   }
 }

@@ -4,6 +4,7 @@ import com.megacrit.cardcrawl.actions.unique.AddCardToDeckAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
+import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.events.AbstractImageEvent;
 import com.megacrit.cardcrawl.localization.EventStrings;
@@ -14,6 +15,7 @@ import com.megacrit.cardcrawl.vfx.cardManip.ShowCardAndObtainEffect;
 import theSlumbering.SlumberingMod;
 import theSlumbering.cards.Curses.LingeringDoubt;
 import theSlumbering.cards.Curses.Sloth;
+import theSlumbering.cards.TheClock;
 import theSlumbering.characters.TheSlumbering;
 
 import java.util.*;
@@ -69,22 +71,29 @@ public class JustInTime extends AbstractImageEvent {
     private void getReward(){
         switch (option){
             case 3:
+                goldSpent += AbstractDungeon.player.gold;
                 AbstractDungeon.player.loseGold(AbstractDungeon.player.gold);
                 break;
             case 4:
-                AbstractDungeon.player.damage(new DamageInfo(AbstractDungeon.player, 10));
+                if(AbstractDungeon.player instanceof TheSlumbering){
+                    SlumberingMod.decHeartCollectorRelic(2);
+                } else{
+                    AbstractDungeon.player.damage(new DamageInfo(AbstractDungeon.player, 20));
+                }
                 break;
             case 5:
-                AbstractDungeon.player.decreaseMaxHealth(10);
+                if(AbstractDungeon.player instanceof TheSlumbering){
+                    SlumberingMod.incSlumberingRelic(-1);
+                } else {
+                    AbstractDungeon.player.decreaseMaxHealth(10);
+                }
                 break;
             case 6:
                 AbstractDungeon.effectList.add(new PurgeCardEffect(card.makeStatEquivalentCopy()));
                 AbstractDungeon.player.masterDeck.removeCard(card);
                 break;
             case 7:
-                AbstractDungeon.actionManager.addToBottom(new AddCardToDeckAction(card));
-                // AbstractDungeon.topLevelEffects.add(new ShowCardAndObtainEffect(card, ));
-                //AbstractDungeon.player.masterDeck.addToTop(card);
+                AbstractDungeon.effectList.add(new ShowCardAndObtainEffect(card, (float)Settings.WIDTH * 0.3F, (float)Settings.HEIGHT / 2.0F));
                 break;
             case 8:
                 AbstractDungeon.player.loseRelic(relic.relicId);
@@ -108,7 +117,15 @@ public class JustInTime extends AbstractImageEvent {
 
             this.imageEventText.updateBodyText(DESCRIPTIONS[option]);
 
-            if(option == 6){
+            if(option == 4){
+                if(AbstractDungeon.player instanceof TheSlumbering){
+                    this.imageEventText.updateDialogOption(0, OPTIONS[option + 8]);
+                }
+            } else if(option == 5){
+                if(AbstractDungeon.player instanceof TheSlumbering){
+                    this.imageEventText.updateDialogOption(0, OPTIONS[option + 8]);
+                }
+            } else if(option == 6){
                 card = AbstractDungeon.player.masterDeck.getRandomCard(AbstractDungeon.eventRng);
                 this.imageEventText.updateDialogOption(0, OPTIONS[option], card);
             } else if (option == 7){
@@ -134,9 +151,11 @@ public class JustInTime extends AbstractImageEvent {
                 this.imageEventText.updateDialogOption(0, OPTIONS[option]);
             }
         } else{
-            this.imageEventText.updateBodyText(DESCRIPTIONS[2]);
-            this.imageEventText.updateDialogOption(0, OPTIONS[2]);
-            this.imageEventText.clearRemainingOptions();
+            this.imageEventText.updateBodyText(DESCRIPTIONS[9]);
+            this.imageEventText.clearAllDialogs();
+            this.imageEventText.setDialogOption(OPTIONS[9]);
+            this.imageEventText.setDialogOption(OPTIONS[10]);
+            this.imageEventText.setDialogOption(OPTIONS[11], new TheClock());
             option = -1;
             screenNum = 2;
         }
@@ -173,8 +192,32 @@ public class JustInTime extends AbstractImageEvent {
             case 2:
                 switch (i) {
                     case 0:
-                        this.imageEventText.updateBodyText(DESCRIPTIONS[3]);
-                        this.imageEventText.updateDialogOption(0, OPTIONS[5]);
+                        AbstractDungeon.player.gainGold(goldSpent);
+                        this.imageEventText.updateBodyText(DESCRIPTIONS[10]);
+                        this.imageEventText.updateDialogOption(0, OPTIONS[0]);
+                        this.imageEventText.clearRemainingOptions();
+                        screenNum = 1;
+                        break;
+                    case 1:
+                        count = 0;
+                        for(AbstractCard c: AbstractDungeon.player.masterDeck.group){
+                            if(!c.upgraded){
+                                c.upgrade();
+                                count++;
+                            }
+                            if(count >= 4){
+                                break;
+                            }
+                        }
+                        this.imageEventText.updateBodyText(DESCRIPTIONS[11]);
+                        this.imageEventText.updateDialogOption(0, OPTIONS[0]);
+                        this.imageEventText.clearRemainingOptions();
+                        screenNum = 1;
+                        break;
+                    case 2:
+                        AbstractDungeon.effectList.add(new ShowCardAndObtainEffect(new TheClock(), (float) Settings.WIDTH * 0.3F, (float)Settings.HEIGHT / 2.0F));
+                        this.imageEventText.updateBodyText(DESCRIPTIONS[12]);
+                        this.imageEventText.updateDialogOption(0, OPTIONS[0]);
                         this.imageEventText.clearRemainingOptions();
                         screenNum = 1;
                         break;

@@ -26,7 +26,7 @@ public class SlimeShield extends AbstractCustomRelic implements BetterOnLoseHpRe
     private int powerLevel = 20;
 
     public SlimeShield() {
-        super(ID, IMG, OUTLINE, RelicTier.COMMON, LandingSound.MAGICAL);
+        super(ID, IMG, OUTLINE, RelicTier.UNCOMMON, LandingSound.MAGICAL);
 
         this.counter = powerLevel;
         this.floatCounter = 0;
@@ -35,7 +35,7 @@ public class SlimeShield extends AbstractCustomRelic implements BetterOnLoseHpRe
 
     @Override
     public String getUpdatedDescription() {
-        return DESCRIPTIONS[0];
+        return DESCRIPTIONS[0] + this.powerLevel + DESCRIPTIONS[1];
 
     }
 
@@ -50,7 +50,7 @@ public class SlimeShield extends AbstractCustomRelic implements BetterOnLoseHpRe
 
     @Override
     public void atBattleStart(){
-        this.counter = powerLevel;
+        //this.counter = powerLevel;
         this.active = true;
         flash();
     }
@@ -81,6 +81,7 @@ public class SlimeShield extends AbstractCustomRelic implements BetterOnLoseHpRe
     public void onVictory() {
         if(this.counter != this.powerLevel){
             this.powerLevel--;
+            this.counter = this.powerLevel;
         }
     }
 

@@ -31,7 +31,8 @@
     "NAME": "Slime Shield",
     "FLAVOR": "Not very protective, but regenerates constantly.",
     "DESCRIPTIONS": [
-      "Negates #b15 damage and then breaks. Regenerates between battles, but loses power."
+      "Negates #b",
+      " damage and then breaks. Regenerates between battles, but loses power."
     ]
   },
   "theSlumbering:SlumberingRelic": {
@@ -42,8 +43,6 @@
       "[#2aecd7]This relic will gain power as you wake up. NL ",
       "You are entirely asleep. Falling any further asleep will end the turn. NL ",
       "You have just begun to awaken... NL ",
-      "You are feeling groggy... NL ",
-      "You still feel sluggish... NL ",
       "Your head is beginning to clear up... NL ",
       "The drowsiness has almost faded... NL ",
       "You feel fully awake. NL "

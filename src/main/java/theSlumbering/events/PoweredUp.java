@@ -43,9 +43,9 @@ public class PoweredUp extends AbstractImageEvent {
         super(NAME, DESCRIPTIONS[0], IMG);
 
         if (AbstractDungeon.ascensionLevel >= 15) {
-            cost = -2;
+            cost = -3;
         } else {
-            cost = -1;
+            cost = -2;
         }
 
         genScene();

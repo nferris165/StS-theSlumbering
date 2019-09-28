@@ -280,7 +280,7 @@
   },
   "theSlumbering:Hypersomnia": {
     "NAME": "Hypersomnia",
-    "DESCRIPTION": "Gain !M! Drowsy. NL Gain !theSlumbering:Magic! Strength. NL At the end of this turn, lose !theSlumbering:Magic! Strength."
+    "DESCRIPTION": "Gain !M! theslumbering:Drowsy. NL Gain !theSlumbering:Magic! Strength. NL At the end of this turn, lose !theSlumbering:Magic! Strength."
   },
   "theSlumbering:ReadyGaze": {
     "NAME": "Ready Gaze",

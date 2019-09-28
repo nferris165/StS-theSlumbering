@@ -6,6 +6,7 @@ import com.megacrit.cardcrawl.actions.common.*;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.helpers.PowerTip;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
@@ -39,6 +40,12 @@ public class SlumberingRelic extends AbstractCustomRelic implements ClickableRel
     }
 
     @Override
+    public void setCounter(int counter) {
+        checkWake();
+        super.setCounter(counter);
+    }
+
+    @Override
     public int getState(){
         if(this.counter < 0){
             return 1;
@@ -46,16 +53,16 @@ public class SlumberingRelic extends AbstractCustomRelic implements ClickableRel
         else if(this.counter == 0){
             return 2;
         }
-        else if(this.counter < 7){
+        else if(this.counter < 6){
             return 3;
         }
-        else if(this.counter < 13){
+        else if(this.counter < 14){
             return 4;
         }
-        else if(this.counter < 18){
+        else if(this.counter < 21){
             return 5;
         }
-        else if (this.counter < 24){
+        else if (this.counter < 30){
             return 6;
         }
         else //if(this.counter >= 20)
@@ -91,17 +98,23 @@ public class SlumberingRelic extends AbstractCustomRelic implements ClickableRel
                 break;
             case 2 :
                 //effect 2
+                this.img = ImageMaster.loadImage(makeRelicPath("zzz.png"));
                 break;
             case 3 :
                 //effect 3
+                this.img = ImageMaster.loadImage(makeRelicPath("zzz2.png"));
                 break;
             case 4 :
                 //effect 4
+                this.img = ImageMaster.loadImage(makeRelicPath("zzz3.png"));
                 break;
             case 5 :
                 //effect woke
+                this.img = ImageMaster.loadImage(makeRelicPath("zzz4.png"));
                 break;
-
+            case 6:
+                this.img = ImageMaster.loadImage(makeRelicPath("zzz5.png"));
+                break;
             default :
                 break;
         }

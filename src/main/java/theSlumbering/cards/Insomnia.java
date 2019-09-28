@@ -22,7 +22,7 @@ public class Insomnia extends AbstractCustomCard {
     private static final CardType TYPE = CardType.SKILL;
     public static final CardColor COLOR = TheSlumbering.Enums.COLOR_SLUMBERING;
 
-    private static final int COST = 2;
+    private static final int COST = 3;
 
     private static final int BLOCK = 4;
 
@@ -30,7 +30,6 @@ public class Insomnia extends AbstractCustomCard {
     private static final int UPGRADE_MAGIC = 3;
 
     private static final int MAGIC2 = 2;
-    private static final int MAGIC2_UPGRADE = 1;
 
     public Insomnia() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
@@ -67,7 +66,7 @@ public class Insomnia extends AbstractCustomCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            upgradeSecondMagicNumber(MAGIC2_UPGRADE);
+            //upgradeSecondMagicNumber(MAGIC2_UPGRADE);
             upgradeMagicNumber(UPGRADE_MAGIC);
             initializeDescription();
         }
