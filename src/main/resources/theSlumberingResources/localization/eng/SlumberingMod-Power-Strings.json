@@ -12,7 +12,7 @@
                 ]
         },
         "theSlumbering:AwakePower": {
-                "NAME": "Awake",
+                "NAME": "Sleep Deprived",
                 "DESCRIPTIONS": [
                         "You have lost connection to the dream world. NL #yAttacks deal #b",
                         "% less damage. Gain #b",

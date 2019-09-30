@@ -12,6 +12,8 @@ import com.megacrit.cardcrawl.powers.AbstractPower;
 import theSlumbering.SlumberingMod;
 import theSlumbering.util.TextureLoader;
 
+import static theSlumbering.SlumberingMod.makePowerPath;
+
 public class SideSleeperPower extends AbstractCustomPower implements CloneablePowerInterface {
     @SuppressWarnings("WeakerAccess")
 
@@ -22,8 +24,8 @@ public class SideSleeperPower extends AbstractCustomPower implements CloneablePo
     public static final String NAME = powerStrings.NAME;
     public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;
 
-    private static final Texture tex84 = TextureLoader.getTexture("theFirstResources/images/powers/placeholder_power84.png");
-    private static final Texture tex32 = TextureLoader.getTexture("theFirstResources/images/powers/placeholder_power32.png");
+    private static final Texture tex84 = TextureLoader.getTexture(makePowerPath("placeholder_power84.png"));
+    private static final Texture tex32 = TextureLoader.getTexture(makePowerPath("placeholder_power32.png"));
 
     public SideSleeperPower(final AbstractCreature owner, int cost) {
         name = NAME;

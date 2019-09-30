@@ -29,9 +29,13 @@ public class FocusedStrike extends AbstractCustomCard {
     private static final int DAMAGE = 7;
     private static final int UPGRADE_PLUS_DMG = 3;
 
+    private static final int MAGIC = 2;
+    private static final int UP_MAGIC = 1;
+
     public FocusedStrike() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         baseDamage = DAMAGE;
+        magicNumber = baseMagicNumber = MAGIC;
 
         tags.add(CardTags.STRIKE);
     }
@@ -43,9 +47,11 @@ public class FocusedStrike extends AbstractCustomCard {
                 new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_VERTICAL));
 
         if(!p.hasPower(DrowsyPower.POWER_ID)){
-            AbstractDungeon.actionManager.addToBottom(new WaitAction(1.0f));
-            AbstractDungeon.actionManager.addToBottom(new DamageAction(m,
-                    new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_VERTICAL));
+            for(int i = 0; i < magicNumber; i++) {
+                AbstractDungeon.actionManager.addToBottom(new WaitAction(1.0f));
+                AbstractDungeon.actionManager.addToBottom(new DamageAction(m,
+                        new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_VERTICAL));
+            }
         }
     }
 
@@ -55,6 +61,7 @@ public class FocusedStrike extends AbstractCustomCard {
         if (!upgraded) {
             upgradeName();
             upgradeDamage(UPGRADE_PLUS_DMG);
+            upgradeMagicNumber(UP_MAGIC);
             initializeDescription();
         }
     }

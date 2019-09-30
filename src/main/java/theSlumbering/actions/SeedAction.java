@@ -44,7 +44,7 @@ public class SeedAction extends AbstractGameAction {
             if(c.misc == 5){
                 AbstractDungeon.topLevelEffects.add(new PurgeCardEffect(c,
                         (float) Settings.WIDTH / 2.0F - 30.0F * Settings.scale - AbstractCard.IMG_WIDTH / 2.0F,(float) Settings.HEIGHT / 2.0F));
-                AbstractDungeon.player.increaseMaxHp(100,true);
+                AbstractDungeon.player.increaseMaxHp(80,true);
                 AbstractDungeon.player.masterDeck.removeCard(d);
             }
         }

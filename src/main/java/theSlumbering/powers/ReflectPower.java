@@ -17,6 +17,8 @@ import theSlumbering.SlumberingMod;
 
 import theSlumbering.util.TextureLoader;
 
+import static theSlumbering.SlumberingMod.makePowerPath;
+
 public class ReflectPower extends AbstractPower implements CloneablePowerInterface, OnLoseBlockPower {
     @SuppressWarnings("WeakerAccess")
     public AbstractCreature source;
@@ -26,8 +28,8 @@ public class ReflectPower extends AbstractPower implements CloneablePowerInterfa
     public static final String NAME = powerStrings.NAME;
     public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;
 
-    private static final Texture tex84 = TextureLoader.getTexture("theFirstResources/images/powers/placeholder_power84.png");
-    private static final Texture tex32 = TextureLoader.getTexture("theFirstResources/images/powers/placeholder_power32.png");
+    private static final Texture tex84 = TextureLoader.getTexture(makePowerPath("placeholder_power84.png"));
+    private static final Texture tex32 = TextureLoader.getTexture(makePowerPath("placeholder_power32.png"));
 
     private DamageInfo reflectInfo;
     private boolean blocked = false;

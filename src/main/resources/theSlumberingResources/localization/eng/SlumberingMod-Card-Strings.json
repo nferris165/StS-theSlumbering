@@ -52,8 +52,8 @@
   },
   "theSlumbering:Invigorate": {
     "NAME": "Invigorate",
-    "DESCRIPTION": "Reduce theslumbering:Drowsy by 1.",
-    "UPGRADE_DESCRIPTION": "Innate. NL Reduce theslumbering:Drowsy by 1."
+    "DESCRIPTION": "Innate. Reduce theslumbering:Drowsy by 1.",
+    "UPGRADE_DESCRIPTION": "Innate. NL Reduce theslumbering:Drowsy by !M!."
   },
   "theSlumbering:ExtraArm": {
     "NAME": "Extra Arm",
@@ -308,7 +308,7 @@
   },
   "theSlumbering:FocusedStrike": {
     "NAME": "Focused Strike",
-    "DESCRIPTION": "Deal !D! damage. NL If you are not theslumbering:Drowsy, deal !D! damage again."
+    "DESCRIPTION": "Deal !D! damage. NL If you are not theslumbering:Drowsy, deal !D! damage !M! more times."
   },
   "theSlumbering:ForcedThought": {
     "NAME": "Forced Thought",

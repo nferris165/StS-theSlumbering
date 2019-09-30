@@ -24,15 +24,22 @@ public class Invigorate extends AbstractCustomCard {
     private static final int COST = 1;
     private static final int UPGRADED_COST = 0;
 
+    private static final int MAGIC = 1;
+    private static final int UPGRADED_MAGIC = 2;
+
+
 
     public Invigorate() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
+        this.isInnate = true;
+
+        this.magicNumber = baseMagicNumber = MAGIC;
     }
 
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        AbstractDungeon.actionManager.addToBottom(new ReducePowerAction(p, p, DrowsyPower.POWER_ID, 1));
+        AbstractDungeon.actionManager.addToBottom(new ReducePowerAction(p, p, DrowsyPower.POWER_ID, magicNumber));
     }
 
 
@@ -40,9 +47,9 @@ public class Invigorate extends AbstractCustomCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            this.isInnate = true;
             upgradeBaseCost(UPGRADED_COST);
-            this.rawDescription = this.updated_desc;
+            //upgradeMagicNumber(UPGRADED_MAGIC);
+            //this.rawDescription = this.updated_desc;
             initializeDescription();
         }
     }

@@ -23,7 +23,7 @@ public class Lullaby extends AbstractCustomCard {
     private static final CardType TYPE = CardType.SKILL;
     public static final CardColor COLOR = TheSlumbering.Enums.COLOR_SLUMBERING;
 
-    private static final int COST = 1;
+    private static final int COST = 2;
 
     private static final int MAGIC = 1;
     private static final int UPGRADE_MAGIC = 1;

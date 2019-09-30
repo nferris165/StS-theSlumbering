@@ -25,7 +25,10 @@ import com.megacrit.cardcrawl.dungeons.TheCity;
 import com.megacrit.cardcrawl.helpers.CardHelper;
 import com.megacrit.cardcrawl.helpers.FontHelper;
 import com.megacrit.cardcrawl.localization.*;
+import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.monsters.MonsterGroup;
 import com.megacrit.cardcrawl.monsters.MonsterInfo;
+import com.megacrit.cardcrawl.monsters.city.Chosen;
 import com.megacrit.cardcrawl.relics.MarkOfTheBloom;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import com.megacrit.cardcrawl.vfx.cardManip.PurgeCardEffect;
@@ -75,7 +78,6 @@ public class SlumberingMod implements
         EditStringsSubscriber,
         EditKeywordsSubscriber,
         EditCharactersSubscriber,
-        PostExhaustSubscriber,
         PostInitializeSubscriber {
 
     public static final Logger logger = LogManager.getLogger(SlumberingMod.class.getName());
@@ -229,16 +231,21 @@ public class SlumberingMod implements
         BaseMod.addEvent(PoweredUp.ID, PoweredUp.class, TheCity.ID);
 
         //monsters
-        //BaseMod.addMonster(SimpleMonster.ID, "Simple Monster", () -> new SimpleMonster(0.0F, 25.0F));
-        BaseMod.addMonster(NewSlaver.ID, "NewSlaver", () -> new NewSlaver(0.0F, 0.0F));
-        BaseMod.addMonster(NewCultist.ID, "NewCultist", () -> new NewCultist(0.0F, -10.0F));
+        BaseMod.addMonster(NewSlaver.ID, NewSlaver.ID, () -> new NewSlaver(0.0F, 0.0F));
+        BaseMod.addMonster(NewCultist.ID, NewCultist.ID, () -> new NewCultist(0.0F, -10.0F));
 
-        BaseMod.addMonster(Adrasteia.ID, "Adrasteia", () -> new Adrasteia(0.0F, 0.0F));
+        BaseMod.addMonster("Dream Cultist and Chosen", () -> new MonsterGroup(new AbstractMonster[]{
+                new NewCultist(-230.0F,15.0F),
+                new Chosen(100.0F, 25.0F)
+        }));
+
+        BaseMod.addMonster(Adrasteia.ID, Adrasteia.ID, () -> new Adrasteia(0.0F, 0.0F));
 
         //encounters
-        //BaseMod.addMonsterEncounter(Exordium.ID, new MonsterInfo(SimpleMonster.ID, 2));
         BaseMod.addMonsterEncounter(Exordium.ID, new MonsterInfo(NewCultist.ID, 3.0F));  //normal weight 2
         BaseMod.addStrongMonsterEncounter(Exordium.ID, new MonsterInfo(NewSlaver.ID, 1.5F));
+
+        BaseMod.addStrongMonsterEncounter(TheCity.ID, new MonsterInfo("Dream Cultist and Chosen", 3.0F));
 
         BaseMod.addEliteEncounter(Exordium.ID, new MonsterInfo(Adrasteia.ID, 1.5F)); //normal weight 1
 
@@ -386,22 +393,6 @@ public class SlumberingMod implements
                 UnlockTracker.unlockCard(card.cardID);
             }
         }
-    }
-
-
-    @Override
-    public void receivePostExhaust(AbstractCard c) {
-        /*
-        int val = 1;
-        if (c.rarity == AbstractCard.CardRarity.UNCOMMON)
-        {
-            val = 2;
-        }else if (c.rarity == AbstractCard.CardRarity.RARE)
-        {
-            val = 3;
-        }
-        AbstractDungeon.player.increaseMaxHp(val, true);
-        */
     }
 
     @Override
