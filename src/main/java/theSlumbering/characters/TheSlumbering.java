@@ -159,7 +159,6 @@ public class TheSlumbering extends AbstractCustomPlayer {
         return "ATTACK_DAGGER_1";
     }
 
-    //TODO finalize hp values
     @Override
     public int getAscensionMaxHPLoss() {
         return 0;
@@ -271,26 +270,37 @@ public class TheSlumbering extends AbstractCustomPlayer {
 
         for(AbstractCard e: AbstractDungeon.player.masterDeck.group){
             float x, y;
-            effCount++;
-
-            if(effCount > 4) {
-                x = MathUtils.random(0.25F, 0.75F) * (float) Settings.WIDTH;
-                y = MathUtils.random(0.25F, 0.75F) * (float) Settings.HEIGHT;
-            } else{
-                x = (float)Settings.WIDTH * (0.2F * effCount);
-                y = (float)Settings.HEIGHT * 0.5F;
-            }
-
-            logger.info(x + " " + y + " " + "\n\n");
 
             if(e instanceof BasicAttack){
+                effCount++;
 
+                if(effCount > 4) {
+                    x = MathUtils.random(0.25F, 0.75F) * (float) Settings.WIDTH;
+                    y = MathUtils.random(0.25F, 0.75F) * (float) Settings.HEIGHT;
+                } else{
+                    x = (float)Settings.WIDTH * (0.2F * effCount);
+                    y = (float)Settings.HEIGHT * 0.5F;
+                }
+
+                logger.info(x + " " + y + " " + "\n\n");
+                logger.info(e.uuid + " " + e.name + " " + "\n\n");
                 AbstractCard c = new DrowsyAttack();
                 applyState(e, c);
                 AbstractDungeon.topLevelEffects.add(new ShowCardAndObtainEffect(c, x, y, false));
                 list.add(e);
             }
             else if(e instanceof BasicDefend){
+                effCount++;
+
+                if(effCount > 4) {
+                    x = MathUtils.random(0.25F, 0.75F) * (float) Settings.WIDTH;
+                    y = MathUtils.random(0.25F, 0.75F) * (float) Settings.HEIGHT;
+                } else{
+                    x = (float)Settings.WIDTH * (0.2F * effCount);
+                    y = (float)Settings.HEIGHT * 0.5F;
+                }
+                logger.info(x + " " + y + " " + "\n\n");
+                logger.info(e.uuid + " " + e.name + " " + "\n\n");
                 AbstractCard c = new DrowsyDefend();
                 applyState(e, c);
                 AbstractDungeon.topLevelEffects.add(new ShowCardAndObtainEffect(c, x, y, false));
@@ -304,43 +314,49 @@ public class TheSlumbering extends AbstractCustomPlayer {
     }
 
     private static void replaceDrowsy() {
-
         CardCrawlGame.screenShake.shake(ScreenShake.ShakeIntensity.MED, ScreenShake.ShakeDur.MED, false);
-        Iterator i = AbstractDungeon.player.masterDeck.group.iterator();
 
-        AbstractCard e;
+        ArrayList<AbstractCard> list = new ArrayList<>();
         int effCount = 0;
         boolean fast = Settings.FAST_MODE;
         Settings.FAST_MODE = false;
 
-        while(i.hasNext()){
-            e = (AbstractCard)i.next();
+        for(AbstractCard e: AbstractDungeon.player.masterDeck.group){
             float x, y;
-            effCount++;
-
-            if(effCount > 4) {
-                x = MathUtils.random(0.25F, 0.75F) * (float) Settings.WIDTH;
-                y = MathUtils.random(0.25F, 0.75F) * (float) Settings.HEIGHT;
-            } else{
-                x = (float)Settings.WIDTH * (0.2F * effCount);
-                y = (float)Settings.HEIGHT * 0.5F;
-            }
 
             if(e instanceof DrowsyAttack){
+                effCount++;
 
+                if(effCount > 4) {
+                    x = MathUtils.random(0.25F, 0.75F) * (float) Settings.WIDTH;
+                    y = MathUtils.random(0.25F, 0.75F) * (float) Settings.HEIGHT;
+                } else{
+                    x = (float)Settings.WIDTH * (0.2F * effCount);
+                    y = (float)Settings.HEIGHT * 0.5F;
+                }
                 AbstractCard c = new WokeAttack();
                 applyState(e, c);
-
                 AbstractDungeon.topLevelEffects.add(new ShowCardAndObtainEffect(c, x, y, false));
-                i.remove();
+                list.add(e);
             }
             else if(e instanceof DrowsyDefend){
+                effCount++;
+
+                if(effCount > 4) {
+                    x = MathUtils.random(0.25F, 0.75F) * (float) Settings.WIDTH;
+                    y = MathUtils.random(0.25F, 0.75F) * (float) Settings.HEIGHT;
+                } else{
+                    x = (float)Settings.WIDTH * (0.2F * effCount);
+                    y = (float)Settings.HEIGHT * 0.5F;
+                }
                 AbstractCard c = new WokeDefend();
                 applyState(e, c);
-
                 AbstractDungeon.topLevelEffects.add(new ShowCardAndObtainEffect(c, x, y, false));
-                i.remove();
+                list.add(e);
             }
+        }
+        for(AbstractCard r: list){
+            AbstractDungeon.player.masterDeck.removeCard(r);
         }
         Settings.FAST_MODE = fast;
     }

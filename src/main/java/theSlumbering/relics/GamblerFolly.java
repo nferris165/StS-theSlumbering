@@ -48,13 +48,13 @@ public class GamblerFolly extends AbstractCustomRelic {
     @Override
     public void onEquip() {
         int curse = AbstractDungeon.miscRng.random(0,99);
-        if(curse < 50){
+        if(curse < 45){
             this.counter = -3;
             //logger.info("cursed\n\n");
             this.img = ImageMaster.loadImage(makeRelicPath("GamblerCURSE.png"));
             updateDescription(AbstractDungeon.player.chosenClass);
         }
-        else if(curse == 99){
+        else if(curse >= 95){
             this.img = ImageMaster.loadImage(makeRelicPath("GamblerJACKPOT.png"));
             this.counter = -4;
             updateDescription(AbstractDungeon.player.chosenClass);
