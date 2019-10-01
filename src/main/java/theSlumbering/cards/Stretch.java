@@ -18,11 +18,11 @@ public class Stretch extends AbstractCustomCard {
 
     public static final String ID = SlumberingMod.makeID(Stretch.class.getSimpleName());
 
-    public static final String IMG = makeCardPath("S_temp.png");
+    public static final String IMG = makeCardPath("A_temp.png");
 
-    private static final CardRarity RARITY = CardRarity.UNCOMMON;
+    private static final CardRarity RARITY = CardRarity.COMMON;
     private static final CardTarget TARGET = CardTarget.ENEMY;
-    private static final CardType TYPE = CardType.SKILL;
+    private static final CardType TYPE = CardType.ATTACK;
     public static final CardColor COLOR = TheSlumbering.Enums.COLOR_SLUMBERING;
 
     private static final int COST = 1;

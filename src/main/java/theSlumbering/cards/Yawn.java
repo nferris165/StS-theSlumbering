@@ -18,15 +18,15 @@ public class Yawn extends AbstractCustomCard {
 
     public static final String IMG = makeCardPath("S_temp.png");
 
-    private static final CardRarity RARITY = CardRarity.UNCOMMON;
+    private static final CardRarity RARITY = CardRarity.COMMON;
     private static final CardTarget TARGET = CardTarget.SELF;
     private static final CardType TYPE = CardType.SKILL;
     public static final CardColor COLOR = TheSlumbering.Enums.COLOR_SLUMBERING;
 
     private static final int COST = 1;
 
-    private static final int BLOCK = 10;
-    private static final int UPGRADE_BLOCK = 5;
+    private static final int BLOCK = 8;
+    private static final int UPGRADE_BLOCK = 4;
 
 
     public Yawn() {

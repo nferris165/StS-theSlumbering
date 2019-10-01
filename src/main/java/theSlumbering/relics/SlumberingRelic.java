@@ -12,6 +12,7 @@ import com.megacrit.cardcrawl.helpers.PowerTip;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import theSlumbering.SlumberingMod;
+import theSlumbering.characters.TheSlumbering;
 import theSlumbering.powers.DrowsyPower;
 import theSlumbering.util.TextureLoader;
 
@@ -93,7 +94,7 @@ public class SlumberingRelic extends AbstractCustomRelic implements ClickableRel
 
     public void checkWake(){
         int s = getState();
-        updateDescription(AbstractDungeon.player.chosenClass);
+        updateDescription(TheSlumbering.Enums.THE_SLUMBERING);
         switch(s)
         {
             //TODO: update relic art?

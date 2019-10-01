@@ -61,7 +61,7 @@ public class EntombedWeapon extends AbstractCustomCard {
 
     @Override
     public void upgrade() {
-        if (!upgraded) {
+        if (!upgraded && this.misc >= magicNumber) {
             upgradeName();
             upgradeDamage(UPGRADE_PLUS_DMG);
             upgradeBaseCost(UPGRADED_COST);

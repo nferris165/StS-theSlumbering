@@ -27,8 +27,8 @@ public class BindingBlow extends AbstractCustomCard {
 
     private static final int COST = 1;
 
-    private static final int DAMAGE = 15;
-    private static final int UPGRADE_PLUS_DMG = 10;
+    private static final int DAMAGE = 20;
+    private static final int UPGRADE_PLUS_DMG = 6;
 
     public static boolean multipleBound = false;
 

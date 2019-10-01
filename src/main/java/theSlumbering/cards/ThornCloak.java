@@ -30,8 +30,8 @@ public class ThornCloak extends AbstractCustomCard {
 
     private static final int BLOCK = 3;
 
-    private static final int THORNS = 6;
-    private static final int UPGRADE_THORNS = 4;
+    private static final int THORNS = 4;
+    private static final int UPGRADE_THORNS = 2;
 
     public ThornCloak() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);

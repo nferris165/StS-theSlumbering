@@ -293,7 +293,7 @@
   },
   "theSlumbering:NightTerror": {
     "NAME": "Night Terror",
-    "DESCRIPTION": "Stun and deal !D! damage to a random enemy."
+    "DESCRIPTION": "Deal !D! damage, and #yStun it for one turn."
   },
   "theSlumbering:Hallucinations": {
     "NAME": "Hallucinations",
@@ -364,7 +364,7 @@
   },
   "theSlumbering:PanicAttack": {
     "NAME": "Panic Attack",
-    "DESCRIPTION": "Stun all enemies, but add a random Curse to your deck."
+    "DESCRIPTION": "#yStun all enemies for one turn, but add a random Curse to your deck."
   },
   "theSlumbering:DreamPeace": {
     "NAME": "Dream: Peace",
