@@ -1,7 +1,8 @@
 {
         "theSlumbering:AutoAttackPower": {
                 "NAME": "Auto-Attack",
-                "DESCRIPTIONS": ["At the start of your turn, #yBasicAttack a random enemy."]
+                "DESCRIPTIONS": ["At the start of your turn, play",
+                        " on a random enemy."]
         },
         "theSlumbering:DrowsyPower": {
                 "NAME": "Drowsy",

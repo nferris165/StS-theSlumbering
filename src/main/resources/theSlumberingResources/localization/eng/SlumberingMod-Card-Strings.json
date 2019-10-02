@@ -113,7 +113,7 @@
     "DESCRIPTION": "Deal !D! damage. NL Gain 1 theslumbering:Drowsy."
   },
   "theSlumbering:Nightmare": {
-    "NAME": "Nightmare",
+    "NAME": "Visceral Nightmare",
     "DESCRIPTION": "Deal !D! damage. NL Deals !M! additional damage for each theslumbering:Drowsy. NL Reduce theslumbering:Drowsy by !theSlumbering:Magic!."
   },
   "theSlumbering:Insomnia": {
@@ -254,7 +254,7 @@
   },
   "theSlumbering:FalseNap": {
     "NAME": "False Nap",
-    "DESCRIPTION": "Can only be played if no other card has been played. NL Deal !D! damage. NL Apply !M! Vulnerable.",
+    "DESCRIPTION": "Cannot be played if other cards have been played. NL Deal !D! damage. NL Apply !M! Vulnerable.",
     "EXTENDED_DESCRIPTION": [
       "I have already played a card this turn."
     ]
@@ -389,5 +389,17 @@
   "theSlumbering:MentalBlock": {
     "NAME": "Mental Block",
     "DESCRIPTION": "Unplayable. NL Retain. NL Removed when discarded."
+  },
+  "theSlumbering:PrepareAlarm": {
+    "NAME": "Prepare Alarm",
+    "DESCRIPTION": "Choose a card. Give it theslumbering:Snooze for the rest of combat. NL Exhaust."
+  },
+  "theSlumbering:Snooze": {
+    "NAME": "SNOOZE!",
+    "DESCRIPTION": "theslumbering:Snooze your entire hand. NL Exhaust."
+  },
+  "theSlumbering:Arrhythmia": {
+    "NAME": "Circadian Arrhythmia",
+    "DESCRIPTION": "Draw all your theslumbering:Snooze cards. NL Exhaust."
   }
 }

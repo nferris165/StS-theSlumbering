@@ -68,7 +68,7 @@ public class TrialsofHypnos extends AbstractCustomCard {
         if (!upgraded) {
             upgradeName();
             upgradeBaseCost(UPGRADED_COST);
-            if(CardCrawlGame.dungeon == null || AbstractDungeon.getCurrRoom().phase != AbstractRoom.RoomPhase.COMBAT){
+            if(CardCrawlGame.dungeon == null || AbstractDungeon.currMapNode == null|| AbstractDungeon.getCurrRoom().phase != AbstractRoom.RoomPhase.COMBAT){
                 this.rawDescription = this.updated_desc;
             }
             initializeDescription();

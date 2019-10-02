@@ -48,6 +48,11 @@
       "Remove from your Deck"
     ]
   },
+  "theSlumbering:SnoozeAction": {
+    "TEXT": [
+      "Grant Snooze"
+    ]
+  },
   "theSlumbering:BowlPatch": {
     "TEXT": [
       "Wake up..."

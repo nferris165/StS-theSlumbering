@@ -28,10 +28,11 @@ public class AutoAttackPower extends AbstractPower implements CloneablePowerInte
     public static final String NAME = powerStrings.NAME;
     public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;
 
-    private static final Texture tex84 = TextureLoader.getTexture(makePowerPath("placeholder_power84.png"));
-    private static final Texture tex32 = TextureLoader.getTexture(makePowerPath("placeholder_power32.png"));
+    private static final Texture tex84 = TextureLoader.getTexture(makePowerPath("autoattack84.png"));
+    private static final Texture tex32 = TextureLoader.getTexture(makePowerPath("autoattack32.png"));
 
     private final int val;
+    private AbstractCard atk;
 
     public AutoAttackPower(final AbstractCreature owner, final AbstractCreature source, final int amount, final int value) {
         name = NAME;
@@ -41,6 +42,7 @@ public class AutoAttackPower extends AbstractPower implements CloneablePowerInte
         this.amount = amount;
         this.source = source;
         this.val = value;
+        this.atk = genAtk();
 
         type = PowerType.DEBUFF;
         isTurnBased = false;
@@ -53,6 +55,18 @@ public class AutoAttackPower extends AbstractPower implements CloneablePowerInte
 
     @Override
     public void atStartOfTurn() {
+        AbstractMonster targetMonster = AbstractDungeon.getRandomMonster();
+
+        atk.freeToPlayOnce = true;
+
+        if (atk.type != AbstractCard.CardType.POWER) {
+            atk.purgeOnUse = true;
+        }
+
+        AbstractDungeon.actionManager.addToBottom(new QueueCardAction(atk, targetMonster));
+    }
+
+    private AbstractCard genAtk(){
         AbstractCard randAtt;
         switch(val)
         {
@@ -69,21 +83,12 @@ public class AutoAttackPower extends AbstractPower implements CloneablePowerInte
                 randAtt = new WokeAttack();
                 break;
         }
-
-        AbstractMonster targetMonster = AbstractDungeon.getRandomMonster();
-
-        randAtt.freeToPlayOnce = true;
-
-        if (randAtt.type != AbstractCard.CardType.POWER) {
-            randAtt.purgeOnUse = true;
-        }
-
-        AbstractDungeon.actionManager.addToBottom(new QueueCardAction(randAtt, targetMonster));
+        return randAtt;
     }
 
     @Override
     public void updateDescription() {
-            description = DESCRIPTIONS[0];
+            description = DESCRIPTIONS[0] + atk.name + DESCRIPTIONS[1];
     }
 
     @Override
