@@ -22,7 +22,7 @@
   },
   "theSlumbering:WokeDefend": {
     "NAME": "Awakened Defend",
-    "DESCRIPTION": "Gain !B! Block. NL Next turn, gain !B! Block. NL Lose 1 theslumbering:Drowsy."
+    "DESCRIPTION": "Gain !B! Block. NL Increased by !M! each time you theslumbering:Snooze a card. NL Lose 1 theslumbering:Drowsy."
   },
   "theSlumbering:Jab": {
     "NAME": "Jab",
@@ -113,7 +113,7 @@
     "DESCRIPTION": "Deal !D! damage. NL Gain 1 theslumbering:Drowsy."
   },
   "theSlumbering:Nightmare": {
-    "NAME": "Visceral Nightmare",
+    "NAME": "Eerie Nightmare",
     "DESCRIPTION": "Deal !D! damage. NL Deals !M! additional damage for each theslumbering:Drowsy. NL Reduce theslumbering:Drowsy by !theSlumbering:Magic!."
   },
   "theSlumbering:Insomnia": {
