@@ -11,4 +11,8 @@ public abstract class AbstractCustomPower extends AbstractPower {
         super();
     }
 
+    public void onSnooze(){
+
+    }
+
 }

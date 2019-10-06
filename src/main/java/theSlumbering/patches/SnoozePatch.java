@@ -7,10 +7,12 @@ import com.megacrit.cardcrawl.actions.common.DiscardAtEndOfTurnAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.vfx.cardManip.ShowCardAndAddToDrawPileEffect;
 import javassist.CannotCompileException;
 import javassist.CtBehavior;
 import theSlumbering.SlumberingMod;
+import theSlumbering.powers.AbstractCustomPower;
 
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -58,6 +60,11 @@ public class SnoozePatch {
 
                 AbstractDungeon.topLevelEffects.add(new ShowCardAndAddToDrawPileEffect(e, x, y,true, false, false));
                 c.remove();
+
+
+                for(AbstractPower pow: AbstractDungeon.player.powers){
+                    ((AbstractCustomPower) pow).onSnooze();
+                }
 
                 int old = ActionManagerPatch.snoozeCount.get(AbstractDungeon.actionManager);
                 ActionManagerPatch.snoozeCount.set(AbstractDungeon.actionManager, old + 1);

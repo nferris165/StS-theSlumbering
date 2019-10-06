@@ -105,5 +105,12 @@
                 "DESCRIPTIONS": [
                         "Whenever this creature takes damage, discard the leftmost card in your hand."
                 ]
+        },
+        "theSlumbering:SnoozeDefendPower": {
+                "NAME": "Heavy Sleeper",
+                "DESCRIPTIONS": [
+                        "Whenever you #ySnooze a card, gain #b",
+                        " Block."
+                ]
         }
 }

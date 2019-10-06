@@ -8,8 +8,11 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.UIStrings;
+import com.megacrit.cardcrawl.powers.AbstractPower;
+import com.megacrit.cardcrawl.relics.AbstractRelic;
 import theSlumbering.SlumberingMod;
 import theSlumbering.patches.ActionManagerPatch;
+import theSlumbering.powers.AbstractCustomPower;
 
 import java.util.ArrayList;
 
@@ -40,10 +43,13 @@ public class SnoozeAction extends AbstractGameAction {
     @Override
     public void update() {
         if(this.duration == Settings.ACTION_DUR_FAST){
-            ArrayList<AbstractCard> removeList = new ArrayList<>();
             for(AbstractCard c: list){
                 p.drawPile.addToRandomSpot(c.makeSameInstanceOf());
                 group.removeCard(c);
+
+                for(AbstractPower pow: p.powers){
+                    ((AbstractCustomPower) pow).onSnooze();
+                }
 
                 int old = ActionManagerPatch.snoozeCount.get(AbstractDungeon.actionManager);
                 ActionManagerPatch.snoozeCount.set(AbstractDungeon.actionManager, old + 1);

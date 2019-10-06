@@ -52,8 +52,8 @@
   },
   "theSlumbering:Invigorate": {
     "NAME": "Invigorate",
-    "DESCRIPTION": "Innate. Reduce theslumbering:Drowsy by 1.",
-    "UPGRADE_DESCRIPTION": "Innate. NL Reduce theslumbering:Drowsy by !M!."
+    "DESCRIPTION": "Innate. NL Reduce theslumbering:Drowsy by !M!. NL theslumbering:Snooze.",
+    "UPGRADE_DESCRIPTION": "Innate. NL Reduce theslumbering:Drowsy by !M!. NL theslumbering:Snooze."
   },
   "theSlumbering:ExtraArm": {
     "NAME": "Extra Arm",
@@ -401,5 +401,9 @@
   "theSlumbering:CircadianArrhythmia": {
     "NAME": "Sleep Arrhythmia",
     "DESCRIPTION": "Draw all your theslumbering:Snooze cards. NL Exhaust."
+  },
+  "theSlumbering:HeavySleeper": {
+    "NAME": "Heavy Sleeper",
+    "DESCRIPTION": "Whenever you theslumbering:Snooze a card, gain !M! Block."
   }
 }
