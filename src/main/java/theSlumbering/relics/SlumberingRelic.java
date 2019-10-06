@@ -10,6 +10,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.helpers.PowerTip;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.powers.DexterityPower;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import theSlumbering.SlumberingMod;
 import theSlumbering.characters.TheSlumbering;
@@ -58,13 +59,13 @@ public class SlumberingRelic extends AbstractCustomRelic implements ClickableRel
         else if(this.counter == 0){
             return 2;
         }
-        else if(this.counter < 6){
+        else if(this.counter < 8){
             return 3;
         }
-        else if(this.counter < 13){
+        else if(this.counter < 16){
             return 4;
         }
-        else if(this.counter < 21){
+        else if(this.counter < 25){
             return 5;
         }
         else if (this.counter < 30){
@@ -97,24 +98,19 @@ public class SlumberingRelic extends AbstractCustomRelic implements ClickableRel
         updateDescription(TheSlumbering.Enums.THE_SLUMBERING);
         switch(s)
         {
-            //TODO: update relic art?
             case 1 :
                 //effect 1
                 break;
             case 2 :
-                //effect 2
                 this.img = ImageMaster.loadImage(makeRelicPath("zzz.png"));
                 break;
             case 3 :
-                //effect 3
                 this.img = ImageMaster.loadImage(makeRelicPath("zzz2.png"));
                 break;
             case 4 :
-                //effect 4
                 this.img = ImageMaster.loadImage(makeRelicPath("zzz3.png"));
                 break;
             case 5 :
-                //effect woke
                 this.img = ImageMaster.loadImage(makeRelicPath("zzz4.png"));
                 break;
             case 6:
@@ -156,6 +152,16 @@ public class SlumberingRelic extends AbstractCustomRelic implements ClickableRel
     @Override
     public void atBattleStartPreDraw() {
         this.firstElite = true;
+    }
+
+    @Override
+    public void atBattleStart() {
+        if(getState() == 6){
+            AbstractDungeon.actionManager.addToBottom(new RelicAboveCreatureAction(AbstractDungeon.player, this));
+            AbstractDungeon.actionManager.addToBottom(new GainBlockAction(AbstractDungeon.player, AbstractDungeon.player, 5));
+            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player,
+                    new DexterityPower(AbstractDungeon.player, 1), 1));
+        }
     }
 
     @Override

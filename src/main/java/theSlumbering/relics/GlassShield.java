@@ -46,10 +46,14 @@ public class GlassShield extends AbstractCustomRelic implements OnLoseBlockRelic
 
     @Override
     public int onLoseBlock(DamageInfo damageInfo, int i) {
-        //logger.info(i + " got here\n\n");
-        this.counter--;
-        flash();
-        AbstractDungeon.actionManager.addToBottom(new RelicAboveCreatureAction(AbstractDungeon.player, this));
-        return i - 3;
+        if(this.counter > 0) {
+            this.counter--;
+            flash();
+            AbstractDungeon.actionManager.addToBottom(new RelicAboveCreatureAction(AbstractDungeon.player, this));
+            return i - 3;
+        }
+        else{
+            return i;
+        }
     }
 }

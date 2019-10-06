@@ -63,7 +63,9 @@ public class SnoozePatch {
 
 
                 for(AbstractPower pow: AbstractDungeon.player.powers){
-                    ((AbstractCustomPower) pow).onSnooze();
+                    if(pow instanceof AbstractCustomPower){
+                        ((AbstractCustomPower) pow).onSnooze();
+                    }
                 }
 
                 int old = ActionManagerPatch.snoozeCount.get(AbstractDungeon.actionManager);

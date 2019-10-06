@@ -264,7 +264,7 @@
     "DESCRIPTION": "theslumbering:Search - Attack NL Deal !D! damage to all enemies for each card searched."
   },
   "theSlumbering:CustomDream": {
-    "NAME": "Custom Dream",
+    "NAME": "Dream: Freedom",
     "DESCRIPTION": "Choose an [#ebc634]Option.",
     "EXTENDED_DESCRIPTION": [
       "Gain ",
@@ -368,7 +368,7 @@
   },
   "theSlumbering:DreamPeace": {
     "NAME": "Dream: Peace",
-    "DESCRIPTION": "Heal an enemy for !M! percent of its max health and gain that much Block."
+    "DESCRIPTION": "Heal an enemy for !M! percent of its max health and gain that much Block. NL theslumbering:Snooze."
   },
   "theSlumbering:LastResort": {
     "NAME": "Last Resort",

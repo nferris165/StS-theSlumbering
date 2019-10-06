@@ -40,7 +40,7 @@ public class TrialSelectAction extends AbstractGameAction {
         else{
             rng = 3;
         }
-        rng = 0;
+        //rng = 0;
 
         if(!p.hasPower(TrialofHypnosPower.POWER_ID)){
             AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new TrialofHypnosPower(p, rng, gold, upgraded)));

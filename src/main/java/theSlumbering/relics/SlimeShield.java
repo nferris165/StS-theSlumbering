@@ -51,8 +51,10 @@ public class SlimeShield extends AbstractCustomRelic implements BetterOnLoseHpRe
     @Override
     public void atBattleStart(){
         //this.counter = powerLevel;
-        this.active = true;
-        flash();
+        if(this.powerLevel > 0){
+            this.active = true;
+            flash();
+        }
     }
 
     @Override

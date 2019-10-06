@@ -51,7 +51,7 @@ public class TheSlumbering extends AbstractCustomPlayer {
     private static boolean calledTransform = true;
 
     //base stats
-    private static final int ENERGY_PER_TURN = 5;
+    private static final int ENERGY_PER_TURN = 4;
     private static final int STARTING_HP = 1;
     private static final int MAX_HP = 1;
     private static final int STARTING_GOLD = 100;
@@ -239,7 +239,7 @@ public class TheSlumbering extends AbstractCustomPlayer {
         if(AbstractDungeon.player.hasRelic(SlumberingRelic.ID)){
             AbstractCustomRelic r = (AbstractCustomRelic) AbstractDungeon.player.getRelic(SlumberingRelic.ID);
             AbstractDungeon.actionManager.addToTop(new ApplyPowerAction(AbstractDungeon.player,
-                    AbstractDungeon.player, new DrowsyPower(AbstractDungeon.player, 6 - r.getState(), false), 1));
+                    AbstractDungeon.player, new DrowsyPower(AbstractDungeon.player, 5 - r.getState(), false), 1));
         }
         else{
             AbstractDungeon.actionManager.addToTop(new ApplyPowerAction(AbstractDungeon.player,

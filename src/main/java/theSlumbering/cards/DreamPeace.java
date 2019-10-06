@@ -6,6 +6,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import theSlumbering.SlumberingMod;
 import theSlumbering.actions.PeacefulAction;
 import theSlumbering.characters.TheSlumbering;
+import theSlumbering.patches.customTags;
 
 import static theSlumbering.SlumberingMod.makeCardPath;
 
@@ -29,6 +30,8 @@ public class DreamPeace extends AbstractCustomCard {
     public DreamPeace() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         baseMagicNumber = magicNumber = MAGIC;
+
+        this.tags.add(customTags.Snooze);
     }
 
 
