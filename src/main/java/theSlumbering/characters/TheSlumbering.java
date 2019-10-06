@@ -245,8 +245,6 @@ public class TheSlumbering extends AbstractCustomPlayer {
             AbstractDungeon.actionManager.addToTop(new ApplyPowerAction(AbstractDungeon.player,
                     AbstractDungeon.player, new DrowsyPower(AbstractDungeon.player, 99, false), 1));
         }
-
-        ActionManagerPatch.snoozeCount.set(AbstractDungeon.actionManager, 0);
     }
 
     private static void applyState(AbstractCard Old, AbstractCard New){

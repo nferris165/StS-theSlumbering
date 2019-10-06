@@ -48,7 +48,7 @@
       "Remove from your Deck"
     ]
   },
-  "theSlumbering:SnoozeAction": {
+  "theSlumbering:AddSnoozeAction": {
     "TEXT": [
       "Grant Snooze"
     ]

@@ -396,10 +396,10 @@
   },
   "theSlumbering:Snooze": {
     "NAME": "SNOOZE!",
-    "DESCRIPTION": "theslumbering:Snooze your entire hand. NL Exhaust."
+    "DESCRIPTION": "theslumbering:Snooze your entire hand. NL Draw !M! cards. NL Exhaust."
   },
-  "theSlumbering:Arrhythmia": {
-    "NAME": "Circadian Arrhythmia",
+  "theSlumbering:CircadianArrhythmia": {
+    "NAME": "Sleep Arrhythmia",
     "DESCRIPTION": "Draw all your theslumbering:Snooze cards. NL Exhaust."
   }
 }

@@ -3,15 +3,16 @@ package theSlumbering.cards;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import theSlumbering.actions.AddSnoozeAction;
+import theSlumbering.actions.DrawTagAction;
 import theSlumbering.characters.TheSlumbering;
+import theSlumbering.patches.customTags;
 
 import static theSlumbering.SlumberingMod.makeCardPath;
 import static theSlumbering.SlumberingMod.makeID;
 
-public class PrepareAlarm extends AbstractCustomCard {
+public class CircadianArrhythmia extends AbstractCustomCard {
 
-    public static final String ID = makeID(PrepareAlarm.class.getSimpleName());
+    public static final String ID = makeID(CircadianArrhythmia.class.getSimpleName());
 
     public static final String IMG = makeCardPath("S_temp.png");
 
@@ -20,18 +21,19 @@ public class PrepareAlarm extends AbstractCustomCard {
     private static final CardType TYPE = CardType.SKILL;
     public static final CardColor COLOR = TheSlumbering.Enums.COLOR_SLUMBERING;
 
-    private static final int COST = 1;
-    private static final int UPGRADED_COST = 0;
+    private static final int COST = 3;
+    private static final int UPGRADED_COST = 2;
 
-    public PrepareAlarm() {
+    public CircadianArrhythmia() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
+
         this.exhaust = true;
     }
 
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        AbstractDungeon.actionManager.addToBottom(new AddSnoozeAction());
+        AbstractDungeon.actionManager.addToBottom(new DrawTagAction(p.drawPile.size(), customTags.Snooze));
     }
 
 

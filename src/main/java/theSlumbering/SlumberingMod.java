@@ -43,6 +43,7 @@ import theSlumbering.events.PoweredUp;
 import theSlumbering.monsters.Adrasteia;
 import theSlumbering.monsters.NewSlaver;
 import theSlumbering.monsters.NewCultist;
+import theSlumbering.patches.ActionManagerPatch;
 import theSlumbering.patches.customTags;
 import theSlumbering.relics.AbstractCustomRelic;
 import com.megacrit.cardcrawl.unlock.UnlockTracker;
@@ -444,6 +445,9 @@ public class SlumberingMod implements
 
     @Override
     public void receiveOnBattleStart(AbstractRoom abstractRoom) {
+
+        // Reset Snooze Count
+        ActionManagerPatch.snoozeCount.set(AbstractDungeon.actionManager, 0);
 
         ArrayList<AbstractCard> removeList = new ArrayList<>();
 
