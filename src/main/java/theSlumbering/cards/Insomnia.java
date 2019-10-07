@@ -24,10 +24,10 @@ public class Insomnia extends AbstractCustomCard {
 
     private static final int COST = 3;
 
-    private static final int BLOCK = 4;
+    private static final int BLOCK = 8;
 
-    private static final int MAGIC = 5;
-    private static final int UPGRADE_MAGIC = 3;
+    private static final int MAGIC = 6;
+    private static final int UPGRADE_MAGIC = 4;
 
     private static final int MAGIC2 = 2;
 

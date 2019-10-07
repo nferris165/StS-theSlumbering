@@ -37,9 +37,9 @@ public class Adrasteia extends CustomMonster {
     public static final String NAME = monsterstrings.NAME;
     public static final String[] MOVES = monsterstrings.MOVES;
     public static final String[] DIALOG = monsterstrings.DIALOG;
-    private static final int HP = 106;
-    private static final int A_8_HP = 112;
-    private static final int SCYTHE_COOLDOWN_TURNS = 2;
+    private static final int HP = 98;
+    private static final int A_8_HP = 104;
+    private static final int DISCARD_COOLDOWN_TURNS = 2;
     private static final float HB_X = 5.0F;
     private static final float HB_Y = -10.0F;
     private static final float HB_W = 350.0F;
@@ -51,12 +51,12 @@ public class Adrasteia extends CustomMonster {
     private static final int A_3_CRIPPLE_DMG = 7;
     private static final int BLANK_AMT = 3;
     private static final int A_18_BLANK_AMT = 2;
-    private static final int BLOCK_AMT = 10;
-    private static final int A_8_BLOCK_AMT = 12;
+    private static final int BLOCK_AMT = 12;
+    private static final int A_8_BLOCK_AMT = 14;
     private int crippleDmg;
     private int crippleTimes;
     private int blockAmt;
-    private int scytheCooldown = 0;
+    private int discardCooldown = 0;
     private int blankAmt;
     private static final byte BUFF  = 1;
     private static final byte SCYTHE = 2;
@@ -75,6 +75,7 @@ public class Adrasteia extends CustomMonster {
 
         this.type = EnemyType.ELITE;
         int bonus = AbstractDungeon.aiRng.random(0, 8);
+        this.discardCooldown = DISCARD_COOLDOWN_TURNS;
 
         if (AbstractDungeon.ascensionLevel >= 8) {
             this.setHp(A_8_HP + bonus);
@@ -161,8 +162,11 @@ public class Adrasteia extends CustomMonster {
     }
 
     protected void getMove(int num) {
-
-        if(this.firstMove){
+        discardCooldown--;
+        if(discardCooldown <= 0){
+            this.setMove(MOVES[3], (byte)4, Intent.DEFEND_DEBUFF);
+            this.discardCooldown = DISCARD_COOLDOWN_TURNS;
+        } else if(this.firstMove){
             this.setMove(MOVES[0], (byte)1, Intent.BUFF);
             this.firstMove = false;
         } else if(num < 30){
@@ -171,7 +175,7 @@ public class Adrasteia extends CustomMonster {
             } else{
                 this.setMove(MOVES[2], (byte)3, Intent.ATTACK_DEBUFF, crippleDmg, crippleTimes, true);
             }
-        } else if(num < 55){
+        } else if(num < 65){
             if(!this.lastTwoMoves((byte)3)){
                 this.setMove(MOVES[2], (byte)3, Intent.ATTACK_DEBUFF, crippleDmg, crippleTimes, true);
             } else{
@@ -179,6 +183,7 @@ public class Adrasteia extends CustomMonster {
             }
         } else if(!this.lastMove((byte)4) || AbstractDungeon.ascensionLevel >= 18){
             this.setMove(MOVES[3], (byte)4, Intent.DEFEND_DEBUFF);
+            this.discardCooldown = DISCARD_COOLDOWN_TURNS;
         } else{
             if(AbstractDungeon.aiRng.randomBoolean()){
                 this.setMove(MOVES[2], (byte)3, Intent.ATTACK_DEBUFF, crippleDmg, crippleTimes, true);

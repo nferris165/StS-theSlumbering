@@ -27,6 +27,7 @@ import theSlumbering.SlumberingMod;
 import theSlumbering.cards.*;
 import theSlumbering.cards.BasicDefend;
 import theSlumbering.patches.ActionManagerPatch;
+import theSlumbering.powers.AwakePower;
 import theSlumbering.powers.DrowsyPower;
 import theSlumbering.relics.*;
 
@@ -238,8 +239,14 @@ public class TheSlumbering extends AbstractCustomPlayer {
 
         if(AbstractDungeon.player.hasRelic(SlumberingRelic.ID)){
             AbstractCustomRelic r = (AbstractCustomRelic) AbstractDungeon.player.getRelic(SlumberingRelic.ID);
-            AbstractDungeon.actionManager.addToTop(new ApplyPowerAction(AbstractDungeon.player,
-                    AbstractDungeon.player, new DrowsyPower(AbstractDungeon.player, 5 - r.getState(), false), 1));
+            int val = 5 - r.getState();
+            if(val > 0) {
+                AbstractDungeon.actionManager.addToTop(new ApplyPowerAction(AbstractDungeon.player,
+                        AbstractDungeon.player, new DrowsyPower(AbstractDungeon.player, val, false), 1));
+            } else{
+                AbstractDungeon.actionManager.addToTop(new ApplyPowerAction(AbstractDungeon.player,
+                        AbstractDungeon.player, new AwakePower(AbstractDungeon.player)));
+            }
         }
         else{
             AbstractDungeon.actionManager.addToTop(new ApplyPowerAction(AbstractDungeon.player,
@@ -261,7 +268,7 @@ public class TheSlumbering extends AbstractCustomPlayer {
         calledTransform = false;
         CardCrawlGame.screenShake.shake(ScreenShake.ShakeIntensity.MED, ScreenShake.ShakeDur.MED, false);
 
-        ArrayList<AbstractCard> list = new ArrayList<>();
+        ArrayList<AbstractCard> removeList = new ArrayList<>();
         int effCount = 0;
         boolean fast = Settings.FAST_MODE;
         Settings.FAST_MODE = false;
@@ -285,7 +292,7 @@ public class TheSlumbering extends AbstractCustomPlayer {
                 AbstractCard c = new DrowsyAttack();
                 applyState(e, c);
                 AbstractDungeon.topLevelEffects.add(new ShowCardAndObtainEffect(c, x, y, false));
-                list.add(e);
+                removeList.add(e);
             }
             else if(e instanceof BasicDefend){
                 effCount++;
@@ -302,10 +309,10 @@ public class TheSlumbering extends AbstractCustomPlayer {
                 AbstractCard c = new DrowsyDefend();
                 applyState(e, c);
                 AbstractDungeon.topLevelEffects.add(new ShowCardAndObtainEffect(c, x, y, false));
-                list.add(e);
+                removeList.add(e);
             }
         }
-        for(AbstractCard r: list){
+        for(AbstractCard r: removeList){
             AbstractDungeon.player.masterDeck.removeCard(r);
         }
         Settings.FAST_MODE = fast;
@@ -314,7 +321,7 @@ public class TheSlumbering extends AbstractCustomPlayer {
     private static void replaceDrowsy() {
         CardCrawlGame.screenShake.shake(ScreenShake.ShakeIntensity.MED, ScreenShake.ShakeDur.MED, false);
 
-        ArrayList<AbstractCard> list = new ArrayList<>();
+        ArrayList<AbstractCard> removeList = new ArrayList<>();
         int effCount = 0;
         boolean fast = Settings.FAST_MODE;
         Settings.FAST_MODE = false;
@@ -335,7 +342,7 @@ public class TheSlumbering extends AbstractCustomPlayer {
                 AbstractCard c = new WokeAttack();
                 applyState(e, c);
                 AbstractDungeon.topLevelEffects.add(new ShowCardAndObtainEffect(c, x, y, false));
-                list.add(e);
+                removeList.add(e);
             }
             else if(e instanceof DrowsyDefend){
                 effCount++;
@@ -350,10 +357,10 @@ public class TheSlumbering extends AbstractCustomPlayer {
                 AbstractCard c = new WokeDefend();
                 applyState(e, c);
                 AbstractDungeon.topLevelEffects.add(new ShowCardAndObtainEffect(c, x, y, false));
-                list.add(e);
+                removeList.add(e);
             }
         }
-        for(AbstractCard r: list){
+        for(AbstractCard r: removeList){
             AbstractDungeon.player.masterDeck.removeCard(r);
         }
         Settings.FAST_MODE = fast;
@@ -369,20 +376,20 @@ public class TheSlumbering extends AbstractCustomPlayer {
                 break;
             case 2:
                 replaceBasic();
-                incSlumberingRelic(2);
+                incSlumberingRelic(1);
                 break;
             case 3:
                 replaceDrowsy();
                 replaceBasic(); //maybe not?
-                incSlumberingRelic(3);
+                incSlumberingRelic(1);
                 break;
             case 4:
-                incSlumberingRelic(4);
+                incSlumberingRelic(2);
                 break;
             default:
                 replaceDrowsy();
                 replaceBasic(); //maybe not?
-                incSlumberingRelic(3);
+                incSlumberingRelic(2);
                 break;
         }
 

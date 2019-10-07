@@ -23,8 +23,8 @@ public class NightTerror extends AbstractCustomCard {
     private static final CardType TYPE = CardType.ATTACK;
     public static final CardColor COLOR = TheSlumbering.Enums.COLOR_SLUMBERING;
 
-    private static final int COST = 3;
-    private static final int UPGRADED_COST = 2;
+    private static final int COST = 4;
+    private static final int UPGRADED_COST = 3;
 
     private static final int DAMAGE = 5;
     private static final int UPGRADE_PLUS_DMG = 2;

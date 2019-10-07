@@ -26,9 +26,11 @@ public class Nightmare extends AbstractCustomCard {
 
     private static final int COST = 3;
 
-    private static final int DAMAGE = 2;
+    private static final int DAMAGE = 4;
+    private static final int UP_DAMAGE = 2;
 
-    private static final int MAGIC = 5;
+    private static final int MAGIC = 7;
+    private static final int UP_MAGIC = 2;
 
     private static final int MAGIC2 = 3;
     private static final int MAGIC2_UPGRADE = -1;
@@ -78,7 +80,8 @@ public class Nightmare extends AbstractCustomCard {
         if (!upgraded) {
             upgradeName();
             upgradeSecondMagicNumber(MAGIC2_UPGRADE);
-            upgradeDamage(4);
+            upgradeDamage(UP_DAMAGE);
+            upgradeMagicNumber(UP_MAGIC);
             initializeDescription();
         }
     }

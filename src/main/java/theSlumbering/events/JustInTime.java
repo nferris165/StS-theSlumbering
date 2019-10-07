@@ -1,6 +1,5 @@
 package theSlumbering.events;
 
-import com.megacrit.cardcrawl.actions.unique.AddCardToDeckAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -15,7 +14,7 @@ import com.megacrit.cardcrawl.vfx.cardManip.ShowCardAndObtainEffect;
 import theSlumbering.SlumberingMod;
 import theSlumbering.cards.Curses.LingeringDoubt;
 import theSlumbering.cards.Curses.Sloth;
-import theSlumbering.cards.TheClock;
+import theSlumbering.cards.colorless.TheClock;
 import theSlumbering.characters.TheSlumbering;
 
 import java.util.*;

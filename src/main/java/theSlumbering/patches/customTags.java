@@ -25,4 +25,7 @@ public class customTags {
 
     @SpireEnum
     public static AbstractCard.CardTags Renewable;
+
+    @SpireEnum
+    public static AbstractCard.CardTags StartDraw;
 }

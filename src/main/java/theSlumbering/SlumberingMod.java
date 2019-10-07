@@ -467,7 +467,6 @@ public class SlumberingMod implements
                     (float) Settings.WIDTH / 2.0F - 30.0F * Settings.scale - AbstractCard.IMG_WIDTH / 2.0F,(float) Settings.HEIGHT / 2.0F));
             AbstractDungeon.player.drawPile.removeCard(c);
         }
-
     }
 
     @Override

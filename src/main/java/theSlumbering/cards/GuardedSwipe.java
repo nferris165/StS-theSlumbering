@@ -36,6 +36,8 @@ public class GuardedSwipe extends AbstractCustomCard {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         baseDamage = DAMAGE;
         baseBlock = BLOCK;
+
+        this.tags.add(customTags.StartDraw);
     }
 
 
@@ -52,7 +54,10 @@ public class GuardedSwipe extends AbstractCustomCard {
         }
     }
 
-
+    @Override
+    public void passiveEffect() {
+        AbstractDungeon.actionManager.addToBottom(new GainBlockAction(AbstractDungeon.player, AbstractDungeon.player, block));
+    }
 
     @Override
     public void upgrade() {

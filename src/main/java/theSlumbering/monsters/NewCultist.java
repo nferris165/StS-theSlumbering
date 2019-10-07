@@ -29,10 +29,10 @@ public class NewCultist extends CustomMonster {
     public static final String NAME = monsterstrings.NAME;
     private static final String[] MOVES = monsterstrings.MOVES;
     private static final String[] DIALOG = monsterstrings.DIALOG;
-    private static final int HP_MIN = 38;
-    private static final int HP_MAX = 44;
-    private static final int A_7_HP_MIN = 42;
-    private static final int A_7_HP_MAX = 48;
+    private static final int HP_MIN = 42;
+    private static final int HP_MAX = 48;
+    private static final int A_7_HP_MIN = 46;
+    private static final int A_7_HP_MAX = 50;
     private static final float HB_X = -8.0F;
     private static final float HB_Y = 10.0F;
     private static final float HB_W = 230.0F;

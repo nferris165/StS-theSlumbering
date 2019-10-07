@@ -48,7 +48,9 @@ public class SnoozeAction extends AbstractGameAction {
                 group.removeCard(c);
 
                 for(AbstractPower pow: p.powers){
-                    ((AbstractCustomPower) pow).onSnooze();
+                    if(pow instanceof AbstractCustomPower){
+                        ((AbstractCustomPower) pow).onSnooze();
+                    }
                 }
 
                 int old = ActionManagerPatch.snoozeCount.get(AbstractDungeon.actionManager);

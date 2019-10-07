@@ -1,4 +1,4 @@
-package theSlumbering.cards;
+package theSlumbering.cards.colorless;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
@@ -8,7 +8,7 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import theSlumbering.SlumberingMod;
-import theSlumbering.characters.TheSlumbering;
+import theSlumbering.cards.AbstractCustomCard;
 
 import static theSlumbering.SlumberingMod.makeCardPath;
 
@@ -21,7 +21,7 @@ public class TheClock extends AbstractCustomCard {
     private static final CardRarity RARITY = CardRarity.SPECIAL;
     private static final CardTarget TARGET = CardTarget.ENEMY;
     private static final CardType TYPE = CardType.ATTACK;
-    public static final CardColor COLOR = TheSlumbering.Enums.COLOR_SLUMBERING;
+    public static final CardColor COLOR = CardColor.COLORLESS;
 
     private static final int COST = 1;
     private static final int UPGRADED_COST = 0;

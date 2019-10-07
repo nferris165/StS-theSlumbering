@@ -27,7 +27,7 @@ public class RunTheGamut extends AbstractCustomCard {
 
     private static final int DAMAGE = 50;
 
-    private static final int LEFT = 10;
+    private static final int LEFT = 8;
 
     public RunTheGamut() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
