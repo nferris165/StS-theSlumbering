@@ -22,7 +22,7 @@
         },
         "theSlumbering:ReflectPower": {
                 "NAME": "Reflect",
-                "DESCRIPTIONS": ["Whenever you are attacked this turn, reflect #b", " percent of damage."]
+                "DESCRIPTIONS": ["Whenever you are attacked this turn, reflect #b", "% of damage."]
         },
         "theSlumbering:ParryPower": {
                 "NAME": "Parry",

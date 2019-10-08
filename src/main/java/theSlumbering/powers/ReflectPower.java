@@ -28,8 +28,8 @@ public class ReflectPower extends AbstractPower implements CloneablePowerInterfa
     public static final String NAME = powerStrings.NAME;
     public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;
 
-    private static final Texture tex84 = TextureLoader.getTexture(makePowerPath("placeholder_power84.png"));
-    private static final Texture tex32 = TextureLoader.getTexture(makePowerPath("placeholder_power32.png"));
+    private static final Texture tex84 = TextureLoader.getTexture(makePowerPath("reflect_power84.png"));
+    private static final Texture tex32 = TextureLoader.getTexture(makePowerPath("reflect_power32.png"));
 
     private DamageInfo reflectInfo;
     private boolean blocked = false;
