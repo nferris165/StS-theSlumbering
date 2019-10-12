@@ -52,6 +52,7 @@ public class SnoozeDefendPower extends AbstractCustomPower implements CloneableP
 
     @Override
     public void onSnooze() {
+        this.flash();
         AbstractDungeon.actionManager.addToBottom(new GainBlockAction(this.owner, this.owner, val));
     }
 

@@ -7,9 +7,9 @@
         "theSlumbering:DrowsyPower": {
                 "NAME": "Drowsy",
                 "DESCRIPTIONS": [
-                        "#yAttacks deal #b",
-                        "% more damage, but you gain #b",
-                        " fewer [E] ."
+                        "You gain #b",
+                        " fewer [E] but #yAttacks deal #b",
+                        "% more damage."
                 ]
         },
         "theSlumbering:AwakePower": {

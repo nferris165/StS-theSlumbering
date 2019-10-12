@@ -33,7 +33,7 @@ public class RunTheGamut extends AbstractCustomCard {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         baseDamage = DAMAGE;
 
-        //baseSecondMagicNumber = secondMagicNumber = LEFT;
+        baseSecondMagicNumber = secondMagicNumber = LEFT;
     }
 
 

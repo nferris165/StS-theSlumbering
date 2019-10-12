@@ -108,6 +108,9 @@ public class JustInTime extends AbstractImageEvent {
 
             String[] keys = map.keySet().toArray(new String[0]);
             int i = AbstractDungeon.eventRng.random(0, keys.length - 1);
+            if(i == 8 && AbstractDungeon.player.relics.size() <= 2){
+                i--;
+            }
 
             val = map.get(keys[i]);
             map.remove(keys[i]);

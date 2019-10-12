@@ -230,7 +230,7 @@
   },
   "theSlumbering:RunTheGamut": {
     "NAME": "Run The Gamut",
-    "DESCRIPTION": "Deal !D! damage. NL Cannot be played if you've played fewer than !M! cards this turn.",
+    "DESCRIPTION": "Deal !D! damage. NL Cannot be played if you've played fewer than !theSlumbering:Magic! cards this turn.",
     "UPGRADE_DESCRIPTION": "Deal !D! damage to all enemies. NL Cannot be played if you've played fewer than !M! cards this turn.",
     "EXTENDED_DESCRIPTION": [
       "I need to play NL #r",

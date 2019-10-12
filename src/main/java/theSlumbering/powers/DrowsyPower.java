@@ -125,9 +125,9 @@ public class DrowsyPower  extends AbstractCustomPower implements CloneablePowerI
     @Override
     public void updateDescription() {
         if (this.owner.isPlayer && AbstractDungeon.player.hasRelic(makeID("StarMobile"))) {
-            this.description = DESCRIPTIONS[0] + ((percent + bonus) * this.amount) + DESCRIPTIONS[1] + this.amount + DESCRIPTIONS[2];
+            this.description = DESCRIPTIONS[0] + this.amount + DESCRIPTIONS[1] + ((percent + bonus) * this.amount) + DESCRIPTIONS[2];
         } else {
-            this.description = DESCRIPTIONS[0] + (percent * this.amount) + DESCRIPTIONS[1] + this.amount + DESCRIPTIONS[2];
+            this.description = DESCRIPTIONS[0] + this.amount + DESCRIPTIONS[1] + (percent * this.amount) + DESCRIPTIONS[2];
         }
 
     }
