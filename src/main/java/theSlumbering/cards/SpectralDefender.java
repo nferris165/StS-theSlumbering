@@ -24,17 +24,21 @@ public class SpectralDefender extends AbstractCustomCard {
 
     private static final int COST = -2;
 
+    private static final int MAGIC = 50;
+
     public SpectralDefender() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
 
         tags.add(customTags.Passive);
+
+        this.magicNumber = baseMagicNumber = MAGIC;
 
     }
 
     @Override
     public void passiveEffect() {
         AbstractPlayer p = AbstractDungeon.player;
-        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new DoubleBlockPower(p)));
+        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new DoubleBlockPower(p, this.magicNumber), this.magicNumber));
     }
 
     @Override

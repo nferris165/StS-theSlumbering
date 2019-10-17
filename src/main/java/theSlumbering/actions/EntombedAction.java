@@ -31,25 +31,29 @@ public class EntombedAction extends AbstractGameAction {
     public void update() {
         AbstractCard deckCard = null;
         for(AbstractCard card: AbstractDungeon.player.masterDeck.group){
-            if (card.uuid.equals(this.uuid)) {
-                deckCard = card;
-                card.misc += this.miscIncrease;
-                card.applyPowers();
-                card.baseMagicNumber = this.limit - card.misc;
-                card.isMagicNumberModified = false;
-                break;
+            if(card.misc != this.limit) {
+                if (card.uuid.equals(this.uuid)) {
+                    deckCard = card;
+                    card.misc += this.miscIncrease;
+                    card.applyPowers();
+                    card.baseMagicNumber = this.limit - card.misc;
+                    card.isMagicNumberModified = false;
+                    break;
+                }
             }
         }
 
         for(AbstractCard battleCard: GetAllInBattleInstances.get(this.uuid)){
-            battleCard.misc += this.miscIncrease;
-            battleCard.applyPowers();
-            battleCard.baseMagicNumber = this.limit - battleCard.misc;
-            if(battleCard.misc == this.limit){
-                battleCard.upgrade();
-                battleCard.superFlash();
-                deckCard.upgrade();
-                AbstractDungeon.effectsQueue.add(new ShowCardBrieflyEffect(deckCard.makeStatEquivalentCopy()));
+            if(battleCard.misc != this.limit) {
+                battleCard.misc += this.miscIncrease;
+                battleCard.applyPowers();
+                battleCard.baseMagicNumber = this.limit - battleCard.misc;
+                if (battleCard.misc == this.limit) {
+                    battleCard.upgrade();
+                    battleCard.superFlash();
+                    deckCard.upgrade();
+                    AbstractDungeon.effectsQueue.add(new ShowCardBrieflyEffect(deckCard.makeStatEquivalentCopy()));
+                }
             }
         }
         this.isDone = true;

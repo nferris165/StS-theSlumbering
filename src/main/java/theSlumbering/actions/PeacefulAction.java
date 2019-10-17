@@ -27,9 +27,13 @@ public class PeacefulAction extends AbstractGameAction {
     public void update() {
         if (this.m != null && this.m.currentHealth < this.m.maxHealth) {
             this.val *= this.m.maxHealth;
+            this.val = Math.min(this.val, this.m.maxHealth - this.m.currentHealth);
             this.m.heal(Math.round(this.val), true);
 
             AbstractDungeon.actionManager.addToBottom(new GainBlockAction(p, p, Math.round(this.val)));
+            if(m.type != AbstractMonster.EnemyType.ELITE && m.type != AbstractMonster.EnemyType.BOSS){
+                AbstractDungeon.actionManager.addToBottom(new GainBlockAction(p, p, Math.round(this.val)));
+            }
         }
 
         this.isDone = true;

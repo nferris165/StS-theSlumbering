@@ -26,7 +26,7 @@ public class InducedMemory extends AbstractCustomCard {
 
     public InducedMemory() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
-        this.exhaust = true;
+        //this.exhaust = true;
     }
 
 

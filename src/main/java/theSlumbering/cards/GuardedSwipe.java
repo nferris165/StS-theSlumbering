@@ -27,10 +27,10 @@ public class GuardedSwipe extends AbstractCustomCard {
 
     private static final int COST = 1;
 
-    private static final int BLOCK = 4;
-    private static final int UPGRADE_BLOCK = 1;
+    private static final int BLOCK = 3;
+    private static final int UPGRADE_BLOCK = 2;
 
-    private static final int DAMAGE = 9;
+    private static final int DAMAGE = 8;
 
     public GuardedSwipe() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);

@@ -35,7 +35,6 @@ public class Insomniac extends AbstractCustomCard {
 
     @Override
     public void passiveEffect() {
-        AbstractPlayer p = AbstractDungeon.player;
         AbstractDungeon.actionManager.addToBottom(new MakeTempCardInDrawPileAction(
                 new Sleepwalk(), this.magicNumber, true, true));
     }

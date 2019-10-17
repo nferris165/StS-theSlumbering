@@ -209,7 +209,7 @@
   },
   "theSlumbering:InducedMemory": {
     "NAME": "Induced Memory",
-    "DESCRIPTION": "Look at 3 cards in your draw pile, choose 1 to draw. NL Exhaust."
+    "DESCRIPTION": "Look at 3 cards in your draw pile, choose 1 to draw."
   },
   "theSlumbering:LingeringDoubt": {
     "NAME": "Lingering Doubt",
@@ -231,7 +231,7 @@
   "theSlumbering:RunTheGamut": {
     "NAME": "Run The Gamut",
     "DESCRIPTION": "Deal !D! damage. NL Cannot be played if you've played fewer than !theSlumbering:Magic! cards this turn.",
-    "UPGRADE_DESCRIPTION": "Deal !D! damage to all enemies. NL Cannot be played if you've played fewer than !M! cards this turn.",
+    "UPGRADE_DESCRIPTION": "Deal !D! damage to all enemies. NL Cannot be played if you've played fewer than !theSlumbering:Magic! cards this turn.",
     "EXTENDED_DESCRIPTION": [
       "I need to play NL #r",
       " more cards to use this."
@@ -360,7 +360,7 @@
   },
   "theSlumbering:SafeBarrage": {
     "NAME": "Safe Barrage",
-    "DESCRIPTION": "Can only be played if your Block is greater than 20. NL Deal !D! damage to a random enemy !M! times."
+    "DESCRIPTION": "Can only be played if your Block is greater than !theSlumbering:Magic!. NL Deal !D! damage to a random enemy !M! times."
   },
   "theSlumbering:PanicAttack": {
     "NAME": "Panic Attack",
@@ -368,7 +368,7 @@
   },
   "theSlumbering:DreamPeace": {
     "NAME": "Dream: Peace",
-    "DESCRIPTION": "Heal an enemy for !M! percent of its max health and gain that much Block. NL theslumbering:Snooze."
+    "DESCRIPTION": "Heal an enemy for !M! percent of its max health and gain that much Block. (Gain double Block if enemy is not a Boss or Elite) NL theslumbering:Snooze."
   },
   "theSlumbering:LastResort": {
     "NAME": "Last Resort",

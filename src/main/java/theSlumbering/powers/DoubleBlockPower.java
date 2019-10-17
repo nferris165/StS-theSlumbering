@@ -25,11 +25,14 @@ public class DoubleBlockPower extends AbstractCustomPower implements CloneablePo
     private static final Texture tex84 = TextureLoader.getTexture(makePowerPath("double_block84.png"));
     private static final Texture tex32 = TextureLoader.getTexture(makePowerPath("double_block32.png"));
 
-    public DoubleBlockPower(final AbstractCreature owner) {
+    private int max;
+
+    public DoubleBlockPower(final AbstractCreature owner, int max) {
         name = NAME;
         ID = POWER_ID;
 
         this.owner = owner;
+        this.max = max;
 
         type = PowerType.BUFF;
         isTurnBased = true;
@@ -45,17 +48,25 @@ public class DoubleBlockPower extends AbstractCustomPower implements CloneablePo
         int block = this.owner.currentBlock;
 
         if( block > 0){
+            block = Math.min(max, block);
             AbstractDungeon.actionManager.addToBottom(new GainBlockAction(this.owner, this.owner, block));
         }
     }
 
     @Override
+    public void stackPower(int stackAmount) {
+        if(stackAmount > max){
+            this.max = stackAmount;
+        }
+    }
+
+    @Override
     public void updateDescription() {
-        description = DESCRIPTIONS[0];
+        description = DESCRIPTIONS[0] + max + DESCRIPTIONS[1];
     }
 
     @Override
     public AbstractPower makeCopy() {
-        return new DoubleBlockPower(owner);
+        return new DoubleBlockPower(owner, max);
     }
 }

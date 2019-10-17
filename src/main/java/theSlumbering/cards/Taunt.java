@@ -24,7 +24,7 @@ public class Taunt extends AbstractCustomCard {
 
     private static final int COST = 2;
 
-    private static final int BLOCK = 20;
+    private static final int BLOCK = 30;
     private static final int UPGRADE_BLOCK = 10;
 
     private static final int MAGIC = 2;

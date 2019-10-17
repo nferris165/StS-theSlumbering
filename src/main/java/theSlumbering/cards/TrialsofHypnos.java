@@ -26,8 +26,8 @@ public class TrialsofHypnos extends AbstractCustomCard {
 
     private String baseDesc = languagePack.getCardStrings(ID).DESCRIPTION;
 
-    private static final int COST = 2;
-    private static final int UPGRADED_COST = 1;
+    private static final int COST = 1;
+    //private static final int UPGRADED_COST = 1;
 
     public TrialsofHypnos() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
@@ -67,7 +67,7 @@ public class TrialsofHypnos extends AbstractCustomCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            upgradeBaseCost(UPGRADED_COST);
+            //upgradeBaseCost(UPGRADED_COST);
             if(CardCrawlGame.dungeon == null || AbstractDungeon.currMapNode == null|| AbstractDungeon.getCurrRoom().phase != AbstractRoom.RoomPhase.COMBAT){
                 this.rawDescription = this.updated_desc;
             }

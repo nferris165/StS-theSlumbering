@@ -51,7 +51,8 @@
         },
         "theSlumbering:DoubleBlockPower": {
                 "NAME": "Double Block",
-                "DESCRIPTIONS": ["At the end of your turn, double your #yBlock."
+                "DESCRIPTIONS": ["At the end of your turn, double your #yBlock. (Cannot gain more than #b",
+                        " Block at once)"
                 ]
         },
         "theSlumbering:ToughSkinPower": {

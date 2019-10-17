@@ -24,9 +24,9 @@ public class Scavenge extends AbstractCustomCard {
 
     private static final int BLOCK = 10;
 
-    private static final int DAMAGE = 13;
+    private static final int DAMAGE = 14;
 
-    private static final int MAGIC = 5;
+    private static final int MAGIC = 4;
     private static final int UPGRADE_MAGIC = -1;
 
     public Scavenge() {

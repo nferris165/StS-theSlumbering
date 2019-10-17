@@ -26,13 +26,17 @@ public class SafeBarrage extends AbstractCustomCard {
 
     private static final int DAMAGE = 3;
 
-    private static final int MAGIC = 7;
+    private static final int MAGIC = 6;
     private static final int UPGRADE_PLUS_MAG = 3;
+
+    private static final int B_MIN = 30;
+    private static final int B_UP = -5;
 
     public SafeBarrage() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         baseDamage = DAMAGE;
         baseMagicNumber = magicNumber = MAGIC;
+        secondMagicNumber = baseSecondMagicNumber = B_MIN;
     }
 
 
@@ -45,7 +49,7 @@ public class SafeBarrage extends AbstractCustomCard {
 
     @Override
     public boolean canUse(AbstractPlayer p, AbstractMonster m) {
-        if(p.currentBlock <= 20){
+        if(p.currentBlock <= secondMagicNumber){
             return false;
         }
         return super.canUse(p, m);
@@ -56,6 +60,7 @@ public class SafeBarrage extends AbstractCustomCard {
         if (!upgraded) {
             upgradeName();
             upgradeMagicNumber(UPGRADE_PLUS_MAG);
+            upgradeSecondMagicNumber(B_UP);
             initializeDescription();
         }
     }

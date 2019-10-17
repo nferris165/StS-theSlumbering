@@ -24,7 +24,7 @@ public class DreamPeace extends AbstractCustomCard {
     private static final int COST = 1;
     private static final int UPGRADED_COST = 0;
 
-    private static final int MAGIC = 20;
+    private static final int MAGIC = 10;
     private static final int UPGRADE_MAGIC = 5;
 
     public DreamPeace() {
