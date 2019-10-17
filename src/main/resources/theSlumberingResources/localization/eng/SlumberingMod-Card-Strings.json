@@ -139,12 +139,12 @@
   },
   "theSlumbering:ImagineSkill": {
     "NAME": "Imagine: Skill",
-    "DESCRIPTION": "Draw a card. If you draw a Skill, Refund this card's cost.",
+    "DESCRIPTION": "Draw two cards. If you draw a Skill, Refund this card's cost.",
     "UPGRADE_DESCRIPTION": "Draw two cards. For each Skill, Refund this card's cost."
   },
   "theSlumbering:ImagineAttack": {
     "NAME": "Imagine: Attack",
-    "DESCRIPTION": "Draw a card. If you draw a Attack, Refund this card's cost.",
+    "DESCRIPTION": "Draw two cards. If you draw an Attack, Refund this card's cost.",
     "UPGRADE_DESCRIPTION": "Draw two cards. For each Attack, Refund this card's cost."
   },
   "theSlumbering:ImaginePower": {

@@ -28,19 +28,23 @@ public class ImagineAttack extends AbstractCustomCard {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
     }
 
-    public void drawAndCheck(AbstractPlayer p){
+    public void drawAndCheck(AbstractPlayer p, boolean refund){
         if (AbstractDungeon.player.drawPile.isEmpty()) {
             AbstractDungeon.actionManager.addToBottom(new EmptyDeckShuffleAction());
         }
-        AbstractDungeon.actionManager.addToBottom(new ImagineAction(CardType.ATTACK, this.cost, this));
+        if(refund){
+            AbstractDungeon.actionManager.addToBottom(new ImagineAction(CardType.ATTACK, this.cost, this));
+        }
         AbstractDungeon.actionManager.addToBottom(new DrawCardAction(p, 1));
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        drawAndCheck(p);
+        drawAndCheck(p, true);
         if(this.upgraded){
-            drawAndCheck(p);
+            drawAndCheck(p,true);
+        } else{
+            drawAndCheck(p, false);
         }
     }
 
