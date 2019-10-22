@@ -27,10 +27,10 @@ public class DrowsyAttack extends AbstractCustomCard {
     public static final CardColor COLOR = TheSlumbering.Enums.COLOR_SLUMBERING;
 
     private static final int COST = 1;
-    private static final int UPGRADED_COST = 0;
+    //private static final int UPGRADED_COST = 0;
 
     private static final int BLOCK = 2;
-    private static final int UPGRADE_BLOCK = 2;
+    private static final int UPGRADE_BLOCK = 1;
 
     private static final int DAMAGE = 6;
     private static final int UPGRADE_PLUS_DMG = 2;
@@ -68,7 +68,7 @@ public class DrowsyAttack extends AbstractCustomCard {
             upgradeName();
             upgradeDamage(UPGRADE_PLUS_DMG);
             upgradeBlock(UPGRADE_BLOCK);
-            upgradeBaseCost(UPGRADED_COST);
+            //upgradeBaseCost(UPGRADED_COST);
             initializeDescription();
         }
     }

@@ -11,6 +11,7 @@ import com.megacrit.cardcrawl.helpers.PowerTip;
 import com.evacipated.cardcrawl.mod.stslib.relics.OnLoseBlockRelic;
 import com.megacrit.cardcrawl.vfx.RelicAboveCreatureEffect;
 import theSlumbering.SlumberingMod;
+import theSlumbering.characters.TheSlumbering;
 import theSlumbering.util.TextureLoader;
 
 import static theSlumbering.SlumberingMod.*;
@@ -23,7 +24,7 @@ public class SlimeShield extends AbstractCustomRelic implements BetterOnLoseHpRe
     private static final Texture OUTLINE = TextureLoader.getTexture(makeRelicOutlinePath("GlassShield.png"));
 
     public boolean active;
-    private int powerLevel = 20;
+    private int powerLevel = 15;
 
     public SlimeShield() {
         super(ID, IMG, OUTLINE, RelicTier.UNCOMMON, LandingSound.MAGICAL);
@@ -31,6 +32,8 @@ public class SlimeShield extends AbstractCustomRelic implements BetterOnLoseHpRe
         this.counter = powerLevel;
         this.floatCounter = 0;
         this.active = true;
+
+        updateDescription(TheSlumbering.Enums.THE_SLUMBERING);
     }
 
     @Override

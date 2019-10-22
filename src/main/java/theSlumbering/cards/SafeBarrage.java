@@ -29,8 +29,8 @@ public class SafeBarrage extends AbstractCustomCard {
     private static final int MAGIC = 6;
     private static final int UPGRADE_PLUS_MAG = 3;
 
-    private static final int B_MIN = 30;
-    private static final int B_UP = -5;
+    private static final int B_MIN = 25;
+    //private static final int B_UP = -5;
 
     public SafeBarrage() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
@@ -60,7 +60,7 @@ public class SafeBarrage extends AbstractCustomCard {
         if (!upgraded) {
             upgradeName();
             upgradeMagicNumber(UPGRADE_PLUS_MAG);
-            upgradeSecondMagicNumber(B_UP);
+            //upgradeSecondMagicNumber(B_UP);
             initializeDescription();
         }
     }

@@ -5,6 +5,7 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.PowerTip;
 import theSlumbering.SlumberingMod;
+import theSlumbering.characters.TheSlumbering;
 import theSlumbering.util.TextureLoader;
 
 import static theSlumbering.SlumberingMod.makeRelicOutlinePath;
@@ -30,7 +31,11 @@ public class CrystalEffigy extends AbstractCustomRelic {
 
     @Override
     public String getUpdatedDescription() {
-        return DESCRIPTIONS[0];
+        if(AbstractDungeon.player instanceof TheSlumbering){
+            return DESCRIPTIONS[1];
+        } else{
+            return DESCRIPTIONS[0];
+        }
 
     }
 
@@ -49,7 +54,12 @@ public class CrystalEffigy extends AbstractCustomRelic {
     public void onVictory() {
         if(!this.damaged){
             this.flash();
-            AbstractDungeon.player.increaseMaxHp(10, true);
+            if(AbstractDungeon.player instanceof TheSlumbering){
+                AbstractDungeon.player.increaseMaxHp(5, true);
+
+            } else{
+                AbstractDungeon.player.increaseMaxHp(10, true);
+            }
         }
     }
 

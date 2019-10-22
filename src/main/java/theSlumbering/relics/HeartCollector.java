@@ -28,10 +28,10 @@ public class HeartCollector extends AbstractCustomRelic implements ClickableReli
         super(ID, IMG, OUTLINE, RelicTier.STARTER, LandingSound.MAGICAL);
 
         if(AbstractDungeon.ascensionLevel >= 6){
-            this.counter = 5;
+            this.counter = 8;
         }
         else{
-            this.counter = 6;
+            this.counter = 9;
         }
     }
 

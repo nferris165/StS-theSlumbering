@@ -32,7 +32,7 @@ public class BasicAttack extends AbstractCustomCard {
     private static final int UPGRADE_BLOCK = 1;
 
     private static final int DAMAGE = 4;
-    private static final int UPGRADE_PLUS_DMG = 2;
+    private static final int UPGRADE_PLUS_DMG = 3;
 
     public BasicAttack() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);

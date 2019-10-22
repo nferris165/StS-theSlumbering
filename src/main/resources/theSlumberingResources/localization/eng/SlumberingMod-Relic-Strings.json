@@ -103,7 +103,8 @@
     "NAME": "Crystal Effigy",
     "FLAVOR": "Don't let it shatter.",
     "DESCRIPTIONS": [
-      "When you win a battle, if you never took damage, gain #b10 max HP."
+      "When you win a battle, if you never took damage, gain #b10 max HP.",
+      "When you win a battle, if you never took damage, wake up ever so slightly...."
     ]
   }
 }

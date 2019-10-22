@@ -1,6 +1,7 @@
 package theSlumbering.cards;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
+import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.actions.utility.WaitAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
@@ -47,6 +48,7 @@ public class FocusedStrike extends AbstractCustomCard {
                 new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_VERTICAL));
 
         if(!p.hasPower(DrowsyPower.POWER_ID)){
+            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new DrowsyPower(p, 1, false), 1));
             for(int i = 0; i < magicNumber; i++) {
                 AbstractDungeon.actionManager.addToBottom(new WaitAction(1.0f));
                 AbstractDungeon.actionManager.addToBottom(new DamageAction(m,

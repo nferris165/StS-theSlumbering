@@ -308,7 +308,7 @@
   },
   "theSlumbering:FocusedStrike": {
     "NAME": "Focused Strike",
-    "DESCRIPTION": "Deal !D! damage. NL If you are not theslumbering:Drowsy, deal !D! damage !M! more times."
+    "DESCRIPTION": "Deal !D! damage. NL If you are not theslumbering:Drowsy, gain 1 theslumbering:Drowsy, and deal !D! damage !M! more times."
   },
   "theSlumbering:ForcedThought": {
     "NAME": "Forced Thought",
@@ -336,7 +336,7 @@
   },
   "theSlumbering:RestedPunch": {
     "NAME": "Rested Punch",
-    "DESCRIPTION": "Deal !D! damage. NL When drawn, this card gains !M! damage for one use. NL theslumbering:Snooze."
+    "DESCRIPTION": "Deal !D! damage. NL When drawn, this card gains !M! damage until its next use. NL theslumbering:Snooze."
   },
   "theSlumbering:InescapableThoughts": {
     "NAME": "Unrelenting",
@@ -396,7 +396,7 @@
   },
   "theSlumbering:Snooze": {
     "NAME": "SNOOZE!",
-    "DESCRIPTION": "theslumbering:Snooze your entire hand. NL Draw !M! cards. NL Exhaust."
+    "DESCRIPTION": "Immediately theslumbering:Snooze your entire hand. NL Gain !theSlumbering:Magic! Block for each card theslumbering:Snoozed. Draw !M! cards. NL Exhaust."
   },
   "theSlumbering:CircadianArrhythmia": {
     "NAME": "Sleep Arrhythmia",

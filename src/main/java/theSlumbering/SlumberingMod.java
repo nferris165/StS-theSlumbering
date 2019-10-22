@@ -21,6 +21,7 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.dungeons.Exordium;
+import com.megacrit.cardcrawl.dungeons.TheBeyond;
 import com.megacrit.cardcrawl.dungeons.TheCity;
 import com.megacrit.cardcrawl.helpers.CardHelper;
 import com.megacrit.cardcrawl.helpers.FontHelper;
@@ -228,8 +229,8 @@ public class SlumberingMod implements
 
         //events
         BaseMod.addEvent(MysteriousOrb.ID, MysteriousOrb.class, Exordium.ID);
-        BaseMod.addEvent(JustInTime.ID, JustInTime.class, Exordium.ID);
-        BaseMod.addEvent(PoweredUp.ID, PoweredUp.class, TheCity.ID);
+        BaseMod.addEvent(JustInTime.ID, JustInTime.class, TheCity.ID);
+        BaseMod.addEvent(PoweredUp.ID, PoweredUp.class, TheBeyond.ID);
 
         //monsters
         BaseMod.addMonster(NewSlaver.ID, NewSlaver.ID, () -> new NewSlaver(0.0F, 0.0F));

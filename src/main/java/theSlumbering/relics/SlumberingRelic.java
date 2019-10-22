@@ -34,10 +34,10 @@ public class SlumberingRelic extends AbstractCustomRelic implements ClickableRel
         super(ID, IMG, OUTLINE, RelicTier.STARTER, LandingSound.MAGICAL);
 
         if(AbstractDungeon.ascensionLevel >= 14){
-            this.counter = 3;
+            this.counter = 4;
         }
         else{
-            this.counter = 4;
+            this.counter = 5;
         }
         if(CardCrawlGame.dungeon != null){
             checkWake();
@@ -59,10 +59,10 @@ public class SlumberingRelic extends AbstractCustomRelic implements ClickableRel
         else if(this.counter == 0){
             return 2;
         }
-        else if(this.counter < 9){
+        else if(this.counter < 8){
             return 3;
         }
-        else if(this.counter < 16){
+        else if(this.counter < 14){
             return 4;
         }
         else if(this.counter < 25){

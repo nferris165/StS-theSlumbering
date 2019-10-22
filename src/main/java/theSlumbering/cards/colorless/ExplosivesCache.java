@@ -8,6 +8,7 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.vfx.cardManip.ShowCardAndAddToDrawPileEffect;
 import com.megacrit.cardcrawl.vfx.cardManip.ShowCardAndObtainEffect;
 import theSlumbering.SlumberingMod;
 import theSlumbering.cards.AbstractCustomCard;
@@ -27,8 +28,8 @@ public class ExplosivesCache extends AbstractCustomCard {
 
     private static final int COST = 0;
 
-    private static final int DAMAGE = 20;
-    private static final int UPGRADE_PLUS_DMG = 15;
+    private static final int DAMAGE = 25;
+    private static final int UPGRADE_PLUS_DMG = 5;
 
     public ExplosivesCache() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
@@ -41,9 +42,9 @@ public class ExplosivesCache extends AbstractCustomCard {
         AbstractDungeon.actionManager.addToBottom(new DamageAction(m,
                 new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.FIRE));
 
-        AbstractDungeon.effectList.add(new ShowCardAndObtainEffect(new Bomb(),
+        AbstractDungeon.effectList.add(new ShowCardAndAddToDrawPileEffect(new Bomb(),
                 MathUtils.random(0.1F, 0.9F) * (float) Settings.WIDTH,
-                MathUtils.random(0.2F, 0.8F) * (float) Settings.HEIGHT));
+                MathUtils.random(0.2F, 0.8F) * (float) Settings.HEIGHT, false));
 
     }
 

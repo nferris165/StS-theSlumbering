@@ -1,7 +1,9 @@
 package theSlumbering.cards;
 
 import com.megacrit.cardcrawl.actions.common.DrawCardAction;
+import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.actions.common.ShuffleAction;
+import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
@@ -29,10 +31,13 @@ public class Snooze extends AbstractCustomCard {
     private static final int MAGIC = 3;
     private static final int UPGRADED_MAGIC = 1;
 
+    private static final int SEC_MAGIC = 2;
+
     public Snooze() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
 
         this.magicNumber = baseMagicNumber = MAGIC;
+        this.secondMagicNumber = baseSecondMagicNumber = SEC_MAGIC;
 
         this.exhaust = true;
     }
@@ -42,6 +47,9 @@ public class Snooze extends AbstractCustomCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
         //p.limbo.addToTop(this);
         p.hand.removeCard(this);
+        for(AbstractCard c: p.hand.group){
+            AbstractDungeon.actionManager.addToBottom(new GainBlockAction(p, p, secondMagicNumber));
+        }
         AbstractDungeon.actionManager.addToBottom(new SnoozeAction(p.hand));
         AbstractDungeon.actionManager.addToBottom(new ShuffleAction(p.drawPile, false));
         AbstractDungeon.actionManager.addToBottom(new DrawCardAction(p, this.magicNumber));

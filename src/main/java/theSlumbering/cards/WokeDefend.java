@@ -29,7 +29,7 @@ public class WokeDefend extends AbstractCustomCard {
     private static final int COST = 1;
     private static final int UPGRADED_COST = 0;
 
-    private static final int BLOCK = 7;
+    private static final int BLOCK = 6;
     private static final int UPGRADE_BLOCK = 3;
 
     private static final int MAGIC = 1;

@@ -1,6 +1,7 @@
 package theSlumbering.events;
 
 import com.megacrit.cardcrawl.cards.AbstractCard;
+import com.megacrit.cardcrawl.cards.CardGroup;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
@@ -33,7 +34,7 @@ public class JustInTime extends AbstractImageEvent {
 
     private static int goldSpent;
     private static int option;
-    private static int count;
+    private int count;
     private static int chambers;
     private static AbstractCard card;
     private static AbstractRelic relic;
@@ -46,6 +47,7 @@ public class JustInTime extends AbstractImageEvent {
         goldSpent = (info.gold + CardCrawlGame.goldGained) - AbstractDungeon.player.gold;
 
         setMap();
+        this.count = 0;
 
         if (AbstractDungeon.ascensionLevel >= 15) {
             //bad effect
@@ -64,7 +66,9 @@ public class JustInTime extends AbstractImageEvent {
         map.put("Max", 5);
         map.put("Card", 6);
         map.put("Curse", 7);
-        map.put("Relic", 8);
+        if(AbstractDungeon.player.relics.size() > 2){
+            map.put("Relic", 8);
+        }
     }
 
     private void getReward(){
@@ -108,9 +112,6 @@ public class JustInTime extends AbstractImageEvent {
 
             String[] keys = map.keySet().toArray(new String[0]);
             int i = AbstractDungeon.eventRng.random(0, keys.length - 1);
-            if(i == 8 && AbstractDungeon.player.relics.size() <= 2){
-                i--;
-            }
 
             val = map.get(keys[i]);
             map.remove(keys[i]);
@@ -144,8 +145,12 @@ public class JustInTime extends AbstractImageEvent {
                         relics.add(r);
                     }
                 }
-                Collections.shuffle(relics, new Random(AbstractDungeon.miscRng.randomLong()));
-                relic = relics.get(0);
+                Collections.shuffle(relics, new Random(AbstractDungeon.eventRng.randomLong()));
+                if(relics.size() >= 1){
+                    relic = relics.get(0);
+                } else{
+                    relic = AbstractDungeon.player.relics.get(0);
+                }
                 this.imageEventText.clearAllDialogs();
                 this.imageEventText.setDialogOption(OPTIONS[option], relic);
                 this.imageEventText.setDialogOption(OPTIONS[0]);
@@ -202,7 +207,9 @@ public class JustInTime extends AbstractImageEvent {
                         break;
                     case 1:
                         count = 0;
-                        for(AbstractCard c: AbstractDungeon.player.masterDeck.group){
+                        ArrayList<AbstractCard> deck = (ArrayList<AbstractCard>) AbstractDungeon.player.masterDeck.group.clone();
+                        Collections.shuffle(deck, AbstractDungeon.eventRng.random);
+                        for(AbstractCard c: deck){
                             if(!c.upgraded){
                                 c.upgrade();
                                 count++;
@@ -229,7 +236,6 @@ public class JustInTime extends AbstractImageEvent {
     }
 
     static{
-        count = 0;
         option = 1;
         chambers = 2;
     }

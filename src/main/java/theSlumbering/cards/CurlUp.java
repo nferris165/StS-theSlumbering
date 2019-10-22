@@ -24,8 +24,8 @@ public class CurlUp extends AbstractCustomCard {
 
     private static final int COST = 1;
 
-    private static final int BLOCK = 10;
-    private static final int UPGRADE_BLOCK = 6;
+    private static final int BLOCK = 12;
+    private static final int UPGRADE_BLOCK = 4;
 
     public CurlUp() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);

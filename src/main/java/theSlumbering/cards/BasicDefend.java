@@ -27,8 +27,8 @@ public class BasicDefend extends AbstractCustomCard {
 
     private static final int COST = 1;
 
-    private static final int BLOCK = 3;
-    private static final int UPGRADE_BLOCK = 2;
+    private static final int BLOCK = 4;
+    private static final int UPGRADE_BLOCK = 3;
 
     public BasicDefend() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
