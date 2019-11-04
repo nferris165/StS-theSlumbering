@@ -82,7 +82,7 @@ public class DrowsyPower  extends AbstractCustomPower implements CloneablePowerI
         for(int i = 0; i < this.amount; i++) {
             --AbstractDungeon.player.energy.energyMaster;
         }
-        AbstractDungeon.actionManager.addToBottom(new RemoveSpecificPowerAction(
+        AbstractDungeon.actionManager.addToTop(new RemoveSpecificPowerAction(
                 AbstractDungeon.player, AbstractDungeon.player, AwakePower.POWER_ID));
     }
 

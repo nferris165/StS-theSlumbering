@@ -9,6 +9,7 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import theSlumbering.SlumberingMod;
+import theSlumbering.actions.FocusedAction;
 import theSlumbering.characters.TheSlumbering;
 import theSlumbering.powers.DrowsyPower;
 
@@ -48,12 +49,17 @@ public class FocusedStrike extends AbstractCustomCard {
                 new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_VERTICAL));
 
         if(!p.hasPower(DrowsyPower.POWER_ID)){
-            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new DrowsyPower(p, 1, false), 1));
-            for(int i = 0; i < magicNumber; i++) {
-                AbstractDungeon.actionManager.addToBottom(new WaitAction(1.0f));
-                AbstractDungeon.actionManager.addToBottom(new DamageAction(m,
-                        new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_VERTICAL));
-            }
+            AbstractDungeon.actionManager.addToTop(new ApplyPowerAction(p, p, new DrowsyPower(p, 1, false), 1));
+            AbstractDungeon.actionManager.addToBottom(new FocusedAction(this, m));
+        }
+    }
+
+    public void strikes(AbstractPlayer p, AbstractMonster m){
+        applyPowers();
+        for(int i = 0; i < magicNumber; i++) {
+            AbstractDungeon.actionManager.addToBottom(new WaitAction(1.0f));
+            AbstractDungeon.actionManager.addToBottom(new DamageAction(m,
+                    new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_VERTICAL));
         }
     }
 
