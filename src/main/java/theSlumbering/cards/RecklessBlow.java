@@ -26,10 +26,10 @@ public class RecklessBlow extends AbstractCustomCard {
     private static final int COST = 1;
     private static final int UPGRADED_COST = 1;
 
-    private static final int DAMAGE = 15;
-    private static final int UPGRADE_PLUS_DMG = 5;
+    private static final int DAMAGE = 12;
+    private static final int UPGRADE_PLUS_DMG = 4;
 
-    private static final int BL_COST = 8;
+    private static final int BL_COST = 4;
 
     public RecklessBlow() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);

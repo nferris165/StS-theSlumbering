@@ -239,7 +239,7 @@
   },
   "theSlumbering:RecklessBlow": {
     "NAME": "Reckless Blow",
-    "DESCRIPTION": "Additionally costs 8 Block. NL Deal !D! damage.",
+    "DESCRIPTION": "Additionally costs !theSlumbering:Magic! Block. NL Deal !D! damage.",
     "EXTENDED_DESCRIPTION": [
       "I need more #yBlock to use this."
     ]
@@ -308,7 +308,10 @@
   },
   "theSlumbering:FocusedStrike": {
     "NAME": "Focused Strike",
-    "DESCRIPTION": "Deal !D! damage. NL If you are not theslumbering:Drowsy, gain 1 theslumbering:Drowsy, and deal !D! damage !M! more times."
+    "DESCRIPTION": "Deal !D! damage. NL If you are not theslumbering:Drowsy, gain 1 theslumbering:Drowsy, and deal !D! damage again.",
+    "EXTENDED_DESCRIPTION": [
+      "Deal !D! damage. NL If you are not theslumbering:Drowsy, gain 1 theslumbering:Drowsy, and deal !D! damage !M! more times."
+    ]
   },
   "theSlumbering:ForcedThought": {
     "NAME": "Forced Thought",
@@ -352,7 +355,7 @@
   },
   "theSlumbering:NocturnalGifts": {
     "NAME": "Nocturnal Gifts",
-    "DESCRIPTION": "Draw a card for each theslumbering:Drowsy you have."
+    "DESCRIPTION": "Draw a card. NL Draw a additional card for each theslumbering:Drowsy you have."
   },
   "theSlumbering:SoundBarrier": {
     "NAME": "Sound Barrier",
@@ -405,5 +408,9 @@
   "theSlumbering:HeavySleeper": {
     "NAME": "Heavy Sleeper",
     "DESCRIPTION": "Whenever you theslumbering:Snooze a card, gain !M! Block."
+  },
+  "theSlumbering:NarcolepticEpisode": {
+    "NAME": "Narcoleptic Episode",
+    "DESCRIPTION": "Unplayable. NL When drawn, gain !M! theslumbering:Drowsy. NL At the end of this turn, lose !theSlumbering:Magic! theslumbering:Drowsy."
   }
 }

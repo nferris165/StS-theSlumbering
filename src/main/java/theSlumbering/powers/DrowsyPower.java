@@ -100,7 +100,8 @@ public class DrowsyPower  extends AbstractCustomPower implements CloneablePowerI
     public void onVictory() {
         for(int i = 0; i < this.val; i++) {
             ++AbstractDungeon.player.energy.energyMaster;
-        }    }
+        }
+    }
 
     @Override
     public void reducePower(int reduceAmount) {
@@ -114,6 +115,13 @@ public class DrowsyPower  extends AbstractCustomPower implements CloneablePowerI
 
     @Override
     public void stackPower(int stackAmount) {
+        if(stackAmount < 0){
+            if(-stackAmount > this.amount){
+                stackAmount = -this.amount;
+            }
+            reducePower(-stackAmount);
+            return;
+        }
         super.stackPower(stackAmount);
         if(this.amount > 999){
             this.amount = 999;

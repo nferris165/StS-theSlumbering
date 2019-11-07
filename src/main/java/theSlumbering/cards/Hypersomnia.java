@@ -27,8 +27,8 @@ public class Hypersomnia extends AbstractCustomCard {
     private static final int COST = 1;
     private static final int UPGRADED_COST = 0;
 
-    private static final int MAGIC = 2;
-    private static final int SEC_MAGIC = 1;
+    private static final int MAGIC = 1;
+    private static final int SEC_MAGIC = 2;
 
 
     public Hypersomnia() {

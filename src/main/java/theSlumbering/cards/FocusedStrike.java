@@ -31,7 +31,7 @@ public class FocusedStrike extends AbstractCustomCard {
     private static final int DAMAGE = 7;
     private static final int UPGRADE_PLUS_DMG = 3;
 
-    private static final int MAGIC = 2;
+    private static final int MAGIC = 1;
     private static final int UP_MAGIC = 1;
 
     public FocusedStrike() {
@@ -41,7 +41,6 @@ public class FocusedStrike extends AbstractCustomCard {
 
         tags.add(CardTags.STRIKE);
     }
-
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
@@ -68,6 +67,7 @@ public class FocusedStrike extends AbstractCustomCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
+            this.rawDescription = ext_desc[0];
             upgradeDamage(UPGRADE_PLUS_DMG);
             upgradeMagicNumber(UP_MAGIC);
             initializeDescription();

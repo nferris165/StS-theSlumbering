@@ -113,5 +113,12 @@
                         "Whenever you #ySnooze a card, gain #b",
                         " Block."
                 ]
+        },
+        "theSlumbering:LoseDrowsyPower": {
+                "NAME": "Drowsy Down",
+                "DESCRIPTIONS": [
+                        "At the end of this turn, lose #b",
+                        " #yDrowsy."
+                ]
         }
 }
