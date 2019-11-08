@@ -1,5 +1,6 @@
 package theSlumbering.cards;
 
+import com.evacipated.cardcrawl.mod.stslib.powers.interfaces.InvisiblePower;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -8,6 +9,7 @@ import com.megacrit.cardcrawl.powers.BarricadePower;
 import theSlumbering.SlumberingMod;
 import theSlumbering.characters.TheSlumbering;
 import theSlumbering.patches.customTags;
+import theSlumbering.powers.BagOfShieldsPower;
 
 import static theSlumbering.SlumberingMod.makeCardPath;
 
@@ -34,6 +36,9 @@ public class BagOfShields extends AbstractCustomCard {
     @Override
     public void passiveEffect() {
         AbstractPlayer p = AbstractDungeon.player;
+        if(!p.hasPower(BagOfShieldsPower.POWER_ID)) {
+            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new BagOfShieldsPower(p)));
+        }
         if(!p.hasPower(BarricadePower.POWER_ID)) {
             AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new BarricadePower(p)));
         }

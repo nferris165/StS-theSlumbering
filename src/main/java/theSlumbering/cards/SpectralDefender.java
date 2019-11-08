@@ -2,12 +2,14 @@ package theSlumbering.cards;
 
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import theSlumbering.SlumberingMod;
 import theSlumbering.characters.TheSlumbering;
 import theSlumbering.patches.customTags;
 import theSlumbering.powers.DoubleBlockPower;
+import theSlumbering.relics.SlumberingRelic;
 
 import static theSlumbering.SlumberingMod.makeCardPath;
 
@@ -31,13 +33,23 @@ public class SpectralDefender extends AbstractCustomCard {
 
         tags.add(customTags.Passive);
 
-        this.magicNumber = baseMagicNumber = MAGIC;
+        updateMagic();
 
+    }
+
+    private void updateMagic(){
+        if(CardCrawlGame.dungeon != null && AbstractDungeon.player.hasRelic(SlumberingRelic.ID)){
+            magicNumber = baseMagicNumber = AbstractDungeon.player.getRelic(SlumberingRelic.ID).counter * 3;
+        } else {
+            baseMagicNumber = magicNumber = MAGIC;
+        }
+        initializeDescription();
     }
 
     @Override
     public void passiveEffect() {
         AbstractPlayer p = AbstractDungeon.player;
+        updateMagic();
         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new DoubleBlockPower(p, this.magicNumber), this.magicNumber));
     }
 

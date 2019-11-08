@@ -1,4 +1,9 @@
 {
+        "theSlumbering:Patches": {
+                "NAME": "Patches",
+                "DESCRIPTIONS": ["Retain up to #b",
+                        " Block at the start of your turn."]
+        },
         "theSlumbering:AutoAttackPower": {
                 "NAME": "Auto-Attack",
                 "DESCRIPTIONS": ["At the start of your turn, play",
@@ -119,6 +124,13 @@
                 "DESCRIPTIONS": [
                         "At the end of this turn, lose #b",
                         " #yDrowsy."
+                ]
+        },
+        "theSlumbering:BagOfShieldsPower": {
+                "NAME": "Bag of Shields",
+                "DESCRIPTIONS": [
+                        "Retain up to #b",
+                        " Block at the start of your turn."
                 ]
         }
 }

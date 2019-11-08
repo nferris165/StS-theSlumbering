@@ -13,5 +13,6 @@ import com.megacrit.cardcrawl.actions.GameActionManager;
 public class ActionManagerPatch {
 
     public static SpireField<Integer> snoozeCount = new SpireField<>(() -> 0);
+    public static SpireField<Boolean> hasBag = new SpireField<>(() -> false);
 
 }

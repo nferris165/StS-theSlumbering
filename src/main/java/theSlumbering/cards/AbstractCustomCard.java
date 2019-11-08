@@ -13,8 +13,8 @@ public abstract class AbstractCustomCard extends CustomCard {
     public boolean isSecondMagicNumberModified;
     public String updated_desc;
     public String[] ext_desc;
-    public static String BG_SMALL_PASSIVE_FIELD = "theFirstResources/images/512/bg_passive_field.png";
-    public static String BG_LARGE_PASSIVE_FIELD = "theFirstResources/images/1024/bg_passive_field.png";
+    public static String BG_SMALL_PASSIVE_FIELD = "theSlumberingResources/images/512/bg_passive_field.png";
+    public static String BG_LARGE_PASSIVE_FIELD = "theSlumberingResources/images/1024/bg_passive_field.png";
 
     public AbstractCustomCard(final String id,
                               final String img,
