@@ -53,8 +53,8 @@
     "FLAVOR": "It's hunger cannot be sated.",
     "DESCRIPTIONS": [
       "We should never have gotten here!",
-      "Accumulate hearts by defeating enemies. Spend those hearts by right clicking. ",
-      "Hearts grant #yBlock, and will grant more #yBlock the more awake you are."
+      "Accumulate hearts by defeating enemies. Spend those hearts by Right Clicking. ",
+      "Hearts grant #yBlock according to the depth of your slumber."
     ]
   },
   "theSlumbering:CursedAnvil": {

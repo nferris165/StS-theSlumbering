@@ -5,6 +5,8 @@ import com.megacrit.cardcrawl.actions.common.ExhaustSpecificCardAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.powers.LoseStrengthPower;
+import com.megacrit.cardcrawl.powers.StrengthPower;
 import theSlumbering.characters.TheSlumbering;
 import theSlumbering.powers.DrowsyPower;
 import theSlumbering.powers.LoseDrowsyPower;
@@ -17,24 +19,25 @@ public class NarcolepticEpisode extends AbstractCustomCard {
 
     public static final String ID = makeID(NarcolepticEpisode.class.getSimpleName());
 
-    public static final String IMG = makeCardPath("S_temp.png");
+    public static final String IMG = makeCardPath("P_temp.png");
 
     private static final CardRarity RARITY = CardRarity.UNCOMMON;
     private static final CardTarget TARGET = CardTarget.SELF;
-    private static final CardType TYPE = CardType.SKILL;
+    private static final CardType TYPE = CardType.POWER;
     public static final CardColor COLOR = TheSlumbering.Enums.COLOR_SLUMBERING;
 
     private static final int COST = -2;
 
-    private static final int MAGIC = 3;
+    private static final int MAGIC = 1;
     private static final int UP_MAGIC = 1;
+
+    private static final int SEC_MAGIC = 2;
 
     public NarcolepticEpisode() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
 
-        magicNumber = baseMagicNumber = MAGIC;
-
-        secondMagicNumber = baseSecondMagicNumber = MAGIC - 1;
+        this.baseMagicNumber = magicNumber = MAGIC;
+        this.baseSecondMagicNumber = secondMagicNumber = SEC_MAGIC;
     }
 
 
@@ -52,8 +55,14 @@ public class NarcolepticEpisode extends AbstractCustomCard {
     @Override
     public void triggerWhenDrawn() {
         AbstractPlayer p = AbstractDungeon.player;
-        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new DrowsyPower(p, magicNumber, false), magicNumber));
-        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new LoseDrowsyPower(p, secondMagicNumber), secondMagicNumber));
+        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p,
+                new DrowsyPower(p, this.magicNumber, false), this.magicNumber));
+        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p,
+                new LoseDrowsyPower(p, magicNumber), magicNumber));
+        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p,
+                new StrengthPower(p, this.secondMagicNumber), this.secondMagicNumber));
+        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p,
+                new LoseStrengthPower(p, this.secondMagicNumber), this.secondMagicNumber));
     }
 
     @Override
@@ -61,12 +70,12 @@ public class NarcolepticEpisode extends AbstractCustomCard {
         AbstractDungeon.actionManager.addToBottom(new ExhaustSpecificCardAction(this, AbstractDungeon.player.discardPile));
     }
 
+
     @Override
     public void upgrade() {
         if (!upgraded) {
-            upgradeMagicNumber(UP_MAGIC);
-            upgradeSecondMagicNumber(UP_MAGIC);
             upgradeName();
+            upgradeMagicNumber(UP_MAGIC);
             initializeDescription();
         }
     }

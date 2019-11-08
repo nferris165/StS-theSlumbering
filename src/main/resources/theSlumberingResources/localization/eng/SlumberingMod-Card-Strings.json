@@ -185,11 +185,11 @@
   },
   "theSlumbering:SpectralDefender": {
     "NAME": "Spectral Defender",
-    "DESCRIPTION": "theslumbering:Passive. NL At the end of your turn, double your Block."
+    "DESCRIPTION": "theslumbering:Passive. NL At the end of your turn, double your Block. (Up to a maximum of !M! gained Block)"
   },
   "theSlumbering:ToughSkin": {
     "NAME": "Tough Skin",
-    "DESCRIPTION": "theslumbering:Passive. NL At the start of your turn, gain !M! Block."
+    "DESCRIPTION": "theslumbering:Passive. NL At the start of your turn, gain Block based on the depth of your slumber."
   },
   "theSlumbering:StrongFooting": {
     "NAME": "Strong Footing",
@@ -281,7 +281,7 @@
   },
   "theSlumbering:Hypersomnia": {
     "NAME": "Hypersomnia",
-    "DESCRIPTION": "Gain !M! theslumbering:Drowsy. NL Gain !theSlumbering:Magic! Strength. NL At the end of this turn, lose !theSlumbering:Magic! Strength."
+    "DESCRIPTION": "Gain !M! theslumbering:Drowsy. NL At the end of this turn, lose !theSlumbering:Magic! theslumbering:Drowsy."
   },
   "theSlumbering:ReadyGaze": {
     "NAME": "Ready Gaze",
@@ -411,6 +411,6 @@
   },
   "theSlumbering:NarcolepticEpisode": {
     "NAME": "Narcoleptic Episode",
-    "DESCRIPTION": "Unplayable. NL When drawn, gain !M! theslumbering:Drowsy. NL At the end of this turn, lose !theSlumbering:Magic! theslumbering:Drowsy."
+    "DESCRIPTION": "Unplayable. NL When drawn, gain !M! theslumbering:Drowsy and !theSlumbering:Magic! Strength. NL At the end of this turn, lose !M! theslumbering:Drowsy and !theSlumbering:Magic! Strength."
   }
 }
