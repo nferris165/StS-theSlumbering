@@ -61,7 +61,7 @@
   },
   "theSlumbering:Reflect": {
     "NAME": "Reflect",
-    "DESCRIPTION": "Whenever you are attacked this turn, reflect 30% of the damage."
+    "DESCRIPTION": "Whenever you are attacked, reflect 20% of the damage."
   },
   "theSlumbering:MagicVarTest": {
     "NAME": "Testing",

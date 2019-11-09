@@ -86,7 +86,7 @@ public class ReflectPower extends AbstractPower implements CloneablePowerInterfa
 
     @Override
     public void atStartOfTurn() {
-        AbstractDungeon.actionManager.addToBottom(new RemoveSpecificPowerAction(AbstractDungeon.player, AbstractDungeon.player, ID));
+        //AbstractDungeon.actionManager.addToBottom(new RemoveSpecificPowerAction(AbstractDungeon.player, AbstractDungeon.player, ID));
     }
 
     @Override

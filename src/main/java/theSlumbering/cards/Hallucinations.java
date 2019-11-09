@@ -27,8 +27,8 @@ public class Hallucinations extends AbstractCustomCard {
 
     private static final int COST = 2;
 
-    private static final int DAMAGE = 8;
-    private static final int UPGRADE_PLUS_DMG = 4;
+    private static final int DAMAGE = 10;
+    private static final int UPGRADE_PLUS_DMG = 3;
 
     private boolean first;
 
@@ -37,6 +37,7 @@ public class Hallucinations extends AbstractCustomCard {
         baseDamage = DAMAGE;
         baseSecondMagicNumber = UPGRADE_PLUS_DMG;
         this.first  = false;
+        //this.upgraded = true;
         this.tags.add(customTags.Snooze);
     }
 
@@ -57,10 +58,14 @@ public class Hallucinations extends AbstractCustomCard {
     }
 
     @Override
+    public boolean canUpgrade() {
+        return false;
+    }
+
+    @Override
     public void upgrade() {
         upgradeDamage(UPGRADE_PLUS_DMG);
         ++this.timesUpgraded;
-        this.upgraded = true;
         this.name = languagePack.getCardStrings(ID).NAME + "+" + this.timesUpgraded;
         this.initializeTitle();
         initializeDescription();

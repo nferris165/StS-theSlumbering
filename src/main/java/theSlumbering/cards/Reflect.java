@@ -24,16 +24,20 @@ public class Reflect extends AbstractCustomCard {
     private static final int COST = 1;
     private static final int UPGRADED_COST = 0;
 
+    private static final int MAGIC = 20;
+
+
     public Reflect() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
 
+        magicNumber = baseMagicNumber = MAGIC;
 
     }
 
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new ReflectPower(p, p, 30), 30));
+        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new ReflectPower(p, p, magicNumber), magicNumber));
     }
 
 

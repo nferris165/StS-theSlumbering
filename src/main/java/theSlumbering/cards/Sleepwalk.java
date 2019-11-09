@@ -52,7 +52,7 @@ public class Sleepwalk extends AbstractCustomCard {
     @Override
     public void triggerWhenDrawn() {
         AbstractDungeon.actionManager.addToBottom(
-                new DamageAction(AbstractDungeon.getRandomMonster(), new DamageInfo(AbstractDungeon.player, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_HORIZONTAL));
+                new DamageAction(AbstractDungeon.getRandomMonster(), new DamageInfo(AbstractDungeon.player, damage, DamageInfo.DamageType.THORNS), AbstractGameAction.AttackEffect.SLASH_HORIZONTAL));
     }
 
     @Override
