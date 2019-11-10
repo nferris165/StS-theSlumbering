@@ -13,6 +13,7 @@ import com.megacrit.cardcrawl.relics.AbstractRelic;
 import com.megacrit.cardcrawl.vfx.cardManip.ShowCardAndObtainEffect;
 import theSlumbering.SlumberingMod;
 import theSlumbering.characters.TheSlumbering;
+import theSlumbering.relics.EnergyDrink;
 
 import java.util.ArrayList;
 
@@ -149,8 +150,7 @@ public class NeowPatch {
                 AbstractDungeon.topLevelEffects.add(new ShowCardAndObtainEffect(c, (float)Settings.WIDTH / 2.0F, (float)Settings.HEIGHT / 2.0F));
             }
             else if (__instance.type == START_SLUMBER) {
-                SlumberingMod.incSlumberingRelic(1);
-                SlumberingMod.decHeartCollectorRelic(-5);
+                AbstractDungeon.getCurrRoom().spawnRelicAndObtain((float)(Settings.WIDTH / 2), (float)(Settings.HEIGHT / 2), new EnergyDrink());
             }
         }
     }

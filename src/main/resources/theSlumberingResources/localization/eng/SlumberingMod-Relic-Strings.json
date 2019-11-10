@@ -106,5 +106,12 @@
       "When you win a battle, if you never took damage, gain #b10 max HP.",
       "When you win a battle, if you never took damage, wake up ever so slightly...."
     ]
+  },
+  "theSlumbering:EnergyDrink": {
+    "NAME": "Energy Drink",
+    "FLAVOR": "A short burst of vigor.",
+    "DESCRIPTIONS": [
+      "While in the Exordium, gain [E] at the start of your turn during Elite and Boss encounters."
+    ]
   }
 }
