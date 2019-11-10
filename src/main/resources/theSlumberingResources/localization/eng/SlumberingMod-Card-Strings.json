@@ -407,7 +407,8 @@
   },
   "theSlumbering:HeavySleeper": {
     "NAME": "Heavy Sleeper",
-    "DESCRIPTION": "Whenever you theslumbering:Snooze a card, gain !M! Block."
+    "DESCRIPTION": "Whenever you theslumbering:Snooze a card, gain !M! Block.",
+    "UPGRADE_DESCRIPTION": "Innate. NL Whenever you theslumbering:Snooze a card, gain !M! Block."
   },
   "theSlumbering:NarcolepticEpisode": {
     "NAME": "Narcoleptic Episode",

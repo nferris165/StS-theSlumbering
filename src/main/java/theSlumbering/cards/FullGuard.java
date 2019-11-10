@@ -23,7 +23,7 @@ public class FullGuard extends AbstractCustomCard {
 
     private static final int COST = 2;
 
-    private static final int BLOCK = 3;
+    private static final int BLOCK = 6;
     private static final int UPGRADE_BLOCK = 2;
 
     public FullGuard() {

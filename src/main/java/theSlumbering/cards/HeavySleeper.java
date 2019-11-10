@@ -43,8 +43,10 @@ public class HeavySleeper extends AbstractCustomCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
+            this.isInnate = true;
             upgradeMagicNumber(UPGRADE_MAGIC);
             //upgradeBaseCost(UPGRADED_COST);
+            this.rawDescription = updated_desc;
             initializeDescription();
         }
     }
