@@ -31,7 +31,7 @@ public class NarcolepticEpisode extends AbstractCustomCard {
     private static final int MAGIC = 1;
     private static final int UP_MAGIC = 1;
 
-    private static final int SEC_MAGIC = 2;
+    private static final int SEC_MAGIC = 1;
 
     public NarcolepticEpisode() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);

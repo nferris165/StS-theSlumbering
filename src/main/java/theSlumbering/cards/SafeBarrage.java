@@ -27,7 +27,7 @@ public class SafeBarrage extends AbstractCustomCard {
     private static final int DAMAGE = 3;
 
     private static final int MAGIC = 6;
-    private static final int UPGRADE_PLUS_MAG = 3;
+    private static final int UPGRADE_PLUS_MAG = 2;
 
     private static final int B_MIN = 25;
     //private static final int B_UP = -5;

@@ -51,11 +51,12 @@ public class PurgeAction extends AbstractGameAction {
             c = (AbstractCard)deck.next();
             if (c.uuid.equals(card.uuid)) {
                 cardsToMove.add(c);
+                break;
             }
         }
 
         for (AbstractCard d: cardsToMove) {
-            if(pile.contains(this.card)){
+            if(pile.contains(d)){
                 AbstractDungeon.topLevelEffects.add(new PurgeCardEffect(d));
                 pile.removeCard(d);
             }

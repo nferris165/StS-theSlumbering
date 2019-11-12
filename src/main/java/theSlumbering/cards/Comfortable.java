@@ -45,7 +45,7 @@ public class Comfortable extends AbstractCustomCard {
     public void triggerWhenDrawn() {
         AbstractDungeon.actionManager.addToBottom(new GainEnergyAction(1));
 
-        if(upgraded){
+        if(upgraded && !AbstractDungeon.player.hasPower(ArtifactPower.POWER_ID)){
             AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player,
                     new ArtifactPower(AbstractDungeon.player, 1), 1));
         }

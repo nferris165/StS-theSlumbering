@@ -24,7 +24,7 @@ public class BattleDrawBlockRenderPatch {
 
     public static void Insert(AbstractRoom __instance) {
 
-        SlumberingMod.logger.info(AbstractDungeon.player.hand.group + "\n\n");
+        //SlumberingMod.logger.info(AbstractDungeon.player.hand.group + "\n\n");
         AbstractDungeon.actionManager.addToBottom(new StartDrawAction());
 
     }

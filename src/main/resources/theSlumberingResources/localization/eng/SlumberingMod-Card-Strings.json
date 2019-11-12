@@ -173,7 +173,7 @@
   "theSlumbering:Comfortable": {
     "NAME": "Comfortable",
     "DESCRIPTION": "Unplayable. NL Gain [E] when drawn.",
-    "UPGRADE_DESCRIPTION": "Unplayable. NL Gain [E] and 1 Artifact when drawn."
+    "UPGRADE_DESCRIPTION": "Unplayable. NL When drawn, gain [E] and set Artifact to 1."
   },
   "theSlumbering:SideSleeper": {
     "NAME": "Side Sleeper",
