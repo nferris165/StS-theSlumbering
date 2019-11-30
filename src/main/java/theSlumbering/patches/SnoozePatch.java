@@ -58,6 +58,9 @@ public class SnoozePatch {
                     y = (float)Settings.HEIGHT * 0.5F;
                 }
 
+                //AbstractDungeon.topLevelEffects.add(new ShowCardAndAddToDrawPileEffect(e.makeStatEquivalentCopy(), x, y,true, false, false));
+                e.setAngle(0.0F, true);
+                e.stopGlowing();
                 AbstractDungeon.topLevelEffects.add(new ShowCardAndAddToDrawPileEffect(e, x, y,true, false, false));
                 c.remove();
 

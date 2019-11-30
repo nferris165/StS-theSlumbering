@@ -35,6 +35,8 @@ public class NocturnalGifts extends AbstractCustomCard {
         if(p.hasPower(DrowsyPower.POWER_ID)){
             AbstractPower pow = p.getPower(DrowsyPower.POWER_ID);
             AbstractDungeon.actionManager.addToBottom(new DrawCardAction(p, (1 + pow.amount)));
+        } else{
+            AbstractDungeon.actionManager.addToBottom(new DrawCardAction(p, (1)));
         }
     }
 
