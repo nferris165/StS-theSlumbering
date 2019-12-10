@@ -26,7 +26,7 @@ public class Scavenge extends AbstractCustomCard {
 
     private static final int DAMAGE = 14;
 
-    private static final int MAGIC = 4;
+    private static final int MAGIC = 3;
     private static final int UPGRADE_MAGIC = -1;
 
     public Scavenge() {
@@ -52,7 +52,7 @@ public class Scavenge extends AbstractCustomCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            upgradeMagicNumber(UPGRADE_MAGIC);
+            //upgradeMagicNumber(UPGRADE_MAGIC);
             this.rawDescription = this.updated_desc;
             initializeDescription();
         }

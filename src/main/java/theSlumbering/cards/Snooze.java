@@ -31,7 +31,7 @@ public class Snooze extends AbstractCustomCard {
     private static final int MAGIC = 3;
     private static final int UPGRADED_MAGIC = 1;
 
-    private static final int SEC_MAGIC = 2;
+    private static final int SEC_MAGIC = 4;
 
     public Snooze() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);

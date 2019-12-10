@@ -37,7 +37,9 @@ public class ToughSkin extends AbstractCustomCard {
     }
 
     private void updateMagic(){
-        if(CardCrawlGame.dungeon != null && AbstractDungeon.player.hasRelic(SlumberingRelic.ID)){
+        if(CardCrawlGame.dungeon != null
+                && AbstractDungeon.player != null
+                && AbstractDungeon.player.hasRelic(SlumberingRelic.ID)){
             magicNumber = baseMagicNumber = AbstractDungeon.player.getRelic(SlumberingRelic.ID).counter;
         } else {
             baseMagicNumber = magicNumber = MAGIC;

@@ -30,7 +30,7 @@ public class StumblingBlow extends AbstractCustomCard {
     private static final int DAMAGE = 12;
     private static final int UPGRADE_PLUS_DMG = 4;
 
-    private static final int WEAK = 2;
+    private static final int WEAK = 1;
     private static final int UPGRADE_WEAK = -1;
 
     public StumblingBlow() {
@@ -58,7 +58,7 @@ public class StumblingBlow extends AbstractCustomCard {
             upgradeName();
             upgradeDamage(UPGRADE_PLUS_DMG);
             //upgradeBaseCost(UPGRADED_COST);
-            upgradeMagicNumber(UPGRADE_WEAK);
+            //upgradeMagicNumber(UPGRADE_WEAK);
             initializeDescription();
         }
     }

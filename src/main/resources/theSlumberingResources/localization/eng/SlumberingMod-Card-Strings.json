@@ -126,7 +126,7 @@
   },
   "theSlumbering:SleepParalysis": {
     "NAME": "Sleep Paralysis",
-    "DESCRIPTION": "Negate the first !M! attack this turn. NL End your turn. NL Exhaust."
+    "DESCRIPTION": "Negate the first !M! attacks this turn. NL End your turn. NL Exhaust."
   },
   "theSlumbering:Lullaby": {
     "NAME": "Lullaby",

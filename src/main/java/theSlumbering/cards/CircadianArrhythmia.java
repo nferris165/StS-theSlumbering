@@ -21,8 +21,8 @@ public class CircadianArrhythmia extends AbstractCustomCard {
     private static final CardType TYPE = CardType.SKILL;
     public static final CardColor COLOR = TheSlumbering.Enums.COLOR_SLUMBERING;
 
-    private static final int COST = 3;
-    private static final int UPGRADED_COST = 2;
+    private static final int COST = 2;
+    private static final int UPGRADED_COST = 1;
 
     public CircadianArrhythmia() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);

@@ -38,7 +38,9 @@ public class SpectralDefender extends AbstractCustomCard {
     }
 
     private void updateMagic(){
-        if(CardCrawlGame.dungeon != null && AbstractDungeon.player.hasRelic(SlumberingRelic.ID)){
+        if(CardCrawlGame.dungeon != null
+                && AbstractDungeon.player != null
+                && AbstractDungeon.player.hasRelic(SlumberingRelic.ID)){
             magicNumber = baseMagicNumber = AbstractDungeon.player.getRelic(SlumberingRelic.ID).counter * 3;
         } else {
             baseMagicNumber = magicNumber = MAGIC;
