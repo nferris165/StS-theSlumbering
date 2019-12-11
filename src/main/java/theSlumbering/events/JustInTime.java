@@ -30,7 +30,8 @@ public class JustInTime extends AbstractImageEvent {
     private static final String NAME = eventStrings.NAME;
     private static final String[] DESCRIPTIONS = eventStrings.DESCRIPTIONS;
     private static final String[] OPTIONS = eventStrings.OPTIONS;
-    public static final String IMG = makeEventPath("JustInTime.png");
+    //public static final String IMG = makeEventPath("JustInTime.png");
+    public static final String IMG = makeEventPath("temp.png");
 
     private static int goldSpent;
     private static int option;

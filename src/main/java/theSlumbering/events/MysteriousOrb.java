@@ -26,7 +26,9 @@ public class MysteriousOrb extends AbstractImageEvent {
     private static final String NAME = eventStrings.NAME;
     private static final String[] DESCRIPTIONS = eventStrings.DESCRIPTIONS;
     private static final String[] OPTIONS = eventStrings.OPTIONS;
-    public static final String IMG = makeEventPath("MysteriousOrb.png");
+    //public static final String IMG = makeEventPath("MysteriousOrb.png");
+    public static final String IMG = makeEventPath("temp.png");
+
     private AbstractCard c;
     private boolean attack;
 

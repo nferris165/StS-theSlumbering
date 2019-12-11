@@ -30,7 +30,9 @@ public class PoweredUp extends AbstractImageEvent {
     private static final String NAME = eventStrings.NAME;
     private static final String[] DESCRIPTIONS = eventStrings.DESCRIPTIONS;
     private static final String[] OPTIONS = eventStrings.OPTIONS;
-    public static final String IMG = makeEventPath("PoweredUp.png");
+    //public static final String IMG = makeEventPath("PoweredUp.png");
+    public static final String IMG = makeEventPath("temp.png");
+
 
     private int cost;
     private AbstractCard reward = null;
