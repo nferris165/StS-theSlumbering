@@ -112,8 +112,8 @@ public class SlumberingMod implements
     private static final String POWER_SLUMBERING_PORTRAIT = "theSlumberingResources/images/1024/bg_power_first_color.png";
     private static final String ENERGY_ORB_SLUMBERING_PORTRAIT = "theSlumberingResources/images/1024/card_first_color_orb.png";
 
-    private static final String THE_SLUMBERING_BUTTON = "theSlumberingResources/images/charSelect/firstButton.png";
-    private static final String THE_SLUMBERING_PORTRAIT = "theSlumberingResources/images/charSelect/FirstPortraitBG.png";
+    private static final String THE_SLUMBERING_BUTTON = "theSlumberingResources/images/charSelect/slumberingButton.png";
+    private static final String THE_SLUMBERING_PORTRAIT = "theSlumberingResources/images/charSelect/SlumberingPortraitBG.png";
     public static final String THE_SLUMBERING_SHOULDER_1 = "theSlumberingResources/images/char/slumberingCharacter/shoulder.png";
     public static final String THE_SLUMBERING_SHOULDER_2 = "theSlumberingResources/images/char/slumberingCharacter/shoulder2.png";
     public static final String THE_SLUMBERING_CORPSE = "theSlumberingResources/images/char/slumberingCharacter/corpse.png";

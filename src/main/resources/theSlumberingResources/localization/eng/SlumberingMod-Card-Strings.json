@@ -181,7 +181,7 @@
   },
   "theSlumbering:BagOfShields": {
     "NAME": "Bag of Shields",
-    "DESCRIPTION": "theslumbering:Passive. NL Retain Block at the start of your turn based on the depth of your slumber."
+    "DESCRIPTION": "theslumbering:Passive. NL Preserve Block at the start of your turn based on the depth of your slumber."
   },
   "theSlumbering:SpectralDefender": {
     "NAME": "Spectral Defender",

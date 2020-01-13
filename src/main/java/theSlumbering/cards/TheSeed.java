@@ -24,7 +24,7 @@ public class TheSeed extends AbstractCustomCard {
     public static final CardColor COLOR = TheSlumbering.Enums.COLOR_SLUMBERING;
 
     private static final int COST = 2;
-    private static final int UPGRADED_COST = 1;
+    private static final int UPGRADED_COST = 0;
 
 
     public TheSeed() {
