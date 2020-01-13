@@ -26,7 +26,7 @@ public class DiscoverDeckAction extends AbstractGameAction {
     public DiscoverDeckAction(boolean draw) {
         this.p = AbstractDungeon.player;
         this.duration = Settings.ACTION_DUR_FAST;
-        this.actionType = ActionType.CARD_MANIPULATION;
+        this.actionType = ActionType.DRAW;
         this.draw = draw;
     }
 
@@ -35,8 +35,10 @@ public class DiscoverDeckAction extends AbstractGameAction {
         //disCard.current_x = -1000.0F * Settings.scale;
         if (this.p.hand.size() < BaseMod.MAX_HAND_SIZE) {
             p.drawPile.moveToHand(disCard, AbstractDungeon.player.drawPile);
+            disCard.triggerWhenDrawn();
         } else {
             p.drawPile.moveToDiscardPile(disCard);
+            disCard.triggerWhenDrawn();
             this.p.createHandIsFullDialog();
         }
     }

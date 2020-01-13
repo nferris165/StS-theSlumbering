@@ -1,5 +1,6 @@
 package theSlumbering.actions;
 
+import basemod.BaseMod;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.AbstractCard.CardTags;
@@ -50,7 +51,7 @@ public class DrawTagAction extends AbstractGameAction {
                     this.isDone = true;
                     return;
                 }
-                if (this.p.hand.size() == 10) {
+                if (this.p.hand.size() == BaseMod.MAX_HAND_SIZE) {
                     this.p.drawPile.moveToDiscardPile(card);
                     this.p.createHandIsFullDialog();
                 } else{
@@ -62,6 +63,7 @@ public class DrawTagAction extends AbstractGameAction {
                     card.current_x = CardGroup.DRAW_PILE_X;
                     card.current_y = CardGroup.DRAW_PILE_Y;
                     this.p.drawPile.removeCard(card);
+                    card.triggerWhenDrawn();
                     AbstractDungeon.player.hand.addToTop(card);
                     AbstractDungeon.player.hand.refreshHandLayout();
                     AbstractDungeon.player.hand.applyPowers();

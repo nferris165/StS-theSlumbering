@@ -1,5 +1,6 @@
 package theSlumbering.actions;
 
+import basemod.BaseMod;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DamageAllEnemiesAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -53,6 +54,7 @@ public class CountAction extends AbstractGameAction {
         c = p.drawPile.getTopCard();
         while(c.type != this.type && p.drawPile.size() > 1){
             AbstractDungeon.effectsQueue.add(new ShowCardBrieflyEffect(c.makeStatEquivalentCopy()));
+            c.triggerWhenDrawn();
             p.drawPile.moveToDiscardPile(c);
             if(this.damageDealt){
                 AbstractDungeon.actionManager.addToBottom(new DamageAllEnemiesAction(p, this.multiDamage, this.damageTypeForTurn, AbstractGameAction.AttackEffect.FIRE));
@@ -63,8 +65,15 @@ public class CountAction extends AbstractGameAction {
         if(this.damageDealt){
             AbstractDungeon.actionManager.addToBottom(new DamageAllEnemiesAction(p, this.multiDamage, this.damageTypeForTurn, AbstractGameAction.AttackEffect.FIRE));
         }
-        p.drawPile.moveToHand(c, p.drawPile);
-        p.hand.refreshHandLayout();
+        if (this.p.hand.size() == BaseMod.MAX_HAND_SIZE) {
+            p.drawPile.moveToDiscardPile(c);
+            this.p.createHandIsFullDialog();
+        } else {
+            p.drawPile.moveToHand(c, p.drawPile);
+            c.triggerWhenDrawn();
+            p.hand.refreshHandLayout();
+        }
+
 
         this.isDone = true;
     }

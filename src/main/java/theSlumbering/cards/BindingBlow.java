@@ -44,6 +44,12 @@ public class BindingBlow extends AbstractCustomCard {
     }
 
     @Override
+    public void triggerWhenCopied() {
+        AbstractPlayer p = AbstractDungeon.player;
+        AbstractDungeon.actionManager.addToBottom(new CheckBoundAction(this));
+    }
+
+    @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         AbstractDungeon.actionManager.addToBottom(new DamageAction(m,
                 new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.SMASH));
