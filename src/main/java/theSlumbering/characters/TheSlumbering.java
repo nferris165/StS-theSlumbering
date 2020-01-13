@@ -84,7 +84,7 @@ public class TheSlumbering extends AbstractCustomPlayer {
         super(name, setClass, orbTextures,
                 "theSlumberingResources/images/char/slumberingCharacter/orb/vfx.png", null,
                 new SpriterAnimation(
-                        "theSlumberingResources/images/char/slumberingCharacter/Spriter/theDefaultAnimation.scml"));
+                        "theSlumberingResources/images/char/slumberingCharacter/Spriter/theSlumberingAnimation.scml"));
 
         //energy manager
         initializeClass(null,
