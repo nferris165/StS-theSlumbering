@@ -41,7 +41,7 @@ public class WokeDefend extends AbstractCustomCard {
         magicNumber = baseMagicNumber = MAGIC;
 
         //tags
-        this.tags.add(BaseModCardTags.BASIC_DEFEND);
+        //this.tags.add(BaseModCardTags.BASIC_DEFEND);
         this.tags.add(customTags.Woke);
 
     }

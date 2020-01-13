@@ -1,5 +1,6 @@
 package theSlumbering.cards;
 
+import basemod.helpers.BaseModCardTags;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.Settings;
@@ -29,6 +30,9 @@ public class Defend_Slumbering extends AbstractCustomCard {
     public Defend_Slumbering() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         baseBlock = BLOCK;
+
+        this.tags.add(BaseModCardTags.BASIC_DEFEND);
+
     }
 
 

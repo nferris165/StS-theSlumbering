@@ -43,7 +43,7 @@ public class DrowsyAttack extends AbstractCustomCard {
         //this.isMultiDamage = true;
 
         //tags
-        this.tags.add(BaseModCardTags.BASIC_STRIKE);
+        //this.tags.add(BaseModCardTags.BASIC_STRIKE);
         this.tags.add(customTags.Drowsy);
 
     }

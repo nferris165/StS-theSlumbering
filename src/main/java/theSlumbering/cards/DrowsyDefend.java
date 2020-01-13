@@ -35,7 +35,7 @@ public class DrowsyDefend extends AbstractCustomCard {
         block = baseBlock = BLOCK;
 
         //tags
-        this.tags.add(BaseModCardTags.BASIC_DEFEND);
+        //this.tags.add(BaseModCardTags.BASIC_DEFEND);
         this.tags.add(customTags.Drowsy);
 
     }
