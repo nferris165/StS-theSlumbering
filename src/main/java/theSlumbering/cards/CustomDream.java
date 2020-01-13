@@ -14,6 +14,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import theSlumbering.SlumberingMod;
 import theSlumbering.characters.TheSlumbering;
+import theSlumbering.patches.customTags;
 
 import java.util.List;
 
@@ -45,6 +46,7 @@ public class CustomDream extends AbstractCustomCard implements ModalChoice.Callb
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         baseDamage = DAMAGE;
         baseBlock = BLOCK;
+        tags.add(customTags.Snooze);
         this.dontTriggerOnUseCard = true;
 
         modal = new ModalChoiceBuilder()

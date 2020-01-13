@@ -265,7 +265,7 @@
   },
   "theSlumbering:CustomDream": {
     "NAME": "Dream: Freedom",
-    "DESCRIPTION": "Choose an [#ebc634]Option.",
+    "DESCRIPTION": "Choose an [#ebc634]Option. NL theslumbering:Snooze.",
     "EXTENDED_DESCRIPTION": [
       "Gain ",
       " Block.",

@@ -22,7 +22,7 @@ public class GlassShield extends AbstractCustomRelic implements OnLoseBlockRelic
     public GlassShield() {
         super(ID, IMG, OUTLINE, RelicTier.COMMON, LandingSound.CLINK);
 
-        this.counter = AbstractDungeon.actNum * 30;
+        this.counter = AbstractDungeon.actNum < 4 ? 120 - (AbstractDungeon.actNum * 30) : 0 ;
         this.floatCounter = 0;
         updateDescription();
     }

@@ -56,8 +56,8 @@ public class Hypersomnia extends AbstractCustomCard {
         if (!upgraded) {
             upgradeName();
             upgradeBaseCost(UPGRADED_COST);
-            upgradeMagicNumber(UP_MAGIC);
-            upgradeSecondMagicNumber(UP_MAGIC);
+            //upgradeMagicNumber(UP_MAGIC);
+            //upgradeSecondMagicNumber(UP_MAGIC);
             initializeDescription();
         }
     }
