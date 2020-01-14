@@ -1,19 +1,14 @@
 package theSlumbering.cards;
 
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
-import com.megacrit.cardcrawl.actions.common.ExhaustSpecificCardAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.powers.GainStrengthPower;
-import com.megacrit.cardcrawl.powers.LoseStrengthPower;
-import com.megacrit.cardcrawl.powers.StrengthPower;
 import theSlumbering.SlumberingMod;
 import theSlumbering.characters.TheSlumbering;
 import theSlumbering.powers.DrowsyPower;
 import theSlumbering.powers.LoseDrowsyPower;
 
-import static com.megacrit.cardcrawl.cards.green.Reflex.EXTENDED_DESCRIPTION;
 import static theSlumbering.SlumberingMod.makeCardPath;
 
 public class Hypersomnia extends AbstractCustomCard {

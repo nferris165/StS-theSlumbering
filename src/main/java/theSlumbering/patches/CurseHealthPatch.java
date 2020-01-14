@@ -32,7 +32,7 @@ public class CurseHealthPatch {
 
     public static class PainPatch{
         @SpireInsertPatch(
-                locator = Locator.class
+                locator = LocatorPain.class
         )
         public static SpireReturn Insert(Pain __instance, AbstractCard c){
             if(AbstractDungeon.player instanceof TheSlumbering){
@@ -51,9 +51,9 @@ public class CurseHealthPatch {
             method = SpirePatch.CONSTRUCTOR
     )
     public static class PainDescPatch{
-        public static void Prefix(Pain __instance, @ByRef String[] ___DESCRIPTION){
+        public static void Prefix(Pain __instance, @ByRef CardStrings[] ___cardStrings){
             if(AbstractDungeon.player instanceof TheSlumbering){
-                ___DESCRIPTION[0] = TEXT[0];
+                ___cardStrings[0].DESCRIPTION = TEXT[0];
             }
         }
     }
@@ -92,7 +92,14 @@ public class CurseHealthPatch {
 
     public static class Locator extends SpireInsertLocator {
         public int[] Locate(CtBehavior ctMethodToPatch) throws CannotCompileException, PatchingException {
-            Matcher finalMatcher = new Matcher.FieldAccessMatcher(AbstractDungeon.class, "actionManager");
+            Matcher finalMatcher = new Matcher.MethodCallMatcher(Regret.class, "addToTop");
+            return LineFinder.findInOrder(ctMethodToPatch, new ArrayList<>(), finalMatcher);
+        }
+    }
+
+    public static class LocatorPain extends SpireInsertLocator {
+        public int[] Locate(CtBehavior ctMethodToPatch) throws CannotCompileException, PatchingException {
+            Matcher finalMatcher = new Matcher.MethodCallMatcher(Pain.class, "addToTop");
             return LineFinder.findInOrder(ctMethodToPatch, new ArrayList<>(), finalMatcher);
         }
     }

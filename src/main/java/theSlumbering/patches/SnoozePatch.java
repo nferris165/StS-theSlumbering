@@ -87,7 +87,7 @@ public class SnoozePatch {
 
     public static class L2 extends SpireInsertLocator {
         public int[] Locate(CtBehavior ctMethodToPatch) throws CannotCompileException, PatchingException {
-            Matcher finalMatcher = new Matcher.FieldAccessMatcher(AbstractDungeon.class, "actionManager");
+            Matcher finalMatcher = new Matcher.MethodCallMatcher(DiscardAtEndOfTurnAction.class, "addToTop");
             return LineFinder.findInOrder(ctMethodToPatch, new ArrayList<>(), finalMatcher);
         }
     }

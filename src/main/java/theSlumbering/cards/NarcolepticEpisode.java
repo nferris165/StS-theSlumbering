@@ -11,7 +11,6 @@ import theSlumbering.characters.TheSlumbering;
 import theSlumbering.powers.DrowsyPower;
 import theSlumbering.powers.LoseDrowsyPower;
 
-import static com.megacrit.cardcrawl.cards.green.Reflex.EXTENDED_DESCRIPTION;
 import static theSlumbering.SlumberingMod.makeCardPath;
 import static theSlumbering.SlumberingMod.makeID;
 
@@ -48,7 +47,7 @@ public class NarcolepticEpisode extends AbstractCustomCard {
 
     @Override
     public boolean canUse(AbstractPlayer p, AbstractMonster m) {
-        this.cantUseMessage = EXTENDED_DESCRIPTION[0];
+        this.cantUseMessage = ext_desc[0];
         return false;
     }
 

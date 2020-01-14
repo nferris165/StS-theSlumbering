@@ -11,7 +11,6 @@ import theSlumbering.SlumberingMod;
 import theSlumbering.characters.TheSlumbering;
 import theSlumbering.powers.DrowsyPower;
 
-import static com.megacrit.cardcrawl.cards.green.Reflex.EXTENDED_DESCRIPTION;
 import static theSlumbering.SlumberingMod.makeCardPath;
 
 public class Sleepwalk extends AbstractCustomCard {
@@ -46,7 +45,7 @@ public class Sleepwalk extends AbstractCustomCard {
 
     @Override
     public boolean canUse(AbstractPlayer p, AbstractMonster m) {
-        this.cantUseMessage = EXTENDED_DESCRIPTION[0];
+        this.cantUseMessage = ext_desc[0];
         return false;
     }
 

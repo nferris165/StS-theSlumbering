@@ -10,7 +10,6 @@ import com.megacrit.cardcrawl.powers.ArtifactPower;
 import theSlumbering.SlumberingMod;
 import theSlumbering.characters.TheSlumbering;
 
-import static com.megacrit.cardcrawl.cards.green.Reflex.EXTENDED_DESCRIPTION;
 import static theSlumbering.SlumberingMod.makeCardPath;
 
 public class Comfortable extends AbstractCustomCard {
@@ -37,7 +36,7 @@ public class Comfortable extends AbstractCustomCard {
 
     @Override
     public boolean canUse(AbstractPlayer p, AbstractMonster m) {
-        this.cantUseMessage = EXTENDED_DESCRIPTION[0];
+        this.cantUseMessage = ext_desc[0];
         return false;
     }
 

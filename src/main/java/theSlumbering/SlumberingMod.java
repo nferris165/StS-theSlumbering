@@ -96,9 +96,9 @@ public class SlumberingMod implements
 
 
     //char main color
-    public static final Color SLUMBERING_TEAL = CardHelper.getColor(59.0f, 125.0f, 99.0f);
+    public static final Color SLUMBERING_TEAL = CardHelper.getColor(59, 125, 99);
 
-    public static final Color SLUMBERING_POTION_RUST = CardHelper.getColor(211.0f, 40.0f, 2.0f);
+    public static final Color SLUMBERING_POTION_RUST = CardHelper.getColor(211, 40, 2);
 
     private static final String ATTACK_CARD_SLUMBERING = "theSlumberingResources/images/512/bg_attack_first_color.png";
     private static final String SKILL_CARD_SLUMBERING = "theSlumberingResources/images/512/bg_skill_first_color.png";

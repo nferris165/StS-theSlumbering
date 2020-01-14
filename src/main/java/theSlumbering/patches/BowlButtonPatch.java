@@ -9,6 +9,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.FontHelper;
 import com.megacrit.cardcrawl.localization.UIStrings;
 import com.megacrit.cardcrawl.ui.buttons.SingingBowlButton;
+import com.megacrit.cardcrawl.ui.buttons.SkipCardButton;
 import javassist.CannotCompileException;
 import javassist.CtBehavior;
 import theSlumbering.characters.TheSlumbering;
@@ -29,9 +30,9 @@ public class BowlButtonPatch {
         @SpireInsertPatch(
                 locator = Locator.class
         )
-        public static SpireReturn Insert(SingingBowlButton __instance, SpriteBatch sb, float ___current_x, float ___TAKE_Y, Color ___textColor){
+        public static SpireReturn Insert(SingingBowlButton __instance, SpriteBatch sb, float ___current_x, Color ___textColor){
             if(AbstractDungeon.player instanceof TheSlumbering){
-                FontHelper.renderFontCentered(sb, FontHelper.buttonLabelFont, TEXT[0], ___current_x, ___TAKE_Y, ___textColor);
+                FontHelper.renderFontCentered(sb, FontHelper.buttonLabelFont, TEXT[0], ___current_x, SkipCardButton.TAKE_Y, ___textColor);
                 return SpireReturn.Return(null);
             }
             return SpireReturn.Continue();

@@ -7,7 +7,6 @@ import theSlumbering.SlumberingMod;
 import theSlumbering.actions.DiscoverDeckAction;
 import theSlumbering.characters.TheSlumbering;
 
-import static com.megacrit.cardcrawl.cards.green.Reflex.EXTENDED_DESCRIPTION;
 import static theSlumbering.SlumberingMod.makeCardPath;
 
 public class InducedDream extends AbstractCustomCard {
@@ -40,7 +39,7 @@ public class InducedDream extends AbstractCustomCard {
     @Override
     public boolean canUse(AbstractPlayer p, AbstractMonster m) {
         if(AbstractDungeon.player.drawPile.size() == 0){
-            this.cantUseMessage = EXTENDED_DESCRIPTION[0];
+            this.cantUseMessage = ext_desc[0];
             return false;
         }
         return super.canUse(p, m);

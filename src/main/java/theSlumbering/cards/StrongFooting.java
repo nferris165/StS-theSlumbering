@@ -7,7 +7,6 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import theSlumbering.SlumberingMod;
 import theSlumbering.characters.TheSlumbering;
 
-import static com.megacrit.cardcrawl.cards.green.Reflex.EXTENDED_DESCRIPTION;
 import static theSlumbering.SlumberingMod.makeCardPath;
 
 public class StrongFooting extends AbstractCustomCard {
@@ -42,7 +41,7 @@ public class StrongFooting extends AbstractCustomCard {
     @Override
     public boolean canUse(AbstractPlayer p, AbstractMonster m) {
         if(p.currentBlock > this.magicNumber){
-            this.cantUseMessage = EXTENDED_DESCRIPTION[0];
+            this.cantUseMessage = ext_desc[0];
             return false;
         }
         return super.canUse(p, m);

@@ -368,7 +368,7 @@ public class RelicHealthPatch {
     )
     public static class PantographPatch{
         @SpireInsertPatch(
-                locator = HealLocator.class
+                locator = HealLocatorPanto.class
         )
         public static SpireReturn Insert(Pantograph __instance){
             if(AbstractDungeon.player instanceof TheSlumbering){
@@ -531,6 +531,13 @@ public class RelicHealthPatch {
     public static class HealLocator extends SpireInsertLocator {
         public int[] Locate(CtBehavior ctMethodToPatch) throws CannotCompileException, PatchingException {
             Matcher finalMatcher = new Matcher.MethodCallMatcher(AbstractPlayer.class, "heal");
+            return LineFinder.findInOrder(ctMethodToPatch, new ArrayList<>(), finalMatcher);
+        }
+    }
+
+    public static class HealLocatorPanto extends SpireInsertLocator {
+        public int[] Locate(CtBehavior ctMethodToPatch) throws CannotCompileException, PatchingException {
+            Matcher finalMatcher = new Matcher.MethodCallMatcher(Pantograph.class, "addToTop");
             return LineFinder.findInOrder(ctMethodToPatch, new ArrayList<>(), finalMatcher);
         }
     }

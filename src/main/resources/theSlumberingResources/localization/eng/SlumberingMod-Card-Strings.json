@@ -168,12 +168,18 @@
   },
   "theSlumbering:Sleepwalk": {
     "NAME": "Sleepwalk",
-    "DESCRIPTION": "Unplayable. NL Deal !D! to a random enemy when drawn."
+    "DESCRIPTION": "Unplayable. NL Deal !D! to a random enemy when drawn.",
+    "EXTENDED_DESCRIPTION": [
+      "I can't play this card."
+    ]
   },
   "theSlumbering:Comfortable": {
     "NAME": "Comfortable",
     "DESCRIPTION": "Unplayable. NL Gain [E] when drawn.",
-    "UPGRADE_DESCRIPTION": "Unplayable. NL When drawn, gain [E] and set Artifact to 1."
+    "UPGRADE_DESCRIPTION": "Unplayable. NL When drawn, gain [E] and set Artifact to 1.",
+    "EXTENDED_DESCRIPTION": [
+      "I can't play this card."
+    ]
   },
   "theSlumbering:SideSleeper": {
     "NAME": "Side Sleeper",
@@ -193,7 +199,10 @@
   },
   "theSlumbering:StrongFooting": {
     "NAME": "Strong Footing",
-    "DESCRIPTION": "If you have !M! or less Block, double your Block."
+    "DESCRIPTION": "If you have !M! or less Block, double your Block.",
+    "EXTENDED_DESCRIPTION": [
+      "I can't play this card."
+    ]
   },
   "theSlumbering:TheClock": {
     "NAME": "The Clock",
@@ -205,11 +214,17 @@
   },
   "theSlumbering:InducedDream": {
     "NAME": "Induced Dream",
-    "DESCRIPTION": "Look at 3 cards in your draw pile, choose 1 and add a copy of it to your hand. NL Exhaust."
+    "DESCRIPTION": "Look at 3 cards in your draw pile, choose 1 and add a copy of it to your hand. NL Exhaust.",
+    "EXTENDED_DESCRIPTION": [
+      "I can't play this card."
+    ]
   },
   "theSlumbering:InducedMemory": {
     "NAME": "Induced Memory",
-    "DESCRIPTION": "Look at 3 cards in your draw pile, choose 1 to draw."
+    "DESCRIPTION": "Look at 3 cards in your draw pile, choose 1 to draw.",
+    "EXTENDED_DESCRIPTION": [
+      "I can't play this card."
+    ]
   },
   "theSlumbering:LingeringDoubt": {
     "NAME": "Lingering Doubt",
@@ -412,7 +427,10 @@
   },
   "theSlumbering:NarcolepticEpisode": {
     "NAME": "Narcoleptic Episode",
-    "DESCRIPTION": "Unplayable. NL When drawn, gain !M! theslumbering:Drowsy and !theSlumbering:Magic! Strength. NL At the end of this turn, lose !M! theslumbering:Drowsy and !theSlumbering:Magic! Strength."
+    "DESCRIPTION": "Unplayable. NL When drawn, gain !M! theslumbering:Drowsy and !theSlumbering:Magic! Strength. NL At the end of this turn, lose !M! theslumbering:Drowsy and !theSlumbering:Magic! Strength.",
+    "EXTENDED_DESCRIPTION": [
+      "I can't play this card."
+    ]
   },
   "theSlumbering:Redemption": {
     "NAME": "Redemption",

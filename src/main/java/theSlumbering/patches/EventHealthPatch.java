@@ -669,21 +669,29 @@ public class EventHealthPatch {
             method = "buttonEffect"
     )
 
+    //TODO inc fix?
     public static class KnowingSkullEventPatch {
         private static int value = 1;
         @SpireInsertPatch(
-                localvars = {"hpCost"},
+                localvars = {"leaveCost", "cardCost", "goldCost", "potionCost"},
                 locator = DamageLocator.class
         )
-        public static void Insert(KnowingSkull __instance, int buttonPressed, @ByRef int[] hpCost) {
+        public static void Insert(KnowingSkull __instance, int buttonPressed, @ByRef int[] leaveCost,
+                                  @ByRef int[] cardCost, @ByRef int[] goldCost, @ByRef int[] potionCost) {
             if (AbstractDungeon.player instanceof TheSlumbering) {
                 if (AbstractDungeon.player.hasRelic(HeartCollector.ID)
                         && AbstractDungeon.player.getRelic(HeartCollector.ID).counter == 0
                         && buttonPressed == 3) {
-                    hpCost[0] = 6;
+                    leaveCost[0] = 6;
+                    cardCost[0] = 6;
+                    goldCost[0] = 6;
+                    potionCost[0] = 6;
                 }
                 else {
-                    hpCost[0] = 0;
+                    leaveCost[0] = 0;
+                    cardCost[0] = 0;
+                    goldCost[0] = 0;
+                    potionCost[0] = 0;
                     SlumberingMod.decHeartCollectorRelic(value);
                 }
             }
@@ -714,6 +722,39 @@ public class EventHealthPatch {
                             __instance.imageEventText.updateDialogOption(3, OPTIONS[27] + value + GENERICS[2]);
                         }
                     }
+                }
+            }
+        }
+    }
+
+    @SpirePatch(
+            clz = KnowingSkull.class,
+            method = "obtainReward"
+    )
+
+    public static class KnowingSkullEventPatch2 {
+        private static int value = 1;
+
+        @SpireInsertPatch(
+                localvars = {"leaveCost", "cardCost", "goldCost", "potionCost"},
+                locator = DamageLocator.class
+        )
+        public static void Insert(KnowingSkull __instance, int buttonPressed, @ByRef int[] leaveCost,
+                                  @ByRef int[] cardCost, @ByRef int[] goldCost, @ByRef int[] potionCost) {
+            if (AbstractDungeon.player instanceof TheSlumbering) {
+                if (AbstractDungeon.player.hasRelic(HeartCollector.ID)
+                        && AbstractDungeon.player.getRelic(HeartCollector.ID).counter == 0
+                        && buttonPressed == 3) {
+                    leaveCost[0] = 6;
+                    cardCost[0] = 6;
+                    goldCost[0] = 6;
+                    potionCost[0] = 6;
+                } else {
+                    leaveCost[0] = 0;
+                    cardCost[0] = 0;
+                    goldCost[0] = 0;
+                    potionCost[0] = 0;
+                    SlumberingMod.decHeartCollectorRelic(value);
                 }
             }
         }

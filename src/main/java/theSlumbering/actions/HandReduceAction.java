@@ -21,13 +21,13 @@ public class HandReduceAction extends AbstractGameAction{
 
     public HandReduceAction(int amount){
         this.p = AbstractDungeon.player;
-        this.redVal = -amount;
+        this.redVal = amount;
         this.duration = Settings.ACTION_DUR_FAST;
         this.actionType = AbstractGameAction.ActionType.CARD_MANIPULATION;
     }
 
     private void reduce(AbstractCard card) {
-        card.modifyCostForTurn(this.redVal);
+        card.setCostForTurn(card.cost - this.redVal);
         this.p.drawPile.moveToHand(card, this.p.hand);
     }
 
