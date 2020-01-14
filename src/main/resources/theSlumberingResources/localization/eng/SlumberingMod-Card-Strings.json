@@ -413,5 +413,9 @@
   "theSlumbering:NarcolepticEpisode": {
     "NAME": "Narcoleptic Episode",
     "DESCRIPTION": "Unplayable. NL When drawn, gain !M! theslumbering:Drowsy and !theSlumbering:Magic! Strength. NL At the end of this turn, lose !M! theslumbering:Drowsy and !theSlumbering:Magic! Strength."
+  },
+  "theSlumbering:Redemption": {
+    "NAME": "Redemption",
+    "DESCRIPTION": "theslumbering:Passive. NL When HP reaches 0, regain 1 HP, and remove this card from your deck."
   }
 }

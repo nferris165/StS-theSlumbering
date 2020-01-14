@@ -132,5 +132,11 @@
                         "Retain up to #b",
                         " Block at the start of your turn."
                 ]
+        },
+        "theSlumbering:RedemptionPower": {
+                "NAME": "Redemption Power",
+                "DESCRIPTIONS": [
+                        "When HP reaches 0, regain 1 HP and remove this card from your deck."
+                ]
         }
 }

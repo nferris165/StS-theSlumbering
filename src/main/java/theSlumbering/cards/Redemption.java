@@ -4,17 +4,18 @@ import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.powers.BarricadePower;
 import theSlumbering.SlumberingMod;
 import theSlumbering.characters.TheSlumbering;
-import theSlumbering.patches.customTags;
-import theSlumbering.powers.BagOfShieldsPower;
 
 import static theSlumbering.SlumberingMod.makeCardPath;
 
-public class BagOfShields extends AbstractCustomCard {
+import theSlumbering.patches.customTags;
+import theSlumbering.powers.BagOfShieldsPower;
+import theSlumbering.powers.RedemptionPower;
 
-    public static final String ID = SlumberingMod.makeID(BagOfShields.class.getSimpleName());
+public class Redemption extends AbstractCustomCard {
+
+    public static final String ID = SlumberingMod.makeID(Redemption.class.getSimpleName());
 
     public static final String IMG = makeCardPath("P_temp.png");
 
@@ -25,21 +26,17 @@ public class BagOfShields extends AbstractCustomCard {
 
     private static final int COST = -2;
 
-    public BagOfShields() {
+    public Redemption() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
 
         tags.add(customTags.Passive);
     }
 
-
     @Override
     public void passiveEffect() {
         AbstractPlayer p = AbstractDungeon.player;
-        if(!p.hasPower(BagOfShieldsPower.POWER_ID)) {
-            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new BagOfShieldsPower(p)));
-        }
-        if(!p.hasPower(BarricadePower.POWER_ID)) {
-            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new BarricadePower(p)));
+        if(!p.hasPower(RedemptionPower.POWER_ID)) {
+            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new RedemptionPower(p, this)));
         }
     }
 
@@ -59,6 +56,5 @@ public class BagOfShields extends AbstractCustomCard {
 
     @Override
     public void upgrade() {
-
     }
 }

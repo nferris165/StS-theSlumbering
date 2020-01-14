@@ -28,10 +28,10 @@ public class HeartCollector extends AbstractCustomRelic implements ClickableReli
         super(ID, IMG, OUTLINE, RelicTier.STARTER, LandingSound.MAGICAL);
 
         if(AbstractDungeon.ascensionLevel >= 6){
-            this.counter = 8;
+            this.counter = 7;
         }
         else{
-            this.counter = 9;
+            this.counter = 8;
         }
     }
 
@@ -68,7 +68,7 @@ public class HeartCollector extends AbstractCustomRelic implements ClickableReli
             this.flash();
             AbstractDungeon.actionManager.addToBottom(new RelicAboveCreatureAction(m, this));
             if(m.type == AbstractMonster.EnemyType.BOSS){
-                if(AbstractDungeon.ascensionLevel >= 14){
+                if(AbstractDungeon.ascensionLevel >= 5){
                     this.counter += 2;
                 }
                 else{

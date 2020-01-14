@@ -130,6 +130,9 @@ public class TheSlumbering extends AbstractCustomPlayer {
         retVal.add(Invigorate.ID);
         retVal.add(DreamEater.ID);
 
+        //optional?
+        retVal.add(Redemption.ID);
+
         return retVal;
     }
 
