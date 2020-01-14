@@ -9,6 +9,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import theSlumbering.SlumberingMod;
 import theSlumbering.characters.TheSlumbering;
+import theSlumbering.powers.DrowsyPower;
 
 import static com.megacrit.cardcrawl.cards.green.Reflex.EXTENDED_DESCRIPTION;
 import static theSlumbering.SlumberingMod.makeCardPath;
@@ -51,8 +52,13 @@ public class Sleepwalk extends AbstractCustomCard {
 
     @Override
     public void triggerWhenDrawn() {
+        if(AbstractDungeon.player.hasPower(DrowsyPower.POWER_ID)){
+            damage = (int) ((DrowsyPower) AbstractDungeon.player.getPower(DrowsyPower.POWER_ID)).damageCalc(baseDamage);
+        }
         AbstractDungeon.actionManager.addToBottom(
-                new DamageAction(AbstractDungeon.getRandomMonster(), new DamageInfo(AbstractDungeon.player, damage, DamageInfo.DamageType.THORNS), AbstractGameAction.AttackEffect.SLASH_HORIZONTAL));
+                new DamageAction(AbstractDungeon.getRandomMonster(),
+                        new DamageInfo(AbstractDungeon.player, damage, DamageInfo.DamageType.THORNS),
+                        AbstractGameAction.AttackEffect.SLASH_HORIZONTAL));
     }
 
     @Override

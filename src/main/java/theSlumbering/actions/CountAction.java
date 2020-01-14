@@ -9,6 +9,7 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.vfx.cardManip.ShowCardBrieflyEffect;
+import theSlumbering.cards.BindingBlow;
 
 public class CountAction extends AbstractGameAction {
 
@@ -54,7 +55,9 @@ public class CountAction extends AbstractGameAction {
         c = p.drawPile.getTopCard();
         while(c.type != this.type && p.drawPile.size() > 1){
             AbstractDungeon.effectsQueue.add(new ShowCardBrieflyEffect(c.makeStatEquivalentCopy()));
-            c.triggerWhenDrawn();
+            if(!c.cardID.equals(BindingBlow.ID)){
+                c.triggerWhenDrawn();
+            }
             p.drawPile.moveToDiscardPile(c);
             if(this.damageDealt){
                 AbstractDungeon.actionManager.addToBottom(new DamageAllEnemiesAction(p, this.multiDamage, this.damageTypeForTurn, AbstractGameAction.AttackEffect.FIRE));

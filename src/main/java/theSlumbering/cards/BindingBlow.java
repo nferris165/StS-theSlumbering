@@ -50,6 +50,12 @@ public class BindingBlow extends AbstractCustomCard {
     }
 
     @Override
+    public void onMoveToDiscard() {
+        AbstractPlayer p = AbstractDungeon.player;
+        AbstractDungeon.actionManager.addToBottom(new RemoveSpecificPowerAction(p, p, BoundPower.POWER_ID));
+    }
+
+    @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         AbstractDungeon.actionManager.addToBottom(new DamageAction(m,
                 new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.SMASH));

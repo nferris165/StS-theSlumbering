@@ -52,12 +52,16 @@ public class DrowsyPower  extends AbstractCustomPower implements CloneablePowerI
         updateDescription();
     }
 
-    @Override
-    public float atDamageGive(float damage, DamageInfo.DamageType type) {
+    public float damageCalc(float damage){
         float regBuf = damage * percentF * this.amount + damage;
         float incBuf = damage * (percentF + buffF) * this.amount + damage;
+        return AbstractDungeon.player.hasRelic(makeID("StarMobile")) ? incBuf : regBuf;
+    }
+
+    @Override
+    public float atDamageGive(float damage, DamageInfo.DamageType type) {
         if (type == DamageInfo.DamageType.NORMAL) {
-            return AbstractDungeon.player.hasRelic(makeID("StarMobile")) ? incBuf : regBuf;
+            return damageCalc(damage);
         } else {
             return damage;
         }

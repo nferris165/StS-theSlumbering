@@ -37,7 +37,7 @@ public class TrialofHypnosPower extends AbstractCustomPower implements Cloneable
     private boolean upgraded;
 
     private int dThresh = 30;
-    private int bThresh = 50;
+    private int bThresh = 40;
     private int cThresh = 5;
     private int pThresh = 1;
 
