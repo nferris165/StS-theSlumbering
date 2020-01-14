@@ -31,6 +31,7 @@ public class RelicRemovePatch {
             BaseMod.removeRelic(new SelfFormingClay());  //Ironclad
             BaseMod.removeRelic(new RedSkull()); //Ironclad
 
+            BaseMod.removeRelic(new TungstenRod());  // better out
             BaseMod.removeRelic(new CentennialPuzzle()); // better out
 
             // special

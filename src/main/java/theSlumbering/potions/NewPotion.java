@@ -37,6 +37,20 @@ public class NewPotion extends AbstractPotion {
         SlumberingMod.incSlumberingRelic(potency);
     }
 
+    @Override
+    public void initializeData() {
+        this.potency = this.getPotency();
+
+        if (AbstractDungeon.player != null && AbstractDungeon.player.hasRelic("SacredBark")) {
+            this.description =DESCRIPTIONS[1];
+        } else {
+            this.description = DESCRIPTIONS[0];
+        }
+
+        this.tips.clear();
+        this.tips.add(new PowerTip(this.name, this.description));
+    }
+
     //TODO use on map? ui.panels.potion
     @Override
     public boolean canUse() {

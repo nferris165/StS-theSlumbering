@@ -1,6 +1,9 @@
 {
         "theSlumbering:NewPotion": {
                 "NAME": "Wake Potion",
-                "DESCRIPTIONS": ["Wake up a little..."]
+                "DESCRIPTIONS": [
+                        "Wake up a little...",
+                        "Wake up a lot..."
+                ]
         }
 }
