@@ -29,7 +29,7 @@ public class ForcedThought extends AbstractCustomCard  implements ModalChoice.Ca
 
     public ForcedThought() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
-        this.dontTriggerOnUseCard = true;
+        //this.dontTriggerOnUseCard = true;
 
         modal = new ModalChoiceBuilder()
                 .setCallback(this)
@@ -45,7 +45,18 @@ public class ForcedThought extends AbstractCustomCard  implements ModalChoice.Ca
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
+        if(AbstractDungeon.player.cardsPlayedThisTurn == 5){
+            --AbstractDungeon.player.cardsPlayedThisTurn;
+        }
         modal.open();
+    }
+
+    @Override
+    public boolean canUse(AbstractPlayer p, AbstractMonster m) {
+        if(p.drawPile.isEmpty()){
+            return false;
+        }
+        return super.canUse(p, m);
     }
 
     @Override

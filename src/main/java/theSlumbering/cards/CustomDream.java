@@ -47,7 +47,7 @@ public class CustomDream extends AbstractCustomCard implements ModalChoice.Callb
         baseDamage = DAMAGE;
         baseBlock = BLOCK;
         tags.add(customTags.Snooze);
-        this.dontTriggerOnUseCard = true;
+        //this.dontTriggerOnUseCard = true;
 
         modal = new ModalChoiceBuilder()
                 .setCallback(this)
