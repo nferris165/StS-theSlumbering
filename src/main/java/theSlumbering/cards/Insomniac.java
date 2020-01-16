@@ -29,6 +29,7 @@ public class Insomniac extends AbstractCustomCard {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
 
         this.baseMagicNumber = this.magicNumber = MAGIC;
+        this.cardsToPreview = new Sleepwalk();
 
         tags.add(customTags.Passive);
     }

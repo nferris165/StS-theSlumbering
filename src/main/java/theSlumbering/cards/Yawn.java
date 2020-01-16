@@ -2,7 +2,9 @@ package theSlumbering.cards;
 
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
+import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import theSlumbering.SlumberingMod;
@@ -33,8 +35,17 @@ public class Yawn extends AbstractCustomCard {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         baseBlock = BLOCK;
         this.exhaust = true;
+        this.cardsToPreview = new Stretch(null);
+
     }
 
+    public Yawn(AbstractCard preview) {
+        super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
+        baseBlock = BLOCK;
+        this.exhaust = true;
+        this.cardsToPreview = preview;
+
+    }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {

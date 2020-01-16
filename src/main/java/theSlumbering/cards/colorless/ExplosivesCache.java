@@ -34,6 +34,7 @@ public class ExplosivesCache extends AbstractCustomCard {
     public ExplosivesCache() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         baseDamage = DAMAGE;
+        this.cardsToPreview = new Bomb();
     }
 
 

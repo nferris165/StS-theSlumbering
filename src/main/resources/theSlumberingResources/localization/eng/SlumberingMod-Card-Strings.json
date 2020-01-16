@@ -73,7 +73,7 @@
   },
   "theSlumbering:TheSeed": {
     "NAME": "The Seed",
-    "DESCRIPTION": "Add a theslumbering:Seed to your deck. NL (Removed from your deck after playing)"
+    "DESCRIPTION": "Add a *Seed to your deck. NL (Removed from your deck after playing)"
   },
   "theSlumbering:Seed": {
     "NAME": "Seed",
@@ -81,7 +81,7 @@
   },
   "theSlumbering:ExplosivesCache": {
     "NAME": "Explosives Cache",
-    "DESCRIPTION": "Deal !D! damage, but shuffle a theslumbering:Bomb into your draw pile."
+    "DESCRIPTION": "Deal !D! damage, but shuffle a *Bomb into your draw pile."
   },
   "theSlumbering:Bomb": {
     "NAME": "Bomb",
@@ -93,7 +93,7 @@
   },
   "theSlumbering:BombToss": {
     "NAME": "Bomb Toss",
-    "DESCRIPTION": "Shuffle a theslumbering:Detonator into your draw pile X times."
+    "DESCRIPTION": "Shuffle a *Detonator into your draw pile X times."
   },
   "theSlumbering:Wake": {
     "NAME": "Wake",
@@ -102,11 +102,11 @@
   },
   "theSlumbering:Yawn": {
     "NAME": "Yawn",
-    "DESCRIPTION": "Gain !B! Block. NL More powerful if played with theslumbering:Stretch. NL Exhaust."
+    "DESCRIPTION": "Gain !B! Block. NL More powerful if played with *Stretch. NL Exhaust."
   },
   "theSlumbering:Stretch": {
     "NAME": "Stretch",
-    "DESCRIPTION": "Deal !D! damage. NL More powerful if played with theslumbering:Yawn. NL Exhaust."
+    "DESCRIPTION": "Deal !D! damage. NL More powerful if played with *Yawn. NL Exhaust."
   },
   "theSlumbering:DreamEater": {
     "NAME": "Dream Eater",
@@ -236,7 +236,7 @@
   },
   "theSlumbering:Insomniac": {
     "NAME": "Insomniac",
-    "DESCRIPTION": "theslumbering:Passive. NL At the start of battle, shuffle a theslumbering:Sleepwalk into your draw pile !M! times."
+    "DESCRIPTION": "theslumbering:Passive. NL At the start of battle, shuffle a *Sleepwalk into your draw pile !M! times."
   },
   "theSlumbering:EntombedWeapon": {
     "NAME": "Entombed Blade",

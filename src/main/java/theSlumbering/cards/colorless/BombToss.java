@@ -25,6 +25,7 @@ public class BombToss extends AbstractCustomCard {
     public BombToss() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
 
+        this.cardsToPreview = new Detonator();
     }
 
 
