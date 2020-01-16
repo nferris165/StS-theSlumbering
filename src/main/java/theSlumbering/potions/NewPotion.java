@@ -33,7 +33,6 @@ public class NewPotion extends AbstractPotion {
 
     @Override
     public void use(AbstractCreature target) {
-
         SlumberingMod.incSlumberingRelic(potency);
     }
 
@@ -51,11 +50,9 @@ public class NewPotion extends AbstractPotion {
         this.tips.add(new PowerTip(this.name, this.description));
     }
 
-    //TODO use on map? ui.panels.potion
     @Override
     public boolean canUse() {
         if (AbstractDungeon.actionManager.turnHasEnded && AbstractDungeon.getCurrRoom().phase == RoomPhase.COMBAT) {
-            //logger.info(AbstractDungeon.actionManager.turnHasEnded + "&&" + AbstractDungeon.getCurrRoom().phase);
             return false;
         } else {
             return AbstractDungeon.getCurrRoom().event == null || !(AbstractDungeon.getCurrRoom().event instanceof WeMeetAgain);
