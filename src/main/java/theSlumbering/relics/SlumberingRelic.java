@@ -33,12 +33,15 @@ public class SlumberingRelic extends AbstractCustomRelic implements ClickableRel
     public SlumberingRelic() {
         super(ID, IMG, OUTLINE, RelicTier.STARTER, LandingSound.MAGICAL);
 
-        if(AbstractDungeon.ascensionLevel >= 14){
-            this.counter = 4;
-        }
-        else{
+        if(difficultyNormal){
             this.counter = 5;
+        } else{
+            this.counter = 6;
         }
+        if(AbstractDungeon.ascensionLevel >= 14){
+            this.counter--;
+        }
+
         if(CardCrawlGame.dungeon != null){
             checkWake();
         }

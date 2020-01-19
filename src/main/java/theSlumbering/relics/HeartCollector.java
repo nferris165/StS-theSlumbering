@@ -14,8 +14,7 @@ import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import theSlumbering.SlumberingMod;
 import theSlumbering.util.TextureLoader;
 
-import static theSlumbering.SlumberingMod.makeRelicOutlinePath;
-import static theSlumbering.SlumberingMod.makeRelicPath;
+import static theSlumbering.SlumberingMod.*;
 
 public class HeartCollector extends AbstractCustomRelic implements ClickableRelic {
 
@@ -27,11 +26,14 @@ public class HeartCollector extends AbstractCustomRelic implements ClickableReli
     public HeartCollector() {
         super(ID, IMG, OUTLINE, RelicTier.STARTER, LandingSound.MAGICAL);
 
-        if(AbstractDungeon.ascensionLevel >= 6){
-            this.counter = 7;
-        }
-        else{
+        if(difficultyNormal){
             this.counter = 8;
+        } else{
+            this.counter = 9;
+        }
+
+        if(AbstractDungeon.ascensionLevel >= 6){
+            this.counter--;
         }
     }
 
@@ -48,6 +50,7 @@ public class HeartCollector extends AbstractCustomRelic implements ClickableReli
                 this.counter = 0;
             }
 
+            //TODO heart sfx
             AbstractDungeon.actionManager.addToBottom(new SFXAction("MONSTER_COLLECTOR_DEBUFF"));
 
             //gain block
@@ -73,6 +76,13 @@ public class HeartCollector extends AbstractCustomRelic implements ClickableReli
                 }
                 else{
                     this.counter += 3;
+                }
+            }
+            else if(m.type == AbstractMonster.EnemyType.ELITE){
+                if(difficultyNormal){
+                    this.counter += 1;
+                } else{
+                    this.counter += 2;
                 }
             }
             else{
