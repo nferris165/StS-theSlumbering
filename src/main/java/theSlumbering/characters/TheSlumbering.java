@@ -131,7 +131,9 @@ public class TheSlumbering extends AbstractCustomPlayer {
         retVal.add(DreamEater.ID);
 
         //optional?
-        retVal.add(Redemption.ID);
+        if(!difficultyNormal) {
+            retVal.add(Redemption.ID);
+        }
 
         return retVal;
     }
@@ -248,7 +250,8 @@ public class TheSlumbering extends AbstractCustomPlayer {
                         AbstractDungeon.player, new DrowsyPower(AbstractDungeon.player, val, false), 1));
             } else{
                 AbstractDungeon.actionManager.addToTop(new ApplyPowerAction(AbstractDungeon.player,
-                        AbstractDungeon.player, new AwakePower(AbstractDungeon.player)));
+                        AbstractDungeon.player, new DrowsyPower(AbstractDungeon.player, 1, false), 1));
+                        //AbstractDungeon.player, new AwakePower(AbstractDungeon.player)));
             }
         }
         else{

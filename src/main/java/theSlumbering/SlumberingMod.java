@@ -88,6 +88,8 @@ public class SlumberingMod implements
     public static Properties defaultSettings = new Properties();
     public static final String event_sharing_settings = "eventSharing";
     public static boolean eventSharing = false;
+public static final String difficulty_settings = "difficultyNormal";
+    public static boolean difficultyNormal = false;
 
     private static final String MODNAME = "Slumbering Mod";
     private static final String AUTHOR = "Nichilas";
@@ -177,10 +179,12 @@ public class SlumberingMod implements
         //TODO finalize mod settings
         logger.info("Adding mod settings");
         defaultSettings.setProperty(event_sharing_settings, "FALSE");
+        defaultSettings.setProperty(difficulty_settings, "FALSE");
         try {
             SpireConfig config = new SpireConfig("slumberingMod", "theSlumberingConfig", defaultSettings);
             config.load();
             eventSharing = config.getBool(event_sharing_settings);
+            difficultyNormal = config.getBool(difficulty_settings);
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -207,8 +211,8 @@ public class SlumberingMod implements
         ModPanel settingsPanel = new ModPanel();
 
         //TODO mod panel
-        ModLabeledToggleButton enableNormalsButton = new ModLabeledToggleButton("Toggles event sharing.",
-                350.0f, 700.0f, Settings.CREAM_COLOR, FontHelper.charDescFont,
+        ModLabeledToggleButton enableEventsButton = new ModLabeledToggleButton("Enables Slumbering events for all characters.",
+                350.0f, 750.0f, Settings.CREAM_COLOR, FontHelper.charDescFont,
                 eventSharing,
                 settingsPanel,
                 (label) -> {},
@@ -224,7 +228,26 @@ public class SlumberingMod implements
                     }
                 });
 
-        settingsPanel.addUIElement(enableNormalsButton);
+        ModLabeledToggleButton enableNormalDifficultyButton = new ModLabeledToggleButton("Enables Normal difficulty mode. " +
+                "(The intended difficulty; More difficult than by default)",
+                350.0f, 700.0f, Settings.CREAM_COLOR, FontHelper.charDescFont,
+                difficultyNormal,
+                settingsPanel,
+                (label) -> {},
+                (button) -> {
+
+                    difficultyNormal = button.enabled;
+                    try {
+                        SpireConfig config = new SpireConfig("slumberingMod", "theSlumberingConfig", defaultSettings);
+                        config.setBool(event_sharing_settings, difficultyNormal);
+                        config.save();
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    }
+                });
+
+        settingsPanel.addUIElement(enableEventsButton);
+        settingsPanel.addUIElement(enableNormalDifficultyButton);
         BaseMod.registerModBadge(badgeTexture, MODNAME, AUTHOR, DESCRIPTION, settingsPanel);
 
         //events

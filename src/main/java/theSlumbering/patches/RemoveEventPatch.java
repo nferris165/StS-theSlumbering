@@ -7,6 +7,7 @@ import com.megacrit.cardcrawl.events.city.CursedTome;
 import com.megacrit.cardcrawl.events.city.Nest;
 import theSlumbering.SlumberingMod;
 import theSlumbering.characters.TheSlumbering;
+import theSlumbering.events.JustInTime;
 import theSlumbering.events.MysteriousOrb;
 import theSlumbering.events.PoweredUp;
 import theSlumbering.relics.SlumberingRelic;
@@ -30,6 +31,7 @@ public class RemoveEventPatch {
         if (!SlumberingMod.eventSharing) {
             if (!(AbstractDungeon.player instanceof TheSlumbering)) {
                 dungeon_instance.eventList.remove(PoweredUp.ID);
+                dungeon_instance.eventList.remove(JustInTime.ID);
             }
         }
     }

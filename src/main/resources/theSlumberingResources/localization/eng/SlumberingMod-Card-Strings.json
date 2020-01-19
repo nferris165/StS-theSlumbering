@@ -308,7 +308,7 @@
   },
   "theSlumbering:NightTerror": {
     "NAME": "Night Terror",
-    "DESCRIPTION": "Deal !D! damage to a random enemy, and [#ebc634]Stun it for one turn."
+    "DESCRIPTION": "Deal !D! damage to a random enemy, and [#ebc634]Stun it for one turn. NL Increase this card's cost by 1 this combat."
   },
   "theSlumbering:Hallucinations": {
     "NAME": "Hallucinations",

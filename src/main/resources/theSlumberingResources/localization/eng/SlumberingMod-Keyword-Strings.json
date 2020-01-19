@@ -31,7 +31,7 @@
     "NAMES": [
       "drowsy"
     ],
-    "DESCRIPTION": "You gain #b1 fewer [E] but #yAttacks deal #b25% more damage."
+    "DESCRIPTION": "You gain #b1 fewer [E] but #yAttacks deal #b25% more damage. NL This effect stacks."
   },
   {
     "NAMES": [
