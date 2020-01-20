@@ -6,6 +6,7 @@ import com.evacipated.cardcrawl.mod.stslib.relics.ClickableRelic;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.actions.common.RelicAboveCreatureAction;
 import com.megacrit.cardcrawl.actions.utility.SFXAction;
+import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.MinionPower;
@@ -69,6 +70,7 @@ public class HeartCollector extends AbstractCustomRelic implements ClickableReli
     public void onMonsterDeath(AbstractMonster m) {
         if (m.currentHealth <= 0 && !m.hasPower(MinionPower.POWER_ID)) {
             this.flash();
+            //CardCrawlGame.sound.play("Heart");
             AbstractDungeon.actionManager.addToBottom(new RelicAboveCreatureAction(m, this));
             if(m.type == AbstractMonster.EnemyType.BOSS){
                 if(AbstractDungeon.ascensionLevel >= 5){

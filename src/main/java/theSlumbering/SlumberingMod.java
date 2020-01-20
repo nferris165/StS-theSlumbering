@@ -368,6 +368,7 @@ public static final String difficulty_settings = "difficultyNormal";
     public void loadAudio() {
         HashMap<String, Sfx> map = (HashMap<String, Sfx>) ReflectionHacks.getPrivate(CardCrawlGame.sound, SoundMaster.class, "map");
         map.put("Pop", new Sfx(AUDIO_PATH + "pop.ogg", false));
+        map.put("Heart", new Sfx(AUDIO_PATH + "clink+thump.ogg", false));
     }
 
     private static void autoAddCards() throws URISyntaxException, IllegalAccessException, InstantiationException, NotFoundException, ClassNotFoundException

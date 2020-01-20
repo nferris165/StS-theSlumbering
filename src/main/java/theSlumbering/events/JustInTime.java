@@ -161,7 +161,7 @@ public class JustInTime extends AbstractImageEvent {
         } else{
             this.imageEventText.updateBodyText(DESCRIPTIONS[9]);
             this.imageEventText.clearAllDialogs();
-            this.imageEventText.setDialogOption(OPTIONS[9]);
+            this.imageEventText.setDialogOption(OPTIONS[9] + goldSpent + OPTIONS[2]);
             this.imageEventText.setDialogOption(OPTIONS[10]);
             this.imageEventText.setDialogOption(OPTIONS[11], new TheClock());
             option = -1;
@@ -211,7 +211,7 @@ public class JustInTime extends AbstractImageEvent {
                         ArrayList<AbstractCard> deck = (ArrayList<AbstractCard>) AbstractDungeon.player.masterDeck.group.clone();
                         Collections.shuffle(deck, AbstractDungeon.eventRng.random);
                         for(AbstractCard c: deck){
-                            if(!c.upgraded){
+                            if(c.canUpgrade() && !c.upgraded){
                                 c.upgrade();
                                 count++;
                             }

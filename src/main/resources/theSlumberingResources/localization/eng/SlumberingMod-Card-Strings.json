@@ -22,7 +22,7 @@
   },
   "theSlumbering:WokeDefend": {
     "NAME": "Awakened Defend",
-    "DESCRIPTION": "Gain !B! Block. NL Increased by !M! each time you theslumbering:Snooze a card. NL Lose 1 theslumbering:Drowsy."
+    "DESCRIPTION": "Gain !B! Block. NL Increased by !M! this combat each time you theslumbering:Snooze a card. NL Lose 1 theslumbering:Drowsy."
   },
   "theSlumbering:Jab": {
     "NAME": "Jab",
@@ -81,7 +81,7 @@
   },
   "theSlumbering:ExplosivesCache": {
     "NAME": "Explosives Cache",
-    "DESCRIPTION": "Deal !D! damage, but shuffle a *Bomb into your draw pile."
+    "DESCRIPTION": "Deal !D! damage. NL Shuffle a *Bomb into your draw pile."
   },
   "theSlumbering:Bomb": {
     "NAME": "Bomb",
