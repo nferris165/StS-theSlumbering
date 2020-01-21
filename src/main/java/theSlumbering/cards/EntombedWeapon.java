@@ -2,6 +2,7 @@ package theSlumbering.cards;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
+import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -60,11 +61,23 @@ public class EntombedWeapon extends AbstractCustomCard {
     }
 
     @Override
+    public AbstractCard makeStatEquivalentCopy() {
+        AbstractCard c = super.makeStatEquivalentCopy();
+        if (this.misc >= magicNumber) {
+            c.upgrade();
+        }
+
+        return c;
+    }
+
+    @Override
     public void upgrade() {
         if (!upgraded && this.misc >= magicNumber) {
             upgradeName();
             upgradeDamage(UPGRADE_PLUS_DMG);
             upgradeBaseCost(UPGRADED_COST);
+        }
+        if(upgraded) {
             this.rawDescription = this.updated_desc;
             initializeDescription();
         }

@@ -1,6 +1,7 @@
 package theSlumbering.relics;
 
 import com.badlogic.gdx.graphics.Texture;
+import com.megacrit.cardcrawl.actions.common.RelicAboveCreatureAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.PowerTip;
@@ -60,6 +61,7 @@ public class EnergyDrink extends AbstractCustomRelic {
         if(room instanceof MonsterRoomBoss || room instanceof MonsterRoomElite){
             if(AbstractDungeon.actNum == 1) {
                 beginPulse();
+                AbstractDungeon.actionManager.addToBottom(new RelicAboveCreatureAction(AbstractDungeon.player, this));
                 ++AbstractDungeon.player.energy.energyMaster;
                 active = true;
             }

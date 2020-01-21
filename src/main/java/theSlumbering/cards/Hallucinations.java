@@ -1,5 +1,6 @@
 package theSlumbering.cards;
 
+import com.badlogic.gdx.graphics.Color;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -42,6 +43,17 @@ public class Hallucinations extends AbstractCustomCard {
     }
 
     @Override
+    public void triggerOnGlowCheck() {
+        if(!first && isGlowing){
+            glowColor = Color.GOLD;
+        }
+        else{
+            glowColor = BLUE_BORDER_GLOW_COLOR.cpy();
+        }
+        super.triggerOnGlowCheck();
+    }
+
+    @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         if(!first){
             this.first = true;
@@ -66,7 +78,7 @@ public class Hallucinations extends AbstractCustomCard {
     public void upgrade() {
         upgradeDamage(UPGRADE_PLUS_DMG);
         ++this.timesUpgraded;
-        this.name = languagePack.getCardStrings(ID).NAME + "+" + this.timesUpgraded;
+        this.name = languagePack.getCardStrings(ID).NAME + " + " + this.timesUpgraded;
         this.initializeTitle();
         initializeDescription();
     }

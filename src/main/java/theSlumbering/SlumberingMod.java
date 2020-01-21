@@ -299,6 +299,7 @@ public static final String difficulty_settings = "difficultyNormal";
         BaseMod.addRelic(new EnchantedHammer(), RelicType.SHARED);
         BaseMod.addRelic(new GamblerFolly(), RelicType.SHARED);
         BaseMod.addRelic(new CrystalEffigy(), RelicType.SHARED);
+        BaseMod.addRelic(new EnergyDrink(), RelicType.SHARED);
 
         //unlock?
         UnlockTracker.markRelicAsSeen(GlassShield.ID);

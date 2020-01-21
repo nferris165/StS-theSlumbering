@@ -31,11 +31,12 @@ public class EntombedAction extends AbstractGameAction {
     public void update() {
         AbstractCard deckCard = null;
         for(AbstractCard card: AbstractDungeon.player.masterDeck.group){
-            if(card.misc != this.limit) {
-                if (card.uuid.equals(this.uuid)) {
+            if(card.uuid.equals(this.uuid)) {
+                if (card.misc != this.limit) {
                     deckCard = card;
                     card.misc += this.miscIncrease;
-                    card.applyPowers();
+                    //card.applyPowers();
+                    card.baseMagicNumber = limit - card.misc;
                     card.baseMagicNumber = this.limit - card.misc;
                     card.isMagicNumberModified = false;
                     break;
