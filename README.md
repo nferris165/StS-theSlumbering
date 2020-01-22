@@ -10,7 +10,7 @@ Currently, this mod is feature complete, however, I am currently working with a 
 
 ### Mechanics and Theme
 
-The Slumbering is a creature that has been asleep for so long, it no longer remembers who it is. It has grow frail in its slumber, but has learned how to harness the power of the dream world.
+The Slumbering is a creature that has been asleep for so long, it no longer remembers who it is. It has grown frail in its slumber, but has learned how to harness the power of the dream world.
 
 Mechanically, the Slumbering is designed to have a unique difficulty curve. The Slumbering starts with only 1 HP, and cannot gain more through any means. In order to deal with foes, the Slumbering must Block all incoming damage. Fortunately, the Slumbering comes equipped with two starting relics that allow traversal of the Spire with relative safety. The first relic is guided by how awakened the Slumbering is; the more it wakes up, the stronger it becomes. The second relic stores energy from the hearts of those who have passed on. As enemies are defeated, it will collect hearts which can be spent to gain Block for the turn. The amount of Block received is determined by the power level of the first relic. The design goal is for the balancing of slumber level and hearts to create a dynamic way to mitigate damage on the fly.
 
