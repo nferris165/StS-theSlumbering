@@ -187,7 +187,7 @@
   },
   "theSlumbering:BagOfShields": {
     "NAME": "Bag of Shields",
-    "DESCRIPTION": "theslumbering:Passive. NL Preserve Block at the start of your turn based on the depth of your slumber."
+    "DESCRIPTION": "theslumbering:Passive. NL Preserve Block at the start of your turn relative to your #bAwakening."
   },
   "theSlumbering:SpectralDefender": {
     "NAME": "Spectral Defender",
@@ -195,7 +195,7 @@
   },
   "theSlumbering:ToughSkin": {
     "NAME": "Tough Skin",
-    "DESCRIPTION": "theslumbering:Passive. NL At the start of your turn, gain Block based on the depth of your slumber."
+    "DESCRIPTION": "theslumbering:Passive. NL At the start of your turn, gain Block relative to your #bAwakening.."
   },
   "theSlumbering:StrongFooting": {
     "NAME": "Strong Footing",

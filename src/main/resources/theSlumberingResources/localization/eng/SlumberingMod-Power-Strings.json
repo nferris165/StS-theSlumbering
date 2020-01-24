@@ -22,7 +22,7 @@
                 "DESCRIPTIONS": [
                         "You have lost connection to the dream world. NL #yAttacks deal #b",
                         "% less damage. Gain #b",
-                        "% less #yBlock from cards."
+                        "% less #yBlock from cards. NL (Gain #yDrowsy to remove this effect)"
                 ]
         },
         "theSlumbering:ReflectPower": {

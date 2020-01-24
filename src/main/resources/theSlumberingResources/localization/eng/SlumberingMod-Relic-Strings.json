@@ -36,7 +36,7 @@
     ]
   },
   "theSlumbering:SlumberingRelic": {
-    "NAME": "The Deep Slumber",
+    "NAME": "The Great Awakening",
     "FLAVOR": "Yaaaaaaaawn...",
     "DESCRIPTIONS": [
       "Right Click to remove all #ytheslumbering:Drowsy stacks, but fall deeper into your slumber...",
@@ -54,7 +54,7 @@
     "DESCRIPTIONS": [
       "We should never have gotten here!",
       "Accumulate hearts by defeating enemies. NL Spend a heart by Right Clicking. NL ",
-      "Hearts grant #yBlock according to the depth of your slumber."
+      "Hearts grant #yBlock relative to your #bAwakening."
     ]
   },
   "theSlumbering:CursedAnvil": {
