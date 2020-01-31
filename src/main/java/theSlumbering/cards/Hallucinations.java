@@ -44,7 +44,7 @@ public class Hallucinations extends AbstractCustomCard {
 
     @Override
     public void triggerOnGlowCheck() {
-        if(!first && isGlowing){
+        if(!this.first && isGlowing){
             glowColor = Color.GOLD;
         }
         else{
@@ -55,7 +55,7 @@ public class Hallucinations extends AbstractCustomCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        if(!first){
+        if(!this.first){
             this.first = true;
             this.upgrade();
 
@@ -81,5 +81,14 @@ public class Hallucinations extends AbstractCustomCard {
         this.name = languagePack.getCardStrings(ID).NAME + " + " + this.timesUpgraded;
         this.initializeTitle();
         initializeDescription();
+    }
+
+    @Override
+    public AbstractCard makeStatEquivalentCopy() {
+        AbstractCard card = super.makeStatEquivalentCopy();
+
+        ((Hallucinations) card).first = this.first;
+
+        return card;
     }
 }

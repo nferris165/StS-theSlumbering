@@ -669,7 +669,6 @@ public class EventHealthPatch {
             method = "buttonEffect"
     )
 
-    //TODO inc fix?
     public static class KnowingSkullEventPatch {
         private static int value = 1;
         @SpireInsertPatch(
