@@ -88,7 +88,7 @@ public class SlumberingMod implements
     public static Properties defaultSettings = new Properties();
     public static final String event_sharing_settings = "eventSharing";
     public static boolean eventSharing = false;
-public static final String difficulty_settings = "difficultyNormal";
+    public static final String difficulty_settings = "difficultyNormal";
     public static boolean difficultyNormal = false;
 
     private static final String MODNAME = "Slumbering Mod";
