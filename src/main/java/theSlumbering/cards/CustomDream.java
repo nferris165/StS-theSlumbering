@@ -27,7 +27,7 @@ public class CustomDream extends AbstractCustomCard implements ModalChoice.Callb
     public static final String IMG = makeCardPath("A_temp.png");
 
     private static final CardRarity RARITY = CardRarity.RARE;
-    private static final CardTarget TARGET = CardTarget.ALL;
+    private static final CardTarget TARGET = CardTarget.SELF;
     private static final CardType TYPE = CardType.ATTACK;
     public static final CardColor COLOR = TheSlumbering.Enums.COLOR_SLUMBERING;
 

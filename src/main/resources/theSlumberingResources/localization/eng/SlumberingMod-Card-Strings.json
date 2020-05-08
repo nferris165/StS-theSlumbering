@@ -1,20 +1,20 @@
 {
   "theSlumbering:BasicAttack": {
     "NAME": "Basic Attack",
-    "DESCRIPTION": "Deal !D! damage. NL Gain !B! Block. NL You are feeling [#666646]groggy...[]"
+    "DESCRIPTION": "Deal !D! damage. NL Gain !B! Block."
   },
   "theSlumbering:BasicDefend": {
     "NAME": "Basic Defend",
-    "DESCRIPTION": "Gain !B! Block. NL You hear [#666646]screams...[] in your mind.",
-    "UPGRADE_DESCRIPTION": "Gain !B! Block. NL Lose 1 theslumbering:Drowsy. NL You hear [#666646]screams...[] in your mind."
+    "DESCRIPTION": "Gain !B! Block.",
+    "UPGRADE_DESCRIPTION": "Gain !B! Block. NL Lose 1 theslumbering:Drowsy."
   },
   "theSlumbering:DrowsyAttack": {
     "NAME": "Drowsy Attack",
-    "DESCRIPTION": "Deal !D! damage. NL Gain !B! Block. NL Gain 1 theslumbering:Drowsy. NL You can feel [#666646]energy[] returning to your body."
+    "DESCRIPTION": "Deal !D! damage. NL Gain !B! Block. NL Gain 1 theslumbering:Drowsy."
   },
   "theSlumbering:DrowsyDefend": {
     "NAME": "Drowsy Defend",
-    "DESCRIPTION": "Gain !B! Block. NL Lose 1 theslumbering:Drowsy. NL [#666646]Whispers[] echo through your mind."
+    "DESCRIPTION": "Gain !B! Block. NL Lose 1 theslumbering:Drowsy."
   },
   "theSlumbering:WokeAttack": {
     "NAME": "Awakened Attack",
@@ -102,11 +102,11 @@
   },
   "theSlumbering:Yawn": {
     "NAME": "Yawn",
-    "DESCRIPTION": "Gain !B! Block. NL More powerful if played with *Stretch. NL Exhaust."
+    "DESCRIPTION": "Gain !B! Block. NL If played with *Stretch, wake up a little... NL Exhaust."
   },
   "theSlumbering:Stretch": {
     "NAME": "Stretch",
-    "DESCRIPTION": "Deal !D! damage. NL More powerful if played with *Yawn. NL Exhaust."
+    "DESCRIPTION": "Deal !D! damage. NL If played with *Yawn, wake up a little... NL Exhaust."
   },
   "theSlumbering:DreamEater": {
     "NAME": "Dream Eater",
@@ -187,7 +187,7 @@
   },
   "theSlumbering:BagOfShields": {
     "NAME": "Bag of Shields",
-    "DESCRIPTION": "theslumbering:Passive. NL Preserve Block at the start of your turn relative to your #bAwakening."
+    "DESCRIPTION": "theslumbering:Passive. NL Preserve Block at the start of your turn relative to your [#87CEEB]Awakening.[]"
   },
   "theSlumbering:SpectralDefender": {
     "NAME": "Spectral Defender",
@@ -195,7 +195,7 @@
   },
   "theSlumbering:ToughSkin": {
     "NAME": "Tough Skin",
-    "DESCRIPTION": "theslumbering:Passive. NL At the start of your turn, gain Block relative to your #bAwakening.."
+    "DESCRIPTION": "theslumbering:Passive. NL At the start of your turn, gain Block relative to your [#87CEEB]Awakening.[]"
   },
   "theSlumbering:StrongFooting": {
     "NAME": "Strong Footing",
@@ -358,7 +358,7 @@
   },
   "theSlumbering:InescapableThoughts": {
     "NAME": "Unrelenting",
-    "DESCRIPTION": "Repeat the next card costing at least 1 that you play until it can no longer be played."
+    "DESCRIPTION": "Repeat the next card costing at least 1 that you play until you can no longer pay the cost."
   },
   "theSlumbering:Defend_Slumbering": {
     "NAME": "Defend",
@@ -390,7 +390,7 @@
   },
   "theSlumbering:LastResort": {
     "NAME": "Last Resort",
-    "DESCRIPTION": "Can only be played if no other cards can be played. NL Deal !D! damage to ALL enemies."
+    "DESCRIPTION": "Cannot be played if other cards can be played. NL Deal !D! damage to ALL enemies."
   },
   "theSlumbering:BindingBlow": {
     "NAME": "Binding Blow",

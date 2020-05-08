@@ -54,7 +54,7 @@
     "DESCRIPTIONS": [
       "We should never have gotten here!",
       "Accumulate hearts by defeating enemies. NL Spend a heart by Right Clicking. NL ",
-      "Hearts grant #yBlock relative to your #bAwakening."
+      "Hearts grant #yBlock equal to your #bAwakening."
     ]
   },
   "theSlumbering:CursedAnvil": {

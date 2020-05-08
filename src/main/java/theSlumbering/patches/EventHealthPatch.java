@@ -179,7 +179,7 @@ public class EventHealthPatch {
         public static void Insert2(GremlinWheelGame __instance) {
             if (AbstractDungeon.player instanceof TheSlumbering) {
                 if(AbstractDungeon.player.hasRelic(HeartCollector.ID)) {
-                    SlumberingMod.decHeartCollectorRelic(-(AbstractDungeon.player.getRelic(HeartCollector.ID).counter));
+                    SlumberingMod.decHeartCollectorRelic(-10);
                 }
             }
         }
@@ -856,7 +856,7 @@ public class EventHealthPatch {
         public static void Insert(MindBloom __instance, int buttonPressed) {
             if (AbstractDungeon.player instanceof TheSlumbering) {
                 if(AbstractDungeon.player.hasRelic(HeartCollector.ID)) {
-                    SlumberingMod.decHeartCollectorRelic(-(AbstractDungeon.player.getRelic(HeartCollector.ID).counter));
+                    SlumberingMod.decHeartCollectorRelic(-15);
                 }
             }
         }
@@ -938,7 +938,7 @@ public class EventHealthPatch {
                     SlumberingMod.incSlumberingRelic(-1);
                 }
                 if(AbstractDungeon.player.hasRelic(HeartCollector.ID)) {
-                    SlumberingMod.decHeartCollectorRelic(-(AbstractDungeon.player.getRelic(HeartCollector.ID).counter));
+                    SlumberingMod.decHeartCollectorRelic(-10);
                 }
             }
         }
