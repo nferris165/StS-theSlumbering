@@ -39,6 +39,8 @@ public class CustomDream extends AbstractCustomCard implements ModalChoice.Callb
     private static final int DAMAGE = 9;
     private static final int ALL = 4;
 
+    private static int multi = 0;
+
 
     private ModalChoice modal;
 
@@ -69,6 +71,25 @@ public class CustomDream extends AbstractCustomCard implements ModalChoice.Callb
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         modal.open();
+    }
+
+    @Override
+    public void hover() {
+        this.baseDamage = ALL;
+        this.applyPowers();
+        multi = damage;
+        this.baseDamage = DAMAGE;
+        this.applyPowers();
+        modal = new ModalChoiceBuilder()
+                .setCallback(this)
+                .setColor(CardColor.BLUE)
+                .addOption("Defend", ext_desc[0] + block + ext_desc[1], CardTarget.SELF)
+                .setColor(CardColor.RED)
+                .addOption("Strong Attack", ext_desc[2] + damage + ext_desc[3], CardTarget.ENEMY)
+                .setColor(CardColor.GREEN)
+                .addOption("Area Attack",ext_desc[2] + multi + ext_desc[4], CardTarget.ALL_ENEMY)
+                .create();
+        super.hover();
     }
 
     @Override
