@@ -21,7 +21,10 @@ import com.megacrit.cardcrawl.helpers.ScreenShake;
 import com.megacrit.cardcrawl.localization.CharacterStrings;
 import com.megacrit.cardcrawl.screens.CharSelectInfo;
 import com.megacrit.cardcrawl.unlock.UnlockTracker;
+import com.megacrit.cardcrawl.vfx.AbstractGameEffect;
 import com.megacrit.cardcrawl.vfx.FastCardObtainEffect;
+import com.megacrit.cardcrawl.vfx.TextCenteredEffect;
+import com.megacrit.cardcrawl.vfx.cardManip.PurgeCardEffect;
 import com.megacrit.cardcrawl.vfx.cardManip.ShowCardAndObtainEffect;
 import theSlumbering.SlumberingMod;
 import theSlumbering.cards.*;
@@ -297,6 +300,9 @@ public class TheSlumbering extends AbstractCustomPlayer {
                 logger.info(e.uuid + " " + e.name + " " + "\n\n");
                 AbstractCard c = new DrowsyAttack();
                 applyState(e, c);
+                AbstractGameEffect eff = new TextCenteredEffect("Your cards have grown stronger...");
+                eff.duration = 3.0F;
+                AbstractDungeon.topLevelEffects.add(eff);
                 AbstractDungeon.topLevelEffects.add(new ShowCardAndObtainEffect(c, x, y, false));
                 removeList.add(e);
             }
@@ -382,20 +388,20 @@ public class TheSlumbering extends AbstractCustomPlayer {
                 break;
             case 2:
                 replaceBasic();
-                incSlumberingRelic(1);
+                //incSlumberingRelic(1);
                 break;
             case 3:
                 replaceDrowsy();
                 replaceBasic(); //maybe not?
-                incSlumberingRelic(1);
+                //incSlumberingRelic(1);
                 break;
             case 4:
-                incSlumberingRelic(2);
+                //incSlumberingRelic(2);
                 break;
             default:
                 replaceDrowsy();
                 replaceBasic(); //maybe not?
-                incSlumberingRelic(2);
+                //incSlumberingRelic(2);
                 break;
         }
 

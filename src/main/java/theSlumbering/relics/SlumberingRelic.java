@@ -149,6 +149,9 @@ public class SlumberingRelic extends AbstractCustomRelic implements ClickableRel
             this.firstElite = false;
             AbstractDungeon.actionManager.addToBottom(new RelicAboveCreatureAction(m, this));
             onTrigger(1);
+            if(m.type == AbstractMonster.EnemyType.BOSS){
+                onTrigger(1);
+            }
         }
     }
 
