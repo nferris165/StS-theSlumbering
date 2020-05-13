@@ -10,8 +10,10 @@ import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import theSlumbering.SlumberingMod;
 import theSlumbering.characters.TheSlumbering;
 import theSlumbering.patches.customTags;
@@ -75,20 +77,22 @@ public class CustomDream extends AbstractCustomCard implements ModalChoice.Callb
 
     @Override
     public void hover() {
-        this.baseDamage = ALL;
-        this.applyPowers();
-        multi = damage;
-        this.baseDamage = DAMAGE;
-        this.applyPowers();
-        modal = new ModalChoiceBuilder()
-                .setCallback(this)
-                .setColor(CardColor.BLUE)
-                .addOption("Defend", ext_desc[0] + block + ext_desc[1], CardTarget.SELF)
-                .setColor(CardColor.RED)
-                .addOption("Strong Attack", ext_desc[2] + damage + ext_desc[3], CardTarget.ENEMY)
-                .setColor(CardColor.GREEN)
-                .addOption("Area Attack",ext_desc[2] + multi + ext_desc[4], CardTarget.ALL_ENEMY)
-                .create();
+        if(CardCrawlGame.dungeon != null && AbstractDungeon.getCurrRoom() != null && AbstractDungeon.getCurrRoom().phase == AbstractRoom.RoomPhase.COMBAT) {
+            this.baseDamage = ALL;
+            this.applyPowers();
+            multi = damage;
+            this.baseDamage = DAMAGE;
+            this.applyPowers();
+            modal = new ModalChoiceBuilder()
+                    .setCallback(this)
+                    .setColor(CardColor.BLUE)
+                    .addOption("Defend", ext_desc[0] + block + ext_desc[1], CardTarget.SELF)
+                    .setColor(CardColor.RED)
+                    .addOption("Strong Attack", ext_desc[2] + damage + ext_desc[3], CardTarget.ENEMY)
+                    .setColor(CardColor.GREEN)
+                    .addOption("Area Attack", ext_desc[2] + multi + ext_desc[4], CardTarget.ALL_ENEMY)
+                    .create();
+        }
         super.hover();
     }
 
