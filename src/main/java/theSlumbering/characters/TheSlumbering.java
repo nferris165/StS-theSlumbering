@@ -270,6 +270,7 @@ public class TheSlumbering extends AbstractCustomPlayer {
         New.inBottleFlame = Old.inBottleFlame;
         New.inBottleTornado = Old.inBottleTornado;
         New.inBottleLightning = Old.inBottleLightning;
+        AbstractDungeon.player.bottledCardUpgradeCheck(New);
     }
 
     private static void replaceBasic() {
