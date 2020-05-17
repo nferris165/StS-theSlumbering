@@ -3,14 +3,14 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>slumberingmod</groupId>
     <artifactId>SlumberingMod</artifactId>
-    <version>0.6.2</version>
+    <version>0.6.3</version>
     <name>SlumberingMod</name>
     <description>A new character mod, featuring the Slumbering!</description>
 
     <properties>
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
-        <SlayTheSpire.version>01-16-2020</SlayTheSpire.version>
+        <SlayTheSpire.version>01-27-2020</SlayTheSpire.version>
         <ModTheSpire.version>3.15.0</ModTheSpire.version>
         <Steam.path>C:\Program Files (x86)\Steam\steamapps</Steam.path>
     </properties>

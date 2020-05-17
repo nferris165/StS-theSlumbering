@@ -26,6 +26,8 @@ public class ImagineSkill extends AbstractCustomCard {
 
     public ImagineSkill() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
+
+        this.check = false;
     }
 
     public void drawAndCheck(AbstractPlayer p, boolean refund){
@@ -41,11 +43,12 @@ public class ImagineSkill extends AbstractCustomCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         drawAndCheck(p, true);
-        if(this.upgraded){
+        if(this.upgraded || !this.check){
             drawAndCheck(p,true);
         } else{
             drawAndCheck(p, false);
         }
+        this.check = false;
     }
 
     @Override

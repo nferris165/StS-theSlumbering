@@ -77,7 +77,9 @@ public class CustomDream extends AbstractCustomCard implements ModalChoice.Callb
 
     @Override
     public void hover() {
-        if(CardCrawlGame.dungeon != null && AbstractDungeon.getCurrRoom() != null && AbstractDungeon.getCurrRoom().phase == AbstractRoom.RoomPhase.COMBAT) {
+        if(CardCrawlGame.dungeon != null
+                && AbstractDungeon.getCurrRoom() != null
+                && AbstractDungeon.getCurrRoom().phase == AbstractRoom.RoomPhase.COMBAT) {
             this.baseDamage = ALL;
             this.applyPowers();
             multi = damage;

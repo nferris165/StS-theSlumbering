@@ -11,6 +11,7 @@ public abstract class AbstractCustomCard extends CustomCard {
     public int baseSecondMagicNumber;
     public boolean upgradedSecondMagicNumber;
     public boolean isSecondMagicNumberModified;
+    public boolean check;
     public String updated_desc;
     public String[] ext_desc;
     public static String BG_SMALL_PASSIVE_FIELD = "theSlumberingResources/images/512/bg_passive_field.png";

@@ -4,6 +4,7 @@ import com.evacipated.cardcrawl.mod.stslib.actions.common.RefundAction;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import theSlumbering.cards.AbstractCustomCard;
 
 import static theSlumbering.SlumberingMod.logger;
 
@@ -29,6 +30,7 @@ public class ImagineAction extends AbstractGameAction {
             AbstractCard card = AbstractDungeon.player.drawPile.getTopCard();
             if (card.type == this.cardType) {
                 AbstractDungeon.actionManager.addToBottom(new RefundAction(this.card));
+                ((AbstractCustomCard) this.card).check = true;
             }
 
             this.isDone = true;
