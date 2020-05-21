@@ -297,8 +297,8 @@ public class TheSlumbering extends AbstractCustomPlayer {
                     y = (float)Settings.HEIGHT * 0.5F;
                 }
 
-                logger.info(x + " " + y + " " + "\n\n");
-                logger.info(e.uuid + " " + e.name + " " + "\n\n");
+                //logger.info(x + " " + y + " " + "\n\n");
+                //logger.info(e.uuid + " " + e.name + " " + "\n\n");
                 AbstractCard c = new DrowsyAttack();
                 applyState(e, c);
                 AbstractGameEffect eff = new TextCenteredEffect("Your cards have grown stronger...");
@@ -317,8 +317,8 @@ public class TheSlumbering extends AbstractCustomPlayer {
                     x = (float)Settings.WIDTH * (0.2F * effCount);
                     y = (float)Settings.HEIGHT * 0.5F;
                 }
-                logger.info(x + " " + y + " " + "\n\n");
-                logger.info(e.uuid + " " + e.name + " " + "\n\n");
+                //logger.info(x + " " + y + " " + "\n\n");
+                //logger.info(e.uuid + " " + e.name + " " + "\n\n");
                 AbstractCard c = new DrowsyDefend();
                 applyState(e, c);
                 AbstractDungeon.topLevelEffects.add(new ShowCardAndObtainEffect(c, x, y, false));

@@ -390,7 +390,11 @@
   },
   "theSlumbering:LastResort": {
     "NAME": "Last Resort",
-    "DESCRIPTION": "Cannot be played if other cards can be played. NL Deal !D! damage to ALL enemies."
+    "DESCRIPTION": "Cannot be played if other cards can be played. NL Deal !D! damage to ALL enemies.",
+    "EXTENDED_DESCRIPTION": [
+      "I can still play ",
+      "."
+    ]
   },
   "theSlumbering:BindingBlow": {
     "NAME": "Binding Blow",

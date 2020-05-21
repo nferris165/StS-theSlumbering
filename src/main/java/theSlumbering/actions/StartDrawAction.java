@@ -22,7 +22,7 @@ public class StartDrawAction extends AbstractGameAction {
     @Override
     public void update() {
         if (this.duration == Settings.ACTION_DUR_FAST) {
-            SlumberingMod.logger.info(AbstractDungeon.player.hand.group + "\n\n");
+            //SlumberingMod.logger.info(AbstractDungeon.player.hand.group + "\n\n");
             for(AbstractCard c: AbstractDungeon.player.hand.group){
                 if(c.hasTag(customTags.StartDraw)){
                     ((AbstractCustomCard)c).passiveEffect();

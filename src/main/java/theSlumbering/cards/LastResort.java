@@ -28,7 +28,7 @@ public class LastResort extends AbstractCustomCard {
     private static final int UPGRADE_PLUS_DMG = 10;
 
     private static boolean checking = false;
-    private boolean check = false;
+    private boolean checked = false;
 
     public LastResort() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
@@ -46,18 +46,20 @@ public class LastResort extends AbstractCustomCard {
 
     @Override
     public boolean canUse(AbstractPlayer p, AbstractMonster m) {
-        if(checking && !check){
+        if(checking && !checked){
             return false;
         }
         checking = true;
-        check = true;
+        checked = true;
         for(AbstractCard c: p.hand.group){
             if(c.uuid != this.uuid && c.canUse(p, m)){
+                SlumberingMod.logger.info("Last Resort cannot be played due to " + c.name);
+                this.cantUseMessage = ext_desc[0] + c.name + ext_desc[1];
                 return false;
             }
         }
         checking = false;
-        check = false;
+        checked = false;
         return this.cardPlayable(m) && this.hasEnoughEnergy();
     }
 
