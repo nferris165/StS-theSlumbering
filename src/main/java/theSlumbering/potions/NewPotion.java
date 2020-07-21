@@ -23,12 +23,7 @@ public class NewPotion extends AbstractPotion {
 
     public NewPotion() {
         super(NAME, POTION_ID, PotionRarity.RARE, PotionSize.HEART, PotionColor.POWER);
-
-        potency = getPotency();
-        description = DESCRIPTIONS[0];
         isThrown = false;
-        tips.add(new PowerTip(name, description));
-
     }
 
     @Override
